@@ -1,0 +1,19 @@
+body {
+    font-family: "DM Sans", sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1
+}
+
+h1 {
+    color: pink;
+}
+header {
+    background-color: red;
+    text-align: center;
+}
+
+tag {
+    color: blue;
+    line-height: 1
+}
