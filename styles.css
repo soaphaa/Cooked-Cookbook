@@ -33,7 +33,7 @@ credit {
     margin-top: 8px;
     margin-bottom: 8px;
     margin-left: 3px;
-    font-size: 15px;
+    font-size: 15jouiouiyopx;
 }
 
 button{
@@ -46,4 +46,23 @@ button{
 }
 .search button:hover {
   background-color: #909690;
+}
+
+#recipe-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 20px
+    /*padding: 2rem */
+
+}
+
+.recipe-card{
+    background: white;
+    border-radius: 20vw;
+    padding: 1rem;
+    box-shadow: 4px, 4px, 0px #cc0000
+}
+
+.recipe-card:hover{
+    transform:scale(1.03);
 }
