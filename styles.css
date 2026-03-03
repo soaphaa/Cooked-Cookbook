@@ -26,10 +26,17 @@ tag {
 }
 
 .search input[type=text] {
-    float: right;
-    padding: 20rem, 10rem;
+    float: left;
+    padding: 25px;
     margin-top: 8px;
     margin-bottom: 8px;
     margin-left: 3px;
     font-size: 20px;
+}
+
+.button{
+    color: white;
+}
+.search button:hover {
+  background-color: #909690;
 }
