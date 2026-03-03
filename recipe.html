@@ -1,18 +1,32 @@
 <!-- Single recipe page (cooking mode, timer, servings) -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recipe page</title>
+    
+    <link rel="stylesheet" href="css/recipe.css" />
+</head>
 
-<!-- Timer widget (sophia)-->
-<section id="timer" class="timer-window">
-    <div class="timer-header">
-        <h3>Timer</h3>
-        <button id="start-timer-btn">Start</button>
-    </div>
-
-    <div class="timer-body">
-        <p id="timer-display">00:00</p>
-
-        <div class="timer-controls">
-            <button id="pause-btn">Pause</button>
-            <button id="reset-btn">Reset</button>
+<body>
+    
+    <!-- Timer widget (sophia)-->
+    <section id="timer" class="timer-window">
+        <div class="timer-header">
+            <h2>Timer</h2>
         </div>
-    </div>
-</section>
+        
+        <div class="timer-body">
+            <p id="timer-display">00:00</p>
+            
+            <div class="timer-controls">
+                <button id="toggle-start-btn">Start</button>
+                <button id="reset-btn">Reset</button>
+            </div>
+        </div>
+    </section>
+    
+<script src="script.js"></script>
+</body>
+</html>
