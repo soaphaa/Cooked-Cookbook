@@ -8,38 +8,20 @@ body {
 
 h1 {
     color: pink;
+    padding-top: 10px;
     margin-bottom: 0.25em;
-    text-align: center;
 }
 
-/* recipe header/paragraph/textidk */
-rh1 {
-    display: inline-block;
-    font-family: "DM Sans", sans-serif;
-    color: #1a1a1a;
-    padding-top: 1rem;
-    margin-top: 1em;
-    margin-bottom: .5em;
-    line-height: 2;
-}
-rbody {
-    display: column;
-    font-family: "DM Sans", sans-serif;
-    color:black;
-    margin-top: .5em;
-    margin-bottom: 1em;
-    line-height:1;
-}
 
 header {
     background-color: rgb(167, 29, 29);
     text-align: center;
+    padding: 10px, 3vw;
     padding-bottom: 10px;
 }
 
 credit {
     color: rgb(229, 177, 195);
-    text-align: center;
     line-height: 1;
     font-weight: bold;
 }
@@ -81,7 +63,7 @@ button{
     border: 1px, solid, rgb(255, 203, 203);
 }
 
-#recipe-container{
+#home button{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     column-gap: 20px;
@@ -89,15 +71,14 @@ button{
 
 }
 
-.recipe-card{
-    background: pink;
-    border-radius: 20vw;
-    padding: 1rem;
-    box-shadow: 10px,10px, 0px #cc0000
+homepage {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 20px;
 }
 
-.recipe-btn{
-    float: right;
+.hbtn{
+    float: left;
     display: block;
     margin-top: 10px;
     padding: 8px 14px;
@@ -107,19 +88,4 @@ button{
     
     text-decoration: none;
     border-radius: 20px;
-    
-    transition: 0.3s;
-    font-weight:bold;
-}
-
-.recipe-btn:hover {
-    background-color: #990000;
-}
-
-.recipe-btn:visited{
-    color:white;
-}
-
-.recipe-card:hover{
-    transform:scale(1.03);
 }
