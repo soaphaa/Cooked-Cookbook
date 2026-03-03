@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    color: black;
+}
+
+
+.panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 220px;
+    background-color: #cd7575;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.panel p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+}
+
+.panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+.panel li {
+    margin-bottom: 0.5rem;
+}
+
+.panel input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+/* crossed-out ingredient */
+.panel li.crossed label {
+    text-decoration: line-through;
+    color: black;
+}
