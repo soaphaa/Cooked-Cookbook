@@ -38,4 +38,4 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("mouseup", () => {
         isDragging = false;
     });
-});//main js file!
+});
