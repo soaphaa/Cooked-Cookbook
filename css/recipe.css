@@ -13,10 +13,9 @@
   z-index: 999;
   backdrop-filter: blur(6px);
   text-align: center;
-  
 }
 
-h2.timer-header {
+h2.timer-header{
   font-size: 1.5em;
   margin-top: 8px;
 }
@@ -30,4 +29,17 @@ h2.timer-header {
   color: white;
 }
 
+.timer-minimize-btn {
+  background-color: red;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.hidden{
+  display: none;
+}
 

@@ -1,29 +1,18 @@
 //main js file!
-console.log("script loaded");
-const toggleButton = document.getElementById("toggle-start-btn");
-let isRunning = false;
+const timerToggleBtn = document.getElementById("timer-toggle-btn");
+const timerWindow = document.getElementById("timer");
+const timerMinimizeBtn = document.getElementById("timer-minimize-btn");
+let timerPopup = null; //to track the popup window state
 
-function startTimer(){
- console.log("Timer started");
- toggleButton.textContent = 'Stop';
- isRunning = true; 
- toggleButton.classList.remove('start');
- toggleButton.classList.add('stop');
-}
-
-function stopTimer(){
-    console.log("Timer stopped");
-    isRunning = false;
-    toggleButton.textContent = 'Start';
-    toggleButton.classList.remove('stop');
-    toggleButton.classList.add('start');
-}
-
-
-toggleButton.addEventListener("click", function() {
-    if (isRunning === false) {
-        startTimer();
+timerToggleBtn.addEventListener("click", function() {
+    if(timerPopup && !timerPopup.closed){
+        timerPopup.focus(); //bring existing popup to front
     } else {
-        stopTimer();
+        timerPopup = window.open("timer.html", "Timer", "width=300,height=200"); //open new popup
     }
+    // timerWindow.classList.toggle("hidden");
+});
+
+timerMinimizeBtn.addEventListener("click", function() {
+    timerWindow.classList.add("hidden");
 });
