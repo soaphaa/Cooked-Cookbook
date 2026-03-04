@@ -1,0 +1,165 @@
+/* header information */
+body {
+    font-family: "DM Sans", sans-serif;
+    background-color: #b49157;
+    color: #1a1a1a;
+    line-height: 1
+    
+}
+
+h1 {
+    color: pink;
+    margin-bottom: 0.25em;
+    text-align: center;
+}
+
+header {
+    background-color: rgb(167, 29, 29);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+credit {
+    color: rgb(229, 177, 195);
+    text-align: center;
+    line-height: 1;
+    font-weight: bold;
+}
+
+/* search bar !! */
+
+.search {
+  background-color: #b6904599;
+  overflow: hidden;
+  display: grid;
+  column-gap: 10px;
+}
+
+.search input[type=text] {
+    float: left;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    font-size: 15;
+    background-color: pink;
+    border: 1px, solid, white;
+}
+
+button{
+    float: left;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+    font-size: 15px;
+}
+
+.search button {
+    background-color: rgb(194, 91, 91);
+    color: white;
+    border: 1px, solid, white;
+}
+.search button:hover {
+    background-color: rgb(161, 66, 66);
+    border: 1px, solid, rgb(255, 203, 203);
+}
+
+/* recipe section for main*/
+
+/* recipe header/paragraph/textidk */
+rh1 {
+    display: block;
+    font-family: "DM Sans", sans-serif;
+    color: #e09a9a;
+    padding-top: 1em;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+rbody {
+    display: block;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    padding-top: 0.5em;
+    padding-left: 10px;
+    color:black;
+    line-height:1em;
+    font-size: 20px;
+}
+
+/* recipe cards, etc. */
+
+#recipe-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 20px;
+    /*padding: 2rem */
+
+}
+
+.recipe-card{
+    background: pink;
+    border-radius: 20vw;
+    padding: 1em, 0, 1em, 1em;
+    box-shadow: 10px,10px, 0px #cc0000
+}
+
+.recipe-btn{
+    float: right;
+    display: block;
+    margin-top: 10px;
+    padding: 8px 14px;
+
+    background-color: #cc0000;
+    color: white;
+    
+    text-decoration: none;
+    border-radius: 20px;
+    
+    transition: 0.3s;
+    font-weight:bold;
+}
+
+.recipe-btn:hover {
+    background-color: #990000;
+}
+
+.recipe-btn:visited{
+    color:white;
+}
+
+.recipe-card:hover{
+    transform:scale(1.03);
+}
+
+/* homepage button !! */
+
+#home button{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 20px;
+    /*padding: 2rem */
+
+}
+
+homepage {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 20px;
+}
+
+.hbtn{
+    float: left;
+    display: block;
+    margin-top: 10px;
+    padding: 8px 14px;
+
+    background-color: #cc0000;
+    color: white;
+    
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+/* whatever else is added */
