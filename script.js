@@ -1,4 +1,5 @@
 const btn = document.getElementById("submit");
+const u_search = document.getElementById("user_search")
 const recipes = [{
     title: "Cookeroonies",
     description: "yum cooks",
@@ -8,18 +9,19 @@ const recipes = [{
     title: "alyn salmon", description: "spicy ahh salmon",
     tags: ["savory", "spicy"], source: "salmon.html"
 }]
-const reccontainer = document.getElementById("recipe-container")
-const tagbtns = document.getElementById("tagbtns")
-btn.addEventListener("click", function () {
-  document.getElementById("spoof").innerHTML = "free me";
-});
+const reccontainer = document.getElementById("recipe-container");
+const tagbtns = document.getElementById("tagbtns");
+const input = document.getElementById("text");
+//btn.addEventListener("click", function () {
+//  const textValue = inputField.value.trim();
+//});
 function displayRec(filteredRecipes){
     reccontainer.innerHTML = "";
     filteredRecipes.forEach(recipe =>{
         const card = document.createElement("body");
         card.classList.add("recipe-card");
 
-        const title = document.createElement("h2");
+        const title = document.createElement("rh1");
         title.textContent = recipe.title;
 
         const description = document.createElement("rbody");
@@ -37,5 +39,7 @@ function displayRec(filteredRecipes){
         reccontainer.appendChild(card);
     })
 }
+
+
 
 displayRec(recipes);

@@ -1,3 +1,4 @@
+/* header information */
 body {
     font-family: "DM Sans", sans-serif;
     background-color: #b49157;
@@ -12,25 +13,6 @@ h1 {
     text-align: center;
 }
 
-/* recipe header/paragraph/textidk */
-rh1 {
-    display: inline-block;
-    font-family: "DM Sans", sans-serif;
-    color: #1a1a1a;
-    padding-top: 1rem;
-    margin-top: 1em;
-    margin-bottom: .5em;
-    line-height: 2;
-}
-rbody {
-    display: column;
-    font-family: "DM Sans", sans-serif;
-    color:black;
-    margin-top: .5em;
-    margin-bottom: 1em;
-    line-height:1;
-}
-
 header {
     background-color: rgb(167, 29, 29);
     text-align: center;
@@ -43,6 +25,8 @@ credit {
     line-height: 1;
     font-weight: bold;
 }
+
+/* search bar !! */
 
 .search {
   background-color: #b6904599;
@@ -81,6 +65,31 @@ button{
     border: 1px, solid, rgb(255, 203, 203);
 }
 
+/* recipe section for main*/
+
+/* recipe header/paragraph/textidk */
+rh1 {
+    display: block;
+    font-family: "DM Sans", sans-serif;
+    color: #e09a9a;
+    padding-top: 1em;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+rbody {
+    display: block;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    padding-top: 0.5em;
+    padding-left: 10px;
+    color:black;
+    line-height:1em;
+    font-size: 20px;
+}
+
+/* recipe cards, etc. */
+
 #recipe-container{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -92,7 +101,7 @@ button{
 .recipe-card{
     background: pink;
     border-radius: 20vw;
-    padding: 1rem;
+    padding: 1em, 0, 1em, 1em;
     box-shadow: 10px,10px, 0px #cc0000
 }
 
@@ -123,3 +132,34 @@ button{
 .recipe-card:hover{
     transform:scale(1.03);
 }
+
+/* homepage button !! */
+
+#home button{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    column-gap: 20px;
+    /*padding: 2rem */
+
+}
+
+homepage {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 20px;
+}
+
+.hbtn{
+    float: left;
+    display: block;
+    margin-top: 10px;
+    padding: 8px 14px;
+
+    background-color: #cc0000;
+    color: white;
+    
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+/* whatever else is added */
