@@ -1,13 +1,13 @@
 const btn = document.getElementById("submit");
 const u_search = document.getElementById("user_search")
 const recipes = [{
-    title: "Cookeroonies",
+    title: "Chocolate Chip Cookies",
     description: "bocolate bip bookies: brown sugar, white sugar, bocolate bips, flour, egg, malk, baking boda, baking bowder",
     tags: ["sweet", "dessert"], source: "cookies.html"
 },
 {
     title: "alyn salmon",
-    description: "spicy ahh salmon: gochugang, mirin, soy sauce, salmon, sesame oil, sugar",
+    description: "spicy ahh salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
     tags: ["savory", "spicy"], source: "salmon.html"
 }]
 const reccontainer = document.getElementById("recipe-container");

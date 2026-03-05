@@ -113,6 +113,7 @@ rbody {
 }
 
 .recipe-card{
+    display: inline-block;
     background: pink;
     border-radius: 20vw;
     padding-bottom: 18px;
