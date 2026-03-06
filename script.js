@@ -85,12 +85,19 @@ function displayRec(filteredRecipes){
         title.textContent = recipe.title;
 
         description.textContent = recipe.description;
+
+        const image = document.createElement("img");
+        image.src = recipe.image;
+        image.alt = recipe.title + " Image";
+        image.classList.add("recipe-image");
+
         const f_btn = document.createElement("a");
 
         f_btn.textContent = "View Recipe trust";
         f_btn.href = recipe.source;
         f_btn.classList.add("recipe-btn")
 
+        card.appendChild(image);
         card.appendChild(title);
         card.appendChild(f_btn);
         card.appendChild(description);
