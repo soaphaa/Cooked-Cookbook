@@ -2,7 +2,7 @@ const btn = document.getElementById("submit");
 const u_search = document.getElementById("user_search")
 const recipes = [{
     title: "Chocolate Chip Cookies",
-    description: "bocolate bip bookies: brown sugar, white sugar, bocolate bips, flour, egg, malk, baking boda, baking bowder",
+    description: "bocolate bip bookies: brown sugar, white sugar, bocolate bips, flour, eggs, malk, baking boda, baking bowder",
     tags: ["sweet", "dessert"], source: "cookies.html"
 },
 {
@@ -17,41 +17,45 @@ const input = document.getElementById("text");
 const home = document.getElementById("home button");
 
 
-
 btn.addEventListener("click", function () {
-//take value from the search bar
-    if (!reccontainer) return;
-    reccontainer.innerHTML = "";
+
     const textValue = u_search.value.trim();
-    recipes.forEach(recipe =>{
-        if ((recipe.description.toLowerCase().includes(textValue.toLowerCase()))){
-            const card = document.createElement("body");
-            const title = document.createElement("rh1");
-            const description = document.createElement("rbody");
-
-            card.classList.add("recipe-card");
-            title.textContent = recipe.title;
-            description.textContent = recipe.description;
-            const f_btn = document.createElement("a");
-
-            f_btn.textContent = "View Recipe trust";
-            f_btn.href = recipe.source;
-            f_btn.classList.add("recipe-btn")
-
-            card.appendChild(title);
-            card.appendChild(f_btn);
-            card.appendChild(description);
-            
-            reccontainer.appendChild(card);
-        }
-        else{
-            const notfound = document.createElement("rh1");
-            reccontainer.appendChild(notfound);
-        }
-        
-     })
+    if (!home){
+        search(textValue);
+    }
+    else{
+        window.location.href = "index.html?search=" + encodeURIComponent(textValue);
+    }
+//take value from the search bar
 });
 
+function search(txt){
+    if (!reccontainer) return;  
+    reccontainer.innerHTML = "";
+    recipes.forEach(recipe =>{
+            if ((recipe.description.toLowerCase().includes(txt.toLowerCase()))){
+                const card = document.createElement("body");
+                const title = document.createElement("rh1");
+                const description = document.createElement("rbody");
+
+                card.classList.add("recipe-card");
+                title.textContent = recipe.title;
+                description.textContent = recipe.description;
+
+                const f_btn = document.createElement("a");
+
+                f_btn.textContent = "View Recipe trust";
+                f_btn.href = recipe.source;
+                f_btn.classList.add("recipe-btn")
+
+                card.appendChild(title);
+                card.appendChild(f_btn);
+            card.appendChild(description);
+                
+                reccontainer.appendChild(card);
+            }
+        })
+}
 
 if (home){
     home.innerHTML ="";
@@ -68,7 +72,7 @@ function displayRec(filteredRecipes){
     if (!reccontainer) return;
     reccontainer.innerHTML = "";
     filteredRecipes.forEach(recipe =>{
-        const card = document.createElement("body");
+        const card = document.createElement("div");
         const title = document.createElement("rh1");
         const description = document.createElement("rbody");
         card.classList.add("recipe-card");

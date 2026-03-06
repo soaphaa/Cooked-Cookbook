@@ -10,7 +10,7 @@
 
 body {
     font-family: "Nunito", sans-serif;
-    background-color: #b49157;
+    background-color: #e3c4c4;
     color: #1a1a1a;
     line-height: 1
     
@@ -40,7 +40,7 @@ credit {
 
 .search {
     font-family: "Nunito", sans-serif;
-    background-color: #b6904599;
+    background-color: #e3c4c4;
     overflow: hidden;
     display: grid;
     column-gap: 10px;
