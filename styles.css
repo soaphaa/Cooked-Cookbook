@@ -72,7 +72,7 @@ rh1 {
     display: block;
     font-family: "DM Sans", sans-serif;
     color: #e09a9a;
-    padding-top: 1em;
+    /* padding-top: 1em; */
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -100,9 +100,12 @@ rbody {
 
 .recipe-card{
     background: pink;
-    border-radius: 20vw;
+    border-radius: 50px;
     padding: 1em, 0, 1em, 1em;
-    box-shadow: 10px,10px, 0px #cc0000
+    box-shadow: 10px,10px, 0px #cc0000;
+    border: 5px solid rgb(205, 138, 150);
+    /* display: flex;
+    flex-direction: column; */
 }
 
 .recipe-btn{
@@ -120,6 +123,19 @@ rbody {
     transition: 0.3s;
     font-weight:bold;
 }
+
+.recipe-image {
+    width: 80%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    border-radius: 40px;
+    border: 3px solid white;
+    margin: 20px auto;
+    align-self: center;
+    box-sizing: border-box;
+}
+
 
 .recipe-btn:hover {
     background-color: #990000;
