@@ -10,7 +10,7 @@
 
 body {
     font-family: "Nunito", sans-serif;
-    background-color: #e3c4c4;
+    background-color: #cf8787;
     color: #1a1a1a;
     line-height: 1
     
@@ -40,7 +40,7 @@ credit {
 
 .search {
     font-family: "Nunito", sans-serif;
-    background-color: #e3c4c4;
+    background-color: #cf8787;
     overflow: hidden;
     display: grid;
     column-gap: 10px;
@@ -86,7 +86,7 @@ rh1 {
     display: block;
     font-family: "Nunito", sans-serif;
     color: #e09a9a;
-    padding-top: 1em;
+    margin-top: 2em;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -96,7 +96,9 @@ rbody {
     text-align: left;
     font-family: "Nunito", sans-serif;
     padding-top: 0.5em;
-    padding-left: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 1em;
     color:black;
     line-height:1em;
     font-size: 20px;
@@ -106,7 +108,7 @@ rbody {
 
 #recipe-container{
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
     column-gap: 20px;
     /*padding: 2rem */
 
@@ -116,7 +118,9 @@ rbody {
     display: inline-block;
     background: pink;
     border-radius: 20vw;
-    padding-bottom: 18px;
+    padding-bottom: 20px;
+    padding-right: 3vw;
+    margin-bottom: 2em;
     box-shadow: 10px,10px, 0px #cc0000
 }
 
@@ -124,7 +128,9 @@ rbody {
     float: right;
     display: block;
     margin-top: 10px;
+    margin-bottom: 10px;
     margin-right: 15px;
+    margin-left: 15px;
     padding: 10px;
 
     background-color: #cc0000;
@@ -181,6 +187,7 @@ homepage {
 /* timer css */
 
 .timer-window {
+  font: "Nunito", "sans-serif";
   position: fixed; /* will always stay at the top corner evenwhenu scroll */
   right: 16px;
   top: 16px;
