@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let timerPopup = null;
     timerToggleBtn.addEventListener("click", () => {
         console.log("Timer toggle button clicked");
-        timerPopup = window.open("timer.html", "Timer", "width=300,height=200,resizable=no");
+        timerPopup = window.open("timer.html", "Timer", "width=260,height=260,resizable=no");
     });
 });
 

@@ -169,12 +169,14 @@ homepage {
   right: 16px;
   top: 16px;
   width: 260px;
+  height:260px;
   
   background: rgba(255, 211, 122, 0.95); /*replace with image maybe*/
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 16px;
   box-shadow: 0 10px 28px rgba(218, 129, 14, 0.18);
   
+  margin: 0;
   padding: 12px;
   z-index: 999;
   backdrop-filter: blur(6px);
@@ -218,4 +220,36 @@ h2.timer-header{
 .active-tab {
     font-weight: bold;
     border-bottom: 2px solid black;
+}
+
+/* ring */
+.ring-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+svg.ring {
+    width: 75px;
+    height: 75px;
+    transform: rotate(-90deg); /* makes ring start at top instead of right */
+}
+
+.ring-bg {
+    fill: none;
+    stroke: rgba(0,0,0,0.15);
+    stroke-width: 4;
+}
+
+.ring-progress {
+    fill: none;
+    stroke: #cc0000;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 157.08; /* 2 × π × 25 matches your r="25" */
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear, stroke 0.3s;
+}
+
+.ring-progress.low {
+    stroke: #ff0000;
 }

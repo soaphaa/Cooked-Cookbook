@@ -11,12 +11,19 @@
 
 <body>
     
-    <!-- Timer widget- able to be minimized(sophia) -->
-    <section id="timer" class="timer-window">
-        <div class="timer-header">
-            <h2>Timer</h2>
+<!-- Timer widget- able to be minimized(sophia) -->
+<section id="timer" class="timer-window">
+    <div class="timer-card" id="timer-card">
+
+        <span class="timer-title">Timer</span>
+
+        <div class="ring-wrap">
+            <svg class="ring" viewBox="0 0 75 75">
+                <circle class="ring-bg" cx="30" cy="30" r="25"></circle>
+                <circle class="ring-progress" id="ring" cx="30" cy="30" r="25"></circle>
+            </svg>
         </div>
-        
+
         <div class="timer-body">
             <p id="timer-display">00:00</p>
             <select id="timer-select">
@@ -29,14 +36,14 @@
                 <option value="900">15 min</option>
                 <option value="1200">20 min</option>
                 <option value="1800">30 min</option>
-
             </select>
             <div class="timer-controls">
                 <button id="toggle-start-btn">Start</button>
                 <button id="reset-btn">Reset</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     
     <script src="timer.js"></script>
 </body>

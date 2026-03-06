@@ -22,22 +22,23 @@ document.getElementById("login-btn").addEventListener("click", function(event) {
     const username = document.getElementById("login-username").value.trim(); //saved username in local storage
     const password = document.getElementById("login-password").value.trim(); //saved password in local storage
     const message = document.getElementById("login-message");
-    const savedUser = JSON.parse(localStorage.getItem(username)); //get the saved user data from local storage
-    const savedPassword = JSON.parse(localStorage.getItem(password)); //get the saved user data from local storage
+   
+    const saved = localStorage.getItem("user_" + username); //check if the username exists in local storage
 
-    if (!savedUser) {
+    if (!saved) {
         message.textContent = "Username not found.";
         return;
     }
-    if (savedPassword !== password) {
-        message.textContent = "Incorrect password.";
+    if (saved !== password) {
+        message.textContent = "Incorrect password please try again.";
         return;
     }
 
     localStorage.setItem("loggedInUser", username);
     console.log("Logged in user:", username);
     console.log(localStorage.getItem("loggedInUser"));
-    message.textContent = "Welcome back the goat" + username + "!";
+    message.textContent = "Welcome back the " + username + "! Redirecting ....";
+    setTimeout(() => window.location.href = "index.html", 1000);
 
 
 });
