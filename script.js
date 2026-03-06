@@ -38,4 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("mouseup", () => {
         isDragging = false;
     });
+
+    // Open nutrition panel in a new window
+    const nutritionBtn = document.getElementById("nutrition-btn");
+
+    nutritionBtn.addEventListener("click", () => {
+        window.open("nutrition.html", "nutrition_window", "width=300, height=400, resizable=no");
+    });
+    
 });
