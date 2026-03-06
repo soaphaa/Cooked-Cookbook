@@ -86,7 +86,7 @@ rh1 {
     display: block;
     font-family: "Nunito", sans-serif;
     color: #e09a9a;
-    margin-top: 2em;
+    margin-top: 1em;
     /* padding-top: 1em; */
     text-align: center;
     font-size: 30px;
@@ -118,28 +118,32 @@ rbody {
 .recipe-card{
     display: inline-block;
     background: pink;
-    border-radius: 20vw;
+    border-radius: 40px;
     padding-bottom: 20px;
     padding-right: 3vw;
     margin-bottom: 2em;
+    margin-top: 15px;
     box-shadow: 10px,10px, 0px #cc0000;
     border: 5px solid rgb(205, 138, 150);
 }
 
 .recipe-btn{
     float: right;
-    display: block;
-    margin-top: 10px;
+    display: flex;
+    margin-top: 30px;
     margin-bottom: 10px;
     margin-right: 15px;
-    margin-left: 15px;
+    margin-left: 25px;
     padding: 10px;
 
     background-color: #cc0000;
     color: white;
     
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 50px;
+
+    font-size:20px;
+    text-align: center; 
     
     transition: 0.3s;
     font-weight:bold;
@@ -147,12 +151,12 @@ rbody {
 
 .recipe-image {
     width: 80%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    display: block;
-    border-radius: 40px;
-    border: 3px solid white;
-    margin: 20px auto;
+    aspect-ratio: 2;
+ /*   object-fit: cover;*/
+    display: flex;
+    border-radius: 50px;
+    border: 2px solid white;
+    margin: 30px;
     align-self: center;
     box-sizing: border-box;
 }

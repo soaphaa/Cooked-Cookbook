@@ -3,12 +3,14 @@ const u_search = document.getElementById("user_search")
 const recipes = [{
     title: "Chocolate Chip Cookies",
     description: "bocolate bip bookies: brown sugar, white sugar, bocolate bips, flour, eggs, malk, baking boda, baking bowder",
-    tags: ["sweet", "dessert"], source: "cookies.html"
+    tags: ["sweet", "dessert"], source: "cookies.html",
+    image: "images/chocolate-chip-cookie.jpeg"
 },
 {
     title: "alyn salmon",
     description: "spicy ahh salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
-    tags: ["savory", "spicy"], source: "salmon.html"
+    tags: ["savory", "spicy"], source: "salmon.html",
+    image: "images/salmon.jpg"
 },
 {
     title: "choc chip ban bread",
@@ -47,6 +49,11 @@ function search(txt){
                 title.textContent = recipe.title;
                 description.textContent = recipe.description;
 
+                const image = document.createElement("img");
+                image.src = recipe.image;
+                image.alt = recipe.title + " Image";
+                image.classList.add("recipe-image");
+
                 const f_btn = document.createElement("a");
 
                 f_btn.textContent = "View Recipe trust";
@@ -55,7 +62,8 @@ function search(txt){
 
                 card.appendChild(title);
                 card.appendChild(f_btn);
-            card.appendChild(description);
+                card.appendChild(description);
+                card.appendChild(image);
                 
                 reccontainer.appendChild(card);
             }
