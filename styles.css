@@ -205,6 +205,17 @@ h2.timer-header{
   right: 8px;
 }
 
-.hidden{
-  display: none;
+.hidden {
+    display: none;
+}
+
+#auth-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.active-tab {
+    font-weight: bold;
+    border-bottom: 2px solid black;
 }

@@ -12,13 +12,10 @@ const recipes = [{
 const reccontainer = document.getElementById("recipe-container");
 const tagbtns = document.getElementById("tagbtns");
 const input = document.getElementById("text");
-//btn.addEventListener("click", function () {
-//  const textValue = inputField.value.trim();
-//});
 
 function displayRec(filteredRecipes) {
     if (!reccontainer) return; // exits if not on the right page
-    reccontainer.innerHTML = "";
+    reccontainer.innerHTML = ""; //It clears out everything inside the reccontainer element.
     filteredRecipes.forEach(recipe => {
         const card = document.createElement("body");
         card.classList.add("recipe-card");
@@ -44,21 +41,6 @@ function displayRec(filteredRecipes) {
 
 
 displayRec(recipes);
-//main js file!
-// const timerToggleBtn = document.getElementById("timer-toggle-btn");
-// let timerPopup = null; //to track the popup window state
-
-// timerToggleBtn.addEventListener("click", function() {
-//     if(timerPopup && !timerPopup.closed){
-//         timerPopup.focus(); //bring existing popup to front
-//     } else {
-    //         timerPopup = window.open(
-//             "timer.html",
-//             "Timer",
-//             "width=300,height=200, top=100,right=100,",
-//             "resizable=no"); //open new popup
-//         }
-//     });
 
 document.addEventListener("DOMContentLoaded", () => {
     const timerToggleBtn = document.getElementById("timer-toggle-btn");
