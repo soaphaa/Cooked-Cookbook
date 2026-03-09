@@ -45,7 +45,6 @@ credit {
 .search {
     /* the general search bar area i lowk didn't know what i was doing i js followed the w3 tutorial*/
     font-family: "Nunito", sans-serif;
-    background-color: #cf8787;
     display: flex;
     column-gap: 10px;
 }
@@ -57,9 +56,10 @@ credit {
     width: 75vw;
     margin-top: 10px;
     margin-left: 3px;
+    padding-left: 10px;
     font-size: 20px;
-    background-color: pink;
     border: 1px, solid, white;
+    border-radius: 10px;
 }
 
 button{
@@ -78,11 +78,19 @@ button{
     background-color: rgb(194, 91, 91);
     color: white;
     border: 1px, solid, white;
+
+    border-radius:20px;
 }
 .search button:hover {
     font-family: "Nunito", sans-serif;
     background-color: rgb(161, 66, 66);
     border: 1px, solid, rgb(255, 203, 203);
+}
+
+warning {
+    font-size:60px;
+    color: black;
+    line-height: 1em;
 }
 
 /* recipe section for main*/
@@ -92,11 +100,11 @@ rh1 {
     display: block;
     font-family: "Nunito", sans-serif;
     color: #ffffff;
-    margin-bottom: 1em;
     /* padding-top: 1em; */
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+    line-height: 1.5em;
 }
 rbody {
     display: block;
@@ -125,40 +133,45 @@ rbody {
 .recipe-card{
     /* contains recipe title, description, image, etc.*/
     display: inline-block;
-    background: pink;
+    background-image: url("images/tempbtn.png");
+    background-size: cover;
     border-radius: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     padding-right: 3vw;
-    margin-bottom: 2em;
+    margin-bottom: 10px;
     margin-top: 15px;
     box-shadow: 10px,10px, 0px #cc0000;
-    border: 5px solid rgb(205, 138, 150);
+    border: 1px solid white;
 }
 
 .recipe-btn{
     /* visit recipe trust' button */
+   /* background-image: url("images/tempbtn.png"); */
+    background-size: cover;
     float: right;
     display: flex;
-    margin-top: 30px;
-    margin-bottom: 10em;
-    margin-right: 15px;
-    margin-left: 25px;
-    padding: 30px;
+    padding: 2.5vw;
+    margin-left:3vw;
+    margin-bottom: 5vw;
+    margin-right: 0;
+    margin-top: 1vw;
     width: 10vw;
 
     background-color: #cc0000;
     color: white;
     
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 40px;
 
-    font-size:25px;
+    font-size:3vw;
     text-align: center; 
     line-height: 1em;
     
     transition: 0.3s;
     font-weight:bold;
 }
+
+
 
 .recipe-tag{
     font-family: "Nunito", sans-serif;
@@ -178,7 +191,25 @@ rbody {
     text-align: center; 
 }
 
-.recipe-tag:hover{
+.recipe-filter{
+    font-family: "Nunito", sans-serif;
+    float: center;
+    display: grid;
+    padding-bottom: 10px;
+
+    background-color: #eb6b6b;
+    color: rgb(255, 255, 255);
+    
+    text-decoration: none;
+    border-radius: 100px;
+
+    border-color: white;
+
+    font-size:15 px;
+    text-align: center; 
+}
+
+.recipe-filter:hover{
     transform: scale(1.05);
 
 }
@@ -187,7 +218,6 @@ rbody {
     display: grid;
     grid-template-columns: repeat(5, minmax(1vw, 50vw));
     overflow: wrap;
-    margin-left: 2fr;
 }
 
 
@@ -196,8 +226,8 @@ rbody {
     aspect-ratio: 2;
  /*   object-fit: cover;*/
     display: flex;
-    border-radius: 50px;
-    border: 2px solid white;
+    border-radius: 30px;
+    border: 1.5px solid rgba(255, 255, 255, 0.333);
     margin: 30px;
     align-self: center;
     box-sizing: border-box;
