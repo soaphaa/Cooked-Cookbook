@@ -15,14 +15,23 @@ const recipes = [{
 {
     title: "choc chip ban bread",
     description: "val day bread: chocolate chips, banana, flour, egg, milk",
+    tags: ["sweet", "dessert"],
     source: "banana bread.html"
 }]
 const reccontainer = document.getElementById("recipe-container");
 const tagbtns = document.getElementById("tagbtns");
 const input = document.getElementById("text");
 
-const home = document.getElementById("home button");
+const home = document.getElementById("home-button");
 
+if (home){
+    home.innerHTML ="";
+    const hbtn = document.createElement("a");
+    hbtn.textContent = "HOMEPAGE"
+    hbtn.href = "index.html";
+    hbtn.classList.add("hbtn");
+    home.appendChild(hbtn);
+}
 
 btn.addEventListener("click", function () {
 
@@ -56,29 +65,68 @@ function search(txt){
 
                 const f_btn = document.createElement("a");
 
-                f_btn.textContent = "View Recipe trust";
+                f_btn.textContent = "View Recipe";
                 f_btn.href = recipe.source;
                 f_btn.classList.add("recipe-btn")
+
+                const tagcont = document.createElement("recipe-tag");
+
+                recipe.tags.forEach(tag => {
+                    const rtag = document.createElement("span");
+                    rtag.classList.add("recipe-tag");
+                    rtag.textContent = tag;
+                    tagcont.appendChild(rtag);
+                });
 
                 card.appendChild(title);
                 card.appendChild(f_btn);
                 card.appendChild(description);
                 card.appendChild(image);
+                card.appendChild(tagcont);
                 
                 reccontainer.appendChild(card);
             }
         })
 }
 
-if (home){
-    home.innerHTML ="";
-    const hbt = document.createElement("a");
-    home.innerHTML = "";
-    hbt.textContent = "HOMEPAGE"
-    hbt.href = "index.html";
-    hbt.classList.add("hbtn");
-    home.appendChild(hbt);
+function genTagBtns(){
+    const allTags = new Set();
+
+    recipes.forEach(recipe =>{
+        recipe.tags.forEach(tag=>{
+            allTags.add(tag);
+        })
+    })
+
+    createTagBtn("All");
+
+    allTags.forEach(tag =>{
+        createTagBtn(tag);
+    })
 }
+
+function createTagBtn(tagname){
+    const tbtn = document.createElement("button");
+    //tagbutton = tbtn
+    tbtn.textContent = tagname;
+    tbtn.classList.add("recipe-tag");
+    tbtn.addEventListener("click", () => {
+        if (tagname == "All"){
+            //if the filter is js all of them
+            displayRec(recipes);
+        }else{
+            //filtered recipes = recipes that have "tagname" (the name of the filtered tag)
+            const filtrecipes = recipes.filter(recipe =>
+                recipe.tags.includes(tagname));
+            displayRec(filtrecipes);
+            //display the filtered set
+        }
+    });
+    tagbtns.appendChild(tbtn);
+}
+
+genTagBtns();
+
  
 
 function displayRec(filteredRecipes){
@@ -101,7 +149,7 @@ function displayRec(filteredRecipes){
 
         const f_btn = document.createElement("a");
 
-        f_btn.textContent = "View Recipe trust";
+        f_btn.textContent = "View Recipe";
         f_btn.href = recipe.source;
         f_btn.classList.add("recipe-btn")
 
@@ -116,19 +164,5 @@ function displayRec(filteredRecipes){
 displayRec(recipes);
 
 
-//main js file!
-document.addEventListener("DOMContentLoaded", () => {
-    const timerToggleBtn = document.getElementById("timer-toggle-btn");
-    if (!timerToggleBtn) {
-        console.log("timer-toggle-btn not found on this page");
-        return;
-    }
-
-    let timerPopup = null;
-    timerToggleBtn.addEventListener("click", () => {
-        console.log("Timer toggle button clicked");
-        timerPopup = window.open("timer.html", "Timer", "width=300,height=200,resizable=no");
-    });
-});
-    
+//main js file
 
