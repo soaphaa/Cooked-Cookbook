@@ -22,7 +22,6 @@ const reccontainer = document.getElementById("recipe-container");
 const tagbtns = document.getElementById("tagbtns");
 const input = document.getElementById("text");
 
-<<<<<<< HEAD
 function displayRec(filteredRecipes) {
     if (!reccontainer) return; // exits if not on the right page
     reccontainer.innerHTML = ""; //It clears out everything inside the reccontainer element.
@@ -66,18 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
-
-const home = document.getElementById("home button");
-if(home){
-    home.innerHTML = "";
-    const hbt = document.createElement("a");
-    hbt.textContent = "HOMEPAGE"
-    hbt.href = "index.html";
-    hbt.classList.add("hbtn");
-    home.appendChild(hbt); 
-}
-=======
 const home = document.getElementById("home-button");
 
 if (home){
@@ -193,51 +180,48 @@ function createTagBtn(tagname){
 
  
 
-function displayRec(filteredRecipes){
-    if (!reccontainer) return;
-    reccontainer.innerHTML = "";
-    filteredRecipes.forEach(recipe =>{
-        const card = document.createElement("div");
-        const title = document.createElement("rh1");
-        const description = document.createElement("rbody");
-        card.classList.add("recipe-card");
+// function displayRec(filteredRecipes){
+//     if (!reccontainer) return;
+//     reccontainer.innerHTML = "";
+//     filteredRecipes.forEach(recipe =>{
+//         const card = document.createElement("div");
+//         const title = document.createElement("rh1");
+//         const description = document.createElement("rbody");
+//         card.classList.add("recipe-card");
 
-        title.textContent = recipe.title;
+//         title.textContent = recipe.title;
 
-        description.textContent = recipe.description;
+//         description.textContent = recipe.description;
 
-        const image = document.createElement("img");
-        image.src = recipe.image;
-        image.alt = recipe.title + " Image";
-        image.classList.add("recipe-image");
+//         const image = document.createElement("img");
+//         image.src = recipe.image;
+//         image.alt = recipe.title + " Image";
+//         image.classList.add("recipe-image");
 
-        const f_btn = document.createElement("a");
+//         const f_btn = document.createElement("a");
 
-        f_btn.textContent = "View Recipe";
-        f_btn.href = recipe.source;
-        f_btn.classList.add("recipe-btn")
+//         f_btn.textContent = "View Recipe";
+//         f_btn.href = recipe.source;
+//         f_btn.classList.add("recipe-btn")
 
-        const tagcont = document.createElement("recipe-tag");
+//         const tagcont = document.createElement("recipe-tag");
 
-        recipe.tags.forEach(tag => {
-            const rtag = document.createElement("rbody");
-            rtag.classList.add("recipe-tag");
-            rtag.textContent = tag;
-            tagcont.appendChild(rtag);
-        });
+//         recipe.tags.forEach(tag => {
+//             const rtag = document.createElement("rbody");
+//             rtag.classList.add("recipe-tag");
+//             rtag.textContent = tag;
+//             tagcont.appendChild(rtag);
+//         });
 
-        card.appendChild(image);
-        card.appendChild(title);
-        card.appendChild(f_btn);
-        card.appendChild(description);
-        card.appendChild(tagcont);
+//         card.appendChild(image);
+//         card.appendChild(title);
+//         card.appendChild(f_btn);
+//         card.appendChild(description);
+//         card.appendChild(tagcont);
         
-        reccontainer.appendChild(card);
-    })
-}
-displayRec(recipes);
+//         reccontainer.appendChild(card);
+//     })
+// }
+// displayRec(recipes);
 
 
-//main js file
-
->>>>>>> 3a3bad07064634ee3d34f28208519f3c52aeb50e

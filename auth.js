@@ -4,63 +4,70 @@ const loginForm = document.getElementById("login-form");
 const signupForm = document.getElementById("signup-form");
 
 tabLogin.addEventListener("click", function() {
-    loginForm.classList.remove("hidden"); //only display the ones maeant gulp
+    loginForm.classList.remove("hidden");
     signupForm.classList.add("hidden");
     tabLogin.classList.add("active-tab");
     tabSignup.classList.remove("active-tab");
 });
 
-tabSignup.addEventListener("click", function() {   
+tabSignup.addEventListener("click", function() {
     signupForm.classList.remove("hidden");
     loginForm.classList.add("hidden");
     tabSignup.classList.add("active-tab");
     tabLogin.classList.remove("active-tab");
 });
 
-//LOGIN PAGE
-document.getElementById("login-btn").addEventListener("click", function(event) {
-    const username = document.getElementById("login-username").value.trim(); //saved username in local storage
-    const password = document.getElementById("login-password").value.trim(); //saved password in local storage
+// LOGIN
+document.getElementById("login-btn").addEventListener("click", function() {
+    const username = document.getElementById("login-username").value.trim();
+    const password = document.getElementById("login-password").value.trim();
     const message = document.getElementById("login-message");
-   
-    const saved = localStorage.getItem("user_" + username); //check if the username exists in local storage
+
+    const saved = localStorage.getItem("user_" + username);
 
     if (!saved) {
         message.textContent = "Username not found.";
         return;
     }
     if (saved !== password) {
-        message.textContent = "Incorrect password please try again.";
+        message.textContent = "Incorrect password, please try again.";
         return;
     }
 
     localStorage.setItem("loggedInUser", username);
-    console.log("Logged in user:", username);
-    console.log(localStorage.getItem("loggedInUser"));
-    message.textContent = "Welcome back the " + username + "! Redirecting ....";
+    message.textContent = "Welcome back " + username + "! Redirecting...";
     setTimeout(() => window.location.href = "index.html", 1000);
-
-
 });
 
-//SIGNUP PAGE
-document.getElementById("signup-btn").addEventListener("click", function(event) {
-    const username = document.getElementById("signup-username").value.trim(); //get the username input value
-    const password = document.getElementById("signup-password").value.trim(); //get the password input value
+// SIGNUP
+document.getElementById("signup-btn").addEventListener("click", function() {
+    const username = document.getElementById("signup-username").value.trim();
+    const password = document.getElementById("signup-password").value.trim();
     const message = document.getElementById("signup-message");
 
-    if(!username || !password) {
+    if (!username || !password) {
         message.textContent = "Please enter a username and password.";
         return;
     }
 
-    const existing = localStorage.getItem("user_" + username); //check if the username already exists in local storage
-    if(existing){
+    const existing = localStorage.getItem("user_" + username);
+    if (existing) {
         message.textContent = "Username already exists. Please choose a different one.";
         return;
     }
 
     localStorage.setItem("user_" + username, password);
-    message.textContent = "Account created successfully! Redirecting...";
-    setTimeout(() => window.location.href = "index.html", 1000); //redirect to home page after 2 seconds
-});    
+    message.textContent = "Account created! Redirecting...";
+    setTimeout(() => window.location.href = "index.html", 1000);
+});
+
+// show/hide password toggles
+document.getElementById("show-login-password").addEventListener("change", function() {
+    const input = document.getElementById("login-password");
+    input.type = this.checked ? "text" : "password";
+});
+
+document.getElementById("show-signup-password").addEventListener("change", function() {
+    const input = document.getElementById("signup-password");
+    input.type = this.checked ? "text" : "password";
+});

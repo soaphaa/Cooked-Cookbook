@@ -1,18 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const timerToggleBtn = document.getElementById("timer-toggle-btn");
-    if (!timerToggleBtn) {
-        console.log("timer-toggle-btn not found on this page");
-        return;
-    }
-
-    let timerPopup = null;
-    timerToggleBtn.addEventListener("click", () => {
-        console.log("Timer toggle button clicked");
-        timerPopup = window.open("timer.html", "Timer", "width=300,height=200,resizable=no");
-    });
-});
-    
-
 console.log("script loaded");
 const toggleButton = document.getElementById("toggle-start-btn");
 const resetButton = document.getElementById("reset-btn");
