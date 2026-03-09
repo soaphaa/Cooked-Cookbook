@@ -1,30 +1,42 @@
-<!DOCTYPE html>
+<!-- Home page (recipe list + search + buttons to go to the other sections) -->
+<!--//how do i make a recipe cookbook website usingg html, css, and js with a red-white gingham/picnic aesthetic with recipe tags (e.g. meals, dietary restrictions, etc.), heavily inspired by the all recipes website-->
+<!--pls explain and comment the code-->
+<DOCTYPE html></DOCTYPE>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="style.css">
+    <title>Cookbook Core</title>
+    
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
+     <script
+            src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js">
+        </script>
 
-    <!-- Link JavaScript -->
-    <script src="script.js"></script>
+<div class = "finish">
+        <button id="finish">Finish</button>
+</div>
+    
+    <!--woahhh comments pmo-->
+    <header>
+        <h1> Cooked Cookbook </h1>
+        <credit> brought to you by le gang </credit>
+    </header>
 
-    <button id="nutrition-btn">Nutrition</button>
-
-    <div class="panel" id="panel">
-        <p>Ingredients panel!!</p>
-        <ul class="ingredients-list">
-            <li><label><input type="checkbox"> Flour</label></li>
-            <li><label><input type="checkbox"> Sugar</label></li>
-            <li><label><input type="checkbox"> Eggs</label></li>
-        </ul>
-        
+    <div class = "search">
+        <input type ="text" id = "user_search" placeholder = "what r u looking at ???">
+        <button id="submit"> submit ur req trust</button>
     </div>
 
+    <h1> legit recipes trust </h1>
+    <section id = "recipe-container">     
+    </section>
+
+    <script src="script.js"></script>
     
 
 </body>
