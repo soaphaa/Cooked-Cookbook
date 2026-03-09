@@ -8,7 +8,7 @@ const recipes = [{
 },
 {
     title: "alyn salmon",
-    description: "spicy ahh salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
+    description: "spicy ahh salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar, suggested to have with avocado, rice, and maybe cucumbers trust",
     tags: ["savory", "spicy"], source: "salmon.html",
     image: "images/salmon.jpg"
 },
@@ -18,6 +18,7 @@ const recipes = [{
     tags: ["sweet", "dessert"],
     source: "banana bread.html"
 }]
+
 const reccontainer = document.getElementById("recipe-container");
 const tagbtns = document.getElementById("tagbtns");
 const input = document.getElementById("text");
@@ -34,6 +35,10 @@ if (home){
 }
 
 genTagBtns();
+
+//add key listener for enter, when txt isn't empty
+//run same code as btn.addEventlistener/search(textvalue)
+//if ! home of course, !home implies lack of homebutton, which implies presence on index/mainpage screen
 
 btn.addEventListener("click", function () {
 

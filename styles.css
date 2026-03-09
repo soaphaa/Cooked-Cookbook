@@ -10,15 +10,17 @@
 
 body {
     font-family: "Nunito", sans-serif;
-    background-color: #cf8787;
+    background-color: #c16c6c;
     color: #1a1a1a;
-    line-height: 1
+    line-height: 0.5em;
+    font-size: 20px;
     
 }
 
 h1 {
     color: pink;
-    margin-bottom: 0.25em;
+    margin-bottom:1em;
+    font-size: 40px;
     text-align: center;
 }
 
@@ -40,6 +42,7 @@ credit {
 /* search bar !! */
 
 .search {
+    /* the general search bar area i lowk didn't know what i was doing i js followed the w3 tutorial*/
     font-family: "Nunito", sans-serif;
     background-color: #cf8787;
     display: flex;
@@ -47,25 +50,29 @@ credit {
 }
 
 .search input[type=text] {
+    /* where you type in the ingredient that you are looking for trust*/
     font-family: "Nunito", sans-serif;
     float: left;
-    padding: 10px;
+    width: 75vw;
     margin-top: 10px;
     margin-left: 3px;
-    font-size: 15;
+    font-size: 20px;
     background-color: pink;
     border: 1px, solid, white;
 }
 
 button{
+    /* general button settings unless directly changed depending on the button*/
     float: left;
     margin-top: 10px;
     padding: 10px;
     margin-left: 3px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .search button {
+    /* when you select a specific ingredient cause my enter key doesn't work */
+    width: 25vw;
     font-family: "Nunito", sans-serif;
     background-color: rgb(194, 91, 91);
     color: white;
@@ -83,8 +90,8 @@ button{
 rh1 {
     display: block;
     font-family: "Nunito", sans-serif;
-    color: #e09a9a;
-    margin-top: 1em;
+    color: #ffffff;
+    margin-bottom: 1em;
     /* padding-top: 1em; */
     text-align: center;
     font-size: 30px;
@@ -132,7 +139,7 @@ rbody {
     float: right;
     display: flex;
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 10em;
     margin-right: 15px;
     margin-left: 25px;
     padding: 10px;
@@ -174,6 +181,7 @@ rbody {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 100px));
     overflow: wrap;
+    margin-left: 2fr;
 }
 
 
@@ -192,9 +200,10 @@ rbody {
 
 .recipe-btn:hover {
     background-color: #990000;
+    transform:scale(1.03);
 }
 
-.recipe-btn:visited{
+.recipe-sited{
     color:white;
 }
 
