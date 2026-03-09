@@ -9,7 +9,7 @@ const recipes = [{
 {
     title: "alyn salmon",
     description: "spicy ahh salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
-    tags: ["savory", "spicy"], source: "salmon.html",
+    tags: ["savory", "spicy"], source: "alyn's salmon.html",
     image: "images/salmon.jpg"
 },
 {
