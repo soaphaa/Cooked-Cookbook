@@ -33,6 +33,8 @@ if (home){
     home.appendChild(hbtn);
 }
 
+genTagBtns();
+
 btn.addEventListener("click", function () {
 
     const textValue = u_search.value.trim();
@@ -90,20 +92,27 @@ function search(txt){
 }
 
 function genTagBtns(){
+    //new list?? ish of tags
     const allTags = new Set();
 
+    //for each recipes, for each tag of recipe, add to the all tags set
     recipes.forEach(recipe =>{
         recipe.tags.forEach(tag=>{
             allTags.add(tag);
         })
     })
 
+
+    //create a tag for all recipes
     createTagBtn("All");
 
+
+    //create tags for the different ones
     allTags.forEach(tag =>{
         createTagBtn(tag);
     })
 }
+
 
 function createTagBtn(tagname){
     const tbtn = document.createElement("button");
@@ -125,7 +134,6 @@ function createTagBtn(tagname){
     tagbtns.appendChild(tbtn);
 }
 
-genTagBtns();
 
  
 
@@ -153,10 +161,20 @@ function displayRec(filteredRecipes){
         f_btn.href = recipe.source;
         f_btn.classList.add("recipe-btn")
 
+        const tagcont = document.createElement("recipe-tag");
+
+        recipe.tags.forEach(tag => {
+            const rtag = document.createElement("rbody");
+            rtag.classList.add("recipe-tag");
+            rtag.textContent = tag;
+            tagcont.appendChild(rtag);
+        });
+
         card.appendChild(image);
         card.appendChild(title);
         card.appendChild(f_btn);
         card.appendChild(description);
+        card.appendChild(tagcont);
         
         reccontainer.appendChild(card);
     })
