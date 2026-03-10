@@ -18,11 +18,28 @@ const recipes = [{
     tags: ["sweet", "dessert"],
     source: "banana bread.html"
 }]
+
 const reccontainer = document.getElementById("recipe-container");
 const tagbtns = document.getElementById("tagbtns");
 const input = document.getElementById("text");
 
+
+document.addEventListener("DOMContentLoaded", () => {
+    const timerToggleBtn = document.getElementById("timer-toggle-btn");
+    if (!timerToggleBtn) {
+        console.log("timer-toggle-btn not found on this page");
+        return;
+    }
+    
+    let timerPopup = null;
+    timerToggleBtn.addEventListener("click", () => {
+        console.log("Timer toggle button clicked");
+        timerPopup = window.open("timer.html", "Timer", "width=260,height=260,resizable=no");
+    });
+});
+
 const home = document.getElementById("home-button");
+
 
 if (home){
     home.innerHTML ="";
@@ -36,59 +53,66 @@ if (home){
 genTagBtns();
 
 btn.addEventListener("click", function () {
-
     const textValue = u_search.value.trim();
-    if (!home){
+    search(textValue);
+//take value from the search bar
+});
+
+document.addEventListener('keydown', function(event) {
+    const textValue = u_search.value.trim();
+    if (event.key === 'Enter' && textValue != null) {
         search(textValue);
     }
-    else{
-        window.location.href = "index.html?search=" + encodeURIComponent(textValue);
-    }
-//take value from the search bar
 });
 
 function search(txt){
     if (!reccontainer) return;  
     reccontainer.innerHTML = "";
     recipes.forEach(recipe =>{
-            if ((recipe.description.toLowerCase().includes(txt.toLowerCase()))){
-                const card = document.createElement("body");
-                const title = document.createElement("rh1");
-                const description = document.createElement("rbody");
+        if ((recipe.description.toLowerCase().includes(txt.toLowerCase()))){
+            const card = document.createElement("div");
+            const title = document.createElement("rh1");
+            const description = document.createElement("rbody");
+            card.classList.add("recipe-card");
 
-                card.classList.add("recipe-card");
-                title.textContent = recipe.title;
-                description.textContent = recipe.description;
+            title.textContent = recipe.title;
 
-                const image = document.createElement("img");
-                image.src = recipe.image;
-                image.alt = recipe.title + " Image";
-                image.classList.add("recipe-image");
+            description.textContent = recipe.description;
 
-                const f_btn = document.createElement("a");
+            const image = document.createElement("img");
+            image.src = recipe.image;
+            image.alt = recipe.title + " Image";
+            image.classList.add("recipe-image");
 
-                f_btn.textContent = "View Recipe";
-                f_btn.href = recipe.source;
-                f_btn.classList.add("recipe-btn")
+            const f_btn = document.createElement("a");
 
-                const tagcont = document.createElement("recipe-tag");
+            f_btn.textContent = "VIEW RECIPE";
+            f_btn.href = recipe.source;
+            f_btn.classList.add("recipe-btn")
 
-                recipe.tags.forEach(tag => {
-                    const rtag = document.createElement("span");
-                    rtag.classList.add("recipe-tag");
-                    rtag.textContent = tag;
-                    tagcont.appendChild(rtag);
-                });
+            const tagcont = document.createElement("taglist");
 
-                card.appendChild(title);
-                card.appendChild(f_btn);
-                card.appendChild(description);
-                card.appendChild(image);
-                card.appendChild(tagcont);
-                
-                reccontainer.appendChild(card);
-            }
-        })
+            recipe.tags.forEach(tag => {
+                const rtag = document.createElement("rbody");
+                rtag.classList.add("recipe-tag");
+                rtag.textContent = tag;
+                tagcont.appendChild(rtag);
+            });
+
+            card.appendChild(image);
+            card.appendChild(title);
+            card.appendChild(f_btn);
+            card.appendChild(description);
+            card.appendChild(tagcont);
+            
+            reccontainer.appendChild(card);
+        }
+    })
+    if (reccontainer.innerHTML == ""){
+            const no_card = document.createElement("warning");
+            no_card.textContent = "sorry !! there's no recipes available with that ingredient !!";
+            reccontainer.appendChild(no_card);
+    }
 }
 
 function genTagBtns(){
@@ -118,7 +142,7 @@ function createTagBtn(tagname){
     const tbtn = document.createElement("button");
     //tagbutton = tbtn
     tbtn.textContent = tagname;
-    tbtn.classList.add("recipe-tag");
+    tbtn.classList.add("recipe-filter");
     tbtn.addEventListener("click", () => {
         if (tagname == "All"){
             //if the filter is js all of them
@@ -133,10 +157,7 @@ function createTagBtn(tagname){
     });
     tagbtns.appendChild(tbtn);
 }
-
-
  
-
 function displayRec(filteredRecipes){
     if (!reccontainer) return;
     reccontainer.innerHTML = "";
@@ -155,32 +176,91 @@ function displayRec(filteredRecipes){
         image.alt = recipe.title + " Image";
         image.classList.add("recipe-image");
 
-        const f_btn = document.createElement("a");
+         const f_btn = document.createElement("a");
 
-        f_btn.textContent = "View Recipe";
+        f_btn.textContent = "VIEW RECIPE";
         f_btn.href = recipe.source;
         f_btn.classList.add("recipe-btn")
 
-        const tagcont = document.createElement("recipe-tag");
+        const tagcont = document.createElement("taglist");
 
         recipe.tags.forEach(tag => {
-            const rtag = document.createElement("rbody");
-            rtag.classList.add("recipe-tag");
-            rtag.textContent = tag;
-            tagcont.appendChild(rtag);
-        });
+             const rtag = document.createElement("rbody");
+             rtag.classList.add("recipe-tag");
+             rtag.textContent = tag;
+             tagcont.appendChild(rtag);
+         });
 
-        card.appendChild(image);
-        card.appendChild(title);
-        card.appendChild(f_btn);
-        card.appendChild(description);
-        card.appendChild(tagcont);
+         card.appendChild(title);
+         card.appendChild(image);
         
-        reccontainer.appendChild(card);
-    })
+         card.appendChild(f_btn);
+         card.appendChild(description);
+         card.appendChild(tagcont);
+        
+         reccontainer.appendChild(card);
+     })
 }
 displayRec(recipes);
 
+document.addEventListener("DOMContentLoaded", () => {
+    const checkboxes = document.querySelectorAll(
+        ".ingredients-list input[type=\"checkbox\"]"
+    );
 
-//main js file
+
+    const confettiBtn = document.getElementById("finish");
+        confettiBtn.addEventListener("click", () => {
+            confetti({
+                particleCount: 2000,
+                spread: 6000,
+                origin: { y: 0.6 }
+            })
+        });
+
+
+    checkboxes.forEach(cb => {
+        cb.addEventListener("change", event => {
+            const li = event.target.closest("li");
+            if (!li) return;
+
+            if (event.target.checked) {
+                li.classList.add("crossed");
+            } else {
+                li.classList.remove("crossed");
+            }
+        });
+    });
+
+    const panel = document.getElementById("panel");
+
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    panel.addEventListener("mousedown", (e) => {
+        isDragging = true;
+
+        offsetX = e.clientX - panel.offsetLeft;
+        offsetY = e.clientY - panel.offsetTop;
+    });
+
+    document.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+
+        panel.style.left = (e.clientX - offsetX) + "px";
+        panel.style.top = (e.clientY - offsetY) + "px";
+    });
+
+    document.addEventListener("mouseup", () => {
+        isDragging = false;
+    });
+
+    // Open nutrition panel in a new window
+    const nutritionBtn = document.getElementById("nutrition-btn");
+
+    nutritionBtn.addEventListener("click", () => {
+        window.open("nutrition.html", "nutrition_window", "width=300, height=400, resizable=no");
+    });
+    
+});
 
