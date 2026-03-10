@@ -1,18 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const checkboxes = document.querySelectorAll(
-        ".ingredients-list input[type=\"checkbox\"]"
-    );
 
 
     const confettiBtn = document.getElementById("finish");
+
+    if (confettiBtn) {
         confettiBtn.addEventListener("click", () => {
             confetti({
                 particleCount: 2000,
                 spread: 6000,
                 origin: { y: 0.6 }
-            })
+            });
         });
+    }
 
+
+    const checkboxes = document.querySelectorAll(
+        ".ingredients-list input[type=\"checkbox\"]"
+    );
 
     checkboxes.forEach(cb => {
         cb.addEventListener("change", event => {
@@ -53,13 +57,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Open nutrition panel in a new window
     const nutritionBtn = document.getElementById("nutrition-btn");
 
-    nutritionBtn.addEventListener("click", () => {
-        window.open("nutrition.html", "nutrition_window", "width=300, height=400, resizable=no");
-    });
-    
+    if (nutritionBtn) {
+        nutritionBtn.addEventListener("click", () => {
+            window.open(
+                "nutrition.html",
+                "nutrition_window",
+                "width=300,height=400,resizable=no"
+            );
+        });
+    }
 });
 
-const home = document.getElementById("home button");
+const home = document.getElementById("home-button");
 
 if (home){
     home.innerHTML = "";
@@ -77,12 +86,22 @@ const recipes = [{
     tags: ["sweet", "dessert"], 
     ingredients: ["flour", "sugar", "eggs", "chocolate chips"],
     source: "cookies.html",
+    title: "Chocolate Chip Cookies",
+    description: "bocolate bip bookies: brown sugar, white sugar, bocolate bips, flour, eggs, malk, baking boda, baking bowder",
+    tags: ["sweet", "dessert"], source: "cookies.html",
     image: "images/chocolate-chip-cookie.jpeg"
 },
 {
-    title: "alyn salmon", description: "spicy ahh salmon",
+    title: "alyn salmon",
+    description: "spicy ahh salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
     tags: ["savory", "spicy"], source: "salmon.html",
     image: "images/salmon.jpg"
+},
+{
+    title: "choc chip ban bread",
+    description: "val day bread: chocolate chips, banana, flour, egg, milk",
+    tags: ["sweet", "dessert"],
+    source: "banana bread.html"
 }]
 
 const reccontainer = document.getElementById("recipe-container");
@@ -92,16 +111,131 @@ const input = document.getElementById("text");
 //btn.addEventListener("click", function () {
 //  const textValue = inputField.value.trim();
 //});
+
+if (home){
+    home.innerHTML ="";
+    const hbtn = document.createElement("a");
+    hbtn.textContent = "HOMEPAGE"
+    hbtn.href = "index.html";
+    hbtn.classList.add("hbtn");
+    home.appendChild(hbtn);
+}
+
+genTagBtns();
+
+btn.addEventListener("click", function () {
+
+    const textValue = u_search.value.trim();
+    if (!home){
+        search(textValue);
+    }
+    else{
+        window.location.href = "index.html?search=" + encodeURIComponent(textValue);
+    }
+//take value from the search bar
+});
+
+function search(txt){
+    if (!reccontainer) return;  
+    reccontainer.innerHTML = "";
+    recipes.forEach(recipe =>{
+            if ((recipe.description.toLowerCase().includes(txt.toLowerCase()))){
+                const card = document.createElement("body");
+                const title = document.createElement("rh1");
+                const description = document.createElement("rbody");
+
+                card.classList.add("recipe-card");
+                title.textContent = recipe.title;
+                description.textContent = recipe.description;
+
+                const image = document.createElement("img");
+                image.src = recipe.image;
+                image.alt = recipe.title + " Image";
+                image.classList.add("recipe-image");
+
+                const f_btn = document.createElement("a");
+
+                f_btn.textContent = "View Recipe";
+                f_btn.href = recipe.source;
+                f_btn.classList.add("recipe-btn")
+
+                const tagcont = document.createElement("recipe-tag");
+
+                recipe.tags.forEach(tag => {
+                    const rtag = document.createElement("span");
+                    rtag.classList.add("recipe-tag");
+                    rtag.textContent = tag;
+                    tagcont.appendChild(rtag);
+                });
+
+                card.appendChild(title);
+                card.appendChild(f_btn);
+                card.appendChild(description);
+                card.appendChild(image);
+                card.appendChild(tagcont);
+                
+                reccontainer.appendChild(card);
+            }
+        })
+}
+
+function genTagBtns(){
+    //new list?? ish of tags
+    const allTags = new Set();
+
+    //for each recipes, for each tag of recipe, add to the all tags set
+    recipes.forEach(recipe =>{
+        recipe.tags.forEach(tag=>{
+            allTags.add(tag);
+        })
+    })
+
+
+    //create a tag for all recipes
+    createTagBtn("All");
+
+
+    //create tags for the different ones
+    allTags.forEach(tag =>{
+        createTagBtn(tag);
+    })
+}
+
+
+function createTagBtn(tagname){
+    const tbtn = document.createElement("button");
+    //tagbutton = tbtn
+    tbtn.textContent = tagname;
+    tbtn.classList.add("recipe-tag");
+    tbtn.addEventListener("click", () => {
+        if (tagname == "All"){
+            //if the filter is js all of them
+            displayRec(recipes);
+        }else{
+            //filtered recipes = recipes that have "tagname" (the name of the filtered tag)
+            const filtrecipes = recipes.filter(recipe =>
+                recipe.tags.includes(tagname));
+            displayRec(filtrecipes);
+            //display the filtered set
+        }
+    });
+    tagbtns.appendChild(tbtn);
+}
+
+
+ 
+
 function displayRec(filteredRecipes){
+    if (!reccontainer) return;
     reccontainer.innerHTML = "";
     filteredRecipes.forEach(recipe =>{
-        const card = document.createElement("body");
+        const card = document.createElement("div");
+        const title = document.createElement("rh1");
+        const description = document.createElement("rbody");
         card.classList.add("recipe-card");
 
-        const title = document.createElement("rh1");
         title.textContent = recipe.title;
 
-        const description = document.createElement("rbody");
         description.textContent = recipe.description;
 
         const image = document.createElement("img");
@@ -110,14 +244,25 @@ function displayRec(filteredRecipes){
         image.classList.add("recipe-image");
 
         const f_btn = document.createElement("a");
-        f_btn.textContent = "View Recipe trust";
+
+        f_btn.textContent = "View Recipe";
         f_btn.href = recipe.source;
         f_btn.classList.add("recipe-btn")
+
+        const tagcont = document.createElement("recipe-tag");
+
+        recipe.tags.forEach(tag => {
+            const rtag = document.createElement("rbody");
+            rtag.classList.add("recipe-tag");
+            rtag.textContent = tag;
+            tagcont.appendChild(rtag);
+        });
 
         card.appendChild(image);
         card.appendChild(title);
         card.appendChild(f_btn);
         card.appendChild(description);
+        card.appendChild(tagcont);
         
         reccontainer.appendChild(card);
     })
@@ -128,18 +273,26 @@ displayRec(recipes);
 
 
 //main js file!
-const timerToggleBtn = document.getElementById("timer-toggle-btn");
-let timerPopup = null; //to track the popup window state
 
-timerToggleBtn.addEventListener("click", function() {
-    if(timerPopup && !timerPopup.closed){
-        timerPopup.focus(); //bring existing popup to front
-    } else {
-        timerPopup = window.open(
-            "timer.html",
-            "Timer",
-            "width=300,height=200, top=100,right=100,",
-            "resizable=no"); //open new popup
+const timerToggleBtn = document.getElementById("timer-toggle-btn");
+let timerPopup = null;
+
+if (timerToggleBtn) {
+    timerToggleBtn.addEventListener("click", function() {
+        if (timerPopup && !timerPopup.closed) {
+            timerPopup.focus();
+        } else {
+            timerPopup = window.open(
+                "timer.html",
+                "Timer",
+                "width=300,height=200,resizable=no"
+            );
         }
-});
+    });
+}
   
+displayRec(recipes);
+
+
+//main js file
+
