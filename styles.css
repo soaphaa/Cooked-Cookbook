@@ -545,6 +545,7 @@ svg.ring {
     box-sizing: border-box;
     outline: none;
 }
+/* does ts worik */
 
 .auth-input:focus {
     border-color: #cc0000;
