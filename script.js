@@ -23,6 +23,49 @@ const reccontainer = document.getElementById("recipe-container");
 const tagbtns = document.getElementById("tagbtns");
 const input = document.getElementById("text");
 
+function displayRec(filteredRecipes) {
+    if (!reccontainer) return; // exits if not on the right page
+    reccontainer.innerHTML = ""; //It clears out everything inside the reccontainer element.
+    filteredRecipes.forEach(recipe => {
+        const card = document.createElement("body");
+        card.classList.add("recipe-card");
+        
+        const title = document.createElement("rh1");
+        title.textContent = recipe.title;
+        
+        const description = document.createElement("rbody");
+        description.textContent = recipe.description;
+        
+        const f_btn = document.createElement("a");
+        f_btn.textContent = "View Recipe trust";
+        f_btn.href = recipe.source;
+        f_btn.classList.add("recipe-btn")
+        
+        card.appendChild(title);
+        card.appendChild(f_btn);
+        card.appendChild(description);
+        
+        reccontainer.appendChild(card);
+    });
+}
+
+
+displayRec(recipes);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const timerToggleBtn = document.getElementById("timer-toggle-btn");
+    if (!timerToggleBtn) {
+        console.log("timer-toggle-btn not found on this page");
+        return;
+    }
+    
+    let timerPopup = null;
+    timerToggleBtn.addEventListener("click", () => {
+        console.log("Timer toggle button clicked");
+        timerPopup = window.open("timer.html", "Timer", "width=260,height=260,resizable=no");
+    });
+});
+
 const home = document.getElementById("home-button");
 
 if (home){
@@ -138,50 +181,48 @@ function createTagBtn(tagname){
 
  
 
-function displayRec(filteredRecipes){
-    if (!reccontainer) return;
-    reccontainer.innerHTML = "";
-    filteredRecipes.forEach(recipe =>{
-        const card = document.createElement("div");
-        const title = document.createElement("rh1");
-        const description = document.createElement("rbody");
-        card.classList.add("recipe-card");
+// function displayRec(filteredRecipes){
+//     if (!reccontainer) return;
+//     reccontainer.innerHTML = "";
+//     filteredRecipes.forEach(recipe =>{
+//         const card = document.createElement("div");
+//         const title = document.createElement("rh1");
+//         const description = document.createElement("rbody");
+//         card.classList.add("recipe-card");
 
-        title.textContent = recipe.title;
+//         title.textContent = recipe.title;
 
-        description.textContent = recipe.description;
+//         description.textContent = recipe.description;
 
-        const image = document.createElement("img");
-        image.src = recipe.image;
-        image.alt = recipe.title + " Image";
-        image.classList.add("recipe-image");
+//         const image = document.createElement("img");
+//         image.src = recipe.image;
+//         image.alt = recipe.title + " Image";
+//         image.classList.add("recipe-image");
 
-        const f_btn = document.createElement("a");
+//         const f_btn = document.createElement("a");
 
-        f_btn.textContent = "View Recipe";
-        f_btn.href = recipe.source;
-        f_btn.classList.add("recipe-btn")
+//         f_btn.textContent = "View Recipe";
+//         f_btn.href = recipe.source;
+//         f_btn.classList.add("recipe-btn")
 
-        const tagcont = document.createElement("recipe-tag");
+//         const tagcont = document.createElement("recipe-tag");
 
-        recipe.tags.forEach(tag => {
-            const rtag = document.createElement("rbody");
-            rtag.classList.add("recipe-tag");
-            rtag.textContent = tag;
-            tagcont.appendChild(rtag);
-        });
+//         recipe.tags.forEach(tag => {
+//             const rtag = document.createElement("rbody");
+//             rtag.classList.add("recipe-tag");
+//             rtag.textContent = tag;
+//             tagcont.appendChild(rtag);
+//         });
 
-        card.appendChild(image);
-        card.appendChild(title);
-        card.appendChild(f_btn);
-        card.appendChild(description);
-        card.appendChild(tagcont);
+//         card.appendChild(image);
+//         card.appendChild(title);
+//         card.appendChild(f_btn);
+//         card.appendChild(description);
+//         card.appendChild(tagcont);
         
-        reccontainer.appendChild(card);
-    })
-}
-displayRec(recipes);
+//         reccontainer.appendChild(card);
+//     })
+// }
+// displayRec(recipes);
 
-
-//main js file
 

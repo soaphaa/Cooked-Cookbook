@@ -276,6 +276,166 @@ h2.timer-header{
   right: 8px;
 }
 
+<<<<<<< HEAD
+.hidden {
+    display: none;
+}
+
+#auth-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.active-tab {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+/* ring */
+.ring-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+svg.ring {
+    width: 75px;
+    height: 75px;
+    transform: rotate(-90deg); /* makes ring start at top instead of right */
+}
+
+.ring-bg {
+    fill: none;
+    stroke: rgba(0,0,0,0.15);
+    stroke-width: 4;
+}
+
+.ring-progress {
+    fill: none;
+    stroke: #cc0000;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 157.08; /* 2 × π × 25 matches your r="25" */
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear, stroke 0.3s;
+}
+
+.ring-progress.low {
+    stroke: #ff0000;
+
+}    
+
 .hidden{
   display: none;
+}
+
+.auth-container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: pink;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+#auth-tabs {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+#auth-tabs button {
+    float: none;
+    flex: 1;
+    background: transparent;
+    border: 2px solid #cc0000;
+    color: #cc0000;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#auth-tabs button.active-tab {
+    background: #cc0000;
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid #cc0000;
+}
+
+#auth-tabs button:hover {
+    background: #cc0000;
+    color: white;
+}
+
+.auth-heading {
+    color: #cc0000;
+    margin-bottom: 16px;
+    font-size: 22px;
+}
+
+.auth-input {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 12px;
+    border-radius: 50px;
+    border: 2px solid #e09a9a;
+    background: white;
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.auth-input:focus {
+    border-color: #cc0000;
+}
+
+.auth-btn {
+    float: none;
+    width: 100%;
+    padding: 10px;
+    background: #cc0000;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 4px;
+}
+
+.auth-btn:hover {
+    background: #990000;
+}
+
+.auth-message {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #cc0000;
+    font-weight: bold;
+}
+
+.show-password {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #8b0000;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.show-password input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    accent-color: #cc0000;
 }
