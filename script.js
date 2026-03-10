@@ -93,13 +93,13 @@ const recipes = [{
 },
 {
     title: "alyn salmon",
-    description: "spicy ahh salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
+    description: "alyn salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
     tags: ["savory", "spicy"], source: "salmon.html",
     image: "images/salmon.jpg"
 },
 {
     title: "choc chip ban bread",
-    description: "val day bread: chocolate chips, banana, flour, egg, milk",
+    description: "chocolate chip banana bread: chocolate chips, banana, flour, egg, milk",
     tags: ["sweet", "dessert"],
     source: "banana bread.html"
 },
@@ -195,7 +195,6 @@ function search(txt){
             card.appendChild(image);
             card.appendChild(title);
             card.appendChild(f_btn);
-            card.appendChild(description);
             card.appendChild(tagcont);
             
             reccontainer.appendChild(card);
@@ -288,7 +287,6 @@ function displayRec(filteredRecipes){
          card.appendChild(image);
         
          card.appendChild(f_btn);
-         card.appendChild(description);
          card.appendChild(tagcont);
         
          reccontainer.appendChild(card);
