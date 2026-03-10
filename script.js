@@ -9,14 +9,15 @@ const recipes = [{
 {
     title: "alyn salmon",
     description: "spicy ahh salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
-    tags: ["savory", "spicy"], source: "alyn's salmon.html",
-    image: "images/salmon.jpg"
+    tags: ["savory", "spicy"], source: "salmon.html",
+    image: "images/alyn's salmon.jpeg"
 },
 {
     title: "choc chip ban bread",
     description: "val day bread: chocolate chips, banana, flour, egg, milk",
     tags: ["sweet", "dessert"],
-    source: "banana bread.html"
+    source: "banana bread.html",
+    image: "images/chocolate-chip-banana-bread.jpg"
 }]
 const reccontainer = document.getElementById("recipe-container");
 const tagbtns = document.getElementById("tagbtns");
