@@ -266,7 +266,7 @@ h2.timer-header{
   color: white;
 }
 
-.timer-minimize-btn {
+/* .timer-minimize-btn {
   background-color: red;
   border: none;
   font-size: 1.2em;
@@ -274,7 +274,7 @@ h2.timer-header{
   position: absolute;
   top: 8px;
   right: 8px;
-}
+} */
 
 <<<<<<< HEAD
 .hidden {

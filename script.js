@@ -17,6 +17,12 @@ const recipes = [{
     description: "val day bread: chocolate chips, banana, flour, egg, milk",
     tags: ["sweet", "dessert"],
     source: "banana bread.html"
+},
+{
+    title: "Kimchi Fried Rice",
+    description: "Kimchi Fried Rice: kimchi, rice, sesame oil, gochujang, soy sauce, garlic, green onions, egg",
+    tags: ["savory", "spicy"],
+    source: "fried rice.html"
 }]
 const reccontainer = document.getElementById("recipe-container");
 const tagbtns = document.getElementById("tagbtns");
