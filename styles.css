@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'Nunito'; /* Name the font */
   src: url("Nunito-Variable.ttf") format("truetype"); 
-  font-weight: bold;
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap; /* Helps with page load performance */
 }
@@ -224,12 +224,14 @@ rbody {
 .recipe-image {
     width: 80%;
     aspect-ratio: 2;
- /*   object-fit: cover;*/
-    display: flex;
+    display: block;
+    justify-content: center;
+    margin: 30px auto;
+    transform: translateX(1.5vw);
+    object-fit: cover;
+    object-position: center;
     border-radius: 30px;
     border: 1.5px solid rgba(255, 255, 255, 0.333);
-    margin: 30px;
-    align-self: center;
     box-sizing: border-box;
 }
 
@@ -593,4 +595,71 @@ svg.ring {
     height: 14px;
     cursor: pointer;
     accent-color: #cc0000;
+}
+
+.review-box {
+    display: block;
+    margin: 2rem 5rem;
+}
+
+.review-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info h2 {
+    margin: 1rem 0rem;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.profile-info h3 {
+    margin: 0.75rem;
+    margin-left: 1.25rem;
+    /* margin-bottom: 0.125rem; */
+    transform: translateY(0.0625rem);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.ratings {
+    /* margin-left: auto; */
+    text-align: left;
+}
+
+.review-content {
+    width: 100%;
+    /* display: flex; */
+}
+
+.review-content p {
+    margin: 0.75rem 0rem;
+    font-weight: normal;
+    font-size: 22;
+}
+
+.review-images {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.review-images img {
+    width: 5.3125rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1rem;
+    border: 0.125rem solid white
 }
