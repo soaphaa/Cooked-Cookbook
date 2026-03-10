@@ -102,7 +102,15 @@ const recipes = [{
     description: "val day bread: chocolate chips, banana, flour, egg, milk",
     tags: ["sweet", "dessert"],
     source: "banana bread.html"
-}]
+},
+{
+    title: "Cheesecake",
+    description: "delicious cheesecake: cream cheese, graham crackers, sugar, eggs",
+    tags: ["sweet", "dessert"], source: "cheesecake.html",
+    image: "images/cheesecake.jpg"
+
+}
+]
 
 const reccontainer = document.getElementById("recipe-container");
 const tagbtns = document.getElementById("tagbtns");
