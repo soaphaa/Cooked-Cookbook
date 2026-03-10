@@ -33,10 +33,14 @@ h1 {
 
 
 header {
+    position: sticky;
     background-color: rgb(167, 29, 29);
     text-align: center;
     padding-top: 5px;
     padding-bottom: 10px;
+    margin-bottom: 10px;
+    top:0;
+    z-index: 100;
 }
 
 ul{
@@ -128,9 +132,10 @@ rh1 {
     color: #ffffff;
     /* padding-top: 1em; */
     text-align: center;
-    font-size: 30px;
+    font-size: 3vw;
     font-weight: bold;
-    line-height: 1.5em;
+    margin-top: 1em;
+    line-height: 0.5em;
 }
 rbody {
     display: block;
@@ -139,10 +144,11 @@ rbody {
     padding-top: 0.5em;
     margin-left: 2em;
     margin-right: 2em;
+    margin-top: 20px;
     margin-bottom: 1em;
     color:black;
     line-height:1em;
-    font-size: 20px;
+    font-size: 1.75vw;
 }
 
 /* recipe cards, etc. */
@@ -254,7 +260,8 @@ rbody {
     display: flex;
     border-radius: 30px;
     border: 1.5px solid rgba(255, 255, 255, 0.333);
-    margin: 30px;
+    margin-top: 15px;
+    margin-left: 30px;
     align-self: center;
     box-sizing: border-box;
 }
@@ -290,7 +297,7 @@ rbody {
 }
 
 .hbtn{
-    line-height: 4em;
+    align-self: center;
     padding: 10px;
 
     background-color: #cc0000;
