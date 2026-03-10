@@ -17,19 +17,45 @@ body {
     
 }
 
+p {
+    font-family: "Nunito", sans-serif;
+    color: #1a1a1a;
+    line-height: 1em;
+    font-size: 20px;
+}
+
 h1 {
     color: pink;
-    margin-bottom:1em;
     font-size: 40px;
     text-align: center;
-    line-height: 1em;
+    line-height: 0.5em;
 }
+
 
 header {
     background-color: rgb(167, 29, 29);
     text-align: center;
     padding-top: 5px;
     padding-bottom: 10px;
+}
+
+ul{
+    list-style-type: circle;
+    font-size: 20px;
+    line-height: 2em;
+    color: white;
+    list-style-type: "square";
+    padding-left: 0;
+    font-size: 35px;
+}
+
+ul li {
+    padding-left: 5vw;
+    display: block;
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    line-height: 1em;
 }
 
 credit {
@@ -249,23 +275,22 @@ rbody {
 
 /* homepage button !! */
 
-#home-button{
+/*#home-button{
     display:grid;
     float: left;
     grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
     column-gap: 20px;
-    /*padding: 2rem */
+    /*padding: 2rem 
 
-}
+}*/
 
 #homepage {
     text-align: center;
-    margin-bottom: 2rem;
     font-size: 20px;
 }
 
 .hbtn{
-    margin-top: 10px;
+    line-height: 4em;
     padding: 10px;
 
     background-color: #cc0000;
