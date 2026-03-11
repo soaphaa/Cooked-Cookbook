@@ -10,71 +10,121 @@
 
 body {
     font-family: "Nunito", sans-serif;
-    background-color: #cf8787;
+    background-color: #c16c6c;
     color: #1a1a1a;
-    line-height: 1
+    line-height: 1em;
+    font-size: 20px;
     
+}
+
+p {
+    font-family: "Nunito", sans-serif;
+    color: #1a1a1a;
+    line-height: 1em;
+    font-size: 20px;
 }
 
 h1 {
     color: pink;
-    margin-bottom: 0.25em;
+    font-size: 40px;
     text-align: center;
+    line-height: 0.5em;
 }
 
+
 header {
+    position: sticky;
     background-color: rgb(167, 29, 29);
     text-align: center;
     padding-top: 5px;
     padding-bottom: 10px;
+    margin-bottom: 10px;
+    top:0;
+    z-index: 100;
+}
+
+ul{
+    list-style-type: circle;
+    font-size: 20px;
+    line-height: 2em;
+    color: white;
+    list-style-type: "square";
+    padding-left: 0;
+    font-size: 35px;
+}
+
+ul li {
+    padding-left: 5vw;
+    display: block;
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    line-height: 1em;
 }
 
 credit {
     /* by le gang trust*/
     color: rgb(229, 177, 195);
     text-align: center;
-    line-height: 1;
+    line-height: 1em;
     font-weight: bold;
 }
 
 /* search bar !! */
 
 .search {
+    /* the general search bar area i lowk didn't know what i was doing i js followed the w3 tutorial*/
     font-family: "Nunito", sans-serif;
-    background-color: #cf8787;
     display: flex;
     column-gap: 10px;
 }
 
 .search input[type=text] {
+    /* where you type in the ingredient that you are looking for trust*/
     font-family: "Nunito", sans-serif;
     float: left;
-    padding: 10px;
+    width: 75vw;
     margin-top: 10px;
     margin-left: 3px;
-    font-size: 15;
-    background-color: pink;
+    padding-left: 10px;
+    font-size: 20px;
     border: 1px, solid, white;
+    border-radius: 10px;
 }
 
 button{
+    /* general button settings unless directly changed depending on the button*/
     float: left;
     margin-top: 10px;
     padding: 10px;
     margin-left: 3px;
-    font-size: 15px;
+    font-size: 20px;
+}
+
+.timer-toggle-btn:hover {
+    background: #990000;
 }
 
 .search button {
+    /* when you select a specific ingredient cause my enter key doesn't work */
+    width: 25vw;
     font-family: "Nunito", sans-serif;
     background-color: rgb(194, 91, 91);
     color: white;
     border: 1px, solid, white;
+
+    border-radius:20px;
 }
 .search button:hover {
     font-family: "Nunito", sans-serif;
     background-color: rgb(161, 66, 66);
     border: 1px, solid, rgb(255, 203, 203);
+}
+
+warning {
+    font-size:60px;
+    color: black;
+    line-height: 1em;
 }
 
 /* recipe section for main*/
@@ -83,12 +133,13 @@ button{
 rh1 {
     display: block;
     font-family: "Nunito", sans-serif;
-    color: #e09a9a;
-    margin-top: 1em;
+    color: #ffffff;
     /* padding-top: 1em; */
     text-align: center;
-    font-size: 30px;
+    font-size: 3vw;
     font-weight: bold;
+    margin-top: 1em;
+    line-height: 0.5em;
 }
 rbody {
     display: block;
@@ -97,10 +148,11 @@ rbody {
     padding-top: 0.5em;
     margin-left: 2em;
     margin-right: 2em;
+    margin-top: 20px;
     margin-bottom: 1em;
     color:black;
     line-height:1em;
-    font-size: 20px;
+    font-size: 1.75vw;
 }
 
 /* recipe cards, etc. */
@@ -117,46 +169,51 @@ rbody {
 .recipe-card{
     /* contains recipe title, description, image, etc.*/
     display: inline-block;
-    background: pink;
+    background-image: url("images/tempbtn.png");
+    background-size: cover;
     border-radius: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     padding-right: 3vw;
-    margin-bottom: 2em;
+    margin-bottom: 10px;
     margin-top: 15px;
     box-shadow: 10px,10px, 0px #cc0000;
-    border: 5px solid rgb(205, 138, 150);
+    border: 1px solid white;
 }
 
 .recipe-btn{
     /* visit recipe trust' button */
+   /* background-image: url("images/tempbtn.png"); */
+    background-size: cover;
     float: right;
     display: flex;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    margin-right: 15px;
-    margin-left: 25px;
-    padding: 10px;
+    padding: 2.5vw;
+    margin-left:3vw;
+    margin-bottom: 5vw;
+    margin-right: 0;
+    margin-top: 1vw;
+    width: 10vw;
 
     background-color: #cc0000;
     color: white;
     
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 40px;
 
-    font-size:20px;
+    font-size:3vw;
     text-align: center; 
+    line-height: 1em;
     
     transition: 0.3s;
     font-weight:bold;
 }
 
+
+
 .recipe-tag{
     font-family: "Nunito", sans-serif;
     float: center;
     display: grid;
-    padding: 10px;
-
-    margin-bottom: 1em;
+    padding-bottom: 10px;
 
     background-color: #eb6b6b;
     color: rgb(255, 255, 255);
@@ -170,9 +227,32 @@ rbody {
     text-align: center; 
 }
 
+.recipe-filter{
+    font-family: "Nunito", sans-serif;
+    float: center;
+    display: grid;
+    padding-bottom: 10px;
+
+    background-color: #eb6b6b;
+    color: rgb(255, 255, 255);
+    
+    text-decoration: none;
+    border-radius: 100px;
+
+    border-color: white;
+
+    font-size:15 px;
+    text-align: center; 
+}
+
+.recipe-filter:hover{
+    transform: scale(1.05);
+
+}
+
 .taglist{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 100px));
+    grid-template-columns: repeat(5, minmax(1vw, 50vw));
     overflow: wrap;
 }
 
@@ -182,9 +262,10 @@ rbody {
     aspect-ratio: 2;
  /*   object-fit: cover;*/
     display: flex;
-    border-radius: 50px;
-    border: 2px solid white;
-    margin: 30px;
+    border-radius: 30px;
+    border: 1.5px solid rgba(255, 255, 255, 0.333);
+    margin-top: 15px;
+    margin-left: 30px;
     align-self: center;
     box-sizing: border-box;
 }
@@ -192,9 +273,10 @@ rbody {
 
 .recipe-btn:hover {
     background-color: #990000;
+    transform:scale(1.03);
 }
 
-.recipe-btn:visited{
+.recipe-sited{
     color:white;
 }
 
@@ -204,23 +286,22 @@ rbody {
 
 /* homepage button !! */
 
-#home-button{
+/*#home-button{
     display:grid;
     float: left;
     grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
     column-gap: 20px;
-    /*padding: 2rem */
+    /*padding: 2rem 
 
-}
+}*/
 
 #homepage {
     text-align: center;
-    margin-bottom: 2rem;
     font-size: 20px;
 }
 
 .hbtn{
-    margin-top: 10px;
+    align-self: center;
     padding: 10px;
 
     background-color: #cc0000;
@@ -276,7 +357,6 @@ h2.timer-header{
   right: 8px;
 } */
 
-<<<<<<< HEAD
 .hidden {
     display: none;
 }
@@ -327,6 +407,116 @@ svg.ring {
 
 .hidden{
   display: none;
+}
+/* whatever else is added */
+
+.panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 220px;
+    background-color: #cd7575;
+    padding: 1rem;
+    padding-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.panel p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+}
+
+#panel p {
+    margin-bottom: 2rem; /* space under ingredients title */
+}
+.panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+.panel li {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem; /* make ingredient items larger */
+}
+
+.panel input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+/* crossed-out ingredient */
+.panel li.crossed label {
+    text-decoration: line-through;
+    color: black;
+}
+
+/* Nutrition panel specific styling */
+#panel2 {
+    background-color: white;           /* white panel */
+    border: 1px solid black;          /* thin black border */
+    padding: 1rem;                    /* space inside so border feels inset */
+    padding-top: 2rem;
+    box-sizing: border-box;           /* ensure padding included with width */
+    width: 300px;                     /* make panel wider */
+    font-size: 1.5rem;                /* larger text overall */
+    display: none;
+}
+
+#panel2 p {
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: center;
+}
+
+#panel2 ol {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0 0; /*space from title */
+}
+
+#panel2 ol li {
+    display: flex;
+    justify-content: space-between;  /* pushes text left & right */
+    border-bottom: 1px solid black;
+    padding: 0.25rem 0;
+}
+
+/* remove bottom border from last item so it doesn't stick out */
+#panel2 ol li:last-child {
+    border-bottom: none;
+}
+
+#panel2 {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+}
+
+/* Small nutrition button */
+#nutrition-btn {
+    position: right;
+    top: 20px;
+    left: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background-color: #d77979;
+    border: 1px solid #590000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#finish{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background-color: #d77979;
+    border: 1px solid #590000;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .auth-container {
@@ -391,6 +581,7 @@ svg.ring {
     box-sizing: border-box;
     outline: none;
 }
+/* does ts worik */
 
 .auth-input:focus {
     border-color: #cc0000;
