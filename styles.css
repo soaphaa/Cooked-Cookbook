@@ -186,7 +186,7 @@ rbody {
     padding-right: 1vw;
     
     margin-bottom: 10px;
-    margin-top: 15px;
+    margin-top: 1em;
     margin-left: 15px;
 
     box-shadow: 10px,10px, 0px #cc0000;
@@ -221,27 +221,28 @@ rbody {
 .recipe-tag{
     /* on recipe card */
     font-family: "Nunito", sans-serif;
-    display: inline-block;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    width: 10vw ;
+    margin-top: 1vw;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+
+    border-radius: 10px;
 
     background-color: #d15b5b;
     color: white;
 
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 20px;
     text-align:center;
 
-    font-size: 15px;
+    font-size: 25px;
 }
-
 /* the ones on top of the recipes*/
 .recipe-filter{
     font-family: "Nunito", sans-serif;
-    display: grid;
-    padding:10px;
+    display: block;
+    padding: 20px;
 
     background-color: #eb6b6b;
     color: rgb(255, 255, 255);
@@ -249,7 +250,7 @@ rbody {
     text-decoration: none;
     border-radius: 100px;
 
-    font-size:15px;
+    font-size:25px;
     text-align:center;
 }
 
@@ -261,18 +262,19 @@ rbody {
 
 /* for recipe-tag*/
 .taglist{
-    display: block;
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(1vw, auto));
     align-self: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;  /* Set to 0 to check if gap itself is the issue */
+  /*  display: grid;
+    grid-template-columns: repeat(3, minmax(1px, 50px));*/
 }
 
 /*for recipe-filter*/
 .filterlist{
     display: block;
     display: grid;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(1vw, auto));
 }

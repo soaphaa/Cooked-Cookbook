@@ -94,7 +94,7 @@ const recipes = [{
 {
     title: "Alyn Salmon",
     description: "alyn salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
-    tags: ["savory", "spicy"], source: "salmon.html",
+    tags: ["savory", "spicy", "sweet"], source: "salmon.html",
     image: "images/salmon.jpg"
 },
 {
@@ -114,7 +114,6 @@ const recipes = [{
 
 const reccontainer = document.getElementById("recipe-container");
 const input = document.getElementById("text");
-const home = document.getElementById("home-button");
 const filterset = document.getElementById("tagbtns")
 
 
