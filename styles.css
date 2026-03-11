@@ -9,12 +9,13 @@
 }
 
 body {
+    margin:0;
     font-family: "Nunito", sans-serif;
     background-color: #c16c6c;
     color: #1a1a1a;
     line-height: 1em;
     font-size: 20px;
-    
+    padding:0;
 }
 
 p {
@@ -34,10 +35,11 @@ h1 {
 /* header heading 1*/
 hh1 {
     color: pink;
-    font-size: 6vw;
+    font-size: 5vw;
     text-align: center;
-    line-height: 1em;
+    line-height: 1.5em;
     padding: 20px;
+    margin-bottom: 50px;
 }
 
 
@@ -46,10 +48,12 @@ header {
     background-color: rgb(167, 29, 29);
     text-align: center;
     padding-top: 5px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 5px;
+    width: 100%;
+    margin-bottom: 1em;
     top:0;
     z-index: 100;
+    line-height:1em;
 }
 
 
@@ -61,31 +65,6 @@ credit {
     font-weight: bold;
 }
 
-.instruction {
-    margin-top: 2vh;
-    margin-left: 15vw;
-    margin-right: 15vw;
-    margin-bottom: 2vh;
-    padding: 10px;
-
-    padding-top: 20px;
-    max-width: 100vw;
-    overflow: wrap;
-
-    background-color: rgb(253, 241, 229);
-
-    line-height: 1em;
-    font-weight: bold;
-    border-radius: 10px;
-}
-
-.instruction p{
-    display: block;
-    grid-template-columns: repeat(1, minmax(10vw, 10vw));
-    color: rgb(167, 29, 29);
-}
-
-
 
 /* search bar !! */
 
@@ -94,15 +73,17 @@ credit {
     font-family: "Nunito", sans-serif;
     display: flex;
     column-gap: 10px;
+    margin-bottom: 20px;
 }
 
 .search input[type=text] {
     /* where you type in the ingredient that you are looking for trust*/
     font-family: "Nunito", sans-serif;
     float: left;
-    width: 75vw;
+    width: 70vw;
     margin-top: 10px;
     margin-left: 3px;
+
     padding-left: 10px;
     font-size: 20px;
     border: 1px, solid, white;
@@ -130,6 +111,7 @@ button{
     background-color: rgb(194, 91, 91);
     color: white;
     border: 1px, solid, white;
+    margin-right: 0;
 
     border-radius:20px;
 }
@@ -139,10 +121,16 @@ button{
     border: 1px, solid, rgb(255, 203, 203);
 }
 
-warning {
-    font-size:60px;
+.warning {
+    width: 100%;
+    justify-content: center; /* Centers horizontally */
+    text-align: center;
+    display: flex;
+    margin: 0;
+    margin-bottom: 0;
+    font-size: 5vw;
     color: black;
-    line-height: 1em;
+    line-height: 1.5; /* Adds space for descenders */
 }
 
 /* recipe section for main*/
@@ -186,30 +174,34 @@ rbody {
 
 .recipe-card{
     /* contains recipe title, description, image, etc.*/
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     background-image: url("images/tempbtn.png");
+
+    max-width: 45vw;
     background-size: cover;
     border-radius: 40px;
+
     padding-bottom: 10px;
-    padding-right: 3vw;
+    padding-right: 1vw;
+    
     margin-bottom: 10px;
     margin-top: 15px;
+    margin-left: 15px;
+
     box-shadow: 10px,10px, 0px #cc0000;
     border: 1px solid white;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 .recipe-btn{
     /* visit recipe trust' button */
    /* background-image: url("images/tempbtn.png"); */
     background-size: cover;
-    float: right;
-    display: flex;
-    padding: 2.5vw;
-    margin-left:3vw;
-    margin-bottom: 2vw;
-    margin-right: 0;
+    display: block;
+    padding: 20px;
     margin-top: 1vw;
-    width: 10vw;
+    width: 20vw;
 
     background-color: #cc0000;
     color: white;
@@ -218,7 +210,7 @@ rbody {
     border-radius: 40px;
 
     font-size:3vw;
-    text-align: center; 
+    align-self: center;
     line-height: 1em;
     
     transition: 0.3s;
@@ -226,31 +218,30 @@ rbody {
 }
 
 
-
 .recipe-tag{
+    /* on recipe card */
     font-family: "Nunito", sans-serif;
-    display: block;
-    padding-bottom: 10px;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 10vw ;
 
-    width: 10vw;
+    background-color: #d15b5b;
+    color: white;
 
-    background-color: #eb6b6b;
-    color: rgb(255, 255, 255);
-    
     text-decoration: none;
     border-radius: 10px;
+    text-align:center;
 
-    border-color: white;
-
-    font-size:15 px;
-    text-align: center; 
+    font-size: 15px;
 }
 
+/* the ones on top of the recipes*/
 .recipe-filter{
     font-family: "Nunito", sans-serif;
-    float: center;
     display: grid;
-    padding-bottom: 15px;
+    padding:10px;
 
     background-color: #eb6b6b;
     color: rgb(255, 255, 255);
@@ -258,21 +249,32 @@ rbody {
     text-decoration: none;
     border-radius: 100px;
 
-    border-color: white;
-
-    font-size:15 px;
-    text-align: center; 
+    font-size:15px;
+    text-align:center;
 }
 
 .recipe-filter:hover{
+    background-color: #e04b4b;
+    border: .5px, white, solid;
     transform: scale(1.05);
-
 }
 
+/* for recipe-tag*/
 .taglist{
+    display: block;
+    align-items: center;
     display: grid;
-    grid-template-columns: repeat(5, minmax(1vw, 50vw));
-    overflow: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(1vw, auto));
+    align-self: center;
+}
+
+/*for recipe-filter*/
+.filterlist{
+    display: block;
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(1vw, auto));
 }
 
 
@@ -284,7 +286,6 @@ rbody {
     border-radius: 30px;
     border: 1.5px solid rgba(255, 255, 255, 0.333);
     margin-top: 15px;
-    margin-left: 30px;
     align-self: center;
     box-sizing: border-box;
 }
@@ -314,15 +315,13 @@ rbody {
 
 }*/
 
-#homepage {
-    text-align: center;
-    font-size: 20px;
-}
 
 .hbtn{
-    margin-top: 90px;
+    display: inline-block;
     align-self: center;
-    padding: 5px;
+    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: 0;
 
     background-color: #cc0000;
     color: white;
@@ -333,7 +332,63 @@ rbody {
     font-size: 20px;
 }
 
+
+/* instructions within the card */
+
+.instruction {
+    margin-top: 2vh;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-bottom: 2vh;
+    padding: 20px;
+
+    padding-top: 20px;
+    max-width: 100%;
+
+    background-color: rgb(253, 241, 229);
+    font-weight: bold;
+    border-radius: 10px;
+
+    font-size: 30px;
+}
+
+.step{
+    position: relative;
+    padding-left: 30px;
+    display: block;
+    grid-template-columns: repeat(1, minmax(10vw, 20vw));
+    color: rgb(167, 29, 29);
+    margin-top:10px;
+    margin-bottom: 10px;
+    font-size:30px;
+}
+
+.step::before{
+    content: "✩";
+    position: absolute; 
+    margin-right: 15px;
+    color: rgb(218, 121, 121);
+    display: block;
+    left: 0;
+    font-size:1em;
+}
+
 /* timer css */
+
+.timer-btn{
+    font-family: "Nunito", sans-serif;
+    z-index: 999;
+    position: sticky;
+    left:0;
+    float: left;
+    margin-top: 10px;
+    padding: 10px;
+    margin-left: 3px;
+    font-size: 20px;
+    background-color: rgb(167, 29, 29);
+    color: white;
+    border-radius: 10px;    
+}
 
 .timer-window {
   font: "Nunito", "sans-serif";
@@ -529,6 +584,7 @@ svg.ring {
 }
 
 #finish{
+    font: "Nunito", "sans-serif";
     position: absolute;
     top: 20px;
     left: 20px;
@@ -538,6 +594,7 @@ svg.ring {
     border: 1px solid #590000;
     border-radius: 5px;
     cursor: pointer;
+    z-index: 1000;
 }
 
 .auth-container {

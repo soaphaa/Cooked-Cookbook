@@ -2,43 +2,27 @@ const btn = document.getElementById("submit");
 const u_search = document.getElementById("user_search")
 const recipes = [{
     title: "Chocolate Chip Cookies",
-    description: "bocolate bip bookies: brown sugar, white sugar, bocolate bips, flour, eggs, malk, baking boda, baking bowder",
+    description: "chocolate chip cookies: brown sugar, white sugar, chocolate chips, flour, eggs, milk, baking soda, baking powder",
     tags: ["sweet", "dessert"], source: "cookies.html",
     image: "images/chocolate-chip-cookie.jpeg"
 },
 {
-    title: "alyn salmon",
+    title: "Alyn Salmon",
     description: "alyn salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
     tags: ["savory", "spicy"], source: "salmon.html",
     image: "images/salmon.jpg"
 },
 {
-    title: "choc chip ban bread",
+    title: "Chocolate Chip Banana Bread",
     description: "chocolate chip banana bread: chocolate chips, banana, flour, egg, milk",
     tags: ["sweet", "dessert"],
     source: "banana bread.html"
 }]
 
 const reccontainer = document.getElementById("recipe-container");
-const tagbtns = document.getElementById("tagbtns");
 const input = document.getElementById("text");
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const timerToggleBtn = document.getElementById("timer-toggle-btn");
-    if (!timerToggleBtn) {
-        console.log("timer-toggle-btn not found on this page");
-        return;
-    }
-    
-    let timerPopup = null;
-    timerToggleBtn.addEventListener("click", () => {
-        console.log("Timer toggle button clicked");
-        timerPopup = window.open("timer.html", "Timer", "width=260,height=260,resizable=no");
-    });
-});
-
 const home = document.getElementById("home-button");
+const filterset = document.getElementById("tagbtns")
 
 
 if (home){
@@ -50,7 +34,6 @@ if (home){
     home.appendChild(hbtn);
 }
 
-genTagBtns();
 
 btn.addEventListener("click", function () {
     const textValue = u_search.value.trim();
@@ -90,7 +73,8 @@ function search(txt){
             f_btn.href = recipe.source;
             f_btn.classList.add("recipe-btn")
 
-            const tagcont = document.createElement("taglist");
+            const tagcont = document.createElement("div");
+            tagcont.classList.add("taglist");
 
             recipe.tags.forEach(tag => {
                 const rtag = document.createElement("rbody");
@@ -98,9 +82,8 @@ function search(txt){
                 rtag.textContent = tag;
                 tagcont.appendChild(rtag);
             });
-
-            card.appendChild(image);
             card.appendChild(title);
+            card.appendChild(image);
             card.appendChild(f_btn);
             card.appendChild(tagcont);
             
@@ -108,8 +91,9 @@ function search(txt){
         }
     })
     if (reccontainer.innerHTML == ""){
-            const no_card = document.createElement("warning");
-            no_card.textContent = "sorry !! there's no recipes available with that ingredient !!";
+            const no_card = document.createElement("p");
+            no_card.classList.add("warning");
+            no_card.textContent = "sorry !! there's no recipes available with that ingredient/title !!";
             reccontainer.appendChild(no_card);
     }
 }
@@ -138,6 +122,8 @@ function genTagBtns(){
 
 
 function createTagBtn(tagname){
+    const tagbtns = document.createElement("div");
+    tagbtns.classList.add("filterlist");
     const tbtn = document.createElement("button");
     //tagbutton = tbtn
     tbtn.textContent = tagname;
@@ -154,7 +140,9 @@ function createTagBtn(tagname){
             //display the filtered set
         }
     });
-    tagbtns.appendChild(tbtn);
+    
+    filterset.appendChild(tbtn);
+
 }
  
 function displayRec(filteredRecipes){
@@ -175,33 +163,46 @@ function displayRec(filteredRecipes){
         image.alt = recipe.title + " Image";
         image.classList.add("recipe-image");
 
-         const f_btn = document.createElement("a");
+        const f_btn = document.createElement("a");
 
         f_btn.textContent = "VIEW RECIPE";
         f_btn.href = recipe.source;
         f_btn.classList.add("recipe-btn")
 
-        const tagcont = document.createElement("taglist");
+        const tagcont = document.createElement("div");
+        tagcont.classList.add("taglist");
 
         recipe.tags.forEach(tag => {
              const rtag = document.createElement("rbody");
              rtag.classList.add("recipe-tag");
              rtag.textContent = tag;
              tagcont.appendChild(rtag);
-         });
+        });
 
-         card.appendChild(title);
-         card.appendChild(image);
+        card.appendChild(title);
+        card.appendChild(image);
+        card.appendChild(f_btn);
+        card.appendChild(tagcont)
         
-         card.appendChild(f_btn);
-         card.appendChild(tagcont);
-        
-         reccontainer.appendChild(card);
+        reccontainer.appendChild(card);
      })
 }
+
+genTagBtns();
 displayRec(recipes);
 
 document.addEventListener("DOMContentLoaded", () => {
+    const timerToggleBtn = document.getElementById("timer-toggle-btn");
+    if (!timerToggleBtn) {
+        console.log("timer-toggle-btn not found on this page");
+        return;
+    }
+    
+    let timerPopup = null;
+    timerToggleBtn.addEventListener("click", () => {
+        console.log("Timer toggle button clicked");
+        timerPopup = window.open("timer.html", "Timer", "width=260,height=260,resizable=no");
+    });
     const checkboxes = document.querySelectorAll(
         ".ingredients-list input[type=\"checkbox\"]"
     );
@@ -261,4 +262,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
 });
-
