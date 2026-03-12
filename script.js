@@ -54,18 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
         isDragging = false;
     });
 
-    // Open nutrition panel in a new window
-    const nutritionBtn = document.getElementById("nutrition-btn");
-
-    if (nutritionBtn) {
-        nutritionBtn.addEventListener("click", () => {
-            window.open(
-                "nutrition.html",
-                "nutrition_window",
-                "width=300,height=400,resizable=no"
-            );
-        });
-    }
 });
 
 const home = document.getElementById("home-button");
@@ -104,28 +92,25 @@ const recipes = [{
     source: "banana bread.html"
 },
 {
+    title: "Kimchi Fried Rice",
+    description: "Kimchi Fried Rice: kimchi, rice, sesame oil, gochujang, soy sauce, garlic, green onions, egg",
+    tags: ["savory", "spicy"],
+    source: "fried rice.html",
+    image: "images/fried-rice.png"
+},
+{
     title: "Cheesecake",
     description: "delicious cheesecake: cream cheese, graham crackers, sugar, eggs",
-    tags: ["sweet", "dessert"], source: "cheesecake.html",
+    tags: ["sweet", "dessert"], 
+    source: "cheesecake.html",
     image: "images/cheesecake.jpg"
 
-}
-]
+}]
+
 
 const reccontainer = document.getElementById("recipe-container");
 const input = document.getElementById("text");
 const filterset = document.getElementById("tagbtns")
-
-
-if (home){
-    home.innerHTML ="";
-    const hbtn = document.createElement("a");
-    hbtn.textContent = "HOMEPAGE"
-    hbtn.href = "index.html";
-    hbtn.classList.add("hbtn");
-    home.appendChild(hbtn);
-}
-
 
 btn.addEventListener("click", function () {
     const textValue = u_search.value.trim();
@@ -321,36 +306,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 li.classList.remove("crossed");
             }
         });
-    });
-
-    const panel = document.getElementById("panel");
-
-    let isDragging = false;
-    let offsetX, offsetY;
-
-    panel.addEventListener("mousedown", (e) => {
-        isDragging = true;
-
-        offsetX = e.clientX - panel.offsetLeft;
-        offsetY = e.clientY - panel.offsetTop;
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-
-        panel.style.left = (e.clientX - offsetX) + "px";
-        panel.style.top = (e.clientY - offsetY) + "px";
-    });
-
-    document.addEventListener("mouseup", () => {
-        isDragging = false;
-    });
-
-    // Open nutrition panel in a new window
-    const nutritionBtn = document.getElementById("nutrition-btn");
-
-    nutritionBtn.addEventListener("click", () => {
-        window.open("nutrition.html", "nutrition_window", "width=300, height=400, resizable=no");
     });
     
 });
