@@ -1,3 +1,5 @@
+
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +9,101 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
         <h1> Cooked Cookbook </h1>
-        <p class = "credit"> brought to you by le gang </p>
+        <p class = "homepage" id = "home-button">
+            homepage where
+            does ts work
+        </p>
     </header>
 
-    <homepage id = "home-button">
-    </homepage>
+    <div class = "homepage" id = "home-button">
+        homepage where
+        does ts work
+    </div>
+    
 
-    <h1> bookies !! </h1>
-    <description>
-        so im cheffing it up??
-        <ul> number one: lock in !! as per usuh
-            <li> grab ur ingredients </li>
-            <li> butter </li>
-            <li> bake </li>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+    <div class="finish">
+        <button id="finish">Finish</button>
+    </div>
+
+
+    <div class="panel" id="panel">
+
+        <p>Ingredients</p>
+
+        <!-- FULL RECIPE -->
+        <ul class="ingredients-list" id="ingredients-full">
+
+            <li><label><input type="checkbox">1 tbsp gochujang</label></li>
+            <li><label><input type="checkbox">1 tbsp honey</label></li>
+            <li><label><input type="checkbox">1 tsp mirin</label></li>
+            <li><label><input type="checkbox">2 tsp soy sauce</label></li>
+            <li><label><input type="checkbox">3 tsp sesame oil</label></li>
+
         </ul>
-    </description>
 
-    <script src="script.js"></script>
-    <h1> so lets get baking ahhhahah am i right</h1>
+        <!-- HALF RECIPE -->
+        <ul class="ingredients-list hidden" id="ingredients-half">
 
+            <li><label><input type="checkbox">1/2 tbsp gochujang</label></li>
+            <li><label><input type="checkbox">1/2 tbsp honey</label></li>
+            <li><label><input type="checkbox">1/2 tsp mirin</label></li>
+            <li><label><input type="checkbox">1 tsp soy sauce</label></li>
+            <li><label><input type="checkbox">1½ tsp sesame oil</label></li>
+
+        </ul>
+
+        <div class="recipe-scale">
+            <button id="full-btn">Regular</button>
+            <button id="half-btn">Half</button>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <button id="nutrition-btn">Nutrition</button>
+
+    <div class="panel" id="panel2">
+        <p>Nutrition Information</p>
+
+        <ol class="nutrition-list">
+            <li><span>Calories</span><span>320</span></li>
+            <li><span>Sugars</span><span>12g</span></li>
+            <li><span>Fat</span><span>8g</span></li>
+            <li><span>Protein</span><span>25g</span></li>
+            <li><span>Carbohydrates</span><span>10g</span></li>
+        </ol>
+    </div>
+
+
+
+
+    <h1> COOKIES !! </h1>
+
+    <div>
+        Heh. So you wanna be a baller like me ?? well here r ur steps for ts
+        <div class = "instruction"> number one: the sauce !!
+            <p> grab a tablespoon of gochujang and spoon out into a bowl</p>
+            <p> toss in a tablespoon of honey as well </p>
+            <p> pour in a teaspoon of mirin </p>
+            <p> add (preferably dark) 2 teaspoons of soy sauce </p>
+            <p> add 3 teaspoons of sesame oil </p>
+            <p> mix well !! </p>
+        </div>
+    </div>
+    <script src = "script.js"> </script>
 
 </body>
 
@@ -36,3 +112,6 @@
     <script src="timer.js"></script>
 
 </body>
+
+
+</html>
