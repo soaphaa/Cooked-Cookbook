@@ -32,7 +32,7 @@ const recipes = [{
 {
     title: "Kimchi Fried Rice",
     description: "Kimchi Fried Rice: kimchi, rice, sesame oil, gochujang, soy sauce, garlic, green onions, egg",
-    tags: ["savory", "spicy"],
+    flavortags: ["savory", "spicy"], mealtags: ["lunch", "dinner"],
     source: "fried rice.html",
     image: "images/fried-rice.png"
 },
@@ -58,7 +58,7 @@ btn.addEventListener("click", function () {
 
 document.addEventListener('keydown', function(event) {
     const textValue = u_search.value.trim();
-    if (event.key === 'Enter' && textValue != null) {
+    if (event.key === 'Enter') {
         search(textValue);
     }
 });
@@ -233,10 +233,11 @@ function displayRec(filteredRecipes){
      })
 }
 
-genTagBtns();
-displayRec(recipes);
-
 document.addEventListener("DOMContentLoaded", () => {
+
+    genTagBtns();
+    displayRec(recipes);
+
     const timerToggleBtn = document.getElementById("timer-toggle-btn");
     if (!timerToggleBtn) {
         console.log("timer-toggle-btn not found on this page");

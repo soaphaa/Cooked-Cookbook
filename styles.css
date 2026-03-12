@@ -265,6 +265,7 @@ rbody {
     display: flex;
     margin-bottom: 0;
     flex-direction: row;
+    line-height: 1em;
     column-gap: 10px;  /* Set to 0 to check if gap itself is the issue */
     row-gap: 0px;
   /*  display: grid;
@@ -276,11 +277,10 @@ rbody {
     margin-left:10px;
     margin-right:10px;
     margin-bottom: 20px;
-    display: block;
     display: grid;
     gap: 2px;
     align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(1vw, auto));
+    grid-template-columns: repeat(4, minmax(1vw, auto));
 }
 
 
