@@ -488,7 +488,7 @@ svg.ring {
 
 .panel li {
     margin-bottom: 0.5rem;
-    font-size: 1.8rem; /* make ingredient items larger */
+    font-size: 1.8rem; /* make ingredient items larger   */
 }
 
 .panel input[type="checkbox"] {
