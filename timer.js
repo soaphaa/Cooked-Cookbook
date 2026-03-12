@@ -6,7 +6,9 @@ const display = document.getElementById("timer-display");
 const ring = document.getElementById("ring");
 const card = document.getElementById("timer-card");
 const timerWindow = document.getElementById("timer");
-const timerToggleBtn = document.getElementById("timer-toggle-btn");
+const timerToggleBtn = document.getElementById("timer-toggle-btn"); //MAIN
+const timerCloseBtn = document.getElementById("timer-close-btn");
+const timerHeader = document.getElementById("timer-header");
 
 const CIRCUMFERENCE = 2 * Math.PI * 25;
 
@@ -14,6 +16,12 @@ let isRunning = false;
 let countdownInterval;
 let totalSeconds = 60;
 let remainingSeconds = totalSeconds;
+let isDragging = false;
+let offsetX, offsetY;
+
+timerToggleBtn.addEventListener("click", function() {
+    timerWindow.classList.toggle("hidden");
+});
 
 function formatTime(seconds){
     const m = Math.floor(seconds / 60).toString().padStart(2, '0');
@@ -82,7 +90,29 @@ timerSelect.addEventListener("change", function() {
     display.textContent = formatTime(totalSeconds);
 });
 
-// toggle show/hide the timer overlay
-timerToggleBtn.addEventListener("click", function() {
-    timerWindow.classList.toggle("hidden");
+timerCloseBtn.addEventListener("click", function() {
+    timerWindow.classList.add("hidden");
 });
+
+//dragging around the screen functionality
+timerHeader.addEventListener("mousedown", function(e) {
+    isDragging = true;
+    offsetX = e.clientX - timerWindow.getBoundingClientRect().left;
+    offsetY = e.clientY - timerWindow.getBoundingClientRect().top;
+});
+
+document.addEventListener("mousemove", function(e) {
+    if (!isDragging) return;
+    timerWindow.style.left = (e.clientX - offsetX) + "px";
+    timerWindow.style.top = (e.clientY - offsetY) + "px";
+    timerWindow.style.right = "auto"; // disable fixed right once dragging starts
+    timerWindow.style.bottom = "auto";
+});
+
+document.addEventListener("mouseup", function() {
+    isDragging = false;
+});
+
+
+
+

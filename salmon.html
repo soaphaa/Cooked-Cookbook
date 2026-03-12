@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +11,16 @@
     <header>
         <h1> Cooked Cookbook </h1>
         <p class="credit"> brought to you by le gang </p>
-        <p class="homepage" id="home-button">homepage where does ts work</p>
+        <p class="homepage" id="home-button"></p>
     </header>
 
     <!-- timer toggle button, always visible -->
-    <button id="timer-toggle-btn" class="timer-toggle-btn">⏱ Timer</button>
+    <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Timer</button>
 
-    <!-- timer overlay, hidden by default -->
     <section id="timer" class="timer-window hidden">
         <div class="timer-card" id="timer-card">
-            <span class="timer-title">Timer</span>
+            <button id="timer-close-btn">x</button>
+            <span class="timer-title" id="timer-header">Timer</span>
             <div class="ring-wrap">
                 <svg class="ring" viewBox="0 0 75 75">
                     <circle class="ring-bg" cx="30" cy="30" r="25"></circle>
@@ -46,6 +47,19 @@
             </div>
         </div>
     </section>
+    </header>
+    
+    <button id="nutrition-btn">Nutrition</button>
+
+    <div class="panel" id="panel">
+        <p>Ingredients panel!!</p>
+        <ul class="ingredients-list">
+            <li><label><input type="checkbox"> Flour</label></li>
+            <li><label><input type="checkbox"> Sugar</label></li>
+            <li><label><input type="checkbox"> Eggs</label></li>
+        </ul>
+        
+    </div>
 
     <h1> ALYN SALMON !! </h1>
     <div class="panel" id="panel">
@@ -59,16 +73,18 @@
 
     <div>
         Heh. So you wanna be a baller like me ?? well here r ur steps for ts
-        <ul class="instruction"> number one: the sauce !!
-            <li> grab a tablespoon of gochujang and spoon out into a bowl</li>
-            <li> toss in a tablespoon of honey as well </li>
-            <li> pour in a teaspoon of mirin </li>
-            <li> add (preferably dark) 2 teaspoons of soy sauce </li>
-            <li> add 3 teaspoons of sesame oil </li>
-            <li> mix well !! </li>
-        </ul>
+        <div class = "instruction"> number one: the sauce !!
+            <p> grab a tablespoon of gochujang and spoon out into a bowl</p>
+            <p> toss in a tablespoon of honey as well </p>
+            <p> pour in a teaspoon of mirin </p>
+            <p> add (preferably dark) 2 teaspoons of soy sauce </p>
+            <p> add 3 teaspoons of sesame oil </p>
+            <p> mix well !! </p>
+        </div>
     </div>
 
     <script src="script.js"></script>
     <script src="timer.js"></script>
+
 </body>
+</html>
