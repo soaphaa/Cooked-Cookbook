@@ -51,6 +51,7 @@
             <li><label><input type="checkbox">1 tsp sea salt</label></li>
             <li><label><input type="checkbox">2 cups chocolate chips</label></li>
 
+
         </ul>
 
         <!-- HALF RECIPE -->
@@ -73,6 +74,44 @@
             <button id="full-btn">Regular</button>
             <button id="half-btn">Half</button>
         </div>
+
+            <!-- timer toggle button, always visible -->
+        <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Timer</button>
+
+
+        <section id="timer" class="timer-window hidden">
+            <div class="timer-card" id="timer-card">
+                <button id="timer-close-btn">x</button>
+                <span class="timer-title" id="timer-header">Timer</span>
+                <div class="ring-wrap">
+                    <svg class="ring" viewBox="0 0 75 75">
+                        <circle class="ring-bg" cx="30" cy="30" r="25"></circle>
+                        <circle class="ring-progress" id="ring" cx="30" cy="30" r="25"></circle>
+                    </svg>
+                </div>
+                <div class="timer-body">
+                    <p id="timer-display">00:00</p>
+                    <select id="timer-select">
+                        <option value="60">1 min</option>
+                        <option value="120">2 min</option>
+                        <option value="180">3 min</option>
+                        <option value="240">4 min</option>
+                        <option value="300">5 min</option>
+                        <option value="600">10 min</option>
+                        <option value="900">15 min</option>
+                        <option value="1200">20 min</option>
+                        <option value="1800">30 min</option>
+                    </select>
+                    <div class="timer-controls">
+                        <button id="toggle-start-btn">Start</button>
+                        <button id="reset-btn">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <homepage id = "home-button">
+        </homepage>
 
     </div>
 
@@ -124,4 +163,7 @@
 </body>
 
 
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
+</body>
 </html>

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookbook Core</title>
-    
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="timer.css">
 </head>
 <body>
 
@@ -103,17 +103,89 @@
             <p> add (preferably dark) 2 teaspoons of soy sauce </p>
             <p> add 3 teaspoons of sesame oil </p>
             <p> mix well !! </p>
+        <p class="credit"> brought to you by le gang </p>
+        <p class="homepage" id="home-button"></p>
+    </header>
+
+    <!-- timer toggle button, always visible -->
+    <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Timer</button>
+
+    <section id="timer" class="timer-window hidden">
+        <div class="timer-card" id="timer-card">
+            <button id="timer-close-btn">x</button>
+            <span class="timer-title" id="timer-header">Timer</span>
+            <div class="ring-wrap">
+                <svg class="ring" viewBox="0 0 75 75">
+                    <circle class="ring-bg" cx="30" cy="30" r="25"></circle>
+                    <circle class="ring-progress" id="ring" cx="30" cy="30" r="25"></circle>
+                </svg>
+            </div>
+            <div class="timer-body">
+                <p id="timer-display">00:00</p>
+                <select id="timer-select">
+                    <option value="60">1 min</option>
+                    <option value="120">2 min</option>
+                    <option value="180">3 min</option>
+                    <option value="240">4 min</option>
+                    <option value="300">5 min</option>
+                    <option value="600">10 min</option>
+                    <option value="900">15 min</option>
+                    <option value="1200">20 min</option>
+                    <option value="1800">30 min</option>
+                </select>
+                <div class="timer-controls">
+                    <button id="toggle-start-btn">Start</button>
+                    <button id="reset-btn">Reset</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    </header>
+    
+    <button id="nutrition-btn">Nutrition</button>
+
+    <h1> ALYN SALMON !! </h1>
+    <div class="panel" id="panel">
+        <p>Ingredients panel!!</p>
+        <ul class="ingredients-list">
+            <li><label><input type="checkbox"> Flour</label></li>
+            <li><label><input type="checkbox"> Sugar</label></li>
+            <li><label><input type="checkbox"> Eggs</label></li>
+        </ul>
+    </div>
+
+    <div>
+        <div class = "instruction"> number one: the sauce !!
+            <p class="step"> grab a tablespoon of gochujang and spoon out into a bowl</p>
+            <p class="step"> toss in a tablespoon of honey as well </p>
+            <p class="step"> pour in a teaspoon of mirin </p>
+            <p class="step"> add (preferably dark) 2 teaspoons of soy sauce </p>
+            <p class="step"> add 3 teaspoons of sesame oil </p>
+            <p class="step"> mix well !! </p>
+        </div>
+        <div class = "instruction"> number two: your salmon !!
+            <p class="step"> optional: skin your salmon </p>
+            <p class="step"> cut your salmon into 1-inch cubes (or larger depending on preffered size) </p>
+            <p class="step-under"> just remember - size affects cooking time !! </p>
+            <p class="step"> toss the salmon cubes into the sauce, ensuring an even coat </p>
+        </div>
+        <div class = "instruction"> number three:  cooking prep !!
+            <p class="step"> grab a medium size pan for 1-2 pieces of salmon </p>
+            <p class="step"> turn your stove onto low-simmer heat </p>
+            <p class="step"> use the circumference of the pan as a guide on how much oil to put </p>
+            <p class="step-under"> do a circle in the shape of the ouline </p>
+            <p class="step"> wait until you can feel a medium amount of heat by hovering you hand over the pan's surface.</p> 
+        </div>
+        <div class = "instruction"> number four: cooking the salmon !!
+            <p class="step"> place all the cubes with enough space from the others to rotate </p>
+            <p class="step"> let the salmon cook for 2-3 minutes on one side, then flip and cook for another 2-3 minutes on the other side </p>
+            <p class="step-under"> of course, 2-3 minutes is a vague suggestions </p>
+
         </div>
     </div>
-    <script src = "script.js"> </script>
 
-</body>
-
-    <button id="timer-toggle-btn">Toggle Timer</button>
-
+    <script src="script.js"></script>
     <script src="timer.js"></script>
 
 </body>
-
-
 </html>
