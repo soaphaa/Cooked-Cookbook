@@ -26,8 +26,10 @@ p {
 }
 
 h1 {
+    margin-left:10vw;
+    margin-right:10vw;
     color: pink;
-    font-size: 3vw;
+    font-size: 4vw;
     text-align: center;
     line-height: 0.1em;
 }
@@ -50,7 +52,6 @@ header {
     padding-top: 5px;
     padding-bottom: 5px;
     width: 100%;
-    margin-bottom: 1em;
     top:0;
     z-index: 100;
     line-height:1em;
@@ -64,36 +65,30 @@ credit {
     line-height: 0.5em;
     font-weight: bold;
 }
-
-
 /* search bar !! */
 
 .search {
     /* the general search bar area i lowk didn't know what i was doing i js followed the w3 tutorial*/
     font-family: "Nunito", sans-serif;
     display: flex;
-    column-gap: 10px;
+    flex-direction: row;
     margin-bottom: 20px;
 }
 
 .search input[type=text] {
     /* where you type in the ingredient that you are looking for trust*/
     font-family: "Nunito", sans-serif;
-    float: left;
     width: 70vw;
+    height:5wv;
     margin-top: 10px;
     margin-left: 3px;
-
-    padding-left: 10px;
-    font-size: 20px;
-    border: 1px, solid, white;
+    font-size: 2vw;
     border-radius: 10px;
 }
 
 button{
     /* general button settings unless directly changed depending on the button*/
     font-family: "Nunito", sans-serif;
-    float: left;
     margin-top: 10px;
     padding: 10px;
     margin-left: 3px;
@@ -106,13 +101,16 @@ button{
 
 .search button {
     /* when you select a specific ingredient cause my enter key doesn't work */
-    width: 25vw;
+    width: 5vw;
     font-family: "Nunito", sans-serif;
     background-color: rgb(194, 91, 91);
     color: white;
     border: 1px, solid, white;
-    margin-right: 0;
-
+    padding-bottom:30px;
+    padding-top:5px;
+    text-align: center;
+    height: 5vw;
+    font-size:3vw;
     border-radius:20px;
 }
 .search button:hover {
@@ -275,8 +273,8 @@ rbody {
 
 /*for recipe-filter*/
 .filterlist{
-    margin-left:auto;
-    margin-right:auto;
+    margin-left:10px;
+    margin-right:10px;
     display: block;
     display: grid;
     gap: 2px;
@@ -346,28 +344,28 @@ rbody {
     margin-top: 2vh;
     margin-left: 15vw;
     margin-right: 15vw;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
 
     padding-top: 20px;
     max-width: 100%;
 
     background-color: rgb(253, 241, 229);
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 30px;
 
-    font-size: 30px;
+    font-size: 3.2vw;
 }
 
 .step{
     position: relative;
-    padding-left: 30px;
+    padding-left: 35px;
     display: block;
     grid-template-columns: repeat(1, minmax(10vw, 20vw));
     color: rgb(167, 29, 29);
     margin-top:10px;
     margin-bottom: 10px;
-    font-size:30px;
+    font-size:3vw;
 }
 
 .step::before{
@@ -389,7 +387,7 @@ rbody {
     color: rgb(167, 29, 29);
     margin-top:10px;
     margin-bottom: 10px;
-    font-size:30px;
+    font-size:3vw;
 }
 
 .step-under::before{
