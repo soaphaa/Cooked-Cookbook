@@ -26,7 +26,7 @@ const input = document.getElementById("text");
 
 function displayRec(filteredRecipes) {
     if (!reccontainer) return; // exits if not on the right page
-    reccontainer.innerHTML = ""; //It clears out everything inside the reccontainer element.
+    reccontainer.innerHTML = ""; // It clears out everything inside the reccontainer element.
     filteredRecipes.forEach(recipe => {
         const card = document.createElement("body");
         card.classList.add("recipe-card");

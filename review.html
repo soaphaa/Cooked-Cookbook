@@ -1,13 +1,81 @@
 <!DOCTYPE html>
-<html lang=""en>
+<html lang="" en>
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="wdith=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Section</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="shortcut icon" href="images/salmon.jpg"> -->
+    <script src="https://kit.fontawesome.com/44fe28e16d.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
+    <h1>Reviews</h1>
+    <section class="review-section">
+        <div class="review-summary">
+            <div class="overall-review-container">
+                <h2 id="overall-score"></h2>
+                <div class="overall-ratings">
+                    <template id="ratings-template">
+                        <i class="fa-star"></i>
+                    </template>
+                </div>
+                <h3 id="num-ratings"></h3>
+            </div>
+            <div class="rating-bars-container">
+                <template id="rating-bar-template">
+                    <div class="rating-bar">
+                        <h4 class="rating-level"></h4>
+                        <div class="rating-bar-full">
+                            <div class="rating-bar-filled"></div>
+                        </div>
+                        <h5 class="rating-percentage"></h5>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <hr class="review-section-divider">
+        <template id="review-template">
+            <div class="review-box" id="review-box">
+                <div class="review-header">
+                    <div class="profile-info">
+                        <h2 id="username">Username</h2>
+                        <h3 id="date">March 9, 2026</h3>
+                    </div>
+                    <div class="ratings"></div>
+                </div>
+                <div class="review-content">
+                    <p id="review-paragraph"></p>
+                    <div class="review-images">
+                        <template id="img-template">
+                            <button class="review-image-btn">
+                                <img src="" alt="Review Image">
+                            </button>
+                            <div class="popup-overlay"></div>
+                            <div class="img-popup">
+                                <div class="popup-header">
+                                    <button class="close-img-btn">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="popup-image">
+                                    <img src="" alt="Review Image">
+                                </div>
+                            </div>
+                        </template>
+                        <!-- <img src="images/salmon.jpg">
+                        <img src="images/alyn's salmon.jpeg">
+                        <img src="images/chocolate-chip-cookie.jpeg">  -->
+                    </div>
+                </div>
+            </div>
+            <hr class="review-divider">
+        </template>
+    </section>
+
     <script src="review.js"></script>
-    
+
 </body>
+
 </html>
