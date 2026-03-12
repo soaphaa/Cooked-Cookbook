@@ -3,27 +3,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookbook Core</title>
-    
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="timer.css">
 </head>
 <body>
 
     <header>
         <h1> Cooked Cookbook </h1>
-        <p class = "homepage" id = "home-button">
-            homepage where
-            does ts work
-        </p>
+        <p class="credit"> brought to you by le gang </p>
+        <p class="homepage" id="home-button"></p>
     </header>
 
-    <div class = "homepage" id = "home-button">
-    </div>
+    <!-- timer toggle button, always visible -->
+    <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Timer</button>
+
+    <section id="timer" class="timer-window hidden">
+        <div class="timer-card" id="timer-card">
+            <button id="timer-close-btn">x</button>
+            <span class="timer-title" id="timer-header">Timer</span>
+            <div class="ring-wrap">
+                <svg class="ring" viewBox="0 0 75 75">
+                    <circle class="ring-bg" cx="30" cy="30" r="25"></circle>
+                    <circle class="ring-progress" id="ring" cx="30" cy="30" r="25"></circle>
+                </svg>
+            </div>
+            <div class="timer-body">
+                <p id="timer-display">00:00</p>
+                <select id="timer-select">
+                    <option value="60">1 min</option>
+                    <option value="120">2 min</option>
+                    <option value="180">3 min</option>
+                    <option value="240">4 min</option>
+                    <option value="300">5 min</option>
+                    <option value="600">10 min</option>
+                    <option value="900">15 min</option>
+                    <option value="1200">20 min</option>
+                    <option value="1800">30 min</option>
+                </select>
+                <div class="timer-controls">
+                    <button id="toggle-start-btn">Start</button>
+                    <button id="reset-btn">Reset</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    </header>
     
     <button id="nutrition-btn">Nutrition</button>
 
     <h1> ALYN SALMON !! </h1>
-
     <div class="panel" id="panel">
         <p>Ingredients panel!!</p>
         <ul class="ingredients-list">
@@ -31,10 +60,7 @@
             <li><label><input type="checkbox"> Sugar</label></li>
             <li><label><input type="checkbox"> Eggs</label></li>
         </ul>
-        
     </div>
-
-    <!--<button id="nutrition-btn">Nutrition</button>-->
 
     <div>
         <div class = "instruction"> number one: the sauce !!
@@ -65,12 +91,8 @@
 
         </div>
     </div>
-    <script src = "script.js"> </script>
 
-</body>
-
-    <button class = "timer-btn" id="timer-toggle-btn">Toggle Timer</button>
-
+    <script src="script.js"></script>
     <script src="timer.js"></script>
 
 </body>

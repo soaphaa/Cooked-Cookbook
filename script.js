@@ -1,72 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-
-    const confettiBtn = document.getElementById("finish");
-
-    if (confettiBtn) {
-        confettiBtn.addEventListener("click", () => {
-            confetti({
-                particleCount: 2000,
-                spread: 6000,
-                origin: { y: 0.6 }
-            });
-        });
-    }
-
-
-    const checkboxes = document.querySelectorAll(
-        ".ingredients-list input[type=\"checkbox\"]"
-    );
-
-    checkboxes.forEach(cb => {
-        cb.addEventListener("change", event => {
-            const li = event.target.closest("li");
-            if (!li) return;
-
-            if (event.target.checked) {
-                li.classList.add("crossed");
-            } else {
-                li.classList.remove("crossed");
-            }
-        });
-    });
-
-    const panel = document.getElementById("panel");
-
-    let isDragging = false;
-    let offsetX, offsetY;
-
-    panel.addEventListener("mousedown", (e) => {
-        isDragging = true;
-
-        offsetX = e.clientX - panel.offsetLeft;
-        offsetY = e.clientY - panel.offsetTop;
-    });
-
-    document.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-
-        panel.style.left = (e.clientX - offsetX) + "px";
-        panel.style.top = (e.clientY - offsetY) + "px";
-    });
-
-    document.addEventListener("mouseup", () => {
-        isDragging = false;
-    });
-
-    // Open nutrition panel in a new window
-    const nutritionBtn = document.getElementById("nutrition-btn");
-
-    if (nutritionBtn) {
-        nutritionBtn.addEventListener("click", () => {
-            window.open(
-                "nutrition.html",
-                "nutrition_window",
-                "width=300,height=400,resizable=no"
-            );
-        });
-    }
-});
 
 const home = document.getElementById("home-button");
 
@@ -97,6 +28,13 @@ const recipes = [{
     description: "chocolate chip banana bread: chocolate chips, banana, flour, egg, milk",
     flavortags: ["sweet"], mealtags: ["dessert"],
     source: "banana bread.html", image: "images/chocolate-chip-banana-bread.jpg"
+},
+{
+    title: "Kimchi Fried Rice",
+    description: "Kimchi Fried Rice: kimchi, rice, sesame oil, gochujang, soy sauce, garlic, green onions, egg",
+    tags: ["savory", "spicy"],
+    source: "fried rice.html",
+    image: "images/fried-rice.png"
 },
 {
     title: "Cheesecake",
@@ -297,3 +235,45 @@ function displayRec(filteredRecipes){
 
 genTagBtns();
 displayRec(recipes);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const timerToggleBtn = document.getElementById("timer-toggle-btn");
+    if (!timerToggleBtn) {
+        console.log("timer-toggle-btn not found on this page");
+        return;
+    }
+    
+    let timerPopup = null;
+    timerToggleBtn.addEventListener("click", () => {
+        console.log("Timer toggle button clicked");
+        timerPopup = window.open("timer.html", "Timer", "width=260,height=260,resizable=no");
+    });
+    const checkboxes = document.querySelectorAll(
+        ".ingredients-list input[type=\"checkbox\"]"
+    );
+
+
+    const confettiBtn = document.getElementById("finish");
+        confettiBtn.addEventListener("click", () => {
+            confetti({
+                particleCount: 2000,
+                spread: 6000,
+                origin: { y: 0.6 }
+            })
+        });
+
+
+    checkboxes.forEach(cb => {
+        cb.addEventListener("change", event => {
+            const li = event.target.closest("li");
+            if (!li) return;
+
+            if (event.target.checked) {
+                li.classList.add("crossed");
+            } else {
+                li.classList.remove("crossed");
+            }
+        });
+    });
+    
+});
