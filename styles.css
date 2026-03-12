@@ -11,36 +11,62 @@
 }
 
 body {
+    margin:0;
     font-family: "Nunito", sans-serif;
     background-color: #c16c6c;
     color: #1a1a1a;
     line-height: 1em;
     font-size: 20px;
+    padding:0;
+}
 
+p {
+    font-family: "Nunito", sans-serif;
+    color: #1a1a1a;
+    line-height: 1em;
+    font-size: 20px;
 }
 
 h1 {
     color: pink;
-    margin-bottom: 1em;
-    font-size: 40px;
+    font-size: 3vw;
     text-align: center;
-    line-height: 1em;
+    line-height: 0.1em;
 }
 
+/* header heading 1*/
+hh1 {
+    color: pink;
+    font-size: 5vw;
+    text-align: center;
+    line-height: 1.5em;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+
 header {
+    position: sticky;
     background-color: rgb(167, 29, 29);
     text-align: center;
     padding-top: 5px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    width: 100%;
+    margin-bottom: 1em;
+    top:0;
+    z-index: 100;
+    line-height:1em;
 }
+
 
 credit {
     /* by le gang trust*/
     color: rgb(229, 177, 195);
     text-align: center;
-    line-height: 1em;
+    line-height: 0.5em;
     font-weight: bold;
 }
+
 
 /* search bar !! */
 
@@ -49,15 +75,17 @@ credit {
     font-family: "Nunito", sans-serif;
     display: flex;
     column-gap: 10px;
+    margin-bottom: 20px;
 }
 
 .search input[type=text] {
     /* where you type in the ingredient that you are looking for trust*/
     font-family: "Nunito", sans-serif;
     float: left;
-    width: 75vw;
+    width: 70vw;
     margin-top: 10px;
     margin-left: 3px;
+
     padding-left: 10px;
     font-size: 20px;
     border: 1px, solid, white;
@@ -66,11 +94,16 @@ credit {
 
 button {
     /* general button settings unless directly changed depending on the button*/
+    font-family: "Nunito", sans-serif;
     float: left;
     margin-top: 10px;
     padding: 10px;
     margin-left: 3px;
     font-size: 20px;
+    background-color: rgb(167, 29, 29);
+    color: white;
+    border: none;
+    border-radius: 10px;    
 }
 
 .search button {
@@ -80,6 +113,7 @@ button {
     background-color: rgb(194, 91, 91);
     color: white;
     border: 1px, solid, white;
+    margin-right: 0;
 
     border-radius: 20px;
 }
@@ -90,10 +124,16 @@ button {
     border: 1px, solid, rgb(255, 203, 203);
 }
 
-warning {
-    font-size: 60px;
+.warning {
+    width: 100%;
+    justify-content: center; /* Centers horizontally */
+    text-align: center;
+    display: flex;
+    margin: 0;
+    margin-bottom: 0;
+    font-size: 5vw;
     color: black;
-    line-height: 1em;
+    line-height: 1.5; /* Adds space for descenders */
 }
 
 /* recipe section for main*/
@@ -105,9 +145,10 @@ rh1 {
     color: #ffffff;
     /* padding-top: 1em; */
     text-align: center;
-    font-size: 30px;
+    font-size: 3vw;
     font-weight: bold;
-    line-height: 1.5em;
+    margin-top: 1em;
+    line-height: 0.5em;
 }
 
 rbody {
@@ -117,10 +158,11 @@ rbody {
     padding-top: 0.5em;
     margin-left: 2em;
     margin-right: 2em;
+    margin-top: 20px;
     margin-bottom: 1em;
-    color: black;
-    line-height: 1em;
-    font-size: 20px;
+    color:black;
+    line-height:1em;
+    font-size: 1.75vw;
 }
 
 /* recipe cards, etc. */
@@ -136,30 +178,34 @@ rbody {
 
 .recipe-card {
     /* contains recipe title, description, image, etc.*/
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     background-image: url("images/tempbtn.png");
+
+    max-width: 45vw;
     background-size: cover;
     border-radius: 40px;
+
     padding-bottom: 10px;
-    padding-right: 3vw;
+    padding-right: 1vw;
+    
     margin-bottom: 10px;
-    margin-top: 15px;
-    box-shadow: 10px, 10px, 0px #cc0000;
+    margin-top: 1em;
+    margin-left: 15px;
+
+    box-shadow: 10px,10px, 0px #cc0000;
     border: 1px solid white;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 .recipe-btn {
     /* visit recipe trust' button */
     /* background-image: url("images/tempbtn.png"); */
     background-size: cover;
-    float: right;
-    display: flex;
-    padding: 2.5vw;
-    margin-left: 3vw;
-    margin-bottom: 5vw;
-    margin-right: 0;
+    display: block;
+    padding: 20px;
     margin-top: 1vw;
-    width: 10vw;
+    width: 20vw;
 
     background-color: #cc0000;
     color: white;
@@ -167,8 +213,8 @@ rbody {
     text-decoration: none;
     border-radius: 40px;
 
-    font-size: 3vw;
-    text-align: center;
+    font-size:3vw;
+    align-self: center;
     line-height: 1em;
 
     transition: 0.3s;
@@ -176,52 +222,70 @@ rbody {
 }
 
 
-
-.recipe-tag {
+.recipe-tag{
+    /* on recipe card */
     font-family: "Nunito", sans-serif;
-    float: center;
-    display: grid;
-    padding-bottom: 10px;
+    padding: 10px;
+    margin-top: 1vw;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
 
-    background-color: #eb6b6b;
-    color: rgb(255, 255, 255);
+    border-radius: 10px;
+
+    background-color: #d15b5b;
+    color: white;
 
     text-decoration: none;
-    border-radius: 100px;
+    border-radius: 20px;
+    text-align:center;
 
-    border-color: white;
-
-    font-size: 15 px;
-    text-align: center;
+    font-size: 3vw;
 }
-
-.recipe-filter {
+/* the ones on top of the recipes*/
+.recipe-filter{
     font-family: "Nunito", sans-serif;
-    float: center;
-    display: grid;
+    display: block;
+    padding-top: 15px;
     padding-bottom: 10px;
+    padding-left:10px;
+    padding-right:10px;
 
     background-color: #eb6b6b;
-    color: rgb(255, 255, 255);
-
+    color: rgb(247, 242, 242);
+    
     text-decoration: none;
-    border-radius: 100px;
+    border-radius: 90px;
 
-    border-color: white;
-
-    font-size: 15 px;
-    text-align: center;
+    font-size:3vw;
+    text-align:center;
 }
 
-.recipe-filter:hover {
+.recipe-filter:hover{
+    background-color: #e04b4b;
+    border: .5px, white, solid;
     transform: scale(1.05);
-
 }
 
-.taglist {
+/* for recipe-tag*/
+.taglist{
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;  /* Set to 0 to check if gap itself is the issue */
+  /*  display: grid;
+    grid-template-columns: repeat(3, minmax(1px, 50px));*/
+}
+
+/*for recipe-filter*/
+.filterlist{
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
     display: grid;
-    grid-template-columns: repeat(5, minmax(1vw, 50vw));
-    overflow: wrap;
+    gap: 2px;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(1vw, auto));
 }
 
 
@@ -236,6 +300,8 @@ rbody {
     object-position: center;
     border-radius: 30px;
     border: 1.5px solid rgba(255, 255, 255, 0.333);
+    margin-top: 15px;
+    align-self: center;
     box-sizing: border-box;
 }
 
@@ -255,24 +321,22 @@ rbody {
 
 /* homepage button !! */
 
-#home-button {
-    display: grid;
+/*#home-button{
+    display:grid;
     float: left;
     grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
     column-gap: 20px;
-    /*padding: 2rem */
+    /*padding: 2rem 
 
-}
+}*/
 
-#homepage {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 20px;
-}
 
-.hbtn {
+.hbtn{
+    display: inline-block;
+    align-self: center;
     margin-top: 10px;
     padding: 10px;
+    margin-bottom: 0;
 
     background-color: #cc0000;
     color: white;
@@ -283,7 +347,84 @@ rbody {
     font-size: 20px;
 }
 
+
+/* instructions within the card */
+
+.instruction {
+    margin-top: 2vh;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-bottom: 30px;
+    padding: 20px;
+
+    padding-top: 20px;
+    max-width: 100%;
+
+    background-color: rgb(253, 241, 229);
+    font-weight: bold;
+    border-radius: 10px;
+
+    font-size: 30px;
+}
+
+.step{
+    position: relative;
+    padding-left: 30px;
+    display: block;
+    grid-template-columns: repeat(1, minmax(10vw, 20vw));
+    color: rgb(167, 29, 29);
+    margin-top:10px;
+    margin-bottom: 10px;
+    font-size:30px;
+}
+
+.step::before{
+    content: "✩";
+    position: absolute; 
+    margin-right: 15px;
+    color: rgb(218, 121, 121);
+    display: block;
+    left: 0;
+    font-size:1em;
+}
+
+.step-under{
+    margin-left:40px;
+    position: relative;
+    padding-left: 30px;
+    display: block;
+    grid-template-columns: repeat(1, minmax(10vw, 20vw));
+    color: rgb(167, 29, 29);
+    margin-top:10px;
+    margin-bottom: 10px;
+    font-size:30px;
+}
+
+.step-under::before{
+    content: "✩";
+    position: absolute; 
+    margin-right: 55px;
+    color: rgb(218, 121, 121);
+    display: block;
+    left: 0;
+    font-size:1em;
+}
 /* timer css */
+
+.timer-btn{
+    font-family: "Nunito", sans-serif;
+    z-index: 999;
+    position: sticky;
+    left:0;
+    float: left;
+    margin-top: 10px;
+    padding: 10px;
+    margin-left: 3px;
+    font-size: 20px;
+    background-color: rgb(167, 29, 29);
+    color: white;
+    border-radius: 10px;    
+}
 
 .timer-window {
     font: "Nunito", "sans-serif";
@@ -390,12 +531,13 @@ svg.ring {
     position: fixed;
     top: 0;
     right: 0;
-    width: 220px;
+    width: 20vw;
     background-color: #cd7575;
     padding: 1rem;
     padding-top: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
 }
 
 .panel p {
@@ -494,7 +636,8 @@ svg.ring {
     cursor: pointer;
 }
 
-#finish {
+#finish{
+    font: "Nunito", "sans-serif";
     position: absolute;
     top: 20px;
     left: 20px;
@@ -504,6 +647,7 @@ svg.ring {
     border: 1px solid #590000;
     border-radius: 5px;
     cursor: pointer;
+    z-index: 1000;
 }
 
 .auth-container {
