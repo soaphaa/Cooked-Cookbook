@@ -99,6 +99,13 @@ const recipes = [{
     image: "images/fried-rice.png"
 },
 {
+    title: "Salad",
+    description: "Arugula Salad: arugula, cherry tomatoes, cucumber, feta cheese, olive oil, balsamic vinegar",
+    tags: ["savory", "healthy"],
+    source: "salad.html",
+    image: "images/salad.png"
+},
+{
     title: "Cheesecake",
     description: "delicious cheesecake: cream cheese, graham crackers, sugar, eggs",
     tags: ["sweet", "dessert"], 
