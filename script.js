@@ -51,6 +51,7 @@ const filterset = document.getElementById("tagbtns")
 n_card.innerHTML = "";
 
 btn.addEventListener("click", function () {
+    
     const textValue = u_search.value.trim();
     search(textValue);
 //take value from the search bar
@@ -59,6 +60,7 @@ btn.addEventListener("click", function () {
 document.addEventListener('keydown', function(event) {
     const textValue = u_search.value.trim();
     if (event.key === 'Enter') {
+        n_card.innerHTML = "";
         search(textValue);
     }
 });

@@ -140,7 +140,7 @@ rh1 {
     font-size: 3vw;
     font-weight: bold;
     margin-top: 1em;
-    line-height: 0.5em;
+    line-height: 1em;
 }
 
 rbody {
@@ -162,7 +162,7 @@ rbody {
 #recipe-container {
     /*contains all the recipe card*/
     display: grid;
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
     column-gap: 20px;
     /*padding: 2rem */
 
@@ -183,7 +183,8 @@ rbody {
     
     margin-bottom: 10px;
     margin-top: 1em;
-    margin-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
 
     box-shadow: 10px,10px, 0px #cc0000;
     border: 1px solid white;
@@ -289,10 +290,8 @@ rbody {
     aspect-ratio: 2;
     display: block;
     justify-content: center;
-    margin: 30px auto;
-    transform: translateX(1.5vw);
+
     object-fit: cover;
-    object-position: center;
     border-radius: 30px;
     border: 1.5px solid rgba(255, 255, 255, 0.333);
     margin-top: 15px;
