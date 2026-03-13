@@ -11,16 +11,43 @@
 <body>
 
     <header>
-        <h1> Cooked Cookbook </h1>
-        <p class = "homepage" id = "home-button">
-            homepage where
-            does ts work
-        </p>
+        <hh1> Cooked Cookbook </hh1>
+        <p class="homepage" id="home-button"></p>
     </header>
 
     <!-- timer toggle button, always visible -->
     <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Timer</button>
-
+    
+    <section id="timer" class="timer-window hidden">
+        <div class="timer-card" id="timer-card">
+            <button id="timer-close-btn">x</button>
+            <span class="timer-title" id="timer-header">Timer</span>
+            <div class="ring-wrap">
+                <svg class="ring" viewBox="0 0 150 150">
+                    <circle class="ring-bg" cx="75" cy="75" r="60"></circle>
+                    <circle class="ring-progress" id="ring" cx="75" cy="75" r="60"></circle>
+                </svg>
+            </div>
+            <div class="timer-body">
+                <p id="timer-display">00:00</p>
+                <select id="timer-select">
+                    <option value="60">1 min</option>
+                    <option value="120">2 min</option>
+                    <option value="180">3 min</option>
+                    <option value="240">4 min</option>
+                    <option value="300">5 min</option>
+                    <option value="600">10 min</option>
+                    <option value="900">15 min</option>
+                    <option value="1200">20 min</option>
+                    <option value="1800">30 min</option>
+                </select>
+                <div class="timer-controls">
+                    <button id="toggle-start-btn">Start</button>
+                    <button id="reset-btn">Reset</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="timer" class="timer-window hidden">
         <div class="timer-card" id="timer-card">
@@ -53,13 +80,6 @@
         </div>
     </section>
 
-    <homepage id = "home-button">
-    </homepage>
-    <div class = "homepage" id = "home-button">
-        homepage where
-        does ts work
-    </div>
-    
 
     <!-- updates!! -->
 

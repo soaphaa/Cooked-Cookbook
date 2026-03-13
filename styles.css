@@ -104,7 +104,14 @@ button {
     background-color: rgb(167, 29, 29);
     color: white;
     border: none;
-    border-radius: 10px;    
+    border-radius: 10px;
+    font-weight:bold;    
+}
+
+button:hover{
+    background: #cf0404;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
 
 .search button {
@@ -275,13 +282,13 @@ rbody {
 
 /*for recipe-filter*/
 .filterlist{
-    margin-left:10px;
-    margin-right:10px;
+    margin-left:20px;
+    margin-right:20px;
     margin-bottom: 20px;
     display: grid;
     gap: 2px;
     align-items: center;
-    grid-template-columns: repeat(4, minmax(1vw, auto));
+    grid-template-columns: repeat(3, minmax(1vw, auto));
 }
 
 
@@ -317,7 +324,7 @@ rbody {
     display: inline-block;
     align-self: center;
     margin-top: 10px;
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 0;
 
     background-color: #cc0000;
@@ -326,7 +333,7 @@ rbody {
     text-decoration: none;
     border-radius: 20px;
 
-    font-size: 20px;
+    font-size: 30px;
 }
 
 /* instructions within the card */
@@ -346,6 +353,20 @@ rbody {
     border-radius: 30px;
 
     font-size: 3.2vw;
+}
+
+.warning {
+    /* make warning span entire grid so it stays centered in recipe container */
+    grid-column: 1 / -1;
+    width: 90%;
+    display: grid;
+    margin:0;
+    justify-self: center;
+    text-align: center;
+    font-size: 5vw;
+    color: black;
+    padding: 1rem;
+    font-weight: bold;
 }
 
 .step{
@@ -502,6 +523,9 @@ svg.ring {
     width: 300px;
     /* make panel wider */
     font-size: 1.5rem;
+    position: absolute;
+    top: 100px;
+    left: 200px;
     /* larger text overall */
     display: none;
 }
@@ -532,11 +556,6 @@ svg.ring {
     border-bottom: none;
 }
 
-#panel2 {
-    position: absolute;
-    top: 100px;
-    left: 200px;
-}
 
 /* Small nutrition button */
 #nutrition-btn {
@@ -578,6 +597,7 @@ svg.ring {
     cursor: pointer;
     z-index: 1000;
 }
+
 
 #profile-btn {
     position: fixed;
@@ -1004,27 +1024,4 @@ svg.ring {
             transparent 10px) 1;
     margin: 0rem -0.5rem;
 }
-#nutrition-btn {
-    position: absolute;
-    top: 500px;
-    left: 100px;
-    z-index: 2000;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    background-color: #d77979;
-    border: 1px solid #590000;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
-#finish{
-    position: absolute;
-    top: 400px;
-    left: 20px;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    background-color: #d77979;
-    border: 1px solid #590000;
-    border-radius: 5px;
-    cursor: pointer;
-}
