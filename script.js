@@ -119,11 +119,12 @@ const reccontainer = document.getElementById("recipe-container");
 const input = document.getElementById("text");
 const filterset = document.getElementById("tagbtns")
 
-btn.addEventListener("click", function () {
-    const textValue = u_search.value.trim();
-    search(textValue);
-//take value from the search bar
-});
+    btn.addEventListener("click", function () {
+        const textValue = u_search.value.trim();
+        search(textValue);
+    //take value from the search bar
+    });
+
 
 document.addEventListener('keydown', function(event) {
     const textValue = u_search.value.trim();
@@ -275,18 +276,6 @@ function displayRec(filteredRecipes){
 genTagBtns();
 displayRec(recipes);
 
-document.addEventListener("DOMContentLoaded", () => {
-    const timerToggleBtn = document.getElementById("timer-toggle-btn");
-    if (!timerToggleBtn) {
-        console.log("timer-toggle-btn not found on this page");
-        return;
-    }
-    
-    let timerPopup = null;
-    timerToggleBtn.addEventListener("click", () => {
-        console.log("Timer toggle button clicked");
-        timerPopup = window.open("timer.html", "Timer", "width=260,height=260,resizable=no");
-    });
     const checkboxes = document.querySelectorAll(
         ".ingredients-list input[type=\"checkbox\"]"
     );
@@ -315,4 +304,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
     
-});

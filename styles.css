@@ -384,115 +384,7 @@ rbody {
     left: 0;
     font-size:1em;
 }
-/* timer css */
 
-.timer-btn{
-    font-family: "Nunito", sans-serif;
-    z-index: 999;
-    position: sticky;
-    left:0;
-    float: left;
-    margin-top: 10px;
-    padding: 10px;
-    margin-left: 3px;
-    font-size: 20px;
-    background-color: rgb(167, 29, 29);
-    color: white;
-    border-radius: 10px;    
-}
-
-.timer-window {
-  font: "Nunito", "sans-serif";
-  position: fixed; /* will always stay at the top corner evenwhenu scroll */
-  right: 20px;
-  bottom: 20px;
-  width: 260px;
-  
-  background: rgba(235, 203, 203, 0.95); /*replace with image maybe*/
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 16px;
-  box-shadow: 0 10px 28px rgba(218, 14, 14, 0.18);
-  
-  padding: 12px;
-  z-index: 999;
-  backdrop-filter: blur(6px);
-  text-align: center;
-  cursor: grab;
-  user-select: none; /* prevents text from being highlighted while user is dragging above the timer */
-}
-
-h2.timer-header{
-  font-size: 1.5em;
-  margin-top: 8px;
-}
-
-.start-btn {
-  background-color: #04AA6D; 
-  color: white;
-}
-.stop-btn {
-  background-color: #f44336;
-  color: white;
-}
-
-.timer-close-btn {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 16px;
-    color: #cc0000;
-    cursor: pointer;
-    float: none;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-}
-
-.timer-close-btn:hover {
-    color: #8b0000;
-    transform: scale(1.2);
-}
-
-.timer-window {
-    cursor: grab;
-}
-
-.timer-window:active {
-    cursor: grabbing;
-}
-
-.timer-display {
-    font-family: "Nunito", sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    color: #8b0000;
-    margin: 4px 0;
-}
-
-.timer-display.low {
-    color: #ff4400;
-}
-
-.timer-controls {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-}
-
-.timer-select {
-    font-family: "Nunito", sans-serif;
-    font-size: 13px;
-    background: rgba(255, 220, 150, 0.8);
-    border: 1px solid rgba(204, 0, 0, 0.3);
-    border-radius: 20px;
-    padding: 4px 8px;
-    color: #8b0000;
-    margin-bottom: 8px;
-    cursor: pointer;
-    width: 100%;
-}
 
 .hidden {
     display: none;
@@ -596,16 +488,30 @@ h2.timer-header{
 
 /* Small nutrition button */
 #nutrition-btn {
-    position: right;
-    top: 20px;
+    position: fixed;
+    top: 40px;
     left: 20px;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    background-color: #d77979;
-    border: 1px solid #590000;
-    border-radius: 5px;
+    z-index: 1000;
+    background: #701616;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    float: none;
+    margin: 0;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+#nutrition-btn:hover {
+    background: #cf0404;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}    
 
 #finish{
     font: "Nunito", "sans-serif";
