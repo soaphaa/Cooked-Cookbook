@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
@@ -11,10 +12,60 @@
     
     <header>
         <h1> Cooked Cookbook </h1>
-        <p class="credit"> brought to you by le gang </p>
         <p class="homepage" id="home-button"></p>
     </header>
-    
+
+    <div class="panel" id="panel">
+
+        <p>Ingredients</p>
+
+       <!-- FULL RECIPE -->
+        <ul class="ingredients-list" id="ingredients-full">
+
+            <li><label><input type="checkbox">1 tbsp gochujang</label></li>
+            <li><label><input type="checkbox">1 tbsp honey</label></li>
+            <li><label><input type="checkbox">1 tsp mirin</label></li>
+            <li><label><input type="checkbox">2 tsp soy sauce</label></li>
+            <li><label><input type="checkbox">3 tsp sesame oil</label></li>
+            <li><label><input type="checkbox">2 salmon fillets</label></li>
+
+        </ul>
+
+        <!-- HALF RECIPE -->
+        <ul class="ingredients-list hidden" id="ingredients-half">
+
+            <li><label><input type="checkbox">1/2 tbsp gochujang</label></li>
+            <li><label><input type="checkbox">1/2 tbsp honey</label></li>
+            <li><label><input type="checkbox">1/2 tsp mirin</label></li>
+            <li><label><input type="checkbox">1 tsp soy sauce</label></li>
+            <li><label><input type="checkbox">1 1/2 tsp sesame oil</label></li>
+            <li><label><input type="checkbox">1 salmon fillet</label></li>
+
+        </ul>
+
+        <div class="recipe-scale">
+            <button id="full-btn">Regular</button>
+            <button id="half-btn">Half</button>
+        </div>
+
+    </div>
+
+<!-- updates!! -->
+
+    <button id="nutrition-btn">Nutrition</button>
+
+    <div class="panel" id="panel2">
+        <p>Nutrition Information</p>
+
+        <ol class="nutrition-list">
+            <li><span>Calories</span><span>475</span></li>
+            <li><span>Sugars</span><span>11g</span></li>
+            <li><span>Fat</span><span>29g</span></li>
+            <li><span>Protein</span><span>34g</span></li>
+            <li><span>Carbohydrates</span><span>14g</span></li>
+        </ol>
+    </div>
+
     <!-- timer toggle button, always visible -->
     <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Timer</button>
     
@@ -48,34 +99,43 @@
             </div>
         </div>
     </section>
-</header>
+    
+    <button id="nutrition-btn">Nutrition</button>
 
-<button id="nutrition-btn">Nutrition</button>
-
-<h1> ALYN SALMON !! </h1>
-<div class="panel" id="panel">
-    <p>Ingredients panel!!</p>
-    <ul class="ingredients-list">
-        <li><label><input type="checkbox"> Flour</label></li>
-        <li><label><input type="checkbox"> Sugar</label></li>
-        <li><label><input type="checkbox"> Eggs</label></li>
-    </ul>
-</div>
-
-<div>
+    <h1> ALYN SALMON !! </h1>
+    
     <div class = "instruction"> number one: the sauce !!
-        <p class="step"> grab a tablespoon of gochujang and spoon out into a bowl</p>
-        <p class="step"> toss in a tablespoon of honey as well </p>
-        <p class="step"> pour in a teaspoon of mirin </p>
-        <p class="step"> add (preferably dark) 2 teaspoons of soy sauce </p>
-        <p class="step"> add 3 teaspoons of sesame oil </p>
-        <p class="step"> mix well !! </p>
+            <p class="step"> grab a tablespoon of gochujang and spoon out into a bowl</p>
+            <p class="step"> toss in a tablespoon of honey as well </p>
+            <p class="step"> pour in a teaspoon of mirin </p>
+            <p class="step"> add (preferably dark) 2 teaspoons of soy sauce </p>
+            <p class="step"> add 3 teaspoons of sesame oil </p>
+            <p class="step"> mix well !! </p>
     </div>
     <div class = "instruction"> number two: your salmon !!
-        <p class="step"> optional: skin your salmon </p>
-        <p class="step"> cut your salmon into 1-inch cubes (or larger depending on preffered size) </p>
-        <p class="step-under"> just remember - size affects cooking time !! </p>
-        <p class="step"> toss the salmon cubes into the sauce, ensuring an even coat </p>
+            <p class="step"> optional: skin your salmon </p>
+            <p class="step"> cut your salmon into 1-inch cubes (or larger depending on preffered size) </p>
+            <p class="step-under"> just remember - size affects cooking time !! </p>
+            <p class="step"> toss the salmon cubes into the sauce, ensuring an even coat </p>
+    </div>
+    <div class = "instruction"> number three:  cooking prep !!
+            <p class="step"> grab a medium size pan for 1-2 pieces of salmon </p>
+            <p class="step"> turn your stove onto low-simmer heat </p>
+            <p class="step"> use the circumference of the pan as a guide on how much oil to put </p>
+            <p class="step-under"> do a circle in the shape of the ouline </p>
+            <p class="step"> wait until you can feel a medium amount of heat by hovering you hand over the pan's surface.</p> 
+    </div>
+    <div class = "instruction"> number four: cooking the salmon !!
+            <p class="step"> place all the cubes with enough space from the others to rotate </p>
+            <p class="step"> let the salmon cook for 2-3 minutes on one side, then flip and cook for another 2-3 minutes on the other side </p>
+        <p class="step-under"> of course, 2-3 minutes is a vague suggestions </p>
+    </div>
+    
+    <div>
+        <div class="finish">
+            <button id="finish">Finish</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     </div>
     <div class = "instruction"> number three:  cooking prep !!
         <p class="step"> grab a medium size pan for 1-2 pieces of salmon </p>
@@ -92,8 +152,9 @@
     </div>
 </div>
 
-<script src="script.js"></script>
-<script src="timer.js"></script>
+    
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
 
 </body>
 </html>
