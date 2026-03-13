@@ -1,3 +1,60 @@
+document.addEventListener("DOMContentLoaded", () => {
+    
+    
+    const confettiBtn = document.getElementById("finish");
+    
+    if (confettiBtn) {
+        confettiBtn.addEventListener("click", () => {
+            confetti({
+                particleCount: 2000,
+                spread: 6000,
+                origin: { y: 0.6 }
+            });
+        });
+    }
+    
+    
+    const checkboxes = document.querySelectorAll(
+        ".ingredients-list input[type=\"checkbox\"]"
+    );
+    
+    checkboxes.forEach(cb => {
+        cb.addEventListener("change", event => {
+            const li = event.target.closest("li");
+            if (!li) return;
+            
+            if (event.target.checked) {
+                li.classList.add("crossed");
+            } else {
+                li.classList.remove("crossed");
+            }
+        });
+    });
+    
+    const panel = document.getElementById("panel");
+    
+    let isDragging = false;
+    let offsetX, offsetY;
+    
+    panel.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        
+        offsetX = e.clientX - panel.offsetLeft;
+        offsetY = e.clientY - panel.offsetTop;
+    });
+    
+    document.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        
+        panel.style.left = (e.clientX - offsetX) + "px";
+        panel.style.top = (e.clientY - offsetY) + "px";
+    });
+    
+    document.addEventListener("mouseup", () => {
+        isDragging = false;
+    });
+    
+});
 
 const home = document.getElementById("home-button");
 
@@ -37,11 +94,18 @@ const recipes = [{
     image: "images/fried-rice.png"
 },
 {
+    title: "Salad",
+    description: "Arugula Salad: arugula, cherry tomatoes, cucumber, feta cheese, olive oil, balsamic vinegar",
+    tags: ["savory", "healthy"],
+    source: "salad.html",
+    image: "images/salad.png"
+},
+{
     title: "Cheesecake",
     description: "delicious cheesecake: cream cheese, graham crackers, sugar, eggs",
     flavortags: ["sweet"], mealtags:["dessert"], source: "cheesecake.html",
     image: "images/cheesecake.jpg"
-
+    
 }]
 const n_card = document.getElementById("no-card");
 const reccontainer = document.getElementById("recipe-container");
@@ -54,8 +118,9 @@ btn.addEventListener("click", function () {
     
     const textValue = u_search.value.trim();
     search(textValue);
-//take value from the search bar
+    //take value from the search bar
 });
+
 
 document.addEventListener('keydown', function(event) {
     const textValue = u_search.value.trim();
@@ -74,18 +139,18 @@ function search(txt){
             const title = document.createElement("rh1");
             const description = document.createElement("rbody");
             card.classList.add("recipe-card");
-
+            
             title.textContent = recipe.title;
-
+            
             description.textContent = recipe.description;
-
+            
             const image = document.createElement("img");
             image.src = recipe.image;
             image.alt = recipe.title + " Image";
             image.classList.add("recipe-image");
-
+            
             const f_btn = document.createElement("a");
-
+            
             f_btn.textContent = "VIEW RECIPE";
             f_btn.href = recipe.source;
             f_btn.classList.add("recipe-btn")
@@ -132,7 +197,7 @@ function search(txt){
 function genTagBtns(){
     //new list?? ish of tags
     const allTags = new Set();
-
+    
     //for each recipes, for each tag of recipe, add to the all tags set
     recipes.forEach(recipe =>{
         recipe.flavortags.forEach(tag=>{
@@ -142,12 +207,12 @@ function genTagBtns(){
             allTags.add(tag);
         })
     })
-
-
+    
+    
     //create a tag for all recipes
     createTagBtn("All");
-
-
+    
+    
     //create tags for the different ones
     allTags.forEach(tag =>{
         createTagBtn(tag);
@@ -257,6 +322,9 @@ if (fullBtn && halfBtn && fullList && halfList) {
     });
 
 }
+
+displayRec(recipes);
+genTagBtns();
 ////////////////////////////////////////////////////////////////////////////
 
 
@@ -290,6 +358,34 @@ if (nutritionBtn && nutritionPanel) {
 
             if (timerPopup && !timerPopup.closed) {
                 timerPopup.focus();
+                //display the filtered set
+            }
+        });
+        
+    }
+    
+    const checkboxes = document.querySelectorAll(
+        ".ingredients-list input[type=\"checkbox\"]"
+    );
+    
+    
+    const confettiBtn = document.getElementById("finish");
+    confettiBtn.addEventListener("click", () => {
+        confetti({
+            particleCount: 2000,
+            spread: 6000,
+            origin: { y: 0.6 }
+        })
+    });
+    
+    
+    checkboxes.forEach(cb => {
+        cb.addEventListener("change", event => {
+            const li = event.target.closest("li");
+            if (!li) return;
+            
+            if (event.target.checked) {
+                li.classList.add("crossed");
             } else {
 
                 timerPopup = window.open(
@@ -302,7 +398,29 @@ if (nutritionBtn && nutritionPanel) {
 
         });
 
+    });
+    
+    //profile stuff
+    
+    const profileBtn = document.getElementById("profile-btn");
+    if (profileBtn) {
+        profileBtn.addEventListener("click", () => {
+            window.location.href = "profile.html";
+        });
     }
-
-    genTagBtns();
-    displayRec(recipes);
+    const usernameDisplay = document.getElementById("profile-username");
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    
+    // show username if logged in
+    if (loggedInUser && usernameDisplay) {
+        usernameDisplay.textContent = loggedInUser;
+    } else if (usernameDisplay) {
+        usernameDisplay.textContent = "guest chef";
+    }
+    
+    if (profileBtn) {
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        if (loggedInUser) {
+            profileBtn.textContent = loggedInUser[0].toUpperCase(); // shows first letter of username on the icon
+        }
+    }
