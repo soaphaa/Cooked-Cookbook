@@ -1,33 +1,75 @@
-<!-- Your profile page! Saved + completed recipes + layout for other ppls profile -->
- <!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Your Profile</title>
-    
-    <link rel="stylesheet" href="profile.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile — Cooked Cookbook</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="profile.css">
 </head>
-
 <body>
+
     <header>
-        <h1> Your Profile </h1>
+        <h1>Cooked Cookbook</h1>
     </header>
 
-    <section id="profile-info">
-        <h2>Username: ChefMaster123</h2>
-        <p>Favorite Cuisine: Italian</p>
-        <p>Recipes Saved: 25</p>
-        <p>Recipes Completed: 10</p>
-    </section>
+    <div id="home-button"></div>
 
-    <section id="saved-recipes">
-        <h2>Saved Recipes</h2>
-        <ul>
-            <li><a href="salmon.html">Alyn Salmon</a></li>
-            <li><a href="pasta.html">Classic Pasta</a></li>
-            <li><a href="dessert.html">Chocolate Cake</a></li>
-            <!-- More saved recipes -->
-        </ul>
-    </section>
+    <main class="profile-page">
+
+        <!-- Profile card -->
+        <section class="profile-card">
+
+            <!-- pfp -->
+            <div class="profile-avatar-wrap">
+                <div class="profile-avatar" id="profile-avatar">
+                    <img src="images/pinkPfp.jpg" alt="404">
+                </div>
+            </div>
+
+            <!-- Name + bio -->
+            <div class="profile-info">
+                <h2 class="profile-username" id="profile-username">guest</h2>
+                <p class="profile-bio">bio empty.</p>
+            </div>
+
+            <!-- Stats row -->
+            <div class="profile-stats">
+                <div class="stat-block">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">recipes</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-block">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">favourites</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-block">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">completed</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Divider -->
+        <div class="profile-divider">
+            <span>✩ favourite recipes ✩</span>
+        </div>
+
+        <!-- Recipe grid placeholder -->
+        <section class="profile-recipes" id="profile-recipes">
+            <div class="profile-empty">
+                <p>no recipes yet !!</p>
+                <a href="index.html" class="recipe-btn">browse recipes</a>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+    <script src="profile.js"></script>
 </body>
+</html>
