@@ -232,49 +232,75 @@ function displayRec(filteredRecipes){
         reccontainer.appendChild(card);
      })
 }
+const fullBtn = document.getElementById("full-btn");
+const halfBtn = document.getElementById("half-btn");
 
-document.addEventListener("DOMContentLoaded", () => {
+const fullList = document.getElementById("ingredients-full");
+const halfList = document.getElementById("ingredients-half");
+
+if (fullBtn && halfBtn && fullList && halfList) {
+
+    fullBtn.addEventListener("click", () => {
+
+        fullList.classList.remove("hidden");
+        halfList.classList.add("hidden");
+
+    });
+
+    halfBtn.addEventListener("click", () => {
+
+        fullList.classList.add("hidden");
+        halfList.classList.remove("hidden");
+
+    });
+
+}
+////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////
+    const nutritionBtn = document.getElementById("nutrition-btn");
+const nutritionPanel = document.getElementById("panel2");
+
+if (nutritionBtn && nutritionPanel) {
+
+    nutritionBtn.addEventListener("click", () => {
+
+        if (nutritionPanel.style.display === "block") {
+            nutritionPanel.style.display = "none";
+        } else {
+            nutritionPanel.style.display = "block";
+        }
+
+    });
+
+}
+////////////////////////////////////////////////////////////////////////////
+
+
+
+    const timerToggleBtn = document.getElementById("timer-toggle-btn");
+    let timerPopup = null;
+
+    if (timerToggleBtn) {
+
+        timerToggleBtn.addEventListener("click", () => {
+
+            if (timerPopup && !timerPopup.closed) {
+                timerPopup.focus();
+            } else {
+
+                timerPopup = window.open(
+                    "timer.html",
+                    "Timer",
+                    "width=300,height=200,resizable=no"
+                );
+
+            }
+
+        });
+
+    }
 
     genTagBtns();
     displayRec(recipes);
-
-    const timerToggleBtn = document.getElementById("timer-toggle-btn");
-    if (!timerToggleBtn) {
-        console.log("timer-toggle-btn not found on this page");
-        return;
-    }
-    
-    let timerPopup = null;
-    timerToggleBtn.addEventListener("click", () => {
-        console.log("Timer toggle button clicked");
-        timerPopup = window.open("timer.html", "Timer", "width=260,height=260,resizable=no");
-    });
-    const checkboxes = document.querySelectorAll(
-        ".ingredients-list input[type=\"checkbox\"]"
-    );
-
-
-    const confettiBtn = document.getElementById("finish");
-        confettiBtn.addEventListener("click", () => {
-            confetti({
-                particleCount: 2000,
-                spread: 6000,
-                origin: { y: 0.6 }
-            })
-        });
-
-
-    checkboxes.forEach(cb => {
-        cb.addEventListener("change", event => {
-            const li = event.target.closest("li");
-            if (!li) return;
-
-            if (event.target.checked) {
-                li.classList.add("crossed");
-            } else {
-                li.classList.remove("crossed");
-            }
-        });
-    });
-    
-});
