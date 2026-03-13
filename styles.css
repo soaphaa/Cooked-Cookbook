@@ -28,8 +28,10 @@ p {
 }
 
 h1 {
+    margin-left:10vw;
+    margin-right:10vw;
     color: pink;
-    font-size: 3vw;
+    font-size: 4vw;
     text-align: center;
     line-height: 0.1em;
 }
@@ -52,7 +54,6 @@ header {
     padding-top: 5px;
     padding-bottom: 5px;
     width: 100%;
-    margin-bottom: 1em;
     top:0;
     z-index: 100;
     line-height:1em;
@@ -66,36 +67,30 @@ credit {
     line-height: 0.5em;
     font-weight: bold;
 }
-
-
 /* search bar !! */
 
 .search {
     /* the general search bar area i lowk didn't know what i was doing i js followed the w3 tutorial*/
     font-family: "Nunito", sans-serif;
     display: flex;
-    column-gap: 10px;
+    flex-direction: row;
     margin-bottom: 20px;
 }
 
 .search input[type=text] {
     /* where you type in the ingredient that you are looking for trust*/
     font-family: "Nunito", sans-serif;
-    float: left;
     width: 70vw;
+    height:5wv;
     margin-top: 10px;
     margin-left: 3px;
-
-    padding-left: 10px;
-    font-size: 20px;
-    border: 1px, solid, white;
+    font-size: 2vw;
     border-radius: 10px;
 }
 
 button {
     /* general button settings unless directly changed depending on the button*/
     font-family: "Nunito", sans-serif;
-    float: left;
     margin-top: 10px;
     padding: 10px;
     margin-left: 3px;
@@ -108,14 +103,17 @@ button {
 
 .search button {
     /* when you select a specific ingredient cause my enter key doesn't work */
-    width: 25vw;
+    width: 5vw;
     font-family: "Nunito", sans-serif;
     background-color: rgb(194, 91, 91);
     color: white;
     border: 1px, solid, white;
-    margin-right: 0;
-
-    border-radius: 20px;
+    padding-bottom:30px;
+    padding-top:5px;
+    text-align: center;
+    height: 5vw;
+    font-size:3vw;
+    border-radius:20px;
 }
 
 .search button:hover {
@@ -135,8 +133,6 @@ button {
     color: black;
     line-height: 1.5; /* Adds space for descenders */
 }
-
-/* recipe section for main*/
 
 /* recipe header/paragraph/textidk */
 rh1 {
@@ -279,8 +275,8 @@ rbody {
 
 /*for recipe-filter*/
 .filterlist{
-    margin-left:auto;
-    margin-right:auto;
+    margin-left:10px;
+    margin-right:10px;
     display: block;
     display: grid;
     gap: 2px;
@@ -319,18 +315,6 @@ rbody {
     transform: scale(1.03);
 }
 
-/* homepage button !! */
-
-/*#home-button{
-    display:grid;
-    float: left;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
-    column-gap: 20px;
-    /*padding: 2rem 
-
-}*/
-
-
 .hbtn{
     display: inline-block;
     align-self: center;
@@ -347,35 +331,34 @@ rbody {
     font-size: 20px;
 }
 
-
 /* instructions within the card */
 
 .instruction {
     margin-top: 2vh;
     margin-left: 15vw;
     margin-right: 15vw;
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
 
     padding-top: 20px;
     max-width: 100%;
 
     background-color: rgb(253, 241, 229);
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 30px;
 
-    font-size: 30px;
+    font-size: 3.2vw;
 }
 
 .step{
     position: relative;
-    padding-left: 30px;
+    padding-left: 35px;
     display: block;
     grid-template-columns: repeat(1, minmax(10vw, 20vw));
     color: rgb(167, 29, 29);
     margin-top:10px;
     margin-bottom: 10px;
-    font-size:30px;
+    font-size:3vw;
 }
 
 .step::before{
@@ -397,7 +380,7 @@ rbody {
     color: rgb(167, 29, 29);
     margin-top:10px;
     margin-bottom: 10px;
-    font-size:30px;
+    font-size:3vw;
 }
 
 .step-under::before{
@@ -427,23 +410,23 @@ rbody {
 }
 
 .timer-window {
-    font: "Nunito", "sans-serif";
-    position: fixed;
-    /* will always stay at the top corner evenwhenu scroll */
-    right: 16px;
-    top: 16px;
-    width: 260px;
-
-    background: rgba(255, 211, 122, 0.95);
-    /*replace with image maybe*/
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 16px;
-    box-shadow: 0 10px 28px rgba(218, 129, 14, 0.18);
-
-    padding: 12px;
-    z-index: 999;
-    backdrop-filter: blur(6px);
-    text-align: center;
+  font: "Nunito", "sans-serif";
+  position: fixed; /* will always stay at the top corner evenwhenu scroll */
+  right: 20px;
+  bottom: 20px;
+  width: 260px;
+  
+  background: rgba(235, 203, 203, 0.95); /*replace with image maybe*/
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(218, 14, 14, 0.18);
+  
+  padding: 12px;
+  z-index: 999;
+  backdrop-filter: blur(6px);
+  text-align: center;
+  cursor: grab;
+  user-select: none; /* prevents text from being highlighted while user is dragging above the timer */
 }
 
 h2.timer-header {
@@ -461,14 +444,63 @@ h2.timer-header {
     color: white;
 }
 
-.timer-minimize-btn {
-    background-color: red;
-    border: none;
-    font-size: 1.2em;
-    cursor: pointer;
+.timer-close-btn {
     position: absolute;
     top: 8px;
-    right: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #cc0000;
+    cursor: pointer;
+    float: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.timer-close-btn:hover {
+    color: #8b0000;
+    transform: scale(1.2);
+}
+
+.timer-window {
+    cursor: grab;
+}
+
+.timer-window:active {
+    cursor: grabbing;
+}
+
+.timer-display {
+    font-family: "Nunito", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #8b0000;
+    margin: 4px 0;
+}
+
+.timer-display.low {
+    color: #ff4400;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.timer-select {
+    font-family: "Nunito", sans-serif;
+    font-size: 13px;
+    background: rgba(255, 220, 150, 0.8);
+    border: 1px solid rgba(204, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 4px 8px;
+    color: #8b0000;
+    margin-bottom: 8px;
+    cursor: pointer;
+    width: 100%;
 }
 
 .hidden {
@@ -485,47 +517,6 @@ h2.timer-header {
     font-weight: bold;
     border-bottom: 2px solid black;
 }
-
-/* ring */
-.ring-wrap {
-    display: flex;
-    justify-content: center;
-}
-
-svg.ring {
-    width: 75px;
-    height: 75px;
-    transform: rotate(-90deg);
-    /* makes ring start at top instead of right */
-}
-
-.ring-bg {
-    fill: none;
-    stroke: rgba(0, 0, 0, 0.15);
-    stroke-width: 4;
-}
-
-.ring-progress {
-    fill: none;
-    stroke: #cc0000;
-    stroke-width: 4;
-    stroke-linecap: round;
-    stroke-dasharray: 157.08;
-    /* 2 × π × 25 matches your r="25" */
-    stroke-dashoffset: 0;
-    transition: stroke-dashoffset 1s linear, stroke 0.3s;
-}
-
-.ring-progress.low {
-    stroke: #ff0000;
-
-}
-
-.hidden {
-    display: none;
-}
-
-/* whatever else is added */
 
 .panel {
     position: fixed;
