@@ -8,6 +8,22 @@
   font-display: swap; /* Helps with page load performance */
 }
 
+/*main logo --> logo.png image*/
+.header-logo {
+    height: 120px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(180, 60, 60, 0.12);
+    backdrop-filter: blur(6px);
+    animation: fadeUp 0.5s ease forwards;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.05);
+}
+
 body {
     margin:0;
     font-family: "Nunito", sans-serif;
@@ -28,6 +44,8 @@ p {
 h1 {
     margin-left:10vw;
     margin-right:10vw;
+    margin-top:0.8em;
+    margin-bottom:0;
     color: pink;
     font-size: 4vw;
     text-align: center;
@@ -35,14 +53,24 @@ h1 {
 }
 
 /* header heading 1*/
-hh1 {
+/* hh1 {
     color: pink;
     font-size: 5vw;
     text-align: center;
     line-height: 1.5em;
     padding: 20px;
     margin-bottom: 50px;
+} */
+
+hh1 {
+    color: pink;
+    font-size: 5vw;
+    text-align: center;
+    line-height: 1em;
+    padding: 0; 
+    margin-bottom: 0; 
 }
+
 
 
 header {
@@ -384,115 +412,7 @@ rbody {
     left: 0;
     font-size:1em;
 }
-/* timer css */
 
-.timer-btn{
-    font-family: "Nunito", sans-serif;
-    z-index: 999;
-    position: sticky;
-    left:0;
-    float: left;
-    margin-top: 10px;
-    padding: 10px;
-    margin-left: 3px;
-    font-size: 20px;
-    background-color: rgb(167, 29, 29);
-    color: white;
-    border-radius: 10px;    
-}
-
-.timer-window {
-  font: "Nunito", "sans-serif";
-  position: fixed; /* will always stay at the top corner evenwhenu scroll */
-  right: 20px;
-  bottom: 20px;
-  width: 260px;
-  
-  background: rgba(235, 203, 203, 0.95); /*replace with image maybe*/
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 16px;
-  box-shadow: 0 10px 28px rgba(218, 14, 14, 0.18);
-  
-  padding: 12px;
-  z-index: 999;
-  backdrop-filter: blur(6px);
-  text-align: center;
-  cursor: grab;
-  user-select: none; /* prevents text from being highlighted while user is dragging above the timer */
-}
-
-h2.timer-header{
-  font-size: 1.5em;
-  margin-top: 8px;
-}
-
-.start-btn {
-  background-color: #04AA6D; 
-  color: white;
-}
-.stop-btn {
-  background-color: #f44336;
-  color: white;
-}
-
-.timer-close-btn {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 16px;
-    color: #cc0000;
-    cursor: pointer;
-    float: none;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-}
-
-.timer-close-btn:hover {
-    color: #8b0000;
-    transform: scale(1.2);
-}
-
-.timer-window {
-    cursor: grab;
-}
-
-.timer-window:active {
-    cursor: grabbing;
-}
-
-.timer-display {
-    font-family: "Nunito", sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    color: #8b0000;
-    margin: 4px 0;
-}
-
-.timer-display.low {
-    color: #ff4400;
-}
-
-.timer-controls {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-}
-
-.timer-select {
-    font-family: "Nunito", sans-serif;
-    font-size: 13px;
-    background: rgba(255, 220, 150, 0.8);
-    border: 1px solid rgba(204, 0, 0, 0.3);
-    border-radius: 20px;
-    padding: 4px 8px;
-    color: #8b0000;
-    margin-bottom: 8px;
-    cursor: pointer;
-    width: 100%;
-}
 
 .hidden {
     display: none;
@@ -552,74 +472,99 @@ h2.timer-header{
     color: black;
 }
 
-/* Nutrition panel specific styling */
-#panel2 {
-    background-color: white;           /* white panel */
-    border: 1px solid black;          /* thin black border */
-    padding: 1rem;                    /* space inside so border feels inset */
-    padding-top: 2rem;
-    box-sizing: border-box;           /* ensure padding included with width */
-    width: 300px;                     /* make panel wider */
-    font-size: 1.5rem;                /* larger text overall */
-    display: none;
-}
-
-#panel2 p {
-    font-size: 1.8rem;
-    margin: 0;
-    text-align: center;
-}
-
-#panel2 ol {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0 0 0; /*space from title */
-}
-
-#panel2 ol li {
-    display: flex;
-    justify-content: space-between;  /* pushes text left & right */
-    border-bottom: 1px solid black;
-    padding: 0.25rem 0;
-}
-
-/* remove bottom border from last item so it doesn't stick out */
-#panel2 ol li:last-child {
-    border-bottom: none;
-}
-
-#panel2 {
-    position: absolute;
-    top: 100px;
-    left: 200px;
-}
-
 /* Small nutrition button */
+
 #nutrition-btn {
-    position: right;
-    top: 20px;
+    position: fixed;
+    top: 40px;
     left: 20px;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    background-color: #d77979;
-    border: 1px solid #590000;
-    border-radius: 5px;
+    z-index: 1000;
+    background: #701616;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    float: none;
+    margin: 0;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#nutrition-btn:hover {
+    background: #cf0404;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}   
+
+#profile-btn {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    z-index: 1000;
+    background: #701616;
+    color: white;
+    border: none;
+    border-radius: 50%; /* circle */
+    width: 100px;      
+    height: 100px;
+    padding: 5px 5px;
+    font-family: "Nunito", sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    float: none;
+    margin: 0;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#profile-btn:hover {
+    background: #cf0404;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+#profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
 }
 
 #finish{
     font: "Nunito", "sans-serif";
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    background-color: #d77979;
-    border: 1px solid #590000;
+    width: 10vw;
+    height: 4vw;
+    bottom: 100px;
+    font-size: 2rem;
     border-radius: 5px;
     cursor: pointer;
     z-index: 1000;
+    margin-top: 2vh;
+    margin: 2vh auto;   /*centers it */
+    display:block;
+    margin-bottom: 2vh;
+    padding-bottom: 20px;
+    background: linear-gradient(270deg, #ff3939, #ffcc00, #37ff52, #35ddff, #b95dff, #ff6b6b); /*rainbowww*/
+    background-size: 300% 300%;
+    animation: rainbow 4s ease infinite;
+    justify-content: center;
+    text-align: center;
 }
+
+/*ehe rainbobw buttonnn*/
+@keyframes rainbow {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
 
 .auth-container {
     max-width: 400px;
@@ -731,4 +676,43 @@ h2.timer-header{
     height: 14px;
     cursor: pointer;
     accent-color: #cc0000;
+}
+
+/* Nutrition panel specific styling */
+#panel2 {
+    position: absolute;
+    top: 117px;
+    left: 20px;
+    background-color: white;           /* white panel */
+    border: 1px solid black;          /* thin black border */
+    padding: 1rem;                    /* space inside so border feels inset */
+    padding-top: 2rem;
+    box-sizing: border-box;           /* ensure padding included with width */
+    width: 300px;                     /* make panel wider */
+    font-size: 1.5rem;                /* larger text overall */
+    display: none;
+}
+
+#panel2 p {
+    font-size: 1.8rem;
+    margin: 0;
+    text-align: center;
+}
+
+#panel2 ol {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0 0; /*space from title */
+}
+
+#panel2 ol li {
+    display: flex;
+    justify-content: space-between;  /* pushes text left & right */
+    border-bottom: 1px solid black;
+    padding: 0.25rem 0;
+}
+
+/* remove bottom border from last item so it doesn't stick out */
+#panel2 ol li:last-child {
+    border-bottom: none;
 }
