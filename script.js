@@ -69,11 +69,7 @@ if (home){
 const btn = document.getElementById("submit");
 const u_search = document.getElementById("user_search")
 const recipes = [{
-    title: "Cookeroonies",
-    description: "yum cooks",
-    tags: ["sweet", "dessert"], 
-    ingredients: ["flour", "sugar", "eggs", "chocolate chips"],
-    source: "cookies.html",
+
     title: "Chocolate Chip Cookies",
     description: "chocolate chip cookies: brown sugar, white sugar, chocolate chips, flour, eggs, milk, baking soda, baking powder",
     tags: ["sweet", "dessert"], source: "cookies.html",
@@ -119,11 +115,13 @@ const reccontainer = document.getElementById("recipe-container");
 const input = document.getElementById("text");
 const filterset = document.getElementById("tagbtns")
 
-btn.addEventListener("click", function () {
-    const textValue = u_search.value.trim();
-    search(textValue);
-    //take value from the search bar
-});
+if (btn) {
+    btn.addEventListener("click", function () {
+        const textValue = u_search.value.trim();
+        search(textValue);
+        //takes value from search bar
+    });
+}
 
 
 document.addEventListener('keydown', function(event) {
@@ -181,6 +179,23 @@ function search(txt){
         no_card.textContent = "sorry !! there's no recipes available with that ingredient/title !!";
         reccontainer.appendChild(no_card);
     }
+}
+
+const nutritionBtn = document.getElementById("nutrition-btn");
+const nutritionPanel = document.getElementById("panel2");
+
+if (nutritionBtn && nutritionPanel) {
+    
+    nutritionBtn.addEventListener("click", () => {
+        
+        if (nutritionPanel.style.display === "block") {
+            nutritionPanel.style.display = "none";
+        } else {
+            nutritionPanel.style.display = "block";
+        }
+        
+    });
+    
 }
 
 function genTagBtns(){
@@ -279,16 +294,7 @@ function createTagBtn(tagname){
     const checkboxes = document.querySelectorAll(
         ".ingredients-list input[type=\"checkbox\"]"
     );
-    
-    
-    const confettiBtn = document.getElementById("finish");
-    confettiBtn.addEventListener("click", () => {
-        confetti({
-            particleCount: 2000,
-            spread: 6000,
-            origin: { y: 0.6 }
-        })
-    });
+
     
     
     checkboxes.forEach(cb => {
@@ -321,10 +327,28 @@ function createTagBtn(tagname){
     } else if (usernameDisplay) {
         usernameDisplay.textContent = "guest chef";
     }
+
+
+    const fullBtn = document.getElementById("full-btn");
+    const halfBtn = document.getElementById("half-btn");
     
-    if (profileBtn) {
-        const loggedInUser = localStorage.getItem("loggedInUser");
-        if (loggedInUser) {
-            profileBtn.textContent = loggedInUser[0].toUpperCase(); // shows first letter of username on the icon
-        }
+    const fullList = document.getElementById("ingredients-full");
+    const halfList = document.getElementById("ingredients-half");
+    
+    if (fullBtn && halfBtn && fullList && halfList) {
+        
+        fullBtn.addEventListener("click", () => {
+            
+            fullList.classList.remove("hidden");
+            halfList.classList.add("hidden");
+            
+        });
+        
+        halfBtn.addEventListener("click", () => {
+            
+            fullList.classList.add("hidden");
+            halfList.classList.remove("hidden");
+            
+        });
+        
     }
