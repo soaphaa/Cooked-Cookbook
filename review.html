@@ -11,8 +11,9 @@
 </head>
 
 <body>
-    <h1>Reviews</h1>
     <section class="review-section">
+        <hr class="review-section-divider">
+        <h1>Reviews</h1>
         <div class="review-summary">
             <div class="overall-review-container">
                 <h2 id="overall-score"></h2>
@@ -22,6 +23,32 @@
                     </template>
                 </div>
                 <h3 id="num-ratings"></h3>
+                <button class="write-review-btn">Write a Review</button>
+                <div class="popup-overlay"></div>
+                <div class="review-popup">
+                    <div class="user-ratings-container">
+                        <h4>Rate the Recipe:</h4>
+                        <div class="user-ratings">
+                            <template id="rating-button-template">
+                                <button class="rating-button">
+                                    <i class="fa-star"></i>
+                                </button>
+                            </template>
+                        </div>
+                    </div>
+                    <textarea class="review-textbox" placeholder="Type your review here..."></textarea>
+                    <div class="img-upload-container">
+                        <input id="img-upload" type="file" accept="image/*">
+                        <label for="img-upload">Upload Images
+                            <span>You can upload a max of 7 images!</span>
+                        </label>
+                    </div>
+                    <div class="uploaded-imgs-container"></div>
+                    <div class="popup-btns">
+                        <button id="cancel-btn">Cancel</button>
+                        <button id="submit-btn">Submit</button>
+                    </div>
+                </div>
             </div>
             <div class="rating-bars-container">
                 <template id="rating-bar-template">
@@ -37,7 +64,7 @@
         </div>
         <hr class="review-section-divider">
         <template id="review-template">
-            <div class="review-box" id="review-box">
+            <div class="review-box">
                 <div class="review-header">
                     <div class="profile-info">
                         <h2 id="username">Username</h2>
@@ -73,6 +100,15 @@
             <hr class="review-divider">
         </template>
     </section>
+
+    <template id="uploaded-img-template">
+        <div class="uploaded-img">
+            <img src="" alt="Image Upload">
+            <button>
+                <i class="fas fa-times-circle"></i>
+            </button>
+        </div>
+    </template>
 
     <script src="review.js"></script>
 
