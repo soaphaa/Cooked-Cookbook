@@ -1,37 +1,36 @@
-
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookbook Core</title>
-    
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="timer.css">
 </head>
 <body>
-
+    
     <header>
-        <h1> Cooked Cookbook </h1>
-        <p class = "homepage" id = "home-button">
-            homepage where
-            does ts work
-        </p>
+        <h1>    <img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"> </h1>
+        <p class="homepage" id="home-button"></p>
     </header>
-
+    
     <!-- timer toggle button, always visible -->
     <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Timer</button>
-
-
+    
     <section id="timer" class="timer-window hidden">
         <div class="timer-card" id="timer-card">
             <button id="timer-close-btn">x</button>
             <span class="timer-title" id="timer-header">Timer</span>
+
+            ///////////////////////////
             <div class="ring-wrap">
-                <svg class="ring" viewBox="0 0 75 75">
-                    <circle class="ring-bg" cx="30" cy="30" r="25"></circle>
-                    <circle class="ring-progress" id="ring" cx="30" cy="30" r="25"></circle>
+                <svg class="ring" viewBox="0 0 150 150">
+                    <circle class="ring-bg" cx="75" cy="75" r="60"></circle>
+                    <circle class="ring-progress" id="ring" cx="75" cy="75" r="60"></circle>
                 </svg>
             </div>
+            ///////////////////////////
+            
             <div class="timer-body">
                 <p id="timer-display">00:00</p>
                 <select id="timer-select">

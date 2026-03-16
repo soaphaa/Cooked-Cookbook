@@ -114,12 +114,13 @@ const filterset = document.getElementById("tagbtns")
 
 n_card.innerHTML = "";
 
-btn.addEventListener("click", function () {
-    
-    const textValue = u_search.value.trim();
-    search(textValue);
-    //take value from the search bar
-});
+if (btn) {
+    btn.addEventListener("click", function () {
+        const textValue = u_search.value.trim();
+        search(textValue);
+        //takes value from search bar
+    });
+}
 
 
 
@@ -186,13 +187,28 @@ function search(txt) {
         }
     })
     if (reccontainer.innerHTML == ""){
-            const no_card = document.createElement("rh1");
-            no_card.textContent = "sorry !! there's no recipes available with that ingredient/title !!";
-            n_card.appendChild(no_card);
+        const no_card = document.createElement("p");
+        no_card.classList.add("warning");
+        no_card.textContent = "sorry !! there's no recipes available with that ingredient/title !!";
+        reccontainer.appendChild(no_card);
     }
-    else {
-        n_card.innerHTML = "";
-    }
+}
+
+const nutritionBtn = document.getElementById("nutrition-btn");
+const nutritionPanel = document.getElementById("panel2");
+
+if (nutritionBtn && nutritionPanel) {
+    
+    nutritionBtn.addEventListener("click", () => {
+        
+        if (nutritionPanel.style.display === "block") {
+            nutritionPanel.style.display = "none";
+        } else {
+            nutritionPanel.style.display = "block";
+        }
+        
+    });
+    
 }
 
 function genTagBtns() {
@@ -368,16 +384,7 @@ if (nutritionBtn && nutritionPanel) {
     const checkboxes = document.querySelectorAll(
         ".ingredients-list input[type=\"checkbox\"]"
     );
-    
-    
-    const confettiBtn = document.getElementById("finish");
-    confettiBtn.addEventListener("click", () => {
-        confetti({
-            particleCount: 2000,
-            spread: 6000,
-            origin: { y: 0.6 }
-        })
-    });
+
     
     
     checkboxes.forEach(cb => {
@@ -418,7 +425,28 @@ if (nutritionBtn && nutritionPanel) {
     } else if (usernameDisplay) {
         usernameDisplay.textContent = "guest chef";
     }
+    const fullBtn = document.getElementById("full-btn");
+    const halfBtn = document.getElementById("half-btn");
     
+    const fullList = document.getElementById("ingredients-full");
+    const halfList = document.getElementById("ingredients-half");
+    
+    if (fullBtn && halfBtn && fullList && halfList) {
+        
+        fullBtn.addEventListener("click", () => {
+            
+            fullList.classList.remove("hidden");
+            halfList.classList.add("hidden");
+            
+        });
+        
+        halfBtn.addEventListener("click", () => {
+            
+            fullList.classList.add("hidden");
+            halfList.classList.remove("hidden");
+            
+        });
+        
     if (profileBtn) {
         const loggedInUser = localStorage.getItem("loggedInUser");
         if (loggedInUser) {

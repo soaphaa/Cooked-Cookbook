@@ -71,3 +71,5 @@ document.getElementById("show-signup-password").addEventListener("change", funct
     const input = document.getElementById("signup-password");
     input.type = this.checked ? "text" : "password";
 });
+
+//profile stuff
