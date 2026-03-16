@@ -72,25 +72,25 @@ const recipes = [{
 
     title: "Chocolate Chip Cookies",
     description: "chocolate chip cookies: brown sugar, white sugar, chocolate chips, flour, eggs, milk, baking soda, baking powder",
-    flavortags: ["sweet"], mealtags: ["dessert"], source: "cookies.html",
+    tags: ["sweet", "dessert"], source: "cookies.html",
     image: "images/chocolate-chip-cookie.jpeg"
 },
 {
     title: "Alyn Salmon",
     description: "alyn salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
-    flavortags: ["savory", "spicy", "sweet"], mealtags: ["lunch", "dinner"], source: "salmon.html",
+    tags: ["savory", "spicy", "sweet"], source: "salmon.html",
     image: "images/salmon.jpg"
 },
 {
     title: "Chocolate Chip Banana Bread",
     description: "chocolate chip banana bread: chocolate chips, banana, flour, egg, milk",
-    flavortags: ["sweet"], mealtags: ["dessert"],
-    source: "banana bread.html", image: "images/chocolate-chip-banana-bread.jpg"
+    tags: ["sweet", "dessert"],
+    source: "banana bread.html"
 },
 {
     title: "Kimchi Fried Rice",
     description: "Kimchi Fried Rice: kimchi, rice, sesame oil, gochujang, soy sauce, garlic, green onions, egg",
-    flavortags: ["savory", "spicy"], mealtags: ["lunch", "dinner"],
+    tags: ["savory", "spicy"],
     source: "fried rice.html",
     image: "images/fried-rice.png"
 },
@@ -104,11 +104,13 @@ const recipes = [{
 {
     title: "Cheesecake",
     description: "delicious cheesecake: cream cheese, graham crackers, sugar, eggs",
-    flavortags: ["sweet"], mealtags:["dessert"], source: "cheesecake.html",
+    tags: ["sweet", "dessert"], 
+    source: "cheesecake.html",
     image: "images/cheesecake.jpg"
     
 }]
-const n_card = document.getElementById("no-card");
+
+
 const reccontainer = document.getElementById("recipe-container");
 const input = document.getElementById("text");
 const filterset = document.getElementById("tagbtns")
@@ -124,8 +126,7 @@ if (btn) {
 
 document.addEventListener('keydown', function(event) {
     const textValue = u_search.value.trim();
-    if (event.key === 'Enter') {
-        n_card.innerHTML = "";
+    if (event.key === 'Enter' && textValue != null) {
         search(textValue);
     }
 });
@@ -154,32 +155,20 @@ function search(txt){
             f_btn.textContent = "VIEW RECIPE";
             f_btn.href = recipe.source;
             f_btn.classList.add("recipe-btn")
-
-            const ftagcont = document.createElement("div");
-            ftagcont.classList.add("taglist");
-
-            const mtagcont = document.createElement("div");
-            mtagcont.classList.add("taglist");
-
-            recipe.flavortags.forEach(tag => {
-                const ftag = document.createElement("rbody");
-                ftag.classList.add("recipe-tag");
-                ftag.textContent = tag;
-                ftagcont.appendChild(ftag);
+            
+            const tagcont = document.createElement("div");
+            tagcont.classList.add("taglist");
+            
+            recipe.tags.forEach(tag => {
+                const rtag = document.createElement("rbody");
+                rtag.classList.add("recipe-tag");
+                rtag.textContent = tag;
+                tagcont.appendChild(rtag);
             });
-
-            recipe.mealtags.forEach(tag => {
-                const mtag = document.createElement("rbody");
-                mtag.classList.add("recipe-tag");
-                mtag.textContent = tag;
-                mtagcont.appendChild(mtag);
-            });
-
             card.appendChild(title);
             card.appendChild(image);
             card.appendChild(f_btn);
-            card.appendChild(ftagcont);
-            card.appendChild(mtagcont);
+            card.appendChild(tagcont);
             
             reccontainer.appendChild(card);
         }
@@ -209,16 +198,13 @@ if (nutritionBtn && nutritionPanel) {
     
 }
 
-function genTagBtns() {
+function genTagBtns(){
     //new list?? ish of tags
     const allTags = new Set();
     
     //for each recipes, for each tag of recipe, add to the all tags set
     recipes.forEach(recipe =>{
-        recipe.flavortags.forEach(tag=>{
-            allTags.add(tag);
-        })
-        recipe.mealtags.forEach(tag=>{
+        recipe.tags.forEach(tag=>{
             allTags.add(tag);
         })
     })
@@ -244,11 +230,9 @@ function createTagBtn(tagname){
     tbtn.classList.add("recipe-filter");
     tbtn.addEventListener("click", () => {
         if (tagname == "All"){
-            n_card.innerHTML = "";
             //if the filter is js all of them
             displayRec(recipes);
         }else{
-            n_card.innerHTML = "";
             //filtered recipes = recipes that have "tagname" (the name of the filtered tag)
             const filtrecipes = recipes.filter(recipe =>
                 recipe.tags.includes(tagname));

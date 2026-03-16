@@ -1,29 +1,11 @@
 /* header information + font */
 
 @font-face {
-    font-family: 'Nunito';
-    /* Name the font */
-    src: url("Nunito-Variable.ttf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-    /* Helps with page load performance */
-}
-
-/*main logo --> logo.png image*/
-.header-logo {
-    height: 120px;
-    width: auto;
-    display: block;
-    margin: 0 auto;
-    box-shadow: 0 8px 32px rgba(180, 60, 60, 0.12);
-    backdrop-filter: blur(6px);
-    animation: fadeUp 0.5s ease forwards;
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.header-logo:hover {
-    transform: scale(1.05);
+  font-family: 'Nunito'; /* Name the font */
+  src: url("Nunito-Variable.ttf") format("truetype"); 
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; /* Helps with page load performance */
 }
 
 /*main logo --> logo.png image*/
@@ -43,15 +25,13 @@
 }
 
 body {
-    cursor: url("images/cursor1.png"), auto;
     margin:0;
     font-family: "Nunito", sans-serif;
-    background-color: #e69677;
+    background-color: #c16c6c;
     color: #1a1a1a;
     line-height: 1em;
     font-size: 20px;
     padding:0;
-    
 }
 
 p {
@@ -69,7 +49,7 @@ h1 {
     color: pink;
     font-size: 4vw;
     text-align: center;
-    line-height: 1em;
+    line-height: 0.1em;
 }
 
 /* header heading 1*/
@@ -78,7 +58,6 @@ h1 {
     font-size: 5vw;
     text-align: center;
     line-height: 1.5em;
-    font-weight: bold;
     padding: 20px;
     margin-bottom: 50px;
 } */
@@ -101,10 +80,9 @@ header {
     padding-top: 5px;
     padding-bottom: 5px;
     width: 100%;
-    margin-bottom: 1em;
-    top: 0;
+    top:0;
     z-index: 100;
-    line-height: 1em;
+    line-height:1em;
 }
 
 
@@ -128,19 +106,15 @@ credit {
 .search input[type=text] {
     /* where you type in the ingredient that you are looking for trust*/
     font-family: "Nunito", sans-serif;
-    background-color: rgb(194, 91, 91);
     width: 70vw;
-    color: white;
     height:5wv;
     margin-top: 10px;
-    margin-left: 10vw;
+    margin-left: 3px;
     font-size: 2vw;
     border-radius: 10px;
-    border-color: white;
-    font-weight: bold;
 }
 
-button {
+button{
     /* general button settings unless directly changed depending on the button*/
     font-family: "Nunito", sans-serif;
     margin-top: 10px;
@@ -151,11 +125,6 @@ button {
     color: white;
     border: none;
     border-radius: 10px;    
-    cursor: url("images/cursor1.cur"), auto;
-}
-
-button:hover{
-    cursor: url("images/cursor1.cur"), auto;
 }
 
 .search button {
@@ -164,7 +133,6 @@ button:hover{
     font-family: "Nunito", sans-serif;
     background-color: rgb(194, 91, 91);
     color: white;
-
     border: 1px, solid, white;
     padding-bottom:30px;
     padding-top:5px;
@@ -173,13 +141,23 @@ button:hover{
     font-size:3vw;
     border-radius:20px;
 }
-
 .search button:hover {
     font-family: "Nunito", sans-serif;
     background-color: rgb(161, 66, 66);
     border: 1px, solid, rgb(255, 203, 203);
 }
 
+.warning {
+    width: 100%;
+    justify-content: center; /* Centers horizontally */
+    text-align: center;
+    display: flex;
+    margin: 0;
+    margin-bottom: 0;
+    font-size: 5vw;
+    color: black;
+    line-height: 1.5; /* Adds space for descenders */
+}
 
 /* recipe header/paragraph/textidk */
 rh1 {
@@ -191,9 +169,8 @@ rh1 {
     font-size: 3vw;
     font-weight: bold;
     margin-top: 1em;
-    line-height: 1em;
+    line-height: 0.5em;
 }
-
 rbody {
     display: block;
     text-align: left;
@@ -210,16 +187,16 @@ rbody {
 
 /* recipe cards, etc. */
 
-#recipe-container {
+#recipe-container{
     /*contains all the recipe card*/
-    display: grid;
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    display:grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
     column-gap: 20px;
     /*padding: 2rem */
 
 }
 
-.recipe-card {
+.recipe-card{
     /* contains recipe title, description, image, etc.*/
     display: flex;
     flex-direction: column;
@@ -231,20 +208,19 @@ rbody {
 
     padding-bottom: 10px;
     padding-right: 1vw;
-
+    
     margin-bottom: 10px;
     margin-top: 1em;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 15px;
 
     box-shadow: 10px,10px, 0px #cc0000;
     border: 1px solid white;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
-.recipe-btn {
+.recipe-btn{
     /* visit recipe trust' button */
-    /* background-image: url("images/tempbtn.png"); */
+   /* background-image: url("images/tempbtn.png"); */
     background-size: cover;
     display: block;
     padding: 20px;
@@ -253,16 +229,16 @@ rbody {
 
     background-color: #cc0000;
     color: white;
-
+    
     text-decoration: none;
     border-radius: 40px;
 
     font-size:3vw;
     align-self: center;
     line-height: 1em;
-
+    
     transition: 0.3s;
-    font-weight: bold;
+    font-weight:bold;
 }
 
 
@@ -284,17 +260,16 @@ rbody {
     border-radius: 20px;
     text-align:center;
 
-    font-size: 2vw;
+    font-size: 3vw;
 }
-
 /* the ones on top of the recipes*/
 .recipe-filter{
     font-family: "Nunito", sans-serif;
     display: block;
     padding-top: 15px;
     padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left:10px;
+    padding-right:10px;
 
     background-color: #eb6b6b;
     color: rgb(247, 242, 242);
@@ -302,10 +277,9 @@ rbody {
     text-decoration: none;
     border-radius: 90px;
 
-    font-size:2vw;
+    font-size:3vw;
     text-align:center;
 }
-
 
 .recipe-filter:hover{
     background-color: #e04b4b;
@@ -314,14 +288,11 @@ rbody {
 }
 
 /* for recipe-tag*/
-.taglist {
+.taglist{
     align-self: center;
     display: flex;
-    margin-bottom: 0;
     flex-direction: row;
-    line-height: 1em;
-    column-gap: 10px;  /* Set to 0 to check if gap itself is the issue */
-    row-gap: 0px;
+    gap: 10px;  /* Set to 0 to check if gap itself is the issue */
   /*  display: grid;
     grid-template-columns: repeat(3, minmax(1px, 50px));*/
 }
@@ -330,21 +301,19 @@ rbody {
 .filterlist{
     margin-left:10px;
     margin-right:10px;
-    margin-bottom: 20px;
+    display: block;
     display: grid;
     gap: 2px;
     align-items: center;
-    grid-template-columns: repeat(4, minmax(1vw, auto));
+    grid-template-columns: repeat(auto-fit, minmax(1vw, auto));
 }
 
 
 .recipe-image {
     width: 80%;
     aspect-ratio: 2;
-    display: block;
-    justify-content: center;
-
-    object-fit: cover;
+ /*   object-fit: cover;*/
+    display: flex;
     border-radius: 30px;
     border: 1.5px solid rgba(255, 255, 255, 0.333);
     margin-top: 15px;
@@ -354,18 +323,16 @@ rbody {
 
 
 .recipe-btn:hover {
-    cursor: url("images/cursor1.cur"), auto;
     background-color: #990000;
-    transform: scale(1.03);
+    transform:scale(1.03);
 }
 
-
-.recipe-sited {
-    color: white;
+.recipe-sited{
+    color:white;
 }
 
-.recipe-card:hover {
-    transform: scale(1.03);
+.recipe-card:hover{
+    transform:scale(1.03);
 }
 
 .hbtn{
@@ -377,7 +344,7 @@ rbody {
 
     background-color: #cc0000;
     color: white;
-
+    
     text-decoration: none;
     border-radius: 20px;
 
@@ -403,47 +370,47 @@ rbody {
     font-size: 3.2vw;
 }
 
-.step {
+.step{
     position: relative;
     padding-left: 35px;
     display: block;
     grid-template-columns: repeat(1, minmax(10vw, 20vw));
     color: rgb(167, 29, 29);
-    margin-top: 10px;
+    margin-top:10px;
     margin-bottom: 10px;
     font-size:3vw;
 }
 
-.step::before {
+.step::before{
     content: "✩";
-    position: absolute;
+    position: absolute; 
     margin-right: 15px;
     color: rgb(218, 121, 121);
     display: block;
     left: 0;
-    font-size: 1em;
+    font-size:1em;
 }
 
-.step-under {
-    margin-left: 40px;
+.step-under{
+    margin-left:40px;
     position: relative;
     padding-left: 30px;
     display: block;
     grid-template-columns: repeat(1, minmax(10vw, 20vw));
     color: rgb(167, 29, 29);
-    margin-top: 10px;
+    margin-top:10px;
     margin-bottom: 10px;
     font-size:3vw;
 }
 
-.step-under::before {
+.step-under::before{
     content: "✩";
-    position: absolute;
+    position: absolute; 
     margin-right: 55px;
     color: rgb(218, 121, 121);
     display: block;
     left: 0;
-    font-size: 1em;
+    font-size:1em;
 }
 
 
@@ -457,14 +424,13 @@ rbody {
     margin-bottom: 16px;
 }
 
-.ring-progress.low {
-    stroke: #ff0000;
-
+.active-tab {
+    font-weight: bold;
+    border-bottom: 2px solid black;
 }
-/* whatever else is added */
 
 .panel {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 20vw;
@@ -477,16 +443,14 @@ rbody {
 }
 
 .panel p {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-align: center;
     margin: 0;
 }
 
 #panel p {
-    margin-bottom: 2rem;
-    /* space under ingredients title */
+    margin-bottom: 2rem; /* space under ingredients title */
 }
-
 .panel ul {
     list-style: none;
     padding: 0;
@@ -495,8 +459,7 @@ rbody {
 
 .panel li {
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-    /* make ingredient items larger */
+    font-size: 1.2rem; /* make ingredient items larger */
 }
 
 .panel input[type="checkbox"] {
@@ -508,6 +471,8 @@ rbody {
     text-decoration: line-through;
     color: black;
 }
+
+/* Small nutrition button */
 
 #nutrition-btn {
     position: fixed;
@@ -607,7 +572,7 @@ rbody {
     background: pink;
     border-radius: 24px;
     padding: 32px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     text-align: center;
 }
 
@@ -663,7 +628,6 @@ rbody {
     box-sizing: border-box;
     outline: none;
 }
-
 /* does ts worik */
 
 .auth-input:focus {
