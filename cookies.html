@@ -1,31 +1,36 @@
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookbook Core</title>
-    
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="timer.css">
 </head>
 <body>
+    
     <header>
-        <h1> Cooked Cookbook </h1>
-        <p class = "credit"> brought to you by le gang </p>
+        <h1>    <img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"> </h1>
+        <p class="homepage" id="home-button"></p>
     </header>
-
+    
     <!-- timer toggle button, always visible -->
     <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Timer</button>
-
-
+    
     <section id="timer" class="timer-window hidden">
         <div class="timer-card" id="timer-card">
             <button id="timer-close-btn">x</button>
             <span class="timer-title" id="timer-header">Timer</span>
+
+            ///////////////////////////
             <div class="ring-wrap">
-                <svg class="ring" viewBox="0 0 75 75">
-                    <circle class="ring-bg" cx="30" cy="30" r="25"></circle>
-                    <circle class="ring-progress" id="ring" cx="30" cy="30" r="25"></circle>
+                <svg class="ring" viewBox="0 0 150 150">
+                    <circle class="ring-bg" cx="75" cy="75" r="60"></circle>
+                    <circle class="ring-progress" id="ring" cx="75" cy="75" r="60"></circle>
                 </svg>
             </div>
+            ///////////////////////////
+            
             <div class="timer-body">
                 <p id="timer-display">00:00</p>
                 <select id="timer-select">
@@ -46,21 +51,68 @@
             </div>
         </div>
     </section>
+</header>
 
-    <homepage id = "home-button">
-    </homepage>
+<button id="nutrition-btn">Nutrition</button>
 
-    <h1> bookies !! </h1>
-    <description>
-        so im cheffing it up??
-        <ul> number one: lock in !! as per usuh
-            <li> grab ur ingredients </li>
-            <li> butter </li>
-            <li> bake </li>
-        </ul>
-    </description>
+<h1> Bookies </h1>
+<div class="panel" id="panel">
+    
+    <p>Ingredients</p>
+    
+    <!-- FULL RECIPE -->
+    <ul class="ingredients-list" id="ingredients-full">
+        
+        <li><label><input type="checkbox">1 tbsp idk</label></li>
+    
+        
+    </ul>
+    
+    <!-- HALF RECIPE -->
+    <ul class="ingredients-list hidden" id="ingredients-half">
+        
+        <li><label><input type="checkbox">1/2 tbsp idk</label></li>
+    
+        
+    </ul>
+    
+    <div class="recipe-scale">
+        <button id="full-btn">Regular</button>
+        <button id="half-btn">Half</button>
+    </div>
+    
+</div>
+<div>
+    <div class = "instruction"> insert text
+        <p class="step"> insert text</p>
+    
+    </div>
 
-    <script src="script.js"></script>
-    <script src="timer.js"></script>
+    
+</div>
+
+<div id="panel2">
+    <p>Nutrition Per Serving</p>
+    
+    <ol class="nutrition-list">
+        <li><span>Calories</span><span>475</span></li>
+        <li><span>Sugars</span><span>11g</span></li>
+        <li><span>Fat</span><span>29g</span></li>
+        <li><span>Protein</span><span>34g</span></li>
+        <li><span>Carbohydrates</span><span>14g</span></li>
+    </ol>
+</div>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js">
+</script>
+
+<div class = "finish">
+    <button id="finish">Finish</button>
+</div>
+
+<script src="script.js"></script>
+<script src="timer.js"></script>
+
 </body>
 </html>
