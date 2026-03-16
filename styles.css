@@ -43,13 +43,15 @@
 }
 
 body {
-    margin: 0;
+    cursor: url("images/cursor1.png"), auto;
+    margin:0;
     font-family: "Nunito", sans-serif;
-    background-color: #c16c6c;
+    background-color: #e69677;
     color: #1a1a1a;
     line-height: 1em;
     font-size: 20px;
-    padding: 0;
+    padding:0;
+    
 }
 
 p {
@@ -67,7 +69,7 @@ h1 {
     color: pink;
     font-size: 4vw;
     text-align: center;
-    line-height: 0.1em;
+    line-height: 1em;
 }
 
 /* header heading 1*/
@@ -76,6 +78,7 @@ h1 {
     font-size: 5vw;
     text-align: center;
     line-height: 1.5em;
+    font-weight: bold;
     padding: 20px;
     margin-bottom: 50px;
 } */
@@ -125,12 +128,16 @@ credit {
 .search input[type=text] {
     /* where you type in the ingredient that you are looking for trust*/
     font-family: "Nunito", sans-serif;
+    background-color: rgb(194, 91, 91);
     width: 70vw;
+    color: white;
     height:5wv;
     margin-top: 10px;
-    margin-left: 3px;
+    margin-left: 10vw;
     font-size: 2vw;
     border-radius: 10px;
+    border-color: white;
+    font-weight: bold;
 }
 
 button {
@@ -143,7 +150,12 @@ button {
     background-color: rgb(167, 29, 29);
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 10px;    
+    cursor: url("images/cursor1.cur"), auto;
+}
+
+button:hover{
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 .search button {
@@ -152,6 +164,7 @@ button {
     font-family: "Nunito", sans-serif;
     background-color: rgb(194, 91, 91);
     color: white;
+
     border: 1px, solid, white;
     padding-bottom:30px;
     padding-top:5px;
@@ -167,19 +180,6 @@ button {
     border: 1px, solid, rgb(255, 203, 203);
 }
 
-.warning {
-    width: 100%;
-    justify-content: center;
-    /* Centers horizontally */
-    text-align: center;
-    display: flex;
-    margin: 0;
-    margin-bottom: 0;
-    font-size: 5vw;
-    color: black;
-    line-height: 1.5;
-    /* Adds space for descenders */
-}
 
 /* recipe header/paragraph/textidk */
 rh1 {
@@ -191,7 +191,7 @@ rh1 {
     font-size: 3vw;
     font-weight: bold;
     margin-top: 1em;
-    line-height: 0.5em;
+    line-height: 1em;
 }
 
 rbody {
@@ -203,8 +203,8 @@ rbody {
     margin-right: 2em;
     margin-top: 20px;
     margin-bottom: 1em;
-    color: black;
-    line-height: 1em;
+    color:black;
+    line-height:1em;
     font-size: 1.75vw;
 }
 
@@ -213,7 +213,7 @@ rbody {
 #recipe-container {
     /*contains all the recipe card*/
     display: grid;
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
     column-gap: 20px;
     /*padding: 2rem */
 
@@ -234,9 +234,10 @@ rbody {
 
     margin-bottom: 10px;
     margin-top: 1em;
-    margin-left: 15px;
+    margin-left: auto;
+    margin-right: auto;
 
-    box-shadow: 10px, 10px, 0px #cc0000;
+    box-shadow: 10px,10px, 0px #cc0000;
     border: 1px solid white;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
@@ -256,7 +257,7 @@ rbody {
     text-decoration: none;
     border-radius: 40px;
 
-    font-size: 3vw;
+    font-size:3vw;
     align-self: center;
     line-height: 1em;
 
@@ -265,7 +266,7 @@ rbody {
 }
 
 
-.recipe-tag {
+.recipe-tag{
     /* on recipe card */
     font-family: "Nunito", sans-serif;
     padding: 10px;
@@ -281,13 +282,13 @@ rbody {
 
     text-decoration: none;
     border-radius: 20px;
-    text-align: center;
+    text-align:center;
 
-    font-size: 3vw;
+    font-size: 2vw;
 }
 
 /* the ones on top of the recipes*/
-.recipe-filter {
+.recipe-filter{
     font-family: "Nunito", sans-serif;
     display: block;
     padding-top: 15px;
@@ -297,15 +298,16 @@ rbody {
 
     background-color: #eb6b6b;
     color: rgb(247, 242, 242);
-
+    
     text-decoration: none;
     border-radius: 90px;
 
-    font-size: 3vw;
-    text-align: center;
+    font-size:2vw;
+    text-align:center;
 }
 
-.recipe-filter:hover {
+
+.recipe-filter:hover{
     background-color: #e04b4b;
     border: .5px, white, solid;
     transform: scale(1.05);
@@ -315,10 +317,12 @@ rbody {
 .taglist {
     align-self: center;
     display: flex;
+    margin-bottom: 0;
     flex-direction: row;
-    gap: 10px;
-    /* Set to 0 to check if gap itself is the issue */
-    /*  display: grid;
+    line-height: 1em;
+    column-gap: 10px;  /* Set to 0 to check if gap itself is the issue */
+    row-gap: 0px;
+  /*  display: grid;
     grid-template-columns: repeat(3, minmax(1px, 50px));*/
 }
 
@@ -326,11 +330,11 @@ rbody {
 .filterlist{
     margin-left:10px;
     margin-right:10px;
-    display: block;
+    margin-bottom: 20px;
     display: grid;
     gap: 2px;
     align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(1vw, auto));
+    grid-template-columns: repeat(4, minmax(1vw, auto));
 }
 
 
@@ -339,10 +343,8 @@ rbody {
     aspect-ratio: 2;
     display: block;
     justify-content: center;
-    margin: 30px auto;
-    transform: translateX(1.5vw);
+
     object-fit: cover;
-    object-position: center;
     border-radius: 30px;
     border: 1.5px solid rgba(255, 255, 255, 0.333);
     margin-top: 15px;
@@ -352,9 +354,11 @@ rbody {
 
 
 .recipe-btn:hover {
+    cursor: url("images/cursor1.cur"), auto;
     background-color: #990000;
     transform: scale(1.03);
 }
+
 
 .recipe-sited {
     color: white;
@@ -363,18 +367,6 @@ rbody {
 .recipe-card:hover {
     transform: scale(1.03);
 }
-
-/* homepage button !! */
-
-/*#home-button{
-    display:grid;
-    float: left;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
-    column-gap: 20px;
-    /*padding: 2rem 
-
-}*/
-
 
 .hbtn{
     display: inline-block;
@@ -465,13 +457,14 @@ rbody {
     margin-bottom: 16px;
 }
 
-.active-tab {
-    font-weight: bold;
-    border-bottom: 2px solid black;
+.ring-progress.low {
+    stroke: #ff0000;
+
 }
+/* whatever else is added */
 
 .panel {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     width: 20vw;
@@ -484,7 +477,7 @@ rbody {
 }
 
 .panel p {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     text-align: center;
     margin: 0;
 }
