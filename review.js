@@ -72,14 +72,14 @@ function initializeReviewWriting() {
                     isTargetBTNReached = true;
                 }
             }
-            changeSubmitBTN();
+            toggleSubmitBTN();
         })
         userRatings.appendChild(ratingBTNClone);
     }
 
     const reviewTextbox = document.querySelector(".review-textbox");
     reviewTextbox.addEventListener("input", () => {
-        changeSubmitBTN();
+        toggleSubmitBTN();
     })
 
     const uploadedImages = document.querySelector(".uploaded-imgs-container");
@@ -114,17 +114,20 @@ function initializeReviewWriting() {
                         break;
                     }
                 }
-                changeUploadImagesBTN(uploadedFiles);
-                changeSubmitBTN();
+                toggleUploadImagesBTN(uploadedFiles);
+                toggleSubmitBTN();
             })
             uploadedImages.appendChild(uploadedImgDiv);
         }
-        changeUploadImagesBTN(uploadedFiles);
-        changeSubmitBTN();
+        toggleUploadImagesBTN(uploadedFiles);
+        toggleSubmitBTN();
     })
 
     const cancelButton = document.querySelector("#cancel-btn");
     cancelButton.addEventListener("click", () => {
+        reviewPopup.classList.remove("show");
+        reviewPopupOverlay.classList.remove("show");
+        
         const ratingButtons = userRatings.querySelectorAll(".rating-button");
         ratingButtons.forEach(button => {
             const buttonIcon = button.querySelector("i");
@@ -136,17 +139,17 @@ function initializeReviewWriting() {
         textbox.value = "";
 
         uploadedImages.innerHTML = "";
-
-        reviewPopup.classList.remove("show");
-        reviewPopupOverlay.classList.remove("show");
+        toggleSubmitBTN();
     })
 
     const submitButton = document.querySelector("#submit-btn");
-    changeSubmitBTN();
-    // submitButton.addEventListener
+    submitButton.disabled = true;
+    submitButton.addEventListener("click", () => {
+        
+    })
 }
 
-function changeUploadImagesBTN(imagesArray) {
+function toggleUploadImagesBTN(imagesArray) {
     const imageUpload = document.querySelector("#img-upload");
     if (imagesArray.length >= 7) {
         imageUpload.disabled = true;
@@ -155,12 +158,12 @@ function changeUploadImagesBTN(imagesArray) {
     }
 }
 
-function changeSubmitBTN() {
+function toggleSubmitBTN() {
     const submitButton = document.querySelector("#submit-btn");
 
     let isRatingsEdited = false;
-    const userRatings = document.querySelector(".user-ratings .rating-button");
-    userRatings.some(button => {
+    const userRatings = document.querySelectorAll(".user-ratings .rating-button");
+    Array.from(userRatings).some(button => {
         if (button.querySelector("i").classList.contains("fas")) {
             isRatingsEdited = true;
             return true;
@@ -218,8 +221,6 @@ function updateReviewSummary() {
     }
 
 }
-
-
 
 function displayReview(review) {
     const reviewClone = reviewTemplate.content.cloneNode(true);
