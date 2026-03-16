@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const home = document.getElementById("home-button");
 
-if (home) {
+if (home){
     home.innerHTML = "";
     const hbt = document.createElement("a");
     hbt.textContent = "HOMEPAGE"
@@ -114,17 +114,15 @@ const filterset = document.getElementById("tagbtns")
 
 n_card.innerHTML = "";
 
-if (btn) {
-    btn.addEventListener("click", function () {
-        const textValue = u_search.value.trim();
-        search(textValue);
-        //takes value from search bar
-    });
-}
+btn.addEventListener("click", function () {
+    
+    const textValue = u_search.value.trim();
+    search(textValue);
+    //take value from the search bar
+});
 
 
-
-document.addEventListener('keydown', function (event) {
+document.addEventListener('keydown', function(event) {
     const textValue = u_search.value.trim();
     if (event.key === 'Enter') {
         n_card.innerHTML = "";
@@ -132,11 +130,11 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-function search(txt) {
-    if (!reccontainer) return;
+function search(txt){
+    if (!reccontainer) return;  
     reccontainer.innerHTML = "";
-    recipes.forEach(recipe => {
-        if ((recipe.description.toLowerCase().includes(txt.toLowerCase()))) {
+    recipes.forEach(recipe =>{
+        if ((recipe.description.toLowerCase().includes(txt.toLowerCase()))){
             const card = document.createElement("div");
             const title = document.createElement("rh1");
             const description = document.createElement("rbody");
@@ -187,31 +185,16 @@ function search(txt) {
         }
     })
     if (reccontainer.innerHTML == ""){
-        const no_card = document.createElement("p");
-        no_card.classList.add("warning");
-        no_card.textContent = "sorry !! there's no recipes available with that ingredient/title !!";
-        reccontainer.appendChild(no_card);
+            const no_card = document.createElement("rh1");
+            no_card.textContent = "sorry !! there's no recipes available with that ingredient/title !!";
+            n_card.appendChild(no_card);
+    }
+    else {
+        n_card.innerHTML = "";
     }
 }
 
-const nutritionBtn = document.getElementById("nutrition-btn");
-const nutritionPanel = document.getElementById("panel2");
-
-if (nutritionBtn && nutritionPanel) {
-    
-    nutritionBtn.addEventListener("click", () => {
-        
-        if (nutritionPanel.style.display === "block") {
-            nutritionPanel.style.display = "none";
-        } else {
-            nutritionPanel.style.display = "block";
-        }
-        
-    });
-    
-}
-
-function genTagBtns() {
+function genTagBtns(){
     //new list?? ish of tags
     const allTags = new Set();
     
@@ -231,13 +214,13 @@ function genTagBtns() {
     
     
     //create tags for the different ones
-    allTags.forEach(tag => {
+    allTags.forEach(tag =>{
         createTagBtn(tag);
     })
 }
 
 
-function createTagBtn(tagname) {
+function createTagBtn(tagname){
     const tagbtns = document.createElement("div");
     tagbtns.classList.add("filterlist");
     const tbtn = document.createElement("button");
@@ -258,15 +241,15 @@ function createTagBtn(tagname) {
             //display the filtered set
         }
     });
-
+    
     filterset.appendChild(tbtn);
 
 }
-
-function displayRec(filteredRecipes) {
+ 
+function displayRec(filteredRecipes){
     if (!reccontainer) return;
     reccontainer.innerHTML = "";
-    filteredRecipes.forEach(recipe => {
+    filteredRecipes.forEach(recipe =>{
         const card = document.createElement("div");
         const title = document.createElement("rh1");
         const description = document.createElement("rbody");
@@ -314,7 +297,7 @@ function displayRec(filteredRecipes) {
         card.appendChild(mtagcont);
         
         reccontainer.appendChild(card);
-    })
+     })
 }
 const fullBtn = document.getElementById("full-btn");
 const halfBtn = document.getElementById("half-btn");
@@ -384,7 +367,16 @@ if (nutritionBtn && nutritionPanel) {
     const checkboxes = document.querySelectorAll(
         ".ingredients-list input[type=\"checkbox\"]"
     );
-
+    
+    
+    const confettiBtn = document.getElementById("finish");
+    confettiBtn.addEventListener("click", () => {
+        confetti({
+            particleCount: 2000,
+            spread: 6000,
+            origin: { y: 0.6 }
+        })
+    });
     
     
     checkboxes.forEach(cb => {
@@ -425,28 +417,7 @@ if (nutritionBtn && nutritionPanel) {
     } else if (usernameDisplay) {
         usernameDisplay.textContent = "guest chef";
     }
-    const fullBtn = document.getElementById("full-btn");
-    const halfBtn = document.getElementById("half-btn");
     
-    const fullList = document.getElementById("ingredients-full");
-    const halfList = document.getElementById("ingredients-half");
-    
-    if (fullBtn && halfBtn && fullList && halfList) {
-        
-        fullBtn.addEventListener("click", () => {
-            
-            fullList.classList.remove("hidden");
-            halfList.classList.add("hidden");
-            
-        });
-        
-        halfBtn.addEventListener("click", () => {
-            
-            fullList.classList.add("hidden");
-            halfList.classList.remove("hidden");
-            
-        });
-        
     if (profileBtn) {
         const loggedInUser = localStorage.getItem("loggedInUser");
         if (loggedInUser) {
