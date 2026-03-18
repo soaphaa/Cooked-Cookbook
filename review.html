@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Section</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="review.css">
     <!-- <link rel="shortcut icon" href="images/salmon.jpg"> -->
     <script src="https://kit.fontawesome.com/44fe28e16d.js" crossorigin="anonymous"></script>
 </head>
@@ -18,8 +19,13 @@
             <div class="overall-review-container">
                 <h2 id="overall-score"></h2>
                 <div class="overall-ratings">
-                    <template id="ratings-template">
-                        <i class="fa-star"></i>
+                    <template id="ratings-with-fill-template">
+                        <div class="rating-star">
+                            <i class="fa-star"></i>
+                            <div class="rating-star-fill">
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
                     </template>
                 </div>
                 <h3 id="num-ratings"></h3>
@@ -67,10 +73,14 @@
             <div class="review-box">
                 <div class="review-header">
                     <div class="profile-info">
-                        <h2 id="username">Username</h2>
-                        <h3 id="date">March 9, 2026</h3>
+                        <h2 id="username"></h2>
+                        <h3 id="date"></h3>
                     </div>
-                    <div class="ratings"></div>
+                    <div class="ratings">
+                        <template id="ratings-template">
+                            <i class="fa-star"></i>
+                        </template>
+                    </div>
                 </div>
                 <div class="review-content">
                     <p id="review-paragraph"></p>

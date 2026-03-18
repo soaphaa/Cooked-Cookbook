@@ -21,7 +21,8 @@ const reviews = [{
 const reviewSection = document.querySelector(".review-section");
 
 const reviewTemplate = document.querySelector("#review-template");
-const ratingsTemplate = document.querySelector("#ratings-template");
+const ratingsTemplate = reviewTemplate.content.querySelector("#ratings-template");
+const ratingsWithFillTemplate = document.querySelector('#ratings-with-fill-template');
 const ratingButtonTemplate = document.querySelector("#rating-button-template");
 const ratingBarTemplate = document.querySelector("#rating-bar-template");
 const uploadedImgTemplate = document.querySelector("#uploaded-img-template");
@@ -30,6 +31,7 @@ const reviewImgTemplate = reviewTemplate.content.querySelector("#img-template");
 
 let totalRatings = 0;
 const ratingsDistribution = [0, 0, 0, 0, 0];
+const uploadedFiles = [];
 
 initializeReviewSummary();
 
@@ -43,11 +45,9 @@ initializeReviewWriting();
 
 function initializeReviewWriting() {
     const writeReviewButton = document.querySelector(".write-review-btn");
-    const reviewPopupOverlay = document.querySelector(".overall-review-container").querySelector(".popup-overlay");
     const reviewPopup = document.querySelector(".review-popup");
     writeReviewButton.addEventListener("click", () => {
-        reviewPopupOverlay.classList.add("show");
-        reviewPopup.classList.add("show");
+        showReviewPopup(true);
     })
 
     const userRatings = document.querySelector(".user-ratings");
@@ -84,7 +84,6 @@ function initializeReviewWriting() {
 
     const uploadedImages = document.querySelector(".uploaded-imgs-container");
 
-    const uploadedFiles = [];
     const fileInput = document.querySelector("#img-upload");
 
     fileInput.addEventListener("change", () => {
@@ -114,44 +113,67 @@ function initializeReviewWriting() {
                         break;
                     }
                 }
-                toggleUploadImagesBTN(uploadedFiles);
+                toggleUploadImagesBTN();
                 toggleSubmitBTN();
             })
             uploadedImages.appendChild(uploadedImgDiv);
         }
-        toggleUploadImagesBTN(uploadedFiles);
+        toggleUploadImagesBTN();
         toggleSubmitBTN();
     })
 
     const cancelButton = document.querySelector("#cancel-btn");
     cancelButton.addEventListener("click", () => {
-        reviewPopup.classList.remove("show");
-        reviewPopupOverlay.classList.remove("show");
-        
-        const ratingButtons = userRatings.querySelectorAll(".rating-button");
-        ratingButtons.forEach(button => {
-            const buttonIcon = button.querySelector("i");
-            buttonIcon.classList.remove("fas");
-            buttonIcon.classList.add("far");
-        })
-
-        const textbox = reviewPopup.querySelector(".review-textbox");
-        textbox.value = "";
-
-        uploadedImages.innerHTML = "";
+        showReviewPopup(false);
+        clearReviewPopup();
         toggleSubmitBTN();
     })
 
     const submitButton = document.querySelector("#submit-btn");
-    submitButton.disabled = true;
+    toggleSubmitBTN();
     submitButton.addEventListener("click", () => {
-        
+        showReviewPopup(false);
+
+        let review = constructReview();
+        displayReview(review);
+        updateReviewSummary();
+
+        clearReviewPopup();
+        toggleSubmitBTN();
     })
 }
 
-function toggleUploadImagesBTN(imagesArray) {
+function showReviewPopup(isVisible) {
+    const reviewPopup = document.querySelector(".review-popup");
+    const reviewPopupOverlay = document.querySelector(".popup-overlay");
+    if (isVisible) {
+        reviewPopup.classList.add("show");
+        reviewPopupOverlay.classList.add("show");
+    } else {
+        reviewPopup.classList.remove("show");
+        reviewPopupOverlay.classList.remove("show");
+    }
+}
+
+function clearReviewPopup() {
+    const ratingButtons = document.querySelectorAll(".user-ratings .rating-button");
+    ratingButtons.forEach(button => {
+        const buttonIcon = button.querySelector("i");
+        buttonIcon.classList.remove("fas");
+        buttonIcon.classList.add("far");
+    })
+
+    const textbox = document.querySelector(".review-textbox");
+    textbox.value = "";
+
+    const uploadedImages = document.querySelector(".uploaded-imgs-container");
+    uploadedImages.innerHTML = "";
+    uploadedFiles.length = 0;
+}
+
+function toggleUploadImagesBTN() {
     const imageUpload = document.querySelector("#img-upload");
-    if (imagesArray.length >= 7) {
+    if (uploadedFiles.length >= 7) {
         imageUpload.disabled = true;
     } else {
         imageUpload.disabled = false;
@@ -161,15 +183,9 @@ function toggleUploadImagesBTN(imagesArray) {
 function toggleSubmitBTN() {
     const submitButton = document.querySelector("#submit-btn");
 
-    let isRatingsEdited = false;
-    const userRatings = document.querySelectorAll(".user-ratings .rating-button");
-    Array.from(userRatings).some(button => {
-        if (button.querySelector("i").classList.contains("fas")) {
-            isRatingsEdited = true;
-            return true;
-        }
-    })
-    if (isRatingsEdited) {
+    const userRatingBTN = document.querySelector(".user-ratings .rating-button");
+
+    if (userRatingBTN.querySelector("i").classList.contains("fas")) {
         const textbox = document.querySelector(".review-textbox");
         const uploadedImgsContainer = document.querySelector(".uploaded-imgs-container");
         if (textbox.value.trim() !== "" || uploadedImgsContainer.children.length !== 0) {
@@ -187,8 +203,8 @@ function initializeReviewSummary() {
     const ratingBars = document.querySelector(".rating-bars-container");
 
     for (let i = 0; i < 5; i++) {
-        const ratingsClone = ratingsTemplate.content.cloneNode(true);
-        ratingsClone.querySelector("i").classList.add("fas");
+        const ratingsClone = ratingsWithFillTemplate.content.cloneNode(true);
+        // ratingsClone.querySelector(".frame").classList.add("far");
         overallRatings.append(ratingsClone);
 
         const ratingBarClone = ratingBarTemplate.content.cloneNode(true);
@@ -199,13 +215,32 @@ function initializeReviewSummary() {
 }
 
 function updateReviewSummary() {
-    let averageRatings = totalRatings / reviews.length; //?
+    const numReviews = document.querySelectorAll(".review-box").length;
+    let averageRatings = totalRatings / numReviews; //?
 
     const overallScore = document.querySelector("#overall-score");
     overallScore.textContent = averageRatings.toFixed(1);
-    // star
+
+    const overallRatings = document.querySelectorAll(".overall-ratings .rating-star");
+    for (let i = 0; i < 5; i++) {
+        const starFrame = overallRatings[i].querySelector("i");
+        const starFill = overallRatings[i].querySelector(".rating-star-fill");
+        starFrame.classList.remove("far", "fas");
+        starFill.style.clipPath = "inset(0 100% 0 0)";
+
+        if (i + 1 <= averageRatings) {
+            starFrame.classList.add("fas");
+        } else if (i + 1 > averageRatings && i < averageRatings) {
+            starFrame.classList.add("far");
+            let fractionalRating = 1 - (averageRatings - i);
+            starFill.style.clipPath = "inset(0 " + fractionalRating * 100 + "% 0 0)";
+        } else {
+            starFrame.classList.add("far");
+        }
+    }
+
     const numRatings = document.querySelector("#num-ratings"); //?
-    numRatings.textContent = reviews.length + " ratings";
+    numRatings.textContent = getNumInTwoDigits(numReviews) + " ratings";
 
     const ratingBarsContainer = document.querySelector(".rating-bars-container");
     const ratingBars = ratingBarsContainer.querySelectorAll(".rating-bar");
@@ -220,6 +255,40 @@ function updateReviewSummary() {
         ratingBarFilled.style.width = percentage + "%";
     }
 
+}
+
+function constructReview() {
+    // username
+
+    const dateFormat = { year: "numeric", month: "long", day: "numeric" };
+    const date = new Date().toLocaleDateString("en-US", dateFormat);
+
+    const ratings = document.querySelectorAll(".user-ratings .rating-button");
+    let userRatings = 0;
+    for (let i = 0; i < 5; i++) {
+        if (ratings[i].querySelector("i").classList.contains("fas")) {
+            userRatings++;
+        } else {
+            break;
+        }
+    }
+
+    const textbox = document.querySelector(".review-textbox");
+    const reviewParagraph = textbox.value;
+
+    const uploadedImages = document.querySelectorAll(".uploaded-imgs-container .uploaded-img");
+    let reviewImages = [];
+    uploadedImages.forEach(imageButton => {
+        reviewImages.push(imageButton.querySelector("img").src);
+    })
+
+    return {
+        username: "Username",
+        date: date,
+        ratings: userRatings,
+        review: reviewParagraph,
+        pictures: reviewImages
+    }
 }
 
 function displayReview(review) {
