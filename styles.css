@@ -128,10 +128,6 @@ button{
     font-weight:bold;    
 }
 
-div {
-    cursor: url("images/cursor1.cur"), auto;
-}
-
 button:hover{
     background: #cf0404;
     transform: scale(1.05);
@@ -374,14 +370,12 @@ rbody {
     margin-right: 15vw;
     margin-bottom: 20px;
     padding: 30px;
-
     padding-top: 20px;
     max-width: 100%;
-
     background-color: rgb(253, 241, 229);
     font-weight: bold;
     border-radius: 30px;
-
+    line-height: 1em;
     font-size: 3.2vw;
 }
 
