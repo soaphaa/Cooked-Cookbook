@@ -1,4 +1,4 @@
-indexedDB.deleteDatabase("ReviewsDataBase");
+// indexedDB.deleteDatabase("ReviewsDataBase");
 
 const reviewSection = document.querySelector(".review-section");
 
@@ -25,21 +25,13 @@ initializeReviewPage();
 async function initializeReviewPage() {
     await openDataBase();
     initializeReviewSummary();
-    // JSON.parse(localStorage.getItem(recipeName));
     await displayExistingReviews();
     updateReviewSummary();
     initializeReviewWriting();
 }
 
-function initializeLocalStorage() {
-    if (localStorage.getItem(recipeName) === null) {
-        localStorage.setItem(recipeName, JSON.stringify([]));
-    }
-}
-
 function initializeReviewWriting() {
     const writeReviewButton = document.querySelector(".write-review-btn");
-    // const reviewPopup = document.querySelector(".review-popup");
     writeReviewButton.addEventListener("click", () => {
         showReviewPopup(true);
     })
@@ -292,11 +284,7 @@ async function constructReview() {
         pictures: reviewImages
     }
 
-    // const reviewData = JSON.parse(localStorage.getItem(recipeName));
-    // reviewData.push(newReview);
-    // localStorage.setItem(recipeName, JSON.stringify(reviewData));
     saveReview(newReview);
-
     return newReview;
 }
 
