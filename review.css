@@ -168,6 +168,8 @@
     /* margin: 3rem 2.5rem; */
     margin-top: 0.2rem;
     margin-bottom: 0rem;
+    font-weight: 600;
+    font-size: 1.25rem;
 }
 
 .review-popup {

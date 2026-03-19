@@ -621,7 +621,7 @@ h2.timer-header{
 
 /* Nutrition panel specific styling */
 #panel2 {
-    position: absolute;
+    position: fixed;
     top: 117px;
     left: 20px;
     background-color: white;           /* white panel */

@@ -252,7 +252,10 @@ function updateReviewSummary() {
 }
 
 async function constructReview() {
-    const username = localStorage.getItem("loggedInUser");
+    let username = localStorage.getItem("loggedInUser");
+    if (username === null) {
+        username = "Guest";
+    }
 
     const dateFormat = { year: "numeric", month: "long", day: "numeric" };
     const date = new Date().toLocaleDateString("en-US", dateFormat);
