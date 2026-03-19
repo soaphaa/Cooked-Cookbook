@@ -68,16 +68,19 @@ document.addEventListener("DOMContentLoaded", () => {
 ////////////////////////////////////////////////////////////////////////////
 const fullBtn = document.getElementById("full-btn");
 const halfBtn = document.getElementById("half-btn");
+const doubleBtn = document.getElementById("double-btn");
 
 const fullList = document.getElementById("ingredients-full");
 const halfList = document.getElementById("ingredients-half");
+const doubleList = document.getElementById("ingredients-double");
 
-if (fullBtn && halfBtn && fullList && halfList) {
+if (fullBtn && halfBtn && doubleBtn && fullList && halfList && doubleList) {
 
     fullBtn.addEventListener("click", () => {
 
         fullList.classList.remove("hidden");
         halfList.classList.add("hidden");
+        doubleList.classList.add("hidden");
 
     });
 
@@ -85,6 +88,15 @@ if (fullBtn && halfBtn && fullList && halfList) {
 
         fullList.classList.add("hidden");
         halfList.classList.remove("hidden");
+        doubleList.classList.add("hidden");
+
+    });
+
+    doubleBtn.addEventListener("click", () => {
+
+        fullList.classList.add("hidden");
+        halfList.classList.add("hidden");
+        doubleList.classList.remove("hidden");
 
     });
 
@@ -112,29 +124,6 @@ if (nutritionBtn && nutritionPanel) {
 ////////////////////////////////////////////////////////////////////////////
 
 
-
-    const timerToggleBtn = document.getElementById("timer-toggle-btn");
-    let timerPopup = null;
-
-    if (timerToggleBtn) {
-
-        timerToggleBtn.addEventListener("click", () => {
-
-            if (timerPopup && !timerPopup.closed) {
-                timerPopup.focus();
-            } else {
-
-                timerPopup = window.open(
-                    "timer.html",
-                    "Timer",
-                    "width=300,height=200,resizable=no"
-                );
-
-            }
-
-        });
-
-    }
 
 
 
@@ -385,52 +374,6 @@ function search(txt){
     }
 }
 
-function genTagBtns(){
-    //new list?? ish of tags
-    const allTags = new Set();
-
-    //for each recipes, for each tag of recipe, add to the all tags set
-    recipes.forEach(recipe =>{
-        recipe.tags.forEach(tag=>{
-            allTags.add(tag);
-        })
-    })
-
-
-    //create a tag for all recipes
-    createTagBtn("All");
-
-
-    //create tags for the different ones
-    allTags.forEach(tag =>{
-        createTagBtn(tag);
-    })
-}
-
-
-function createTagBtn(tagname){
-    const tagbtns = document.createElement("div");
-    tagbtns.classList.add("filterlist");
-    const tbtn = document.createElement("button");
-    //tagbutton = tbtn
-    tbtn.textContent = tagname;
-    tbtn.classList.add("recipe-filter");
-    tbtn.addEventListener("click", () => {
-        if (tagname == "All"){
-            //if the filter is js all of them
-            displayRec(recipes);
-        }else{
-            //filtered recipes = recipes that have "tagname" (the name of the filtered tag)
-            const filtrecipes = recipes.filter(recipe =>
-                recipe.tags.includes(tagname));
-            displayRec(filtrecipes);
-            //display the filtered set
-        }
-    });
-    
-    filterset.appendChild(tbtn);
-
-}
  
 function displayRec(filteredRecipes){
     if (!reccontainer) return;
@@ -485,11 +428,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
     
-    let timerPopup = null;
-    timerToggleBtn.addEventListener("click", () => {
-        console.log("Timer toggle button clicked");
-        timerPopup = window.open("timer.html", "Timer", "width=260,height=260,resizable=no");
-    });
+
     const checkboxes = document.querySelectorAll(
         ".ingredients-list input[type=\"checkbox\"]"
     );
