@@ -312,7 +312,7 @@ rbody {
 .recipe-image {
     width: 80%;
     aspect-ratio: 2;
- /*   object-fit: cover;*/
+   object-fit: cover;
     display: flex;
     border-radius: 30px;
     border: 1.5px solid rgba(255, 255, 255, 0.333);
