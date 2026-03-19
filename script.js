@@ -371,9 +371,6 @@ function createTagBtn(tagname){
         })
     }
     
-    genTagBtns();
-    displayRec(recipes);
-    
     const checkboxes = document.querySelectorAll(
         ".ingredients-list input[type=\"checkbox\"]"
     );
@@ -436,3 +433,6 @@ function createTagBtn(tagname){
     }
 }
         
+genTagBtns();
+displayRec(recipes);
+    
