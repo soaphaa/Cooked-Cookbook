@@ -66,9 +66,7 @@ h1 {
 
 hh1 {
     color: pink;
-    font-size: 5vw;
     text-align: center;
-    line-height: 1em;
     padding: 0; 
     margin-bottom: 0; 
 }
@@ -121,7 +119,7 @@ button{
     font-family: "Nunito", sans-serif;
     margin-top: 10px;
     padding: 10px;
-    margin-left: 3px;
+    left: 20px;
     font-size: 20px;
     background-color: rgb(167, 29, 29);
     color: white;
@@ -351,17 +349,30 @@ rbody {
 .hbtn{
     display: inline-block;
     align-self: center;
-    margin-top: 10px;
-    padding: 20px;
-    margin-bottom: 0;
-
-    background-color: #cc0000;
-    color: white;
-    
     text-decoration: none;
-    border-radius: 20px;
+    position: fixed;
+    top: 180px;
+    left: 20px;
+    z-index: 1000;
+    background: #ffc4c4;
+    color: rgb(200, 0, 0);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    float: none;
+    margin: 0;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-    font-size: 30px;
+.hbtn:hover{
+    background: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
 
 /* instructions within the card */
@@ -398,13 +409,14 @@ rbody {
 
 .step{
     position: relative;
+    padding-right: 30px;
     padding-left: 35px;
     display: block;
     grid-template-columns: repeat(1, minmax(10vw, 20vw));
     color: rgb(167, 29, 29);
-    margin-top:10px;
-    margin-bottom: 10px;
-    font-size:3vw;
+    margin-top:20px;
+    margin-bottom: 20px;
+    font-size:2vw;
 }
 
 .step::before{
