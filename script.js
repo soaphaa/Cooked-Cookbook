@@ -1,3 +1,5 @@
+// localStorage.setItem("loggedInUser", "Guest");
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const fullBtn = document.getElementById("full-btn");
@@ -28,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-    
     
     const checkboxes = document.querySelectorAll(
         ".ingredients-list input[type=\"checkbox\"]"
@@ -88,20 +89,23 @@ const recipes = [{
 
     title: "Chocolate Chip Cookies",
     description: "chocolate chip cookies: brown sugar, white sugar, chocolate chips, flour, eggs, milk, baking soda, baking powder",
-    tags: ["sweet", "dessert"], source: "cookies.html",
+    tags: ["sweet", "dessert"], 
+    source: "cookies.html",
     image: "images/chocolate-chip-cookie.jpeg"
 },
 {
     title: "Alyn Salmon",
     description: "alyn salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
-    tags: ["savory", "spicy", "sweet"], source: "salmon.html",
-    image: "images/salmon.jpg"
+    tags: ["savory", "spicy", "sweet"], 
+    source: "salmon.html",
+    image: "images/alyn's salmon.jpeg"
 },
 {
     title: "Chocolate Chip Banana Bread",
     description: "chocolate chip banana bread: chocolate chips, banana, flour, egg, milk",
     tags: ["sweet", "dessert"],
-    source: "banana bread.html"
+    source: "banana bread.html",
+    image: "images/chocolate-chip-banana-bread.jpg"
 },
 {
     title: "Kimchi Fried Rice",

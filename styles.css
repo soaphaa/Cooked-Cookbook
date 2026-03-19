@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'Nunito'; /* Name the font */
   src: url("Nunito-Variable.ttf") format("truetype"); 
-  font-weight: bold;
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap; /* Helps with page load performance */
 }
@@ -310,7 +310,7 @@ rbody {
 .recipe-image {
     width: 80%;
     aspect-ratio: 2;
- /*   object-fit: cover;*/
+   object-fit: cover;
     display: flex;
     border-radius: 30px;
     border: 1.5px solid rgba(255, 255, 255, 0.333);

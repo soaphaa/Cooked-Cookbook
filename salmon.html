@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,48 +7,51 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="timer.css">
+    <link rel="stylesheet" href="review.css">
+    <script src="https://kit.fontawesome.com/44fe28e16d.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     
     <header>
         <hh1>    <img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"> </hh1>
     </header>
-
+    
     <p class="homepage" id="home-button"></p>
-
-        <div class="panel" id="panel">
-
+    
+    <div class="panel" id="panel">
+        
         <p>Ingredients</p>
-
-       <!-- FULL RECIPE -->
+        
+        <!-- FULL RECIPE -->
         <ul class="ingredients-list" id="ingredients-full">
-
+            
             <li><label><input type="checkbox">1 tbsp gochujang</label></li>
             <li><label><input type="checkbox">1 tbsp honey</label></li>
             <li><label><input type="checkbox">1 tsp mirin</label></li>
             <li><label><input type="checkbox">2 tsp soy sauce</label></li>
             <li><label><input type="checkbox">3 tsp sesame oil</label></li>
             <li><label><input type="checkbox">2 salmon fillets</label></li>
-
+            
         </ul>
-
+        
         <!-- HALF RECIPE -->
         <ul class="ingredients-list hidden" id="ingredients-half">
-
+            
             <li><label><input type="checkbox">1/2 tbsp gochujang</label></li>
             <li><label><input type="checkbox">1/2 tbsp honey</label></li>
             <li><label><input type="checkbox">1/2 tsp mirin</label></li>
             <li><label><input type="checkbox">1 tsp soy sauce</label></li>
             <li><label><input type="checkbox">1 1/2 tsp sesame oil</label></li>
             <li><label><input type="checkbox">1 salmon fillet</label></li>
-
+            
         </ul>
-
+        
         <div class="recipe-scale">
             <button id="full-btn">Regular</button>
             <button id="half-btn">Half</button>
         </div>
-
+        
     </div>
     
     <!-- timer toggle button, always visible -->
@@ -57,7 +61,7 @@
         <div class="timer-card" id="timer-card">
             <button id="timer-close-btn">x</button>
             <span class="timer-title" id="timer-header">Timer</span>
-
+            
             ///////////////////////////
             <div class="ring-wrap">
                 <svg class="ring" viewBox="0 0 150 150">
@@ -87,65 +91,207 @@
             </div>
         </div>
     </section>
-</header>
-
-<button id="nutrition-btn">Nutrition</button>
-
-<h1> ALYN SALMON !! </h1>
-
-<div>
-    <div class = "instruction"> number one: the sauce !!
-        <p class="step"> grab a tablespoon of gochujang and spoon out into a bowl</p>
-        <p class="step"> toss in a tablespoon of honey as well </p>
-        <p class="step"> pour in a teaspoon of mirin </p>
-        <p class="step"> add (preferably dark) 2 teaspoons of soy sauce </p>
-        <p class="step"> add 3 teaspoons of sesame oil </p>
-        <p class="step"> mix well !! </p>
-    </div>
-    <div class = "instruction"> number two: your salmon !!
-        <p class="step"> optional: skin your salmon </p>
-        <p class="step"> cut your salmon into 1-inch cubes (or larger depending on preffered size) </p>
-        <p class="step-under"> just remember - size affects cooking time !! </p>
-        <p class="step"> toss the salmon cubes into the sauce, ensuring an even coat </p>
-    </div>
-    <div class = "instruction"> number three:  cooking prep !!
-        <p class="step"> grab a medium size pan for 1-2 pieces of salmon </p>
-        <p class="step"> turn your stove onto low-simmer heat </p>
-        <p class="step"> use the circumference of the pan as a guide on how much oil to put </p>
-        <p class="step-under"> do a circle in the shape of the ouline </p>
-        <p class="step"> wait until you can feel a medium amount of heat by hovering you hand over the pan's surface.</p> 
-    </div>
-    <div class = "instruction"> number four: cooking the salmon !!
-        <p class="step"> place all the cubes with enough space from the others to rotate </p>
-        <p class="step"> let the salmon cook for 2-3 minutes on one side, then flip and cook for another 2-3 minutes on the other side </p>
-        <p class="step-under"> of course, 2-3 minutes is a vague suggestions </p>
+    
+    <button id="nutrition-btn">Nutrition</button>
+    
+    <h1> ALYN SALMON !! </h1>
+    <div class="panel" id="panel">
+        
+        <p>Ingredients</p>
+        
+        <!-- FULL RECIPE -->
+        <ul class="ingredients-list" id="ingredients-full">
+            
+            <li><label><input type="checkbox">1 tbsp gochujang</label></li>
+            <li><label><input type="checkbox">1 tbsp honey</label></li>
+            <li><label><input type="checkbox">1 tsp mirin</label></li>
+            <li><label><input type="checkbox">2 tsp soy sauce</label></li>
+            <li><label><input type="checkbox">3 tsp sesame oil</label></li>
+            <li><label><input type="checkbox">2 salmon fillets</label></li>
+            
+        </ul>
+        
+        <!-- HALF RECIPE -->
+        <ul class="ingredients-list hidden" id="ingredients-half">
+            
+            <li><label><input type="checkbox">1/2 tbsp gochujang</label></li>
+            <li><label><input type="checkbox">1/2 tbsp honey</label></li>
+            <li><label><input type="checkbox">1/2 tsp mirin</label></li>
+            <li><label><input type="checkbox">1 tsp soy sauce</label></li>
+            <li><label><input type="checkbox">1 1/2 tsp sesame oil</label></li>
+            <li><label><input type="checkbox">1 salmon fillet</label></li>
+            
+        </ul>
+        
+        <div class="recipe-scale">
+            <button id="full-btn">Regular</button>
+            <button id="half-btn">Half</button>
+        </div>
         
     </div>
-    
-</div>
-
-<div id="panel2">
-    <p>Nutrition Per Serving</p>
-    
-    <ol class="nutrition-list">
-        <li><span>Calories</span><span>475</span></li>
-        <li><span>Sugars</span><span>11g</span></li>
-        <li><span>Fat</span><span>29g</span></li>
-        <li><span>Protein</span><span>34g</span></li>
-        <li><span>Carbohydrates</span><span>14g</span></li>
-    </ol>
-</div>
-
-<script
-    src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js">
-</script>
-
-<div class = "finish">
-    <button id="finish">Finish</button>
-</div>
-
-<script src="script.js"></script>
-<script src="timer.js"></script>
-
-</body>
-</html>
+    <div>
+        <div class="instruction"> number one: the sauce !!
+            <p class="step"> grab a tablespoon of gochujang and spoon out into a bowl</p>
+            <p class="step"> toss in a tablespoon of honey as well </p>
+            <p class="step"> pour in a teaspoon of mirin </p>
+            <p class="step"> add (preferably dark) 2 teaspoons of soy sauce </p>
+            <p class="step"> add 3 teaspoons of sesame oil </p>
+            <p class="step"> mix well !! </p>
+        </div>
+        <div class="instruction"> number two: your salmon !!
+            <p class="step"> optional: skin your salmon </p>
+            <p class="step"> cut your salmon into 1-inch cubes (or larger depending on preffered size) </p>
+            <p class="step-under"> just remember - size affects cooking time !! </p>
+            <p class="step"> toss the salmon cubes into the sauce, ensuring an even coat </p>
+        </div>
+        <div class="instruction"> number three: cooking prep !!
+            <p class="step"> grab a medium size pan for 1-2 pieces of salmon </p>
+            <p class="step"> turn your stove onto low-simmer heat </p>
+            <p class="step"> use the circumference of the pan as a guide on how much oil to put </p>
+            <p class="step-under"> do a circle in the shape of the ouline </p>
+            <p class="step"> wait until you can feel a medium amount of heat by hovering you hand over the pan's
+                surface.</p>
+            </div>
+            <div class="instruction"> number four: cooking the salmon !!
+                <p class="step"> place all the cubes with enough space from the others to rotate </p>
+                <p class="step"> let the salmon cook for 2-3 minutes on one side, then flip and cook for another 2-3 minutes
+                    on the other side </p>
+                    <p class="step-under"> of course, 2-3 minutes is a vague suggestions </p>
+                    
+                </div>
+                
+            </div>
+            
+            <div id="panel2">
+                <p>Nutrition Per Serving</p>
+                
+                <ol class="nutrition-list">
+                    <li><span>Calories</span><span>475</span></li>
+                    <li><span>Sugars</span><span>11g</span></li>
+                    <li><span>Fat</span><span>29g</span></li>
+                    <li><span>Protein</span><span>34g</span></li>
+                    <li><span>Carbohydrates</span><span>14g</span></li>
+                </ol>
+            </div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js">
+            </script>
+            
+            <div class="finish">
+                <button id="finish">Finish</button>
+            </div>
+            
+            <div id="review-container">
+                <section class="review-section">
+                    <hr class="review-section-divider">
+                    <h1>Reviews</h1>
+                    <div class="review-summary">
+                        <div class="overall-review-container">
+                            <h2 id="overall-score"></h2>
+                            <div class="overall-ratings">
+                                <template id="ratings-with-fill-template">
+                                    <div class="rating-star">
+                                        <i class="fa-star"></i>
+                                        <div class="rating-star-fill">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                            <h3 id="num-ratings"></h3>
+                            <button class="write-review-btn">Write a Review</button>
+                            <div class="popup-overlay"></div>
+                            <div class="review-popup">
+                                <div class="user-ratings-container">
+                                    <h4>Rate the Recipe:</h4>
+                                    <div class="user-ratings">
+                                        <template id="rating-button-template">
+                                            <button class="rating-button">
+                                                <i class="fa-star"></i>
+                                            </button>
+                                        </template>
+                                    </div>
+                                </div>
+                                <textarea class="review-textbox" placeholder="Type your review here..."></textarea>
+                                <div class="img-upload-container">
+                                    <input id="img-upload" type="file" accept="image/*">
+                                    <label for="img-upload">Upload Images
+                                        <span>You can upload a max of 7 images!</span>
+                                    </label>
+                                </div>
+                                <div class="uploaded-imgs-container"></div>
+                                <div class="popup-btns">
+                                    <button id="cancel-btn">Cancel</button>
+                                    <button id="submit-btn">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rating-bars-container">
+                            <template id="rating-bar-template">
+                                <div class="rating-bar">
+                                    <h4 class="rating-level"></h4>
+                                    <div class="rating-bar-full">
+                                        <div class="rating-bar-filled"></div>
+                                    </div>
+                                    <h5 class="rating-percentage"></h5>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <hr class="review-section-divider">
+                    <template id="review-template">
+                        <div class="review-box">
+                            <div class="review-header">
+                                <div class="profile-info">
+                                    <h2 id="username"></h2>
+                                    <h3 id="date"></h3>
+                                </div>
+                                <div class="ratings">
+                                    <template id="ratings-template">
+                                        <i class="fa-star"></i>
+                                    </template>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                <p id="review-paragraph"></p>
+                                <div class="review-images">
+                                    <template id="img-template">
+                                        <button class="review-image-btn">
+                                            <img src="" alt="Review Image">
+                                        </button>
+                                        <div class="popup-overlay"></div>
+                                        <div class="img-popup">
+                                            <div class="popup-header">
+                                                <button class="close-img-btn">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </div>
+                                            <div class="popup-image">
+                                                <img src="" alt="Review Image">
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="review-divider">
+                    </template>
+                </section>
+                
+                <template id="uploaded-img-template">
+                    <div class="uploaded-img">
+                        <img src="" alt="Image Upload">
+                        <button>
+                            <i class="fas fa-times-circle"></i>
+                        </button>
+                    </div>
+                </template>
+            </div>
+            
+            <script src="review.js"></script>
+            <script src="script.js"></script>
+            <script src="timer.js"></script>
+            
+        </body>
+        
+        </html>

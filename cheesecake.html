@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,26 +12,100 @@
 </head>
 
 <body>
+
     <header>
         <h1> Cooked Cookbook </h1>
-        <p class="credit"> brought to you by le gang </p>
+        <p class="homepage" id="home-button">
+            homepage where
+            does ts work
+        </p>
     </header>
 
-    <homepage id="home-button">
-    </homepage>
+    <div class="homepage" id="home-button">
+        homepage where
+        does ts work
+    </div>
 
-    <h1> Kimchi Fried Rice </h1>
-    <description>
-        Original recipe by my mama
-        <ul> Insert Header (placeholder)
-            <li> Heat up a wide, flat pan or skillet. Add the vegetable oil. </li>
-            <li> Add the kimchi and stir fry for 1 minute over medium-high heat. </li>
-            <li> Add rice, kimchi juice, water, and gochujang. Stir all the ingredients together for about 7 minutes
-                with a wooden spoon. </li>
-            <li> Add sesame oil and remove from the heat. </li>
-            <li> Garnish with sprinkled chopped green onion, roasted gim, and sesame seeds. Serve right away.</li>
+
+    <!-- updates!! -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+    <div class="panel" id="panel">
+
+        <p>Ingredients</p>
+
+        <!-- FULL RECIPE -->
+        <ul class="ingredients-list" id="ingredients-full">
+
+            <li><label><input type="checkbox">1 ½ cups graham crackers</label></li>
+            <li><label><input type="checkbox">2 tbsp sugar</label></li>
+            <li><label><input type="checkbox">1 tbsp sugar</label></li>
+            <li><label><input type="checkbox">7 tbsp butter, melted</label></li>
+            <li><label><input type="checkbox">32 oz cream cheese</label></li>
+            <li><label><input type="checkbox">1 cup sugar</label></li>
+            <li><label><input type="checkbox">⅔ cup sour cream</label></li>
+            <li><label><input type="checkbox">1 ½ tsp vanilla extract</label></li>
+            <li><label><input type="checkbox">⅛ tsp salt</label></li>
+            <li><label><input type="checkbox">4 large eggs</label></li>
+
         </ul>
-    </description>
+
+        <!-- HALF RECIPE -->
+        <ul class="ingredients-list hidden" id="ingredients-half">
+
+            <li><label><input type="checkbox">¾ cup graham crackers</label></li>
+            <li><label><input type="checkbox">1 tbsp sugar</label></li>
+            <li><label><input type="checkbox">½ tbsp sugar</label></li>
+            <li><label><input type="checkbox">3 ½ tbsp butter, melted</label></li>
+            <li><label><input type="checkbox">16 oz cream cheese</label></li>
+            <li><label><input type="checkbox">½ cup sugar</label></li>
+            <li><label><input type="checkbox">⅓ cup sour cream</label></li>
+            <li><label><input type="checkbox">¾ tsp vanilla extract</label></li>
+            <li><label><input type="checkbox">1⁄16 tsp salt</label></li>
+            <li><label><input type="checkbox">2 large eggs</label></li>
+
+        </ul>
+
+        <div class="recipe-scale">
+            <button id="full-btn">Regular</button>
+            <button id="half-btn">Half</button>
+        </div>
+
+    </div>
+
+    <button id="nutrition-btn">Nutrition</button>
+
+    <div class="panel" id="panel2">
+        <p>Nutrition Per Serving</p>
+
+        <ol class="nutrition-list">
+            <li><span>Calories</span><span>500</span></li>
+            <li><span>Sugars</span><span>24g</span></li>
+            <li><span>Fat</span><span>36g</span></li>
+            <li><span>Protein</span><span>8g</span></li>
+            <li><span>Carbohydrates</span><span>32g</span></li>
+        </ol>
+    </div>
+
+
+    <h1> CHEESECAKE !! </h1>
+
+    <div>
+        Heh. So you wanna be a baller like me ?? well here r ur steps for ts
+        <div class="instruction"> number one: the sauce !!
+            <p> grab a tablespoon of gochujang and spoon out into a bowl</p>
+            <p> toss in a tablespoon of honey as well </p>
+            <p> pour in a teaspoon of mirin </p>
+            <p> add (preferably dark) 2 teaspoons of soy sauce </p>
+            <p> add 3 teaspoons of sesame oil </p>
+            <p> mix well !! </p>
+        </div>
+    </div>
+
+    <div class="finish">
+        <button id="finish">Finish</button>
+    </div>
 
     <div id="review-container">
         <section class="review-section">
@@ -138,8 +214,8 @@
         </template>
     </div>
 
-    <script src="script.js"></script>
     <script src="review.js"></script>
+    <script src="script.js"> </script>
 
 </body>
 
@@ -149,13 +225,5 @@
 
 </body>
 
-3 bowls steamed rice (3 cups)
-1 cup chopped kimchi (should be aged, well-fermented and sour)
-¼ cup kimchi juice (spicy red juice from a jar of kimchi)
-¼ cup water
-2-3 tablespoons gochujang
-3 teaspoons toasted sesame oil
-1 teaspoon vegetable oil
-1 green onion, chopped
-1 tablespoon roasted sesame seeds
-1 sheet of gim, roasted and shredded into seaweed strips
+
+</html>
