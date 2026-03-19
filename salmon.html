@@ -76,16 +76,13 @@
         <div class="timer-card" id="timer-card">
             <button id="timer-close-btn">x</button>
             <span class="timer-title" id="timer-header">Timer</span>
-
-            ///////////////////////////
             <div class="ring-wrap">
                 <svg class="ring" viewBox="0 0 150 150">
                     <circle class="ring-bg" cx="75" cy="75" r="60"></circle>
                     <circle class="ring-progress" id="ring" cx="75" cy="75" r="60"></circle>
                 </svg>
             </div>
-            ///////////////////////////
-
+            
             <div class="timer-body">
                 <p id="timer-display">00:00</p>
                 <select id="timer-select">
@@ -169,11 +166,13 @@
         </div>
         <div class="instruction"> number four: cooking the salmon !!
             <p class="step"> place all the cubes with enough space from the others to rotate </p>
-            <p class="step"> let the salmon cook for 2-3 minutes on one side, then flip and cook for another 2-3 minutes on the other side </p>
-        <p class="step-under"> of course, 2-3 minutes is a vague suggestions </p>
+            <p class="step"> let the salmon cook for 2-3 minutes on one side, then flip and cook for another 2-3 minutes
+                on the other side </p>
+            <p class="step-under"> of course, 2-3 minutes is a vague suggestions </p>
+
+        </div>
+
     </div>
-    
-</div>
 
     <div id="panel2">
         <p>Nutrition Per Serving</p>
@@ -190,10 +189,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js">
     </script>
 
-<div class = "finish">
-    <button id="finish">Finish</button>
-</div>
-
+    <div class="finish">
+        <button id="finish">Finish</button>
+    </div>
 
     <div id="review-container">
         <section class="review-section">
@@ -302,6 +300,7 @@
         </template>
     </div>
 
+    
     <script src="review.js"></script>
     <script src="script.js"></script>
     <script src="timer.js"></script>

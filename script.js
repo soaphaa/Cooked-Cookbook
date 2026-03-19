@@ -301,6 +301,50 @@ function createTagBtn(tagname){
     }
     
     
+    function displayRec(filteredRecipes){
+        if (!reccontainer) return;
+        reccontainer.innerHTML = "";
+        filteredRecipes.forEach(recipe =>{
+            const card = document.createElement("div");
+            const title = document.createElement("rh1");
+            const description = document.createElement("rbody");
+            card.classList.add("recipe-card");
+            
+            title.textContent = recipe.title;
+            
+            description.textContent = recipe.description;
+            
+            const image = document.createElement("img");
+            image.src = recipe.image;
+            image.alt = recipe.title + " Image";
+            image.classList.add("recipe-image");
+            
+            const f_btn = document.createElement("a");
+            
+            f_btn.textContent = "VIEW RECIPE";
+            f_btn.href = recipe.source;
+            f_btn.classList.add("recipe-btn")
+            
+            const tagcont = document.createElement("div");
+            tagcont.classList.add("taglist");
+            
+            recipe.tags.forEach(tag => {
+                const rtag = document.createElement("rbody");
+                rtag.classList.add("recipe-tag");
+                rtag.textContent = tag;
+                tagcont.appendChild(rtag);
+            });
+            
+            card.appendChild(title);
+            card.appendChild(image);
+            card.appendChild(f_btn);
+            card.appendChild(tagcont)
+            
+            reccontainer.appendChild(card);
+        })
+    }
+
+    
     const checkboxes = document.querySelectorAll(
         ".ingredients-list input[type=\"checkbox\"]"
     );
@@ -372,5 +416,6 @@ function createTagBtn(tagname){
         });
         
     }
+
  genTagBtns();
  displayRec(recipes);
