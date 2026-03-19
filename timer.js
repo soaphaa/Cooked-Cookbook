@@ -9,8 +9,7 @@ const timerWindow = document.getElementById("timer");
 const timerToggleBtn = document.getElementById("timer-toggle-btn"); //MAIN
 const timerCloseBtn = document.getElementById("timer-close-btn");
 
-const CIRCUMFERENCE = 2 * Math.PI * 25;
-
+const CIRCUMFERENCE = 2 * Math.PI * 60;
 let isRunning = false;
 let countdownInterval;
 let totalSeconds = 60;
@@ -26,7 +25,12 @@ function formatTime(seconds){
     return `${m}:${s}`;
 }
 
+// add this right after your const declarations at the top
+console.log("ring element:", ring);
+console.log("CIRCUMFERENCE:", CIRCUMFERENCE);
+
 function updateRing(){
+        console.log("updateRing called, offset:", CIRCUMFERENCE * (1 - remainingSeconds / totalSeconds));
     ring.style.strokeDashoffset = CIRCUMFERENCE * (1 - remainingSeconds / totalSeconds);
 }
 
@@ -53,6 +57,7 @@ function startTimer(){
             toggleButton.classList.remove('stop');
             toggleButton.classList.add('start');
             console.log("Timer finished");
+            triggerAlarm();
         }
     }, 1000);
 }
@@ -114,3 +119,21 @@ document.addEventListener("mousemove", function(e) {
 document.addEventListener("mouseup", function() {
     isDragging = false;
 });
+
+
+//ALARM SOUND for when timer goes off
+const alarmSound = new Audio("assets/alarm.mp3");
+
+function triggerAlarm(){
+    timerWindow.classList.remove("hidden");
+    alarmSound.play();
+    const notification = document.createElement("div");
+    notification.id = "timer notification";
+    notification.textContent = "TIME'S UP!!";
+    timerWindow.appendChild(notification);
+
+    //remove after 5 seconds
+    setTimeout(() => {
+        notification.remove();
+    }, 5000);
+}
