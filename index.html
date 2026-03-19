@@ -1,6 +1,3 @@
-<!-- Home page (recipe list + search + buttons to go to the other sections) -->
-<!--//how do i make a recipe cookbook website usingg html, css, and js with a red-white gingham/picnic aesthetic with recipe tags (e.g. meals, dietary restrictions, etc.), heavily inspired by the all recipes website-->
-<!--pls explain and comment the code-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,27 +11,31 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
-    
-<header id = "hpg">
-
-    <hh1>    <img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"> </hh1>
-    <div class = "search">
-        <input type ="text" id = "user_search" >
-        <button id="submit"> 🔍︎ </button>
-    </div>
-</header> 
 
 <body>
 
-    <div id = "tagbtns" class = "filterlist">
-    </div>
-    <section id = "no-card"> </section>
+    <header id="hpg">
+        <hh1>
+            <img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo">
+        </hh1>
+        <div class="search">
+            <input type="text" id="user_search" placeholder="search ingredients or recipes...">
+            <button id="submit">🔍︎</button>
+        </div>
+    </header>
 
-    <section id = "recipe-container">     
-    </section>
+    <!-- Profile button — moved out of <head> where it was before -->
+    <a href="profile.html" id="profile-btn">
+        <img src="images/pinkPfp.jpg" alt="profile" id="profile-img">
+    </a>
+
+    <div id="tagbtns" class="filterlist"></div>
+
+    <section id="no-card"></section>
+
+    <section id="recipe-container"></section>
 
     <script src="script.js"></script>
 
 </body>
 </html>
-</DOCTYPE>
