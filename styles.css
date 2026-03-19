@@ -122,7 +122,7 @@ button{
     color: white;
     border: none;
     border-radius: 10px;
-    font-weight:bold;    
+    font-weight:bold;
 }
 
 button:hover{
@@ -152,6 +152,7 @@ button:hover{
     font-family: "Nunito", sans-serif;
     background-color: rgb(161, 66, 66);
     border: 1px, solid, rgb(255, 203, 203);
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 .warning {
@@ -293,6 +294,7 @@ rbody {
     border: .5px, white, solid;
     border-radius: 90px;
     transform: scale(1.05);
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 /* for recipe-tag*/
@@ -333,6 +335,7 @@ rbody {
 .recipe-btn:hover {
     background-color: #990000;
     transform:scale(1.03);
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 .recipe-sited{
@@ -341,6 +344,7 @@ rbody {
 
 .recipe-card:hover{
     transform:scale(1.03);
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 .hbtn{
@@ -370,6 +374,7 @@ rbody {
     background: #ffffff;
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 /* instructions within the card */
@@ -522,7 +527,7 @@ rbody {
     width: 300px;
     /* make panel wider */
     font-size: 1.5rem;
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 200px;
     /* larger text overall */
@@ -582,6 +587,7 @@ rbody {
     background: #cf0404;
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    cursor: url("images/cursor1.cur"), auto;
 }   
 
 
@@ -611,6 +617,7 @@ rbody {
     background: #cf0404;
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 #profile-img {
@@ -692,6 +699,7 @@ rbody {
 #auth-tabs button:hover {
     background: #cc0000;
     color: white;
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 .auth-heading {
@@ -763,22 +771,6 @@ rbody {
     accent-color: #cc0000;
 }
 
-/* Nutrition panel specific styling */
-#panel2 {
-    position: absolute;
-    top: 117px;
-    left: 20px;
-    background-color: white;           /* white panel */
-    border: 1px solid black;          /* thin black border */
-    padding: 1rem;                    /* space inside so border feels inset */
-    padding-top: 2rem;
-    box-sizing: border-box;           /* ensure padding included with width */
-    width: 300px;                     /* make panel wider */
-    font-size: 1.5rem;                /* larger text overall */
-    display: none;
-    transition: opacity 0.2s ease;
-}    
-
 .review-section {
     margin: 2rem 5rem;
 }
@@ -789,6 +781,7 @@ rbody {
 
 .review-section button:hover {
     filter: brightness(90%);
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 .review-section button:active {
