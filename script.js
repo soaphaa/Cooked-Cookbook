@@ -89,7 +89,7 @@ const recipes = [{
     description: "chocolate chip banana bread: chocolate chips, banana, flour, egg, milk",
     tags: ["sweet", "dessert"],
     source: "banana bread.html",
-    image: "/images/chocolate-chip-banana-bread.jpg"
+    image: "images/chocolate-chip-banana-bread.jpg"
 },
 {
     title: "Kimchi Fried Rice",
