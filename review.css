@@ -5,11 +5,14 @@
 }
 
 .review-section button {
-    transition: all 0.08s;
+    transition: all 0.05s;
 }
 
 .review-section button:hover:enabled {
     filter: brightness(90%);
+    background: transparent;
+    transform: scale(1);
+    box-shadow: none;
 }
 
 .review-section button:active:enabled {
@@ -165,6 +168,8 @@
     /* margin: 3rem 2.5rem; */
     margin-top: 0.2rem;
     margin-bottom: 0rem;
+    font-weight: 600;
+    font-size: 1.25rem;
 }
 
 .review-popup {

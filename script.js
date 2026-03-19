@@ -88,7 +88,8 @@ const u_search = document.getElementById("user_search")
 const recipes = [{
     title: "Chocolate Chip Cookies",
     description: "chocolate chip cookies: brown sugar, white sugar, chocolate chips, flour, eggs, milk, baking soda, baking powder",
-    tags: ["sweet", "dessert"], source: "cookies.html",
+    tags: ["sweet", "dessert"], 
+    source: "cookies.html",
     image: "images/chocolate-chip-cookie.jpeg"
 },
 {
@@ -363,8 +364,43 @@ function createTagBtn(tagname){
         usernameDisplay.textContent = "guest chef";
     }
 
-genTagBtns();
-displayRec(recipes);    
+
+    const fullBtn = document.getElementById("full-btn");
+    const halfBtn = document.getElementById("half-btn");
+    const doubleBtn = document.getElementById("double-btn");
+
+    const fullList = document.getElementById("ingredients-full");
+    const halfList = document.getElementById("ingredients-half");
+    const doubleList = document.getElementById("ingredients-double");
+
+    if (fullBtn && halfBtn && doubleBtn && fullList && halfList && doubleList) {
+
+        fullBtn.addEventListener("click", () => {
+
+            fullList.classList.remove("hidden");
+            halfList.classList.add("hidden");
+            doubleList.classList.add("hidden");
+
+        });
+
+        halfBtn.addEventListener("click", () => {
+
+            fullList.classList.add("hidden");
+            halfList.classList.remove("hidden");
+            doubleList.classList.add("hidden");
+
+        });
+
+        doubleBtn.addEventListener("click", () => {
+
+            fullList.classList.add("hidden");
+            halfList.classList.add("hidden");
+            doubleList.classList.remove("hidden");
+
+        });
+
+    }
 
 
-    
+ genTagBtns();
+ displayRec(recipes);
