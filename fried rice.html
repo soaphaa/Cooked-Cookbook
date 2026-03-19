@@ -2,17 +2,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookbook Core</title>
-    
+
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/44fe28e16d.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header>
         <h1> Cooked Cookbook </h1>
-        <p class = "credit"> brought to you by le gang </p>
+        <p class="credit"> brought to you by le gang </p>
     </header>
 
-    <homepage id = "home-button">
+    <homepage id="home-button">
     </homepage>
 
     <h1> Kimchi Fried Rice </h1>
@@ -21,20 +23,33 @@
         <ul> Insert Header (placeholder)
             <li> Heat up a wide, flat pan or skillet. Add the vegetable oil. </li>
             <li> Add the kimchi and stir fry for 1 minute over medium-high heat. </li>
-            <li> Add rice, kimchi juice, water, and gochujang. Stir all the ingredients together for about 7 minutes with a wooden spoon. </li>
+            <li> Add rice, kimchi juice, water, and gochujang. Stir all the ingredients together for about 7 minutes
+                with a wooden spoon. </li>
             <li> Add sesame oil and remove from the heat. </li>
             <li> Garnish with sprinkled chopped green onion, roasted gim, and sesame seeds. Serve right away.</li>
         </ul>
     </description>
+
+    <div id="review-container"></div>
+
+    <script type="module">
+        fetch("review.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("review-container").innerHTML = html;
+                import("./review.js")
+                    .catch(err => console.error(err));
+            });
+    </script>
 
     <script src="script.js"></script>
 
 
 </body>
 
-    <button id="timer-toggle-btn">Toggle Timer</button>
+<button id="timer-toggle-btn">Toggle Timer</button>
 
-    <script src="timer.js"></script>
+<script src="timer.js"></script>
 
 </body>
 

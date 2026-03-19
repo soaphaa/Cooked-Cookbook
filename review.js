@@ -1,22 +1,22 @@
-const reviews = [{
-    username: "Username",
-    date: "March 10, 2026",
-    ratings: 5,
-    review: "Abcdefg",
-    pictures: ["images/alyn's salmon.jpeg", "images/salmon.jpg", "images/chocolate-chip-banana-bread.jpg"]
-}, {
-    username: "Claireee",
-    date: "February 26, 2026",
-    ratings: 4,
-    review: "This is a great recipe. This is a great recipe. This is a great recipe.",
-    pictures: ["images/alyn's salmon.jpeg", "images/salmon.jpg", "images/chocolate-chip-banana-bread.jpg"]
-}, {
-    username: "Hellooo",
-    date: "April 5, 2026",
-    ratings: 1,
-    review: "BAD",
-    pictures: ["images/alyn's salmon.jpeg", "images/salmon.jpg", "images/chocolate-chip-banana-bread.jpg"]
-}]
+// const reviews = [{
+//     username: "Username",
+//     date: "March 10, 2026",
+//     ratings: 5,
+//     review: "Abcdefg",
+//     pictures: ["images/alyn's salmon.jpeg", "images/salmon.jpg", "images/chocolate-chip-banana-bread.jpg"]
+// }, {
+//     username: "Claireee",
+//     date: "February 26, 2026",
+//     ratings: 4,
+//     review: "This is a great recipe. This is a great recipe. This is a great recipe.",
+//     pictures: ["images/alyn's salmon.jpeg", "images/salmon.jpg", "images/chocolate-chip-banana-bread.jpg"]
+// }, {
+//     username: "Hellooo",
+//     date: "April 5, 2026",
+//     ratings: 1,
+//     review: "BAD",
+//     pictures: ["images/alyn's salmon.jpeg", "images/salmon.jpg", "images/chocolate-chip-banana-bread.jpg"]
+// }]
 
 const reviewSection = document.querySelector(".review-section");
 
@@ -28,24 +28,32 @@ const ratingBarTemplate = document.querySelector("#rating-bar-template");
 const uploadedImgTemplate = document.querySelector("#uploaded-img-template");
 const reviewImgTemplate = reviewTemplate.content.querySelector("#img-template");
 
+let recipeName = window.location.pathname;
+recipeName = recipeName.substring(recipeName.lastIndexOf("/") + 1);
+recipeName = recipeName.split(".")[0];
 
 let totalRatings = 0;
 const ratingsDistribution = [0, 0, 0, 0, 0];
 const uploadedFiles = [];
 
+initializeLocalStorage();
 initializeReviewSummary();
-
-reviews.forEach(review => {
+const existingReviews = JSON.parse(localStorage.getItem(recipeName));
+existingReviews.forEach(review => {
     displayReview(review);
 })
-
 updateReviewSummary();
-
 initializeReviewWriting();
+
+function initializeLocalStorage() {
+    if (localStorage.getItem(recipeName) === null) {
+        localStorage.setItem(recipeName, JSON.stringify([]));
+    }
+}
 
 function initializeReviewWriting() {
     const writeReviewButton = document.querySelector(".write-review-btn");
-    const reviewPopup = document.querySelector(".review-popup");
+    // const reviewPopup = document.querySelector(".review-popup");
     writeReviewButton.addEventListener("click", () => {
         showReviewPopup(true);
     })
@@ -204,7 +212,6 @@ function initializeReviewSummary() {
 
     for (let i = 0; i < 5; i++) {
         const ratingsClone = ratingsWithFillTemplate.content.cloneNode(true);
-        // ratingsClone.querySelector(".frame").classList.add("far");
         overallRatings.append(ratingsClone);
 
         const ratingBarClone = ratingBarTemplate.content.cloneNode(true);
@@ -215,11 +222,15 @@ function initializeReviewSummary() {
 }
 
 function updateReviewSummary() {
-    const numReviews = document.querySelectorAll(".review-box").length;
-    let averageRatings = totalRatings / numReviews; //?
+    let numReviews = document.querySelectorAll(".review-box").length;
+    let averageRatings = totalRatings / numReviews;
 
     const overallScore = document.querySelector("#overall-score");
-    overallScore.textContent = averageRatings.toFixed(1);
+    if (numReviews === 0) {
+        overallScore.textContent = "N/A";
+    } else {
+        overallScore.textContent = averageRatings.toFixed(1);
+    }
 
     const overallRatings = document.querySelectorAll(".overall-ratings .rating-star");
     for (let i = 0; i < 5; i++) {
@@ -239,26 +250,26 @@ function updateReviewSummary() {
         }
     }
 
-    const numRatings = document.querySelector("#num-ratings"); //?
+    const numRatings = document.querySelector("#num-ratings");
     numRatings.textContent = getNumInTwoDigits(numReviews) + " ratings";
 
     const ratingBarsContainer = document.querySelector(".rating-bars-container");
     const ratingBars = ratingBarsContainer.querySelectorAll(".rating-bar");
     for (let i = 0; i < 5; i++) {
-        const percentage = (ratingsDistribution[5 - i - 1] / reviews.length * 100).toFixed(0);
-
         const ratingPercentage = ratingBars[i].querySelector(".rating-percentage");
-        ratingPercentage.textContent = percentage + "% (" + getNumInTwoDigits(ratingsDistribution[5 - i - 1]) + ")";
-        // ratingPercentage.textContent = "100% (999K)";
-
         const ratingBarFilled = ratingBars[i].querySelector(".rating-bar-filled");
-        ratingBarFilled.style.width = percentage + "%";
+        if (numReviews === 0) {
+            ratingPercentage.textContent = "(0)";
+        } else {
+            const percentage = (ratingsDistribution[5 - i - 1] / numReviews * 100).toFixed(0);
+            ratingPercentage.textContent = percentage + "% (" + getNumInTwoDigits(ratingsDistribution[5 - i - 1]) + ")";
+            ratingBarFilled.style.width = percentage + "%";
+        }
     }
-
 }
 
 function constructReview() {
-    // username
+    const username = localStorage.getItem("loggedInUser");
 
     const dateFormat = { year: "numeric", month: "long", day: "numeric" };
     const date = new Date().toLocaleDateString("en-US", dateFormat);
@@ -282,13 +293,19 @@ function constructReview() {
         reviewImages.push(imageButton.querySelector("img").src);
     })
 
-    return {
-        username: "Username",
+    const newReview = {
+        username: username,
         date: date,
         ratings: userRatings,
         review: reviewParagraph,
         pictures: reviewImages
     }
+
+    const reviewData = JSON.parse(localStorage.getItem(recipeName));
+    reviewData.push(newReview);
+    localStorage.setItem(recipeName, JSON.stringify(reviewData));
+
+    return newReview;
 }
 
 function displayReview(review) {

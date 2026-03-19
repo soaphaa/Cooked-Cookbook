@@ -7,10 +7,10 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="timer.css">
+    <script src="https://kit.fontawesome.com/44fe28e16d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
     <header>
         <h1> <img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"> </h1>
         <p class="homepage" id="home-button"></p>
@@ -109,13 +109,6 @@
 
     </div>
 
-
-
-
-
-
-
-
     <button id="nutrition-btn">Nutrition</button>
 
     <div class="panel" id="panel2">
@@ -151,7 +144,17 @@
         <button id="finish">Finish</button>
     </div>
 
+    <div id="review-container"></div>
 
+    <script type="module">
+        fetch("review.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("review-container").innerHTML = html;
+                import("./review.js")
+                    .catch(err => console.error(err));
+            });
+    </script>
 </body>
 
 <button id="timer-toggle-btn">Toggle Timer</button>

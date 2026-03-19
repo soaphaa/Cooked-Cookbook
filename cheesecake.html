@@ -1,43 +1,40 @@
-
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookbook Core</title>
-    
+
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/44fe28e16d.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
     <header>
         <h1> Cooked Cookbook </h1>
-        <p class = "homepage" id = "home-button">
+        <p class="homepage" id="home-button">
             homepage where
             does ts work
         </p>
     </header>
 
-    <div class = "homepage" id = "home-button">
+    <div class="homepage" id="home-button">
         homepage where
         does ts work
     </div>
-    
+
 
     <!-- updates!! -->
 
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 
-    <div class="finish">
-        <button id="finish">Finish</button>
-    </div>
-
-
     <div class="panel" id="panel">
 
         <p>Ingredients</p>
 
-       <!-- FULL RECIPE -->
+        <!-- FULL RECIPE -->
         <ul class="ingredients-list" id="ingredients-full">
 
             <li><label><input type="checkbox">1 ½ cups graham crackers</label></li>
@@ -76,13 +73,6 @@
 
     </div>
 
-
-
-
-
-
-
-
     <button id="nutrition-btn">Nutrition</button>
 
     <div class="panel" id="panel2">
@@ -98,13 +88,11 @@
     </div>
 
 
-
-    
-    <h1>  CHEESECAKE !! </h1>
+    <h1> CHEESECAKE !! </h1>
 
     <div>
         Heh. So you wanna be a baller like me ?? well here r ur steps for ts
-        <div class = "instruction"> number one: the sauce !!
+        <div class="instruction"> number one: the sauce !!
             <p> grab a tablespoon of gochujang and spoon out into a bowl</p>
             <p> toss in a tablespoon of honey as well </p>
             <p> pour in a teaspoon of mirin </p>
@@ -113,13 +101,30 @@
             <p> mix well !! </p>
         </div>
     </div>
-    <script src = "script.js"> </script>
+
+    <div class="finish">
+        <button id="finish">Finish</button>
+    </div>
+
+    <div id="review-container"></div>
+
+    <script type="module">
+        fetch("review.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("review-container").innerHTML = html;
+                import("./review.js")
+                    .catch(err => console.error(err));
+            });
+    </script>
+
+    <script src="script.js"> </script>
 
 </body>
 
-    <button id="timer-toggle-btn">Toggle Timer</button>
+<button id="timer-toggle-btn">Toggle Timer</button>
 
-    <script src="timer.js"></script>
+<script src="timer.js"></script>
 
 </body>
 
