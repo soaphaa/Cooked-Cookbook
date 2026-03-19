@@ -624,21 +624,15 @@ h2.timer-header{
 /* Nutrition panel specific styling */
 #panel2 {
     background-color: white;
-    /* white panel */
     border: 1px solid black;
-    /* thin black border */
     padding: 1rem;
-    /* space inside so border feels inset */
     padding-top: 2rem;
     box-sizing: border-box;
-    /* ensure padding included with width */
     width: 300px;
-    /* make panel wider */
     font-size: 1.5rem;
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 200px;
-    /* larger text overall */
     display: none;
 }
 
