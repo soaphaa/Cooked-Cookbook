@@ -1,3 +1,5 @@
+// localStorage.setItem("loggedInUser", "Guest");
+
 document.addEventListener("DOMContentLoaded", () => {
     
     
@@ -12,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-    
     
     const checkboxes = document.querySelectorAll(
         ".ingredients-list input[type=\"checkbox\"]"
@@ -77,14 +78,16 @@ const recipes = [{
 {
     title: "Alyn Salmon",
     description: "alyn salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
-    tags: ["savory", "spicy", "sweet"], source: "salmon.html",
+    tags: ["savory", "spicy", "sweet"], 
+    source: "salmon.html",
     image: "images/alyn's salmon.jpeg"
 },
 {
     title: "Chocolate Chip Banana Bread",
-    description: "chocolate chip banana bread: chocolate chips, bananas, flour, eggs, milk, sugar, brown sugar, baking soda, baking powder",
+    description: "chocolate chip banana bread: chocolate chips, banana, flour, egg, milk",
     tags: ["sweet", "dessert"],
-    source: "banana bread.html"
+    source: "banana bread.html",
+    image: "images/chocolate-chip-banana-bread.jpg"
 },
 {
     title: "Kimchi Fried Rice",
@@ -297,6 +300,50 @@ function createTagBtn(tagname){
     }
     
     
+    function displayRec(filteredRecipes){
+        if (!reccontainer) return;
+        reccontainer.innerHTML = "";
+        filteredRecipes.forEach(recipe =>{
+            const card = document.createElement("div");
+            const title = document.createElement("rh1");
+            const description = document.createElement("rbody");
+            card.classList.add("recipe-card");
+            
+            title.textContent = recipe.title;
+            
+            description.textContent = recipe.description;
+            
+            const image = document.createElement("img");
+            image.src = recipe.image;
+            image.alt = recipe.title + " Image";
+            image.classList.add("recipe-image");
+            
+            const f_btn = document.createElement("a");
+            
+            f_btn.textContent = "VIEW RECIPE";
+            f_btn.href = recipe.source;
+            f_btn.classList.add("recipe-btn")
+            
+            const tagcont = document.createElement("div");
+            tagcont.classList.add("taglist");
+            
+            recipe.tags.forEach(tag => {
+                const rtag = document.createElement("rbody");
+                rtag.classList.add("recipe-tag");
+                rtag.textContent = tag;
+                tagcont.appendChild(rtag);
+            });
+            
+            card.appendChild(title);
+            card.appendChild(image);
+            card.appendChild(f_btn);
+            card.appendChild(tagcont)
+            
+            reccontainer.appendChild(card);
+        })
+    }
+
+    
     const checkboxes = document.querySelectorAll(
         ".ingredients-list input[type=\"checkbox\"]"
     );
@@ -368,5 +415,6 @@ function createTagBtn(tagname){
         });
         
     }
+
  genTagBtns();
  displayRec(recipes);

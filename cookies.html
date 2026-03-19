@@ -1,5 +1,5 @@
-
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +7,30 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="timer.css">
+    <link rel="stylesheet" href="review.css">
+    <script src="https://kit.fontawesome.com/44fe28e16d.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
     <header>
-        <h1>    <img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"> </h1>
+        <h1> <img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"> </h1>
         <p class="homepage" id="home-button"></p>
     </header>
-    
+
     <!-- timer toggle button, always visible -->
     <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Timer</button>
-    
+
     <section id="timer" class="timer-window hidden">
         <div class="timer-card" id="timer-card">
             <button id="timer-close-btn">x</button>
             <span class="timer-title" id="timer-header">Timer</span>
-
-            ///////////////////////////
             <div class="ring-wrap">
                 <svg class="ring" viewBox="0 0 150 150">
                     <circle class="ring-bg" cx="75" cy="75" r="60"></circle>
                     <circle class="ring-progress" id="ring" cx="75" cy="75" r="60"></circle>
                 </svg>
             </div>
-            ///////////////////////////
-            
+
             <div class="timer-body">
                 <p id="timer-display">00:00</p>
                 <select id="timer-select">
@@ -52,17 +51,18 @@
             </div>
         </div>
     </section>
-</header>
+
+    <homepage id="home-button">
+    </homepage>
+    <!-- <div class="homepage" id="home-button">
+        homepage where
+        does ts work
+    </div> -->
 
 
     <!-- updates!! -->
 
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
-
-    <div class="finish">
-        <button id="finish">Finish</button>
-    </div>
-
 
     <div class="panel" id="panel">
 
@@ -107,7 +107,6 @@
 
     </div>
 
-
     <button id="nutrition-btn">Nutrition</button>
 
     <div class="panel" id="panel2">
@@ -126,10 +125,9 @@
 
 
     <h1> COOKIES !! </h1>
-
+    <br>
     <div>
-        Heh. So you wanna be a baller like me ?? well here r ur steps for ts
-        <div class = "instruction"> number one: the sauce !!
+        <div class="instruction"> number one: the sauce !!
             <p> grab a tablespoon of gochujang and spoon out into a bowl</p>
             <p> toss in a tablespoon of honey as well </p>
             <p> pour in a teaspoon of mirin </p>
