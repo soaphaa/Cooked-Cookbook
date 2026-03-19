@@ -1,5 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+
+    const fullBtn = document.getElementById("full-btn");
+    const halfBtn = document.getElementById("half-btn");
+    const fullList = document.getElementById("ingredients-full");
+    const halfList = document.getElementById("ingredients-half");
+
+
+    if (fullBtn && halfBtn && fullList && halfList) {
+        fullBtn.addEventListener("click", () => {
+            fullList.classList.remove("hidden");
+            halfList.classList.add("hidden");
+        });
+        halfBtn.addEventListener("click", () => {
+            fullList.classList.add("hidden");
+            halfList.classList.remove("hidden");
+        });
+    }
     
     const confettiBtn = document.getElementById("finish");
     
@@ -329,26 +345,4 @@ function createTagBtn(tagname){
     }
 
 
-    const fullBtn = document.getElementById("full-btn");
-    const halfBtn = document.getElementById("half-btn");
     
-    const fullList = document.getElementById("ingredients-full");
-    const halfList = document.getElementById("ingredients-half");
-    
-    if (fullBtn && halfBtn && fullList && halfList) {
-        
-        fullBtn.addEventListener("click", () => {
-            
-            fullList.classList.remove("hidden");
-            halfList.classList.add("hidden");
-            
-        });
-        
-        halfBtn.addEventListener("click", () => {
-            
-            fullList.classList.add("hidden");
-            halfList.classList.remove("hidden");
-            
-        });
-        
-    }
