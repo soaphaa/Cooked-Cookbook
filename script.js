@@ -112,14 +112,24 @@ const recipes = [{
 
 const reccontainer = document.getElementById("recipe-container");
 const input = document.getElementById("text");
-const filterset = document.getElementById("tagbtns");
-if(btn){
+const filterset = document.getElementById("tagbtns")
+
+if (btn) {
     btn.addEventListener("click", function () {
         const textValue = u_search.value.trim();
         search(textValue);
-        //take value from the search bar
+        //takes value from search bar
     });
 }
+
+
+document.addEventListener('keydown', function(event) {
+    const textValue = u_search.value.trim();
+    if (event.key === 'Enter' && textValue != null) {
+        search(textValue);
+        //take value from the search bar
+    }
+});
 if (!home){
     document.addEventListener('keydown', function(event) {
         const textValue = u_search.value.trim();
@@ -177,6 +187,23 @@ function search(txt){
         no_card.textContent = "sorry !! there's no recipes available with that ingredient/title !!";
         reccontainer.appendChild(no_card);
     }
+}
+
+const nutritionBtn = document.getElementById("nutrition-btn");
+const nutritionPanel = document.getElementById("panel2");
+
+if (nutritionBtn && nutritionPanel) {
+    
+    nutritionBtn.addEventListener("click", () => {
+        
+        if (nutritionPanel.style.display === "block") {
+            nutritionPanel.style.display = "none";
+        } else {
+            nutritionPanel.style.display = "block";
+        }
+        
+    });
+    
 }
 
 function genTagBtns(){
@@ -316,49 +343,30 @@ function createTagBtn(tagname){
     } else if (usernameDisplay) {
         usernameDisplay.textContent = "guest chef";
     }
+
+
+    const fullBtn = document.getElementById("full-btn");
+    const halfBtn = document.getElementById("half-btn");
     
-    if (profileBtn) {
-        const loggedInUser = localStorage.getItem("loggedInUser");
-        if (loggedInUser) {
-            profileBtn.textContent = loggedInUser[0].toUpperCase(); // shows first letter of username on the icon
-        }
+    const fullList = document.getElementById("ingredients-full");
+    const halfList = document.getElementById("ingredients-half");
+    
+    if (fullBtn && halfBtn && fullList && halfList) {
+        
+        fullBtn.addEventListener("click", () => {
+            
+            fullList.classList.remove("hidden");
+            halfList.classList.add("hidden");
+            
+        });
+        
+        halfBtn.addEventListener("click", () => {
+            
+            fullList.classList.add("hidden");
+            halfList.classList.remove("hidden");
+            
+        });
+        
     }
-
-const fullBtn = document.getElementById("full-btn");
-const halfBtn = document.getElementById("half-btn");
-
-const fullList = document.getElementById("ingredients-full");
-const halfList = document.getElementById("ingredients-half");
-
-if (fullBtn && halfBtn && fullList && halfList) {
-
-    fullBtn.addEventListener("click", () => {
-
-        fullList.classList.remove("hidden");
-        halfList.classList.add("hidden");
-
-    });
-
-    halfBtn.addEventListener("click", () => {
-
-        fullList.classList.add("hidden");
-        halfList.classList.remove("hidden");
-
-    });
-
-}
-
-const nutritionBtn = document.getElementById("nutrition-btn");
-if (nutritionBtn) {
-    nutritionBtn.addEventListener("click", function() {
-        const nutritionPanel = document.getElementById("panel2");
-        if (nutritionPanel.style.display === "none" || nutritionPanel.style.display === "") {
-            nutritionPanel.style.display = "block";
-        } else {
-            nutritionPanel.style.display = "none";
-        }
-    });
-}
-
-genTagBtns();
-displayRec(recipes);
+ genTagBtns();
+ displayRec(recipes);
