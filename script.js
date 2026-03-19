@@ -33,85 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     const panel = document.getElementById("panel");
-
-    if (panel) {
-
-        let isDragging = false;
-        let offsetX = 0;
-        let offsetY = 0;
-
-        panel.addEventListener("mousedown", (e) => {
-
-            isDragging = true;
-
-            offsetX = e.clientX - panel.offsetLeft;
-            offsetY = e.clientY - panel.offsetTop;
-
-        });
-
-        document.addEventListener("mousemove", (e) => {
-
-            if (!isDragging) return;
-
-            panel.style.left = (e.clientX - offsetX) + "px";
-            panel.style.top = (e.clientY - offsetY) + "px";
-
-        });
-
-        document.addEventListener("mouseup", () => {
-            isDragging = false;
-        });
-
-    }
-});
-
-////////////////////////////////////////////////////////////////////////////
-const fullBtn = document.getElementById("full-btn");
-const halfBtn = document.getElementById("half-btn");
-const doubleBtn = document.getElementById("double-btn");
-
-const fullList = document.getElementById("ingredients-full");
-const halfList = document.getElementById("ingredients-half");
-const doubleList = document.getElementById("ingredients-double");
-
-if (fullBtn && halfBtn && doubleBtn && fullList && halfList && doubleList) {
-
-    fullBtn.addEventListener("click", () => {
-
-        fullList.classList.remove("hidden");
-        halfList.classList.add("hidden");
-        doubleList.classList.add("hidden");
-
-    });
-
-    halfBtn.addEventListener("click", () => {
-
-        fullList.classList.add("hidden");
-        halfList.classList.remove("hidden");
-        doubleList.classList.add("hidden");
-
-    });
-
-    doubleBtn.addEventListener("click", () => {
-
-        fullList.classList.add("hidden");
-        halfList.classList.add("hidden");
-        doubleList.classList.remove("hidden");
-
-    });
-
-}
-////////////////////////////////////////////////////////////////////////////
-
-
-////////////////////////////////////////////////////////////////////////////
-    const nutritionBtn = document.getElementById("nutrition-btn");
-const nutritionPanel = document.getElementById("panel2");
-
-if (nutritionBtn && nutritionPanel) {
-
-    nutritionBtn.addEventListener("click", () => {
-
     
     let isDragging = false;
     let offsetX, offsetY;
@@ -473,28 +394,40 @@ function createTagBtn(tagname){
 
     const fullBtn = document.getElementById("full-btn");
     const halfBtn = document.getElementById("half-btn");
-    
+    const doubleBtn = document.getElementById("double-btn");
+
     const fullList = document.getElementById("ingredients-full");
     const halfList = document.getElementById("ingredients-half");
-    
-    if (fullBtn && halfBtn && fullList && halfList) {
-        
+    const doubleList = document.getElementById("ingredients-double");
+
+    if (fullBtn && halfBtn && doubleBtn && fullList && halfList && doubleList) {
+
         fullBtn.addEventListener("click", () => {
-            
+
             fullList.classList.remove("hidden");
             halfList.classList.add("hidden");
-            
+            doubleList.classList.add("hidden");
+
         });
-        
+
         halfBtn.addEventListener("click", () => {
-            
+
             fullList.classList.add("hidden");
             halfList.classList.remove("hidden");
-            
+            doubleList.classList.add("hidden");
+
         });
+
+        doubleBtn.addEventListener("click", () => {
+
+            fullList.classList.add("hidden");
+            halfList.classList.add("hidden");
+            doubleList.classList.remove("hidden");
+
+        });
+
     }
-}
-        
+
 
  genTagBtns();
  displayRec(recipes);
