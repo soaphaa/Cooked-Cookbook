@@ -149,11 +149,9 @@ if (home){
 const btn = document.getElementById("submit");
 const u_search = document.getElementById("user_search")
 const recipes = [{
-
     title: "Chocolate Chip Cookies",
     description: "chocolate chip cookies: brown sugar, white sugar, chocolate chips, flour, eggs, milk, baking soda, baking powder",
-    tags: ["sweet", "dessert"], 
-    source: "cookies.html",
+    tags: ["sweet", "dessert"], source: "cookies.html",
     image: "images/chocolate-chip-cookie.jpeg"
 },
 {
@@ -211,8 +209,17 @@ document.addEventListener('keydown', function(event) {
     const textValue = u_search.value.trim();
     if (event.key === 'Enter' && textValue != null) {
         search(textValue);
+        //take value from the search bar
     }
 });
+if (!home){
+    document.addEventListener('keydown', function(event) {
+        const textValue = u_search.value.trim();
+        if (event.key === 'Enter' && textValue != null) {
+            search(textValue);
+        }
+    });
+}
 
 function search(txt){
     if (!reccontainer) return;  
@@ -305,27 +312,27 @@ function genTagBtns(){
 
 
 function createTagBtn(tagname){
-    const tagbtns = document.createElement("div");
-    tagbtns.classList.add("filterlist");
+    if (!filterset) return; // no container to attach to
+
     const tbtn = document.createElement("button");
     //tagbutton = tbtn
     tbtn.textContent = tagname;
     tbtn.classList.add("recipe-filter");
-    tbtn.addEventListener("click", () => {
-        if (tagname == "All"){
-            //if the filter is js all of them
-            displayRec(recipes);
-        }else{
-            //filtered recipes = recipes that have "tagname" (the name of the filtered tag)
-            const filtrecipes = recipes.filter(recipe =>
-                recipe.tags.includes(tagname));
-                displayRec(filtrecipes);
-                //display the filtered set
-            }
-        });
-        
-        filterset.appendChild(tbtn);
-        
+    if (tbtn){
+        tbtn.addEventListener("click", () => {
+            if (tagname == "All"){
+                //if the filter is js all of them
+                displayRec(recipes);
+            }else{
+                //filtered recipes = recipes that have "tagname" (the name of the filtered tag)
+                const filtrecipes = recipes.filter(recipe =>
+                    recipe.tags.includes(tagname));
+                    displayRec(filtrecipes);
+                    //display the filtered set
+                }
+            });
+    }
+    filterset.appendChild(tbtn);
 }
     
     function displayRec(filteredRecipes){
@@ -371,11 +378,66 @@ function createTagBtn(tagname){
         })
     }
     
+    
+    function displayRec(filteredRecipes){
+        if (!reccontainer) return;
+        reccontainer.innerHTML = "";
+        filteredRecipes.forEach(recipe =>{
+            const card = document.createElement("div");
+            const title = document.createElement("rh1");
+            const description = document.createElement("rbody");
+            card.classList.add("recipe-card");
+            
+            title.textContent = recipe.title;
+            
+            description.textContent = recipe.description;
+            
+            const image = document.createElement("img");
+            image.src = recipe.image;
+            image.alt = recipe.title + " Image";
+            image.classList.add("recipe-image");
+            
+            const f_btn = document.createElement("a");
+            
+            f_btn.textContent = "VIEW RECIPE";
+            f_btn.href = recipe.source;
+            f_btn.classList.add("recipe-btn")
+            
+            const tagcont = document.createElement("div");
+            tagcont.classList.add("taglist");
+            
+            recipe.tags.forEach(tag => {
+                const rtag = document.createElement("rbody");
+                rtag.classList.add("recipe-tag");
+                rtag.textContent = tag;
+                tagcont.appendChild(rtag);
+            });
+            
+            card.appendChild(title);
+            card.appendChild(image);
+            card.appendChild(f_btn);
+            card.appendChild(tagcont)
+            
+            reccontainer.appendChild(card);
+        })
+    }
+
+    
     const checkboxes = document.querySelectorAll(
         ".ingredients-list input[type=\"checkbox\"]"
     );
-
     
+    
+    const confettiBtn = document.getElementById("finish");
+    if (confettiBtn) {
+        confettiBtn.addEventListener("click", () => {
+            confetti({
+                particleCount: 2000,
+                spread: 6000,
+                origin: { y: 0.6 }
+            })
+        });
+    }
     
     checkboxes.forEach(cb => {
         cb.addEventListener("change", event => {
@@ -390,7 +452,7 @@ function createTagBtn(tagname){
         });
     });
     
-    //profile stuff
+    // stuff
     
     const profileBtn = document.getElementById("profile-btn");
     if (profileBtn) {
@@ -433,6 +495,6 @@ function createTagBtn(tagname){
     }
 }
         
-genTagBtns();
-displayRec(recipes);
-    
+
+ genTagBtns();
+ displayRec(recipes);

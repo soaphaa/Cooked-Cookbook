@@ -14,17 +14,45 @@
 <body>
 
     <header>
-        <h1> Cooked Cookbook </h1>
-        <p class="homepage" id="home-button">
-            homepage where
-            does ts work
-        </p>
+        <hh1> Cooked Cookbook </hh1>
+        <p class="homepage" id="home-button"></p>
     </header>
 
-    <div class="homepage" id="home-button">
-        homepage where
-        does ts work
-    </div>
+
+    <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Timer</button>
+    
+    <section id="timer" class="timer-window hidden">
+        <div class="timer-card" id="timer-card">
+            <button id="timer-close-btn">x</button>
+            <span class="timer-title" id="timer-header">Timer</span>
+            <div class="ring-wrap">
+                <svg class="ring" viewBox="0 0 150 150">
+                    <circle class="ring-bg" cx="75" cy="75" r="60"></circle>
+                    <circle class="ring-progress" id="ring" cx="75" cy="75" r="60"></circle>
+                </svg>
+            </div>
+            <div class="timer-body">
+                <p id="timer-display">00:00</p>
+                <select id="timer-select">
+                    <option value="60">1 min</option>
+                    <option value="120">2 min</option>
+                    <option value="180">3 min</option>
+                    <option value="240">4 min</option>
+                    <option value="300">5 min</option>
+                    <option value="600">10 min</option>
+                    <option value="900">15 min</option>
+                    <option value="1200">20 min</option>
+                    <option value="1800">30 min</option>
+                </select>
+                <div class="timer-controls">
+                    <button id="toggle-start-btn">Start</button>
+                    <button id="reset-btn">Reset</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
 
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 
@@ -83,12 +111,7 @@
     </div>
 
 
-
-
     <!-- updates!! -->
-
-
-
     <button id="nutrition-btn">Nutrition</button>
 
     <div class="panel" id="panel2">
@@ -108,16 +131,26 @@
 
     <h1> BANANA BREAD !! </h1>
 
-    <div>
-        Heh. So you wanna be a baller like me ?? well here r ur steps for ts
-        <div class="instruction"> number one: the sauce !!
-            <p> grab a tablespoon of gochujang and spoon out into a bowl</p>
-            <p> toss in a tablespoon of honey as well </p>
-            <p> pour in a teaspoon of mirin </p>
-            <p> add (preferably dark) 2 teaspoons of soy sauce </p>
-            <p> add 3 teaspoons of sesame oil </p>
-            <p> mix well !! </p>
-        </div>
+    <div class = "instruction"> number one: mixing dry and wet respectively !!
+            <p class="step"> </p>
+    </div>
+    <div class = "instruction"> number two: your salmon !!
+            <p class="step"> optional: skin your salmon </p>
+            <p class="step"> cut your salmon into 1-inch cubes (or larger depending on preffered size) </p>
+            <p class="step-under"> just remember - size affects cooking time !! </p>
+            <p class="step"> toss the salmon cubes into the sauce, ensuring an even coat </p>
+    </div>
+    <div class = "instruction"> number three:  cooking prep !!
+            <p class="step"> grab a medium size pan for 1-2 pieces of salmon </p>
+            <p class="step"> turn your stove onto low-simmer heat </p>
+            <p class="step"> use the circumference of the pan as a guide on how much oil to put </p>
+            <p class="step-under"> do a circle in the shape of the ouline </p>
+            <p class="step"> wait until you can feel a medium amount of heat by hovering you hand over the pan's surface.</p> 
+    </div>
+    <div class = "instruction"> number four: cooking the salmon !!
+            <p class="step"> place all the cubes with enough space from the others to rotate </p>
+            <p class="step"> let the salmon cook for 2-3 minutes on one side, then flip and cook for another 2-3 minutes on the other side </p>
+        <p class="step-under"> of course, 2-3 minutes is a vague suggestions </p>
     </div>
 
     <div class="finish">
@@ -234,13 +267,7 @@
     <script src="review.js"></script>
     <script src="script.js"> </script>
 
-</body>
-
-<button id="timer-toggle-btn">Toggle Timer</button>
-
-<script src="timer.js"></script>
+    <script src="timer.js"></script>
 
 </body>
-
-
 </html>
