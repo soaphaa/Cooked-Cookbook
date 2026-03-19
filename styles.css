@@ -297,6 +297,7 @@ rbody {
 .recipe-filter:hover{
     background-color: #e04b4b;
     border: .5px, white, solid;
+    border-radius: 90px;
     transform: scale(1.05);
 }
 
