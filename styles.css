@@ -418,7 +418,7 @@ rbody {
     color: rgb(167, 29, 29);
     margin-top:20px;
     margin-bottom: 20px;
-    font-size:3vw;
+    font-size:2vw;
 }
 
 .step::before{
@@ -440,7 +440,7 @@ rbody {
     color: rgb(167, 29, 29);
     margin-top:10px;
     margin-bottom: 10px;
-    font-size:3vw;
+    font-size:2vw;
 }
 
 .step-under::before{
@@ -582,7 +582,7 @@ h2.timer-header{
     position: fixed;
     top: 0;
     right: 0;
-    width: 20vw;
+    width: 18vw;
     background-color: #cd7575;
     padding: 1rem;
     padding-top: 2rem;
