@@ -1,0 +1,175 @@
+/* ---- profile page only ---- */
+/* uses styles.css as base, adds profile-specific styles */
+
+.profile-page {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* main profile card */
+.profile-card {
+    background: rgba(255, 220, 210, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    padding: 36px 32px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 8px 32px rgba(180, 60, 60, 0.12);
+    backdrop-filter: blur(6px);
+    animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* avatar circle */
+.profile-avatar-wrap {
+    position: relative;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgb(167, 29, 29);
+    border: 4px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;     /* makes image itself circular */
+}
+
+/* username */
+.profile-username {
+    font-family: "Nunito", sans-serif;
+    font-size: 28px;
+    color: white;
+    text-align: center;
+    margin: 0;
+    line-height: 1.2em;
+}
+
+/* bio */
+.profile-bio {
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    margin: 0;
+    font-style: italic;
+}
+
+/* stats row */
+.profile-stats {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 8px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 12px 28px;
+}
+
+.stat-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.stat-number {
+    font-family: "Nunito", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(167, 29, 29);
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: "Nunito", sans-serif;
+    font-size: 13px;
+    color: rgba(80, 20, 20, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(167, 29, 29, 0.25);
+}
+
+/* section divider */
+.profile-divider {
+    text-align: center;
+    margin: 32px 0 20px 0;
+    position: relative;
+}
+
+.profile-divider::before,
+.profile-divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1.5px;
+    background: rgba(255,255,255,0.4);
+}
+
+.profile-divider::before { left: 0; }
+.profile-divider::after  { right: 0; }
+
+.profile-divider span {
+    font-family: "Nunito", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: #c16c6c;
+    padding: 0 12px;
+    position: relative;
+}
+
+/* empty state */
+.profile-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 40px;
+    background: rgba(255,220,210,0.4);
+    border-radius: 24px;
+    border: 2px dashed rgba(255,255,255,0.5);
+}
+
+.profile-empty p {
+    font-size: 20px;
+    color: white;
+    font-style: italic;
+    margin: 0;
+}
+
+/* saved recipes show up here*/
+.profile-recipes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}

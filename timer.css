@@ -1,4 +1,6 @@
 /* start button */
+
+
 #toggle-start-btn {
     background: #cc0000;
     color: white;
@@ -30,42 +32,133 @@
 /* floating timer toggle button */
 .timer-toggle-btn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    top: 110px;
+    left: 20px;
     z-index: 1000;
     background: #701616;
     color: white;
     border: none;
     border-radius: 50px;
-    padding: 10px 18px;
+    padding: 12px 20px;
     font-family: "Nunito", sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     float: none;
     margin: 0;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .timer-toggle-btn:hover {
-    background: #990000;
+    background: #cf0404;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
 
-/* ring container — centers the SVG */
-.ring-wrap {
+.timer-window {
+  position: fixed;
+    left: 8px;
+    bottom: 8px;
+    width: 220px;
+    background: #ffd7d0;
+    border: 2px solid rgba(204, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(180, 80, 0, 0.2);
+  
+  padding: 12px;
+  z-index: 999;
+  backdrop-filter: blur(6px);
+  text-align: center;
+  cursor: grab;
+  user-select: none; /* prevents text from being highlighted while user is dragging above the timer */
+}
+
+.timer-window {
+    cursor: grab;
+}
+
+.timer-window:active {
+    cursor: grabbing;
+}
+
+.timer-title{    
+    display: block;
+    background: rgb(255, 201, 201);
+    border: 3px solid #ffffff;
+    border-radius: 12px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: #8b0000;
+    padding: 6px 16px;
+    margin-bottom: 12px;
+    margin-top: 4px;
+}
+
+#timer-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 8px;
+    width: 35px;
+    height: 35px;
+    background: #cc0000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    float: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 8px auto;
-    position: relative;
-    width: 75px;
-    height: 75px;
+    justify-content: center;
 }
 
-svg.ring {
-    width: 75px;
-    height: 75px;
-    transform: rotate(-90deg);
+.timer-close-btn:hover {
+    color: #8b0000;
+    transform: scale(1.2);
+}
+
+#timer-select {
+    font-family: "Nunito", sans-serif;
+    font-size: 13px;
+    background: rgba(255, 198, 198, 0.8);
+    border: 1px solid rgba(204, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 4px 8px;
+    color: #8b0000;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.timer-select {
+    font-family: "Nunito", sans-serif;
+    font-size: 13px;
+    background: rgba(255, 220, 150, 0.8);
+    border: 1px solid rgba(204, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 4px 8px;
+    color: #8b0000;
+    margin-bottom: 8px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* ring container*/
+.ring-wrap {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 8px auto;
 }
 
 .ring-bg {
@@ -76,14 +169,19 @@ svg.ring {
 
 .ring-progress {
     fill: none;
-    stroke: #cc0000; 
+    stroke: #af1515;
     stroke-width: 5;
     stroke-linecap: round;
-    stroke-dasharray: 157.08;
-    stroke-dashoffset: 0; /* 0 = full ring, increases as time runs out */
+stroke-dasharray: 376.99;
+    stroke-dashoffset: 0;
     transition: stroke-dashoffset 1s linear, stroke 0.4s ease;
     filter: drop-shadow(0 0 4px rgba(204, 0, 0, 0.4));
-    /* glowyy */
+}
+
+svg.ring {
+    width: 150px;
+    height: 150px;
+    transform: rotate(-90deg);
 }
 
 /* turns red when under 10 seconds */
@@ -92,6 +190,49 @@ svg.ring {
     filter: drop-shadow(0 0 6px rgba(255, 68, 0, 0.7));
 }
 
+
+#timer-display {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    font-family: "Nunito", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #8b0000;
+    margin: 0;
+}
+
+.timer-display.low {
+    color: #ff4400;
+}
+
+#timer-notification {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #cc0000;
+    color: white;
+    font-family: "Nunito", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    animation: fadeInOut 3s ease forwards;
+    z-index: 1001;
+}
+
+@keyframes fadeInOut {
+    0%   { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    15%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+    75%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 .hidden{
   display: none;
 }
+
