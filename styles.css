@@ -50,7 +50,7 @@ h1 {
     margin-bottom:0;
     font-size: 4vw;
     text-align: center;
-    line-height: 0.1em;
+    line-height: 1em;
 }
 
 /* header heading 1*/
@@ -129,6 +129,10 @@ button{
     font-weight:bold;    
 }
 
+div {
+    cursor: url("images/cursor1.cur"), auto;
+}
+
 button:hover{
     background: #cf0404;
     transform: scale(1.05);
@@ -179,7 +183,7 @@ rh1 {
     font-size: 3vw;
     font-weight: bold;
     margin-top: 1em;
-    line-height: 0.5em;
+    line-height: 1em;
 }
 rbody {
     display: block;
@@ -200,7 +204,7 @@ rbody {
 #recipe-container{
     /*contains all the recipe card*/
     display:grid;
-    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
     column-gap: 20px;
     /*padding: 2rem */
 
@@ -294,6 +298,7 @@ rbody {
 .recipe-filter:hover{
     background-color: #e04b4b;
     border: .5px, white, solid;
+    border-radius: 90px;
     transform: scale(1.05);
 }
 
@@ -498,22 +503,16 @@ rbody {
 
 /* Nutrition panel specific styling */
 #panel2 {
-    background-color: white;
-    /* white panel */
-    border: 1px solid black;
-    /* thin black border */
-    padding: 1rem;
-    /* space inside so border feels inset */
-    padding-top: 2rem;
-    box-sizing: border-box;
-    /* ensure padding included with width */
-    width: 300px;
-    /* make panel wider */
-    font-size: 1.5rem;
     position: absolute;
-    top: 100px;
-    left: 200px;
-    /* larger text overall */
+    top: 117px;
+    left: 20px;
+    background-color: white;           /* white panel */
+    border: 1px solid black;          /* thin black border */
+    padding: 1rem;                    /* space inside so border feels inset */
+    padding-top: 2rem;
+    box-sizing: border-box;           /* ensure padding included with width */
+    width: 300px;                     /* make panel wider */
+    font-size: 1.5rem;                /* larger text overall */
     display: none;
 }
 
@@ -526,14 +525,12 @@ rbody {
 #panel2 ol {
     list-style: none;
     padding: 0;
-    margin: 1.5rem 0 0 0;
-    /*space from title */
+    margin: 1.5rem 0 0 0; /*space from title */
 }
 
 #panel2 ol li {
     display: flex;
-    justify-content: space-between;
-    /* pushes text left & right */
+    justify-content: space-between;  /* pushes text left & right */
     border-bottom: 1px solid black;
     padding: 0.25rem 0;
 }
@@ -749,355 +746,4 @@ rbody {
     height: 14px;
     cursor: pointer;
     accent-color: #cc0000;
-}
-
-<<<<<<<<< Temporary merge branch 1
-.review-section {
-    margin: 2rem 5rem;
-}
-
-.review-section button {
-    transition: all 0.08s;
-}
-
-.review-section button:hover {
-    filter: brightness(90%);
-}
-
-.review-section button:active {
-    filter: brightness(70%);
-}
-
-.review-section div {
-    transition: all 0.3s ease;
-}
-
-.review-summary {
-    display: flex;
-    width: 100%;
-    height: 10rem;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.overall-review-container {
-    display: flex;
-    width: 15rem;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.overall-review-container h2 {
-    margin-top: 1.7rem;
-    margin-bottom: 2.0rem;
-    padding: 0;
-    font-weight: bold;
-    font-size: 3.8rem;
-}
-
-.overall-review-container h3 {
-    margin: 1rem;
-    font-weight: 600;
-    font-size: 1.8rem;
-}
-
-.overall-ratings i {
-    font-size: 1.3rem;
-    color: #590000;
-}
-
-.rating-bars-container {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-}
-
-.rating-bar {
-    display: flex;
-    width: 100%;
-    height: 2rem;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.rating-bar h4 {
-    width: 2.5rem;
-    font-weight: 700;
-    font-size: 1.3rem;
-    text-align: left;
-}
-
-.rating-bar h5 {
-    margin-left: 0.5rem;
-    width: 7rem;
-    font-weight: 600;
-    font-size: 1.14rem;
-    text-align: left;
-}
-
-.rating-bar div {
-    border-radius: 0.5rem;
-    box-shadow: inset 0 0 0.5rem rgba(0,0,0,0.2);
-
-}
-
-.rating-bar-full {
-    flex: 1;
-    height: 0.6rem;
-    background-color: rgb(197, 170, 170);
-    overflow: hidden;
-}
-
-.rating-bar-filled {
-    height: 100%;
-    width: 0%;
-    background-color: #590000;
-    /* transition: width 0.5s ease; */
-}
-
-.review-section-divider {
-    width: 100%;
-    height: 0.2rem;
-    border: none;
-    margin: 0rem -0.5rem;
-    background: rgb(134, 54, 54);
-    box-shadow: 0 0.12rem 0.3rem 0.01rem rgba(124, 40, 40, 0.5);
-}
-
-
-.review-box {
-    display: block;
-    margin-top: 0.7rem;
-    margin-bottom: 2rem;
-}
-
-.review-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.profile-info {
-    display: flex;
-    align-items: center;
-}
-
-.profile-info h2 {
-    font-weight: 700;
-    font-size: 2rem;
-}
-
-.profile-info h3 {
-    margin-left: 1.25rem;
-    transform: translateY(0.0625rem);
-    font-weight: 600;
-    font-size: 1.25rem;
-}
-
-.ratings {
-    color: #590000;
-}
-
-.review-content {
-    width: 100%;
-}
-
-.review-content p {
-    margin: 0.75rem 0rem;
-    font-weight: normal;
-    font-size: 22;
-}
-
-.review-images {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: 2rem;
-    gap: 1rem;
-}
-
-.review-image-btn {
-    width: 5.3125rem;
-    aspect-ratio: 1;
-    border-radius: 1rem;
-    border: 0.125rem solid white;
-    overflow: hidden;
-    padding: 0rem;
-    margin: 0rem;
-    cursor: pointer;
-}
-
-.review-image-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.popup-overlay {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 999;
-}
-
-.popup-overlay.show {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.img-popup {
-    display: flex;
-    background-color: white;
-    width: 50rem;
-    aspect-ratio: 7/5;
-    flex-direction: column;
-    overflow: hidden;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.8);
-    opacity: 0;
-    border: 0.15rem solid rgb(187, 107, 107);
-    border-radius: 0.5rem;
-    pointer-events: none;
-    z-index: 1000;
-}
-
-.img-popup.show {
-    transform: translate(-50%, -50%) scale(1.0);
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.popup-header {
-    display: flex;
-    width: 100%;
-    height: 2.8rem;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: #d08888;
-}
-
-.close-img-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    aspect-ratio: 4/3;
-    border: 0rem;
-    padding: 0rem;
-    margin: 0rem;
-    cursor: pointer;
-    background-color: rgb(207, 101, 101);
-}
-
-.close-img-btn i {
-    font-size: 2rem;
-    font-weight: 900;
-    line-height: 1;
-    color: #1a1a1a;
-}
-
-.popup-image {
-    flex: 1;
-    display: flex;
-    min-height: 0;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(239, 238, 238);
-}
-
-.popup-image img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-.review-divider {
-    border-image: repeating-linear-gradient(to right,
-            white 0px,
-            white 2px,
-            transparent 2px,
-            transparent 10px) 1;
-    margin: 0rem -0.5rem;
-}
-#nutrition-btn {
-    position: absolute;
-    top: 500px;
-    left: 100px;
-    z-index: 2000;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    background-color: #d77979;
-    border: 1px solid #590000;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#finish{
-    position: absolute;
-    top: 400px;
-    left: 20px;
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    background-color: #d77979;
-    border: 1px solid #590000;
-    border-radius: 5px;
-    cursor: pointer;
-=========
-/* Nutrition panel specific styling */
-#panel2 {
-    position: absolute;
-    top: 117px;
-    left: 20px;
-    background-color: white;           /* white panel */
-    border: 1px solid black;          /* thin black border */
-    padding: 1rem;                    /* space inside so border feels inset */
-    padding-top: 2rem;
-    box-sizing: border-box;           /* ensure padding included with width */
-    width: 300px;                     /* make panel wider */
-    font-size: 1.5rem;                /* larger text overall */
-    display: none;
-}
-
-#panel2 p {
-    font-size: 1.8rem;
-    margin: 0;
-    text-align: center;
-}
-
-#panel2 ol {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0 0 0; /*space from title */
-}
-
-#panel2 ol li {
-    display: flex;
-    justify-content: space-between;  /* pushes text left & right */
-    border-bottom: 1px solid black;
-    padding: 0.25rem 0;
-}
-
-/* remove bottom border from last item so it doesn't stick out */
-#panel2 ol li:last-child {
-    border-bottom: none;
->>>>>>>>> Temporary merge branch 2
 }
