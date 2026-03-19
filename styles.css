@@ -440,7 +440,7 @@ rbody {
     color: rgb(167, 29, 29);
     margin-top:10px;
     margin-bottom: 10px;
-    font-size:3vw;
+    font-size:2vw;
 }
 
 .step-under::before{
@@ -635,7 +635,7 @@ h2.timer-header{
     width: 300px;
     /* make panel wider */
     font-size: 1.5rem;
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 200px;
     /* larger text overall */
@@ -875,22 +875,6 @@ h2.timer-header{
     cursor: pointer;
     accent-color: #cc0000;
 }
-
-/* Nutrition panel specific styling */
-#panel2 {
-    position: absolute;
-    top: 117px;
-    left: 20px;
-    background-color: white;           /* white panel */
-    border: 1px solid black;          /* thin black border */
-    padding: 1rem;                    /* space inside so border feels inset */
-    padding-top: 2rem;
-    box-sizing: border-box;           /* ensure padding included with width */
-    width: 300px;                     /* make panel wider */
-    font-size: 1.5rem;                /* larger text overall */
-    display: none;
-    transition: opacity 0.2s ease;
-}    
 
 .review-section {
     margin: 2rem 5rem;
