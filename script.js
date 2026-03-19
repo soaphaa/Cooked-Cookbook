@@ -80,7 +80,7 @@ const recipes = [{
     description: "alyn salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
     tags: ["savory", "spicy", "sweet"], 
     source: "salmon.html",
-    image: "images/alyn's salmon.jpeg"
+    image: "images/salmon.jpg"
 },
 {
     title: "Chocolate Chip Banana Bread",

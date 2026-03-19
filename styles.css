@@ -301,11 +301,11 @@ rbody {
 /* for recipe-tag*/
 .taglist{
     align-self: center;
-    display: flex;
     flex-direction: row;
     gap: 10px;  /* Set to 0 to check if gap itself is the issue */
-  /*  display: grid;
-    grid-template-columns: repeat(3, minmax(1px, 50px));*/
+    display: flex;
+    flex-direction: row;
+
 }
 
 /*for recipe-filter*/
