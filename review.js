@@ -1,22 +1,4 @@
-// const reviews = [{
-//     username: "Username",
-//     date: "March 10, 2026",
-//     ratings: 5,
-//     review: "Abcdefg",
-//     pictures: ["images/alyn's salmon.jpeg", "images/salmon.jpg", "images/chocolate-chip-banana-bread.jpg"]
-// }, {
-//     username: "Claireee",
-//     date: "February 26, 2026",
-//     ratings: 4,
-//     review: "This is a great recipe. This is a great recipe. This is a great recipe.",
-//     pictures: ["images/alyn's salmon.jpeg", "images/salmon.jpg", "images/chocolate-chip-banana-bread.jpg"]
-// }, {
-//     username: "Hellooo",
-//     date: "April 5, 2026",
-//     ratings: 1,
-//     review: "BAD",
-//     pictures: ["images/alyn's salmon.jpeg", "images/salmon.jpg", "images/chocolate-chip-banana-bread.jpg"]
-// }]
+indexedDB.deleteDatabase("ReviewsDataBase");
 
 const reviewSection = document.querySelector(".review-section");
 
@@ -28,6 +10,8 @@ const ratingBarTemplate = document.querySelector("#rating-bar-template");
 const uploadedImgTemplate = document.querySelector("#uploaded-img-template");
 const reviewImgTemplate = reviewTemplate.content.querySelector("#img-template");
 
+let dataBase;
+
 let recipeName = window.location.pathname;
 recipeName = recipeName.substring(recipeName.lastIndexOf("/") + 1);
 recipeName = recipeName.split(".")[0];
@@ -36,14 +20,16 @@ let totalRatings = 0;
 const ratingsDistribution = [0, 0, 0, 0, 0];
 const uploadedFiles = [];
 
-initializeLocalStorage();
-initializeReviewSummary();
-const existingReviews = JSON.parse(localStorage.getItem(recipeName));
-existingReviews.forEach(review => {
-    displayReview(review);
-})
-updateReviewSummary();
-initializeReviewWriting();
+initializeReviewPage();
+
+async function initializeReviewPage() {
+    await openDataBase();
+    initializeReviewSummary();
+    // JSON.parse(localStorage.getItem(recipeName));
+    await displayExistingReviews();
+    updateReviewSummary();
+    initializeReviewWriting();
+}
 
 function initializeLocalStorage() {
     if (localStorage.getItem(recipeName) === null) {
@@ -96,6 +82,9 @@ function initializeReviewWriting() {
 
     fileInput.addEventListener("change", () => {
         const file = fileInput.files[0];
+        // if (!file) {
+        //     return;
+        // }
         let doesFileExist = false;
 
         if (uploadedFiles.length > 0) {
@@ -126,6 +115,7 @@ function initializeReviewWriting() {
             })
             uploadedImages.appendChild(uploadedImgDiv);
         }
+        fileInput.value = "";
         toggleUploadImagesBTN();
         toggleSubmitBTN();
     })
@@ -139,10 +129,10 @@ function initializeReviewWriting() {
 
     const submitButton = document.querySelector("#submit-btn");
     toggleSubmitBTN();
-    submitButton.addEventListener("click", () => {
+    submitButton.addEventListener("click", async () => {
         showReviewPopup(false);
 
-        let review = constructReview();
+        let review = await constructReview();
         displayReview(review);
         updateReviewSummary();
 
@@ -223,6 +213,7 @@ function initializeReviewSummary() {
 
 function updateReviewSummary() {
     let numReviews = document.querySelectorAll(".review-box").length;
+    console.log(numReviews);
     let averageRatings = totalRatings / numReviews;
 
     const overallScore = document.querySelector("#overall-score");
@@ -268,7 +259,7 @@ function updateReviewSummary() {
     }
 }
 
-function constructReview() {
+async function constructReview() {
     const username = localStorage.getItem("loggedInUser");
 
     const dateFormat = { year: "numeric", month: "long", day: "numeric" };
@@ -287,11 +278,11 @@ function constructReview() {
     const textbox = document.querySelector(".review-textbox");
     const reviewParagraph = textbox.value;
 
-    const uploadedImages = document.querySelectorAll(".uploaded-imgs-container .uploaded-img");
-    let reviewImages = [];
-    uploadedImages.forEach(imageButton => {
-        reviewImages.push(imageButton.querySelector("img").src);
-    })
+    const reviewImages = [];
+    for (const imageFile of uploadedFiles) {
+        const base64 = await fileToBase64(imageFile);
+        reviewImages.push(base64);
+    }
 
     const newReview = {
         username: username,
@@ -301,9 +292,10 @@ function constructReview() {
         pictures: reviewImages
     }
 
-    const reviewData = JSON.parse(localStorage.getItem(recipeName));
-    reviewData.push(newReview);
-    localStorage.setItem(recipeName, JSON.stringify(reviewData));
+    // const reviewData = JSON.parse(localStorage.getItem(recipeName));
+    // reviewData.push(newReview);
+    // localStorage.setItem(recipeName, JSON.stringify(reviewData));
+    saveReview(newReview);
 
     return newReview;
 }
@@ -318,7 +310,6 @@ function displayReview(review) {
     date.textContent = review.date;
 
     const ratings = reviewClone.querySelector(".ratings");
-    // ratings.innerHTML = "";
 
     for (let i = 0; i < 5; i++) {
         const ratingsClone = ratingsTemplate.content.cloneNode(true);
@@ -340,12 +331,12 @@ function displayReview(review) {
 
     const reviewImages = reviewClone.querySelector(".review-images");
 
-    review.pictures.forEach(reviewPicture => {
+    review.pictures.forEach(imageFile => {
         const reviewImgClone = reviewImgTemplate.content.cloneNode(true);
         const image = reviewImgClone.querySelector("img");
         const popUpImage = reviewImgClone.querySelector(".popup-image img");
-        image.src = reviewPicture;
-        popUpImage.src = reviewPicture;
+        image.src = imageFile;
+        popUpImage.src = imageFile;
 
         const imageButton = reviewImgClone.querySelector(".review-image-btn");
         const popupOverlay = reviewImgClone.querySelector(".popup-overlay");
@@ -368,6 +359,71 @@ function displayReview(review) {
     reviewSection.appendChild(reviewClone);
 }
 
+function saveReview(review) {
+    const storage = dataBase.transaction("recipes", "readwrite").objectStore("recipes");
+    const recipeStorage = storage.get(recipeName);
+
+    recipeStorage.onsuccess = () => {
+        let recipe = recipeStorage.result;
+        recipe.reviews.push(review);
+        storage.put(recipe);
+    }
+}
+
+function openDataBase() {
+    return new Promise(resolve => {
+        const request = indexedDB.open("ReviewsDataBase", 1);
+
+        request.onupgradeneeded = function (event) {
+            dataBase = event.target.result;
+
+            dataBase.createObjectStore("recipes", {
+                keyPath: "recipe",
+            });
+        };
+
+        request.onsuccess = function (event) {
+            dataBase = event.target.result;
+            addRecipeToStorage();
+            resolve();
+        };
+    });
+}
+
+function addRecipeToStorage() {
+    const storage = dataBase.transaction("recipes", "readwrite").objectStore("recipes");
+    const recipeStorage = storage.get(recipeName);
+
+    recipeStorage.onsuccess = () => {
+        if (!recipeStorage.result) {
+            const newRecipe = { recipe: recipeName, reviews: [] };
+            storage.add(newRecipe);
+        }
+    };
+}
+
+function displayExistingReviews() {
+    return new Promise(resolve => {
+        const storage = dataBase.transaction("recipes", "readonly").objectStore("recipes");
+        const recipeStorage = storage.get(recipeName);
+
+        recipeStorage.onsuccess = () => {
+            const reviews = recipeStorage.result?.reviews || [];
+            reviews.forEach(review => {
+                displayReview(review);
+            });
+            resolve();
+        };
+    });
+}
+
+function fileToBase64(imageFile) {
+    return new Promise(resolve => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.readAsDataURL(imageFile);
+    });
+}
 
 function getNumInTwoDigits(number) {
     if (number < 1000) {
