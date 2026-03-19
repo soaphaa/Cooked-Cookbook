@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="" en>
 
 <head>
@@ -7,7 +7,6 @@
     <title>Review Section</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="review.css">
-    <!-- <link rel="shortcut icon" href="images/salmon.jpg"> -->
     <script src="https://kit.fontawesome.com/44fe28e16d.js" crossorigin="anonymous"></script>
 </head>
 
@@ -101,9 +100,6 @@
                                 </div>
                             </div>
                         </template>
-                        <!-- <img src="images/salmon.jpg">
-                        <img src="images/alyn's salmon.jpeg">
-                        <img src="images/chocolate-chip-cookie.jpeg">  -->
                     </div>
                 </div>
             </div>
@@ -124,4 +120,14 @@
 
 </body>
 
-</html>
+</html> -->
+<!-- 
+<script type="module">
+    fetch("review.html")
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById("review-container").innerHTML = html;
+            import("./review.js")
+                .catch(err => console.error(err));
+        });
+</script> -->

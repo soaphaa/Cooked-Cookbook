@@ -1,3 +1,5 @@
+// localStorage.setItem("loggedInUser", "Guest");
+
 document.addEventListener("DOMContentLoaded", () => {
     
     
@@ -12,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-    
     
     const checkboxes = document.querySelectorAll(
         ".ingredients-list input[type=\"checkbox\"]"
