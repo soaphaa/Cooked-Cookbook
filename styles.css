@@ -32,6 +32,7 @@ body {
     line-height: 1em;
     font-size: 20px;
     padding:0;
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 p {
@@ -364,6 +365,7 @@ rbody {
 /* instructions within the card */
 
 .instruction {
+    line-height: 1em;
     margin-top: 2vh;
     margin-left: 15vw;
     margin-right: 15vw;
