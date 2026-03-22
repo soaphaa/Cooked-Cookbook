@@ -1,3 +1,5 @@
+localStorage.setItem("loggedInUser", "Guest");
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const fullBtn = document.getElementById("full-btn");

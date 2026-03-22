@@ -134,7 +134,12 @@ button:hover{
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     border-radius: 10px;    
     cursor: url("images/cursor1.cur"), auto;
-    border-radius: 10px;    
+}
+
+button:hover:disabled {
+    transform: none;
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
 .search button {

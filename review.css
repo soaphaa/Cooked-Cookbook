@@ -10,19 +10,18 @@
 
 .review-section button:hover:enabled {
     filter: brightness(90%);
-    background: transparent;
-    transform: scale(1);
-    box-shadow: none;
+    background-color: rgb(167, 29, 29);
 }
 
 .review-section button:active:enabled {
     filter: brightness(70%);
+
 }
 
 .review-section button:disabled {
     opacity: 0.55;
     filter: brightness(95%);
-    cursor: not-allowed;
+    background-color: rgb(167, 29, 29);
 }
 
 .review-section i {
@@ -30,7 +29,7 @@
 }
 
 .review-section div {
-    /* transition: all 0.3s ease; */
+    transition: all 0.3s ease;
 }
 
 .review-section h1 {
@@ -172,6 +171,10 @@
     font-size: 1.25rem;
 }
 
+.write-review-btn:hover {
+    border-radius: 2rem;
+}
+
 .review-popup {
     display: flex;
     background-color: white;
@@ -232,6 +235,12 @@
     background-color: transparent;
 }
 
+.review-section .rating-button:hover:enabled {
+    background-color: transparent;
+    box-shadow: none;
+    transform: none;
+}
+
 .rating-button i {
     font-size: 3rem;
 }
@@ -261,15 +270,16 @@
     cursor: pointer;
 }
 
-.img-upload-container input:enabled + label:hover {
+.img-upload-container input:enabled+label:hover {
     filter: brightness(90%);
+    transform: scale(1.05);
 }
 
-.img-upload-container input:enabled + label:active {
+.img-upload-container input:enabled+label:active {
     filter: brightness(70%);
 }
 
-.img-upload-container input:disabled + label {
+.img-upload-container input:disabled+label {
     cursor: not-allowed;
 }
 
@@ -359,6 +369,7 @@
     top: 0;
     right: 0;
     margin: 0.2rem;
+    margin-left: auto;
     padding: 0rem;
     justify-content: center;
     align-items: center;
@@ -453,6 +464,11 @@
     cursor: pointer;
 }
 
+.review-image-btn:hover {
+    border-radius: 1rem;
+    transform: scale(1.01);
+}
+
 .review-image-btn img {
     width: 100%;
     height: 100%;
@@ -490,7 +506,6 @@
     left: 50%;
     transform: translate(-50%, -50%) scale(0.8);
     opacity: 0;
-    border: 0.15rem solid rgb(187, 107, 107);
     border-radius: 0.5rem;
     pointer-events: none;
     z-index: 1000;
@@ -508,7 +523,7 @@
     height: 2.8rem;
     justify-content: flex-end;
     align-items: center;
-    background-color: #d08888;
+    background-color: #c16c6c;
 }
 
 .close-img-btn {
@@ -520,8 +535,9 @@
     border: 0rem;
     padding: 0rem;
     margin: 0rem;
+    border-radius: 0%;
     cursor: pointer;
-    background-color: rgb(207, 101, 101);
+    /* background-color: rgb(167, 29, 29); */
 }
 
 .close-img-btn i {
