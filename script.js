@@ -362,7 +362,6 @@ function createTagBtn(tagname){
         usernameDisplay.textContent = "guest chef";
     }
 
-
     const fullBtn = document.getElementById("full-btn");
     const halfBtn = document.getElementById("half-btn");
     const doubleBtn = document.getElementById("double-btn");
