@@ -129,7 +129,7 @@ button:hover{
     background: #cf0404;
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-    border-radius: 10px;    
+    border-radius: 9step0px;    
     cursor: url("images/cursor1.cur"), auto;
     border-radius: 10px;    
 }
@@ -267,6 +267,8 @@ rbody {
     text-decoration: none;
     border-radius: 20px;
     text-align:center;
+
+    font-weight: bold;
 
     font-size: 3vw;
 }
@@ -441,7 +443,7 @@ rbody {
     color: rgb(167, 29, 29);
     margin-top:10px;
     margin-bottom: 10px;
-    font-size:3vw;
+    font-size:2vw;
 }
 
 .step-under::before{
