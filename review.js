@@ -74,9 +74,6 @@ function initializeReviewWriting() {
 
     fileInput.addEventListener("change", () => {
         const file = fileInput.files[0];
-        // if (!file) {
-        //     return;
-        // }
         let doesFileExist = false;
 
         if (uploadedFiles.length > 0) {
