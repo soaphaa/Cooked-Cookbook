@@ -15,7 +15,8 @@
 <body>
     
     <header>
-        <hh1>    <img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"> </hh1>
+        <h1> <img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"> </h1>
+        <p class="homepage" id="home-button"></p>
     </header>
     
     <p class="homepage" id="home-button"></p>
@@ -45,7 +46,7 @@
             <li><label><input type="checkbox">1 tsp soy sauce</label></li>
             <li><label><input type="checkbox">1 1/2 tsp sesame oil</label></li>
             <li><label><input type="checkbox">1 salmon fillet</label></li>
-            
+
         </ul>
 
         <!-- DOUBLE RECIPE  -->
@@ -60,6 +61,7 @@
 
         </ul>
 
+        
         <div class="recipe-scale">
             <button id="half-btn">Half</button>
             <button id="full-btn">Regular</button>
@@ -67,6 +69,10 @@
         </div>
         
     </div>
+
+    <!-- updates!! -->
+
+    <button id="nutrition-btn">Nutrition</button>
 
     <div class="panel" id="panel2">
         <p>Nutrition Information</p>
@@ -116,8 +122,44 @@
     </section>
     
     <button id="nutrition-btn">Nutrition</button>
-    <div>
-        <div class="instruction"> number one: the sauce !!
+    
+    <h1> ALYN SALMON !! </h1>
+    <div class="panel" id="panel">
+    
+    <p>Ingredients</p>
+    
+    <!-- FULL RECIPE -->
+    <ul class="ingredients-list" id="ingredients-full">
+        
+        <li><label><input type="checkbox">1 tbsp gochujang</label></li>
+        <li><label><input type="checkbox">1 tbsp honey</label></li>
+        <li><label><input type="checkbox">1 tsp mirin</label></li>
+        <li><label><input type="checkbox">2 tsp soy sauce</label></li>
+        <li><label><input type="checkbox">3 tsp sesame oil</label></li>
+        <li><label><input type="checkbox">2 salmon fillets</label></li>
+        
+    </ul>
+    
+    <!-- HALF RECIPE -->
+    <ul class="ingredients-list hidden" id="ingredients-half">
+        
+        <li><label><input type="checkbox">1/2 tbsp gochujang</label></li>
+        <li><label><input type="checkbox">1/2 tbsp honey</label></li>
+        <li><label><input type="checkbox">1/2 tsp mirin</label></li>
+        <li><label><input type="checkbox">1 tsp soy sauce</label></li>
+        <li><label><input type="checkbox">1 1/2 tsp sesame oil</label></li>
+        <li><label><input type="checkbox">1 salmon fillet</label></li>
+        
+    </ul>
+    
+    <div class="recipe-scale">
+        <button id="full-btn">Regular</button>
+        <button id="half-btn">Half</button>
+    </div>
+    
+</div>
+<div>
+    <div class = "instruction"> number one: the sauce !!
             <p class="step"> grab a tablespoon of gochujang and spoon out into a bowl</p>
             <p class="step"> toss in a tablespoon of honey as well </p>
             <p class="step"> pour in a teaspoon of mirin </p>

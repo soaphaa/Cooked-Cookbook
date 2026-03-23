@@ -74,7 +74,7 @@
 
             <li><label><input type="checkbox">1 cup salted butter, softened</label></li>
             <li><label><input type="checkbox">1 cup granulated sugar</label></li>
-            <li><label><input type="checkbox">1 cup light brown sugar, packed</label></li>
+            <li><label><input type="checkbox">1 cup light brown sugar</label></li>
             <li><label><input type="checkbox">2 tsp pure vanilla extract</label></li>
             <li><label><input type="checkbox">2 large eggs</label></li>
             <li><label><input type="checkbox">3 cups all-purpose flour</label></li>
@@ -91,7 +91,7 @@
 
             <li><label><input type="checkbox">1/2 cup salted butter, softened</label></li>
             <li><label><input type="checkbox">1/2 cup granulated sugar</label></li>
-            <li><label><input type="checkbox">1/2 cup light brown sugar, packed</label></li>
+            <li><label><input type="checkbox">1/2 cup light brown sugar</label></li>
             <li><label><input type="checkbox">1 tsp pure vanilla extract</label></li>
             <li><label><input type="checkbox">1 large egg</label></li>
             <li><label><input type="checkbox">1 1/2 cups all-purpose flour</label></li>
@@ -108,7 +108,7 @@
 
             <li><label><input type="checkbox">2 cups salted butter, softened</label></li>
             <li><label><input type="checkbox">2 cups granulated sugar</label></li>
-            <li><label><input type="checkbox">2 cups light brown sugar, packed</label></li>
+            <li><label><input type="checkbox">2 cups light brown sugar</label></li>
             <li><label><input type="checkbox">4 tsp pure vanilla extract</label></li>
             <li><label><input type="checkbox">4 large eggs</label></li>
             <li><label><input type="checkbox">6 cups all-purpose flour</label></li>
@@ -162,8 +162,126 @@
             <p> mix well !! </p>
         </div>
     </div>
-    <script src = "script.js"> </script>
-    <script src="timer.js"></script>
+    <script src="script.js"> </script>
+
+    <div class="finish">
+        <button id="finish">Finish</button>
+    </div>
+
+    <div id="review-container">
+        <section class="review-section">
+            <hr class="review-section-divider">
+            <h1>Reviews</h1>
+            <div class="review-summary">
+                <div class="overall-review-container">
+                    <h2 id="overall-score"></h2>
+                    <div class="overall-ratings">
+                        <template id="ratings-with-fill-template">
+                            <div class="rating-star">
+                                <i class="fa-star"></i>
+                                <div class="rating-star-fill">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <h3 id="num-ratings"></h3>
+                    <button class="write-review-btn">Write a Review</button>
+                    <div class="popup-overlay"></div>
+                    <div class="review-popup">
+                        <div class="user-ratings-container">
+                            <h4>Rate the Recipe:</h4>
+                            <div class="user-ratings">
+                                <template id="rating-button-template">
+                                    <button class="rating-button">
+                                        <i class="fa-star"></i>
+                                    </button>
+                                </template>
+                            </div>
+                        </div>
+                        <textarea class="review-textbox" placeholder="Type your review here..."></textarea>
+                        <div class="img-upload-container">
+                            <input id="img-upload" type="file" accept="image/*">
+                            <label for="img-upload">Upload Images
+                                <span>You can upload a max of 7 images!</span>
+                            </label>
+                        </div>
+                        <div class="uploaded-imgs-container"></div>
+                        <div class="popup-btns">
+                            <button id="cancel-btn">Cancel</button>
+                            <button id="submit-btn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="rating-bars-container">
+                    <template id="rating-bar-template">
+                        <div class="rating-bar">
+                            <h4 class="rating-level"></h4>
+                            <div class="rating-bar-full">
+                                <div class="rating-bar-filled"></div>
+                            </div>
+                            <h5 class="rating-percentage"></h5>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <hr class="review-section-divider">
+            <template id="review-template">
+                <div class="review-box">
+                    <div class="review-header">
+                        <div class="profile-info">
+                            <h2 id="username"></h2>
+                            <h3 id="date"></h3>
+                        </div>
+                        <div class="ratings">
+                            <template id="ratings-template">
+                                <i class="fa-star"></i>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p id="review-paragraph"></p>
+                        <div class="review-images">
+                            <template id="img-template">
+                                <button class="review-image-btn">
+                                    <img src="" alt="Review Image">
+                                </button>
+                                <div class="popup-overlay"></div>
+                                <div class="img-popup">
+                                    <div class="popup-header">
+                                        <button class="close-img-btn">
+                                            <i class="fa fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <div class="popup-image">
+                                        <img src="" alt="Review Image">
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+                <hr class="review-divider">
+            </template>
+        </section>
+
+        <template id="uploaded-img-template">
+            <div class="uploaded-img">
+                <img src="" alt="Image Upload">
+                <button>
+                    <i class="fas fa-times-circle"></i>
+                </button>
+            </div>
+        </template>
+    </div>
+
+    <script src="review.js"></script>
+
+</body>
+
+<button id="timer-toggle-btn">Toggle Timer</button>
+
+<script src="timer.js"></script>
 
 </body>
 

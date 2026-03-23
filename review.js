@@ -74,9 +74,6 @@ function initializeReviewWriting() {
 
     fileInput.addEventListener("change", () => {
         const file = fileInput.files[0];
-        // if (!file) {
-        //     return;
-        // }
         let doesFileExist = false;
 
         if (uploadedFiles.length > 0) {
@@ -252,7 +249,10 @@ function updateReviewSummary() {
 }
 
 async function constructReview() {
-    const username = localStorage.getItem("loggedInUser");
+    let username = localStorage.getItem("loggedInUser");
+    if (username === null) {
+        username = "Guest";
+    }
 
     const dateFormat = { year: "numeric", month: "long", day: "numeric" };
     const date = new Date().toLocaleDateString("en-US", dateFormat);
