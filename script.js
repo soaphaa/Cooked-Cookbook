@@ -1,4 +1,4 @@
-// localStorage.setItem("loggedInUser", "Guest");
+localStorage.setItem("loggedInUser", "Guest");
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -363,7 +363,6 @@ function createTagBtn(tagname){
     } else if (usernameDisplay) {
         usernameDisplay.textContent = "guest chef";
     }
-
 
     const fullBtn = document.getElementById("full-btn");
     const halfBtn = document.getElementById("half-btn");
