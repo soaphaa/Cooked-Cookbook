@@ -111,6 +111,64 @@
         </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+    <div class="panel" id="panel">
+
+        <p>Ingredients</p>
+
+        <!-- FULL RECIPE -->
+        <ul class="ingredients-list" id="ingredients-full">
+
+            <li><label><input type="checkbox">2 to 3 medium very ripe bananas</label></li>
+            <li><label><input type="checkbox">1/3 cup butter, melted</label></li>
+            <li><label><input type="checkbox">1/2 tsp baking soda</label></li>
+            <li><label><input type="checkbox">1 pinch salt</label></li>
+            <li><label><input type="checkbox">3/4 cup sugar</label></li>
+            <li><label><input type="checkbox">1 large egg, beaten</label></li>
+            <li><label><input type="checkbox">1 tsp vanilla extract</label></li>
+            <li><label><input type="checkbox">1 1/2 cups all-purpose flour</label></li>
+
+        </ul>
+
+        <!-- HALF RECIPE -->
+        <ul class="ingredients-list hidden" id="ingredients-half">
+
+            <li><label><input type="checkbox">1 to 1 1/2 medium very ripe bananas</label></li>
+            <li><label><input type="checkbox">1/6 cup butter, melted</label></li>
+            <li><label><input type="checkbox">1/4 tsp baking soda</label></li>
+            <li><label><input type="checkbox">1 pinch salt</label></li>
+            <li><label><input type="checkbox">3/8 cup sugar</label></li>
+            <li><label><input type="checkbox">1/2 large egg, beaten</label></li>
+            <li><label><input type="checkbox">1/2 tsp vanilla extract</label></li>
+            <li><label><input type="checkbox">3/4 cup all-purpose flour</label></li>
+
+        </ul>
+
+        <!-- DOUBLE RECIPE -->
+        <ul class="ingredients-list hidden" id="ingredients-double">
+
+            <li><label><input type="checkbox">4 to 6 medium very ripe bananas</label></li>
+            <li><label><input type="checkbox">2/3 cup butter, melted</label></li>
+            <li><label><input type="checkbox">1 tsp baking soda</label></li>
+            <li><label><input type="checkbox">2 pinches salt</label></li>
+            <li><label><input type="checkbox">1 1/2 cups sugar</label></li>
+            <li><label><input type="checkbox">2 large eggs, beaten</label></li>
+            <li><label><input type="checkbox">2 tsp vanilla extract</label></li>
+            <li><label><input type="checkbox">3 cups all-purpose flour</label></li>
+
+        </ul>
+
+        <div class="recipe-scale">
+            <button id="half-btn">Half</button>
+            <button id="full-btn">Regular</button>
+            <button id="double-btn">Double</button>
+        </div>
+
+    </div>
+
+
+    <!-- updates!! -->
     <button id="nutrition-btn">Nutrition</button>
 
     <!-- Recipe Content -->
@@ -189,7 +247,7 @@
                         <div class="popup-btns">
                             <button id="cancel-btn">Cancel</button>
                             <button id="submit-btn">Submit</button>
-                        </div>
+                         </div>
                     </div>
                 </div>
                 <div class="rating-bars-container">

@@ -8,9 +8,9 @@
 
 ## About
 
-Cooked Cookbook is a recipe website with a warm picnic-themed UI, designed with a strong focus on user experience and interactivity.
+Cooked Cookbook is a recipe website with a warm picnic-themed UI, designed with a strong focus on user interface and experience (UI/UX).
 
-Unlike most recipe websites cluttered with ads and hard-to-follow layouts, Cooked Cookbook is built to actually improve your cooking experience!!
+Unlike most recipe websites cluttered with ads and hard-to-follow layouts, Cooked Cookbook is built to actually improve your cooking experience !!
 
 ---
 

@@ -1,5 +1,3 @@
-// localStorage.setItem("loggedInUser", "Guest");
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const fullBtn = document.getElementById("full-btn");
@@ -109,7 +107,8 @@ const u_search = document.getElementById("user_search")
 const recipes = [{
     title: "Chocolate Chip Cookies",
     description: "chocolate chip cookies: brown sugar, white sugar, chocolate chips, flour, eggs, milk, baking soda, baking powder",
-    tags: ["sweet", "dessert"], source: "cookies.html",
+    tags: ["sweet", "dessert"], 
+    source: "cookies.html",
     image: "images/chocolate-chip-cookie.jpeg"
 },
 {
