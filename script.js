@@ -132,6 +132,7 @@ const recipes = [{
 const reccontainer = document.getElementById("recipe-container");
 const input = document.getElementById("text");
 const filterset = document.getElementById("tagbtns")
+const pbtn = document.getElementById("printbtn");
 
 if (btn) {
     btn.addEventListener("click", function () {
@@ -141,6 +142,15 @@ if (btn) {
     });
 }
 
+if (pbtn) {
+    pbtn.addEventListener("click", function () {
+        var printContents = document.getElementById("recipeprint").innerHTML;
+        w=window.open();
+        w.document.write(printContents);
+        w.print();
+        w.close();
+    });
+}
 
 document.addEventListener('keydown', function(event) {
     const textValue = u_search.value.trim();
@@ -207,6 +217,8 @@ function search(txt){
         reccontainer.appendChild(no_card);
     }
 }
+
+
 
 const nutritionBtn = document.getElementById("nutrition-btn");
 const nutritionPanel = document.getElementById("panel2");

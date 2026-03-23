@@ -21,6 +21,8 @@
     <p class="homepage" id="home-button"></p>
     
     <div class="panel" id="panel">
+
+
         
         <p>Ingredients</p>
         
@@ -83,6 +85,9 @@
     <!-- timer toggle button, always visible -->
     <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Cooking Timer</button>
     
+    <button id = "printbtn" class = "pbtn" >PRINT RECIPE!</button>
+
+
     <section id="timer" class="timer-window hidden">
         <div class="timer-card" id="timer-card">
             <button id="timer-close-btn">x</button>
@@ -116,8 +121,9 @@
     </section>
     
     <button id="nutrition-btn">Nutrition</button>
-    <div>
+    <div id = recipeprint>
         <div class="instruction"> number one: the sauce !!
+            <P class = "step"> first, gather your ingredients for the sauce </P>
             <p class="step"> grab a tablespoon of gochujang and spoon out into a bowl</p>
             <p class="step"> toss in a tablespoon of honey as well </p>
             <p class="step"> pour in a teaspoon of mirin </p>
@@ -156,7 +162,7 @@
             <div class="finish">
                 <button id="finish">Finish</button>
             </div>
-            
+
             <div id="review-container">
                 <section class="review-section">
                     <hr class="review-section-divider">
