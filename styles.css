@@ -51,7 +51,7 @@ h1 {
     max-width: 100vw;
     font-size: 4vw;
     text-align: center;
-    line-height: .1em;
+    line-height: 1em;
 }
 
 /* header heading 1*/
@@ -134,7 +134,12 @@ button:hover{
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     border-radius: 10px;    
     cursor: url("images/cursor1.cur"), auto;
-    border-radius: 10px;    
+}
+
+button:hover:disabled {
+    transform: none;
+    cursor: not-allowed;
+    box-shadow: none;
 }
 
 .search button {
@@ -416,15 +421,13 @@ rbody {
     margin-right: 15vw;
     margin-bottom: 20px;
     padding: 30px;
-
     padding-top: 20px;
     max-width: 100%;
-
     background-color: rgb(253, 241, 229);
     font-weight: bold;
     border-radius: 30px;
-
-    font-size: 2.5vw;
+    line-height: 1em;
+    font-size: 3.2vw;
 }
 
 .warning {
@@ -614,7 +617,7 @@ h2.timer-header{
     position: fixed;
     top: 0;
     right: 0;
-    width: 20vw;
+    width: 18vw;
     background-color: #cd7575;
     padding: 1rem;
     padding-top: 2rem;
@@ -677,14 +680,12 @@ h2.timer-header{
 #panel2 ol {
     list-style: none;
     padding: 0;
-    margin: 1.5rem 0 0 0;
-    /*space from title */
+    margin: 1.5rem 0 0 0; /*space from title */
 }
 
 #panel2 ol li {
     display: flex;
-    justify-content: space-between;
-    /* pushes text left & right */
+    justify-content: space-between;  /* pushes text left & right */
     border-bottom: 1px solid black;
     padding: 0.25rem 0;
 }
