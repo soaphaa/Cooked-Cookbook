@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <head>
@@ -21,6 +22,8 @@
     <p class="homepage" id="home-button"></p>
     
     <div class="panel" id="panel">
+
+
         
         <p>Ingredients</p>
         
@@ -60,20 +63,6 @@
 
         </ul>
 
-        <!-- DOUBLE RECIPE  -->
-        <ul class="ingredients-list hidden" id="ingredients-double">
-
-
-            <li><label><input type="checkbox">2 tbsp gochujang</label></li>
-            <li><label><input type="checkbox">2 tbsp honey</label></li>
-            <li><label><input type="checkbox">2 tsp mirin</label></li>
-            <li><label><input type="checkbox">4 tsp soy sauce</label></li>
-            <li><label><input type="checkbox">6 tsp sesame oil</label></li>
-            <li><label><input type="checkbox">4 salmon fillets</label></li>
-
-
-        </ul>
-
         
         <div class="recipe-scale">
             <button id="half-btn">Half</button>
@@ -102,6 +91,9 @@
     <!-- timer toggle button, always visible -->
     <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Cooking Timer</button>
     
+    <button id = "printbtn" class = "pbtn" >PRINT RECIPE!</button>
+
+
     <section id="timer" class="timer-window hidden">
         <div class="timer-card" id="timer-card">
             <button id="timer-close-btn">x</button>
@@ -135,44 +127,9 @@
     </section>
     
     <button id="nutrition-btn">Nutrition</button>
-    
-    <h1> ALYN SALMON !! </h1>
-    <div class="panel" id="panel">
-    
-    <p>Ingredients</p>
-    
-    <!-- FULL RECIPE -->
-    <ul class="ingredients-list" id="ingredients-full">
-        
-        <li><label><input type="checkbox">1 tbsp gochujang</label></li>
-        <li><label><input type="checkbox">1 tbsp honey</label></li>
-        <li><label><input type="checkbox">1 tsp mirin</label></li>
-        <li><label><input type="checkbox">2 tsp soy sauce</label></li>
-        <li><label><input type="checkbox">3 tsp sesame oil</label></li>
-        <li><label><input type="checkbox">2 salmon fillets</label></li>
-        
-    </ul>
-    
-    <!-- HALF RECIPE -->
-    <ul class="ingredients-list hidden" id="ingredients-half">
-        
-        <li><label><input type="checkbox">1/2 tbsp gochujang</label></li>
-        <li><label><input type="checkbox">1/2 tbsp honey</label></li>
-        <li><label><input type="checkbox">1/2 tsp mirin</label></li>
-        <li><label><input type="checkbox">1 tsp soy sauce</label></li>
-        <li><label><input type="checkbox">1 1/2 tsp sesame oil</label></li>
-        <li><label><input type="checkbox">1 salmon fillet</label></li>
-        
-    </ul>
-    
-    <div class="recipe-scale">
-        <button id="full-btn">Regular</button>
-        <button id="half-btn">Half</button>
-    </div>
-    
-</div>
-<div>
-    <div class = "instruction"> number one: the sauce !!
+    <div id = recipeprint>
+        <div class="instruction"> number one: the sauce !!
+            <P class = "step"> first, gather your ingredients for the sauce </P>
             <p class="step"> grab a tablespoon of gochujang and spoon out into a bowl</p>
             <p class="step"> toss in a tablespoon of honey as well </p>
             <p class="step"> pour in a teaspoon of mirin </p>
@@ -204,13 +161,14 @@
                 
             </div>
             
+            
             <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js">
             </script>
             
             <div class="finish">
                 <button id="finish">Finish</button>
             </div>
-            
+
             <div id="review-container">
                 <section class="review-section">
                     <hr class="review-section-divider">

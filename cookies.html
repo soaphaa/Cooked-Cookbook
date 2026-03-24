@@ -120,18 +120,116 @@
             </div>
         </div>
     </section>
-    
+
+    <homepage id="home-button">
+    </homepage>
+
+    <button id = "printbtn" class = "pbtn" >PRINT RECIPE!</button>
+    <!-- <div class="homepage" id="home-button">
+        homepage where
+        does ts work
+    </div> -->
+
+
+    <!-- updates!! -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+    <div class="panel" id="panel">
+
+        <p>Ingredients</p>
+
+        <!-- FULL RECIPE -->
+        <ul class="ingredients-list" id="ingredients-full">
+
+            <li><label><input type="checkbox">1 cup salted butter, softened</label></li>
+            <li><label><input type="checkbox">1 cup granulated sugar</label></li>
+            <li><label><input type="checkbox">1 cup light brown sugar</label></li>
+            <li><label><input type="checkbox">2 tsp pure vanilla extract</label></li>
+            <li><label><input type="checkbox">2 large eggs</label></li>
+            <li><label><input type="checkbox">3 cups all-purpose flour</label></li>
+            <li><label><input type="checkbox">1 tsp baking soda</label></li>
+            <li><label><input type="checkbox">1/2 tsp baking powder</label></li>
+            <li><label><input type="checkbox">1 tsp sea salt</label></li>
+            <li><label><input type="checkbox">2 cups chocolate chips</label></li>
+
+
+        </ul>
+
+        <!-- HALF RECIPE -->
+        <ul class="ingredients-list hidden" id="ingredients-half">
+
+            <li><label><input type="checkbox">1/2 cup salted butter, softened</label></li>
+            <li><label><input type="checkbox">1/2 cup granulated sugar</label></li>
+            <li><label><input type="checkbox">1/2 cup light brown sugar</label></li>
+            <li><label><input type="checkbox">1 tsp pure vanilla extract</label></li>
+            <li><label><input type="checkbox">1 large egg</label></li>
+            <li><label><input type="checkbox">1 1/2 cups all-purpose flour</label></li>
+            <li><label><input type="checkbox">1/2 tsp baking soda</label></li>
+            <li><label><input type="checkbox">1/4 tsp baking powder</label></li>
+            <li><label><input type="checkbox">1/2 tsp sea salt</label></li>
+            <li><label><input type="checkbox">1 cup chocolate chips</label></li>
+
+        </ul>
+
+        <!-- DOUBLE RECIPE -->
+
+        <ul class="ingredients-list hidden" id="ingredients-double">
+
+            <li><label><input type="checkbox">2 cups salted butter, softened</label></li>
+            <li><label><input type="checkbox">2 cups granulated sugar</label></li>
+            <li><label><input type="checkbox">2 cups light brown sugar</label></li>
+            <li><label><input type="checkbox">4 tsp pure vanilla extract</label></li>
+            <li><label><input type="checkbox">4 large eggs</label></li>
+            <li><label><input type="checkbox">6 cups all-purpose flour</label></li>
+            <li><label><input type="checkbox">2 tsp baking soda</label></li>
+            <li><label><input type="checkbox">1 tsp baking powder</label></li>
+            <li><label><input type="checkbox">2 tsp sea salt</label></li>
+            <li><label><input type="checkbox">4 cups chocolate chips</label></li>
+
+        </ul>
+
+        <div class="recipe-scale">
+            <button id="half-btn">Half</button>
+            <button id="full-btn">Regular</button>
+            <button id="double-btn">Double</button>
+        </div>
+
+            <!-- timer toggle button, always visible -->
+        <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Timer</button>
+
+        <homepage id = "home-button">
+        </homepage>
+
+    </div>
+
     <button id="nutrition-btn">Nutrition</button>
-    
-    <!-- Recipe Content -->
-    <h1>COOKIES !!</h1>
-    
-    <div>
-        <div class="instruction"> Serving size: 36 cookies</div>
-        
-        <div class="instruction"> Prep
-            <p class="step"> Preheat oven to 375 F(190 degrees C). Line three baking sheets with parchment paper and set aside.</p>
-            <p class="step"> In a medium bowl mix flour, baking soda, baking powder and salt. Set aside. </p>
+
+    <div class="panel" id="panel2">
+        <p>Nutrition Information</p>
+
+        <ol class="nutrition-list">
+            <li><span>Calories</span><span>227</span></li>
+            <li><span>Sugars</span><span>19g</span></li>
+            <li><span>Fat</span><span>11g</span></li>
+            <li><span>Protein</span><span>2.7g</span></li>
+            <li><span>Carbohydrates</span><span>31g</span></li>
+        </ol>
+    </div>
+
+
+
+
+    <h1> COOKIES !! </h1>
+    <br>
+    <div id = recipeprint>
+        <div class="instruction"> number one: the sauce !!
+            <p> grab a tablespoon of gochujang and spoon out into a bowl</p>
+            <p> toss in a tablespoon of honey as well </p>
+            <p> pour in a teaspoon of mirin </p>
+            <p> add (preferably dark) 2 teaspoons of soy sauce </p>
+            <p> add 3 teaspoons of sesame oil </p>
+            <p> mix well !! </p>
         </div>
         
         <div class="instruction"> Mixing

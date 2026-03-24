@@ -310,11 +310,11 @@ rbody {
 /* for recipe-tag*/
 .taglist{
     align-self: center;
-    display: flex;
     flex-direction: row;
     gap: 10px;  /* Set to 0 to check if gap itself is the issue */
-  /*  display: grid;
-    grid-template-columns: repeat(3, minmax(1px, 50px));*/
+    display: flex;
+    flex-direction: row;
+
 }
 
 /*for recipe-filter*/
@@ -384,6 +384,37 @@ rbody {
     background: #ffffff;
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    border-radius: 90px;
+    cursor: url("images/cursor1.cur"), auto;
+}
+
+.pbtn{
+    display: inline-block;
+    align-self: center;
+    text-decoration: none;
+    position: fixed;
+    top: 240px;
+    left: 20px;
+    z-index: 1000;
+    background: #ffc4c4;
+    color: rgb(200, 0, 0);
+    border: none;
+    border-radius: 50px;
+    padding: 12px 20px;
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    float: none;
+    margin: 0;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.pbtn:hover{
+    background: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    border-radius: 90px;
     cursor: url("images/cursor1.cur"), auto;
 }
 
@@ -476,7 +507,7 @@ rbody {
     font-size: 20px;
     background-color: rgb(167, 29, 29);
     color: white;
-    border-radius: 10px;    
+    border-radius: 90px;    
 }
 
 .timer-window {
@@ -641,7 +672,7 @@ h2.timer-header{
     width: 230px;
     font-size: 1.5rem;
     position: fixed;
-    top: 230px;
+    top: 300px;
     left: 5px;
     display: none;
 }
