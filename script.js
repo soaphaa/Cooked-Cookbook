@@ -116,7 +116,7 @@ const recipes = [{
     description: "alyn salmon: gochujang, mirin, soy sauce, salmon, sesame oil, sugar",
     tags: ["savory", "spicy", "sweet"], 
     source: "salmon.html",
-    image: "images/salmon.jpg"
+    image: "images/alyn's salmon.JPG"
 },
 {
     title: "Chocolate Chip Banana Bread",
@@ -146,6 +146,13 @@ const recipes = [{
     source: "cheesecake.html",
     image: "images/cheesecake.jpg"
     
+},
+{
+    title: "Egg Tart",
+    description: "egg tarts: milk, cream, sugar, egg, tart crusts",
+    tags: ["sweet", "dessert"],
+    source: "eggtart.html",
+    image: "images/eggtart.jpg"
 }]
 
 
