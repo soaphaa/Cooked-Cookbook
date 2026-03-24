@@ -74,7 +74,7 @@ hh1 {
 
 
 header {
-    position: sticky;
+    position: fixed;
     background-color: rgb(167, 29, 29);
     text-align: center;
     padding-top: 5px;
