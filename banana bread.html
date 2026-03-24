@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookbook Core</title>
-
+    <title>Banana Bread – Cookbook Core</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="timer.css">
@@ -15,13 +14,72 @@
 <body>
 
     <header>
-        <h1> <img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"> </h1>
+        <hh1><img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"></hh1>
         <p class="homepage" id="home-button"></p>
     </header>
 
+    <!-- Ingredients Panel -->
+    <div class="panel" id="panel">
+        <p>Ingredients</p>
 
-    <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Timer</button>
-    
+        <!-- FULL RECIPE -->
+        <ul class="ingredients-list" id="ingredients-full">
+            <li><label><input type="checkbox"> 2 to 3 medium very ripe bananas</label></li>
+            <li><label><input type="checkbox"> 1/3 cup butter, melted</label></li>
+            <li><label><input type="checkbox"> 1/2 tsp baking soda</label></li>
+            <li><label><input type="checkbox"> 1 pinch salt</label></li>
+            <li><label><input type="checkbox"> 3/4 cup sugar</label></li>
+            <li><label><input type="checkbox"> 1 large egg, beaten</label></li>
+            <li><label><input type="checkbox"> 1 tsp vanilla extract</label></li>
+            <li><label><input type="checkbox"> 1 1/2 cups all-purpose flour</label></li>
+        </ul>
+
+        <!-- HALF RECIPE -->
+        <ul class="ingredients-list hidden" id="ingredients-half">
+            <li><label><input type="checkbox"> 1 to 1½ medium very ripe bananas</label></li>
+            <li><label><input type="checkbox"> 1/6 cup butter, melted</label></li>
+            <li><label><input type="checkbox"> 1/4 tsp baking soda</label></li>
+            <li><label><input type="checkbox"> 1 pinch salt</label></li>
+            <li><label><input type="checkbox"> 3/8 cup sugar</label></li>
+            <li><label><input type="checkbox"> 1/2 large egg, beaten</label></li>
+            <li><label><input type="checkbox"> 1/2 tsp vanilla extract</label></li>
+            <li><label><input type="checkbox"> 3/4 cup all-purpose flour</label></li>
+        </ul>
+
+        <!-- DOUBLE RECIPE -->
+        <ul class="ingredients-list hidden" id="ingredients-double">
+            <li><label><input type="checkbox"> 4 to 6 medium very ripe bananas</label></li>
+            <li><label><input type="checkbox"> 2/3 cup butter, melted</label></li>
+            <li><label><input type="checkbox"> 1 tsp baking soda</label></li>
+            <li><label><input type="checkbox"> 2 pinches salt</label></li>
+            <li><label><input type="checkbox"> 1 1/2 cups sugar</label></li>
+            <li><label><input type="checkbox"> 2 large eggs, beaten</label></li>
+            <li><label><input type="checkbox"> 2 tsp vanilla extract</label></li>
+            <li><label><input type="checkbox"> 3 cups all-purpose flour</label></li>
+        </ul>
+
+        <div class="recipe-scale">
+            <button id="full-btn">Regular</button>
+            <button id="half-btn">Half</button>
+            <button id="double-btn">Double</button>
+        </div>
+    </div>
+
+    <!-- Nutrition Panel -->
+    <div class="panel" id="panel2">
+        <p>Nutrition Information</p>
+        <ol class="nutrition-list">
+            <li><span>Calories</span><span>220</span></li>
+            <li><span>Sugars</span><span>12g</span></li>
+            <li><span>Fat</span><span>7g</span></li>
+            <li><span>Protein</span><span>3g</span></li>
+            <li><span>Carbohydrates</span><span>37g</span></li>
+        </ol>
+    </div>
+
+    <!-- Timer toggle button -->
+    <button id="timer-toggle-btn" class="timer-toggle-btn">⏱ Timer</button>
+
     <section id="timer" class="timer-window hidden">
         <div class="timer-card" id="timer-card">
             <button id="timer-close-btn">x</button>
@@ -52,8 +110,6 @@
             </div>
         </div>
     </section>
-
-    
 
     <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 
@@ -115,49 +171,40 @@
     <!-- updates!! -->
     <button id="nutrition-btn">Nutrition</button>
 
-    <div class="panel" id="panel2">
-        <p>Nutrition Information</p>
+    <!-- Recipe Content -->
+    <h1>BANANA BREAD !!</h1>
 
-        <ol class="nutrition-list">
-            <li><span>Calories</span><span>220</span></li>
-            <li><span>Sugars</span><span>12g</span></li>
-            <li><span>Fat</span><span>7g</span></li>
-            <li><span>Protein</span><span>3g</span></li>
-            <li><span>Carbohydrates</span><span>37g</span></li>
-        </ol>
-    </div>
-
-
-
-
-    <h1> BANANA BREAD !! </h1>
-
-    <div class = "instruction"> number one: mixing dry and wet respectively !!
-            <p class="step"> </p>
-    </div>
-    <div class = "instruction"> number two: your salmon !!
+    <div>
+        <div class="instruction"> number one: mixing dry and wet respectively !!
+            <p class="step"> (steps to be filled in) </p>
+        </div>
+        <div class="instruction"> number two: your salmon !!
             <p class="step"> optional: skin your salmon </p>
             <p class="step"> cut your salmon into 1-inch cubes (or larger depending on preffered size) </p>
             <p class="step-under"> just remember - size affects cooking time !! </p>
             <p class="step"> toss the salmon cubes into the sauce, ensuring an even coat </p>
-    </div>
-    <div class = "instruction"> number three:  cooking prep !!
+        </div>
+        <div class="instruction"> number three: cooking prep !!
             <p class="step"> grab a medium size pan for 1-2 pieces of salmon </p>
             <p class="step"> turn your stove onto low-simmer heat </p>
             <p class="step"> use the circumference of the pan as a guide on how much oil to put </p>
-            <p class="step-under"> do a circle in the shape of the ouline </p>
-            <p class="step"> wait until you can feel a medium amount of heat by hovering you hand over the pan's surface.</p> 
-    </div>
-    <div class = "instruction"> number four: cooking the salmon !!
+            <p class="step-under"> do a circle in the shape of the outline </p>
+            <p class="step"> wait until you can feel a medium amount of heat by hovering your hand over the pan's surface.</p>
+        </div>
+        <div class="instruction"> number four: cooking the salmon !!
             <p class="step"> place all the cubes with enough space from the others to rotate </p>
             <p class="step"> let the salmon cook for 2-3 minutes on one side, then flip and cook for another 2-3 minutes on the other side </p>
-        <p class="step-under"> of course, 2-3 minutes is a vague suggestions </p>
+            <p class="step-under"> of course, 2-3 minutes is a vague suggestion </p>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 
     <div class="finish">
         <button id="finish">Finish</button>
     </div>
 
+    <!-- Reviews -->
     <div id="review-container">
         <section class="review-section">
             <hr class="review-section-divider">
@@ -200,7 +247,7 @@
                         <div class="popup-btns">
                             <button id="cancel-btn">Cancel</button>
                             <button id="submit-btn">Submit</button>
-                        </div>
+                         </div>
                     </div>
                 </div>
                 <div class="rating-bars-container">
@@ -254,25 +301,17 @@
                 <hr class="review-divider">
             </template>
         </section>
-
         <template id="uploaded-img-template">
             <div class="uploaded-img">
                 <img src="" alt="Image Upload">
-                <button>
-                    <i class="fas fa-times-circle"></i>
-                </button>
+                <button><i class="fas fa-times-circle"></i></button>
             </div>
         </template>
     </div>
 
     <script src="review.js"></script>
-    <script src="script.js"> </script>
-
-</body>
-
-<button id="timer-toggle-btn">Toggle Timer</button>
-
-<script src="timer.js"></script>
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
 
 </body>
 </html>

@@ -125,14 +125,14 @@ button{
     color: white;
     border: none;
     border-radius: 10px;
-    font-weight:bold;    
+    font-weight:bold;
 }
 
 button:hover{
     background: #cf0404;
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-    border-radius: 10px;    
+    border-radius: 9step0px;    
     cursor: url("images/cursor1.cur"), auto;
 }
 
@@ -160,6 +160,7 @@ button:hover:disabled {
     font-family: "Nunito", sans-serif;
     background-color: rgb(161, 66, 66);
     border: 1px, solid, rgb(255, 203, 203);
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 .warning {
@@ -275,6 +276,8 @@ rbody {
     border-radius: 20px;
     text-align:center;
 
+    font-weight: bold;
+
     font-size: 3vw;
 }
 /* the ones on top of the recipes*/
@@ -301,6 +304,7 @@ rbody {
     border: .5px, white, solid;
     border-radius: 90px;
     transform: scale(1.05);
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 /* for recipe-tag*/
@@ -341,6 +345,7 @@ rbody {
 .recipe-btn:hover {
     background-color: #990000;
     transform:scale(1.03);
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 .recipe-sited{
@@ -349,6 +354,7 @@ rbody {
 
 .recipe-card:hover{
     transform:scale(1.03);
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 .hbtn{
@@ -722,6 +728,7 @@ h2.timer-header{
     background: #cf0404;
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    cursor: url("images/cursor1.cur"), auto;
 }   
 
 
@@ -751,6 +758,7 @@ h2.timer-header{
     background: #cf0404;
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 #profile-img {
@@ -832,6 +840,7 @@ h2.timer-header{
 #auth-tabs button:hover {
     background: #cc0000;
     color: white;
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 .auth-heading {
@@ -913,6 +922,7 @@ h2.timer-header{
 
 .review-section button:hover {
     filter: brightness(90%);
+    cursor: url("images/cursor1.cur"), auto;
 }
 
 .review-section button:active {

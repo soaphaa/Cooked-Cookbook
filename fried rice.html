@@ -1,36 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookbook Core</title>
-
+    <title>Kimchi Fried Rice – Cookbook Core</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="timer.css">
     <link rel="stylesheet" href="review.css">
     <script src="https://kit.fontawesome.com/44fe28e16d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
     <header>
-        <h1> <img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"> </h1>
+        <hh1><img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"></hh1>
         <p class="homepage" id="home-button"></p>
     </header>
 
-    <homepage id="home-button">
-    </homepage>
+    <!-- Ingredients Panel -->
+    <div class="panel" id="panel">
+        <p>Ingredients</p>
 
-    <h1> Kimchi Fried Rice </h1>
-    <description>
-        Original recipe by my mama
-        <ul> Insert Header (placeholder)
-            <li> Heat up a wide, flat pan or skillet. Add the vegetable oil. </li>
-            <li> Add the kimchi and stir fry for 1 minute over medium-high heat. </li>
-            <li> Add rice, kimchi juice, water, and gochujang. Stir all the ingredients together for about 7 minutes
-                with a wooden spoon. </li>
-            <li> Add sesame oil and remove from the heat. </li>
-            <li> Garnish with sprinkled chopped green onion, roasted gim, and sesame seeds. Serve right away.</li>
+        <!-- FULL RECIPE -->
+        <ul class="ingredients-list" id="ingredients-full">
+            <li><label><input type="checkbox"> 3 bowls steamed rice (3 cups)</label></li>
+            <li><label><input type="checkbox"> 1 cup chopped kimchi (aged, well-fermented and sour)</label></li>
+            <li><label><input type="checkbox"> ¼ cup kimchi juice</label></li>
+            <li><label><input type="checkbox"> ¼ cup water</label></li>
+            <li><label><input type="checkbox"> 2–3 tbsp gochujang</label></li>
+            <li><label><input type="checkbox"> 3 tsp toasted sesame oil</label></li>
+            <li><label><input type="checkbox"> 1 tsp vegetable oil</label></li>
+            <li><label><input type="checkbox"> 1 green onion, chopped</label></li>
+            <li><label><input type="checkbox"> 1 tbsp roasted sesame seeds</label></li>
+            <li><label><input type="checkbox"> 1 sheet of gim, roasted and shredded</label></li>
         </ul>
-    </description>
 
+        <!-- HALF RECIPE -->
+        <ul class="ingredients-list hidden" id="ingredients-half">
+            <li><label><input type="checkbox"> 1½ bowls steamed rice (1½ cups)</label></li>
+            <li><label><input type="checkbox"> ½ cup chopped kimchi</label></li>
+            <li><label><input type="checkbox"> 2 tbsp kimchi juice</label></li>
+            <li><label><input type="checkbox"> 2 tbsp water</label></li>
+            <li><label><input type="checkbox"> 1–1½ tbsp gochujang</label></li>
+            <li><label><input type="checkbox"> 1½ tsp toasted sesame oil</label></li>
+            <li><label><input type="checkbox"> ½ tsp vegetable oil</label></li>
+            <li><label><input type="checkbox"> ½ green onion, chopped</label></li>
+            <li><label><input type="checkbox"> ½ tbsp roasted sesame seeds</label></li>
+            <li><label><input type="checkbox"> ½ sheet of gim, roasted and shredded</label></li>
+        </ul>
+
+        <!-- DOUBLE RECIPE -->
+        <ul class="ingredients-list hidden" id="ingredients-double">
+            <li><label><input type="checkbox"> 6 bowls steamed rice (6 cups)</label></li>
+            <li><label><input type="checkbox"> 2 cups chopped kimchi</label></li>
+            <li><label><input type="checkbox"> ½ cup kimchi juice</label></li>
+            <li><label><input type="checkbox"> ½ cup water</label></li>
+            <li><label><input type="checkbox"> 4–6 tbsp gochujang</label></li>
+            <li><label><input type="checkbox"> 6 tsp toasted sesame oil</label></li>
+            <li><label><input type="checkbox"> 2 tsp vegetable oil</label></li>
+            <li><label><input type="checkbox"> 2 green onions, chopped</label></li>
+            <li><label><input type="checkbox"> 2 tbsp roasted sesame seeds</label></li>
+            <li><label><input type="checkbox"> 2 sheets of gim, roasted and shredded</label></li>
+        </ul>
+
+        <div class="recipe-scale">
+            <button id="full-btn">Regular</button>
+            <button id="half-btn">Half</button>
+            <button id="double-btn">Double</button>
+        </div>
+    </div>
+
+    <!-- Nutrition Panel -->
+    <div class="panel" id="panel2">
+        <p>Nutrition Information</p>
+        <ol class="nutrition-list">
+            <li><span>Calories</span><span>380</span></li>
+            <li><span>Sugars</span><span>5g</span></li>
+            <li><span>Fat</span><span>9g</span></li>
+            <li><span>Protein</span><span>10g</span></li>
+            <li><span>Carbohydrates</span><span>65g</span></li>
+        </ol>
+    </div>
+
+    <!-- Timer toggle button -->
+    <button id="timer-toggle-btn" class="timer-toggle-btn">⏱ Timer</button>
+
+    <section id="timer" class="timer-window hidden">
+        <div class="timer-card" id="timer-card">
+            <button id="timer-close-btn">x</button>
+            <span class="timer-title" id="timer-header">Timer</span>
+            <div class="ring-wrap">
+                <svg class="ring" viewBox="0 0 150 150">
+                    <circle class="ring-bg" cx="75" cy="75" r="60"></circle>
+                    <circle class="ring-progress" id="ring" cx="75" cy="75" r="60"></circle>
+                </svg>
+            </div>
+            <div class="timer-body">
+                <p id="timer-display">00:00</p>
+                <select id="timer-select">
+                    <option value="60">1 min</option>
+                    <option value="120">2 min</option>
+                    <option value="180">3 min</option>
+                    <option value="240">4 min</option>
+                    <option value="300">5 min</option>
+                    <option value="600">10 min</option>
+                    <option value="900">15 min</option>
+                    <option value="1200">20 min</option>
+                    <option value="1800">30 min</option>
+                </select>
+                <div class="timer-controls">
+                    <button id="toggle-start-btn">Start</button>
+                    <button id="reset-btn">Reset</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button id="nutrition-btn">Nutrition</button>
+
+    <!-- Recipe Content -->
+    <h1>Kimchi Fried Rice</h1>
+    <p style="text-align:center; color:#8b0000; font-size: 18px;">
+        Original recipe by my mama
+    </p>
+
+    <div>
+        <div class="instruction"> ① heat the pan
+            <p class="step"> heat up a wide, flat pan or skillet </p>
+            <p class="step"> add the vegetable oil </p>
+        </div>
+        <div class="instruction"> ② cook the kimchi
+            <p class="step"> add the kimchi and stir fry for 1 minute over medium-high heat </p>
+        </div>
+        <div class="instruction"> ③ add the rice
+            <p class="step"> add rice, kimchi juice, water, and gochujang </p>
+            <p class="step"> stir all the ingredients together for about 7 minutes with a wooden spoon </p>
+        </div>
+        <div class="instruction"> ④ finish and serve
+            <p class="step"> add sesame oil and remove from the heat </p>
+            <p class="step"> garnish with chopped green onion, roasted gim, and sesame seeds </p>
+            <p class="step"> serve right away </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+    <div class="finish">
+        <button id="finish">Finish</button>
+    </div>
+
+    <!-- Reviews -->
     <div id="review-container">
         <section class="review-section">
             <hr class="review-section-divider">
@@ -127,35 +247,17 @@
                 <hr class="review-divider">
             </template>
         </section>
-
         <template id="uploaded-img-template">
             <div class="uploaded-img">
                 <img src="" alt="Image Upload">
-                <button>
-                    <i class="fas fa-times-circle"></i>
-                </button>
+                <button><i class="fas fa-times-circle"></i></button>
             </div>
         </template>
     </div>
 
-    <script src="script.js"></script>
     <script src="review.js"></script>
+    <script src="script.js"></script>
+    <script src="timer.js"></script>
 
 </body>
-
-<button id="timer-toggle-btn">Toggle Timer</button>
-
-<script src="timer.js"></script>
-
-</body>
-
-3 bowls steamed rice (3 cups)
-1 cup chopped kimchi (should be aged, well-fermented and sour)
-¼ cup kimchi juice (spicy red juice from a jar of kimchi)
-¼ cup water
-2-3 tablespoons gochujang
-3 teaspoons toasted sesame oil
-1 teaspoon vegetable oil
-1 green onion, chopped
-1 tablespoon roasted sesame seeds
-1 sheet of gim, roasted and shredded into seaweed strips
+</html>

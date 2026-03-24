@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookbook Core</title>
+    <title>Arugula Salad – Cookbook Core</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="timer.css">
@@ -14,11 +14,80 @@
 <body>
 
     <header>
-        <h1> <img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"> </h1>
+        <hh1><img src="images/logo2.png" alt="Cooked Cookbook" class="header-logo"></hh1>
         <p class="homepage" id="home-button"></p>
     </header>
 
-    <button id="timer-toggle-btn" class="timer-toggle-btn"> ⏱ Timer</button>
+    <!-- Ingredients Panel -->
+    <div class="panel" id="panel">
+        <p>Ingredients</p>
+
+        <!-- FULL RECIPE -->
+        <ul class="ingredients-list" id="ingredients-full">
+            <li><label><input type="checkbox"> 3 cups fresh arugula</label></li>
+            <li><label><input type="checkbox"> 1 apple, thinly sliced (honeycrisp or fuji work great)</label></li>
+            <li><label><input type="checkbox"> ¼ cup dried cranberries or raisins</label></li>
+            <li><label><input type="checkbox"> ¼ cup crumbled goat cheese</label></li>
+            <li><label><input type="checkbox"> ¼ small red onion, thinly sliced</label></li>
+            <li><label><input type="checkbox"> ¼ cup walnuts or pecans (optional but recommended)</label></li>
+            <li><label><input type="checkbox"> 3 tbsp olive oil</label></li>
+            <li><label><input type="checkbox"> 1½ tbsp fresh lemon juice</label></li>
+            <li><label><input type="checkbox"> 1 tbsp honey</label></li>
+            <li><label><input type="checkbox"> 1 tsp dijon mustard</label></li>
+            <li><label><input type="checkbox"> salt and pepper to taste</label></li>
+        </ul>
+
+        <!-- HALF RECIPE -->
+        <ul class="ingredients-list hidden" id="ingredients-half">
+            <li><label><input type="checkbox"> 1½ cups fresh arugula</label></li>
+            <li><label><input type="checkbox"> ½ apple, thinly sliced</label></li>
+            <li><label><input type="checkbox"> 2 tbsp dried cranberries or raisins</label></li>
+            <li><label><input type="checkbox"> 2 tbsp crumbled goat cheese</label></li>
+            <li><label><input type="checkbox"> ⅛ small red onion, thinly sliced</label></li>
+            <li><label><input type="checkbox"> 2 tbsp walnuts or pecans</label></li>
+            <li><label><input type="checkbox"> 1½ tbsp olive oil</label></li>
+            <li><label><input type="checkbox"> ¾ tbsp fresh lemon juice</label></li>
+            <li><label><input type="checkbox"> ½ tbsp honey</label></li>
+            <li><label><input type="checkbox"> ½ tsp dijon mustard</label></li>
+            <li><label><input type="checkbox"> salt and pepper to taste</label></li>
+        </ul>
+
+        <!-- DOUBLE RECIPE -->
+        <ul class="ingredients-list hidden" id="ingredients-double">
+            <li><label><input type="checkbox"> 6 cups fresh arugula</label></li>
+            <li><label><input type="checkbox"> 2 apples, thinly sliced</label></li>
+            <li><label><input type="checkbox"> ½ cup dried cranberries or raisins</label></li>
+            <li><label><input type="checkbox"> ½ cup crumbled goat cheese</label></li>
+            <li><label><input type="checkbox"> ½ small red onion, thinly sliced</label></li>
+            <li><label><input type="checkbox"> ½ cup walnuts or pecans</label></li>
+            <li><label><input type="checkbox"> 6 tbsp olive oil</label></li>
+            <li><label><input type="checkbox"> 3 tbsp fresh lemon juice</label></li>
+            <li><label><input type="checkbox"> 2 tbsp honey</label></li>
+            <li><label><input type="checkbox"> 2 tsp dijon mustard</label></li>
+            <li><label><input type="checkbox"> salt and pepper to taste</label></li>
+        </ul>
+
+        <div class="recipe-scale">
+            <button id="full-btn">Regular</button>
+            <button id="half-btn">Half</button>
+            <button id="double-btn">Double</button>
+        </div>
+    </div>
+
+    <!-- Nutrition Panel -->
+    <div class="panel" id="panel2">
+        <p>Nutrition Information</p>
+        <ol class="nutrition-list">
+            <li><span>Calories</span><span>210</span></li>
+            <li><span>Sugars</span><span>9g</span></li>
+            <li><span>Fat</span><span>16g</span></li>
+            <li><span>Protein</span><span>5g</span></li>
+            <li><span>Carbohydrates</span><span>14g</span></li>
+        </ol>
+    </div>
+
+    <!-- Timer toggle button -->
+    <button id="timer-toggle-btn" class="timer-toggle-btn">⏱ Timer</button>
 
     <section id="timer" class="timer-window hidden">
         <div class="timer-card" id="timer-card">
@@ -53,56 +122,44 @@
 
     <button id="nutrition-btn">Nutrition</button>
 
-    <h1> Arugula Salad </h1>
+    <!-- Recipe Content -->
+    <h1>Arugula Salad</h1>
     <p style="text-align:center; color:#8b0000; font-size: 18px;">
         fresh arugula, crisp apple, goat cheese, and a lemon honey mustard dressing
     </p>
 
-    <div class="panel" id="panel">
-        <p><strong>Ingredients</strong></p>
-        <ul class="ingredients-list">
-            <li><label><input type="checkbox"> 3 cups fresh arugula</label></li>
-            <li><label><input type="checkbox"> 1 apple, thinly sliced (honeycrisp or fuji work great)</label></li>
-            <li><label><input type="checkbox"> ¼ cup dried cranberries or raisins</label></li>
-            <li><label><input type="checkbox"> ¼ cup crumbled goat cheese</label></li>
-            <li><label><input type="checkbox"> ¼ small red onion, thinly sliced</label></li>
-            <li><label><input type="checkbox"> ¼ cup walnuts or pecans (optional but recommended)</label></li>
-            <li><label><input type="checkbox"> 3 tbsp olive oil</label></li>
-            <li><label><input type="checkbox"> 1½ tbsp fresh lemon juice</label></li>
-            <li><label><input type="checkbox"> 1 tbsp honey</label></li>
-            <li><label><input type="checkbox"> 1 tsp dijon mustard</label></li>
-            <li><label><input type="checkbox"> salt and pepper to taste</label></li>
-        </ul>
-    </div>
-
     <div>
         <div class="instruction"> ① make the dressing
-            <p class="step"> in a small bowl, whisk together 3 tbsp olive oil, 1½ tbsp lemon juice, 1 tbsp honey, and 1
-                tsp dijon mustard </p>
+            <p class="step"> in a small bowl, whisk together 3 tbsp olive oil, 1½ tbsp lemon juice, 1 tbsp honey, and 1 tsp dijon mustard </p>
             <p class="step"> season with salt and pepper to taste </p>
             <p class="step"> whisk until fully combined and slightly thickened </p>
             <p class="step-under"> taste and adjust — more honey for sweetness, more lemon for tang </p>
         </div>
-
         <div class="instruction"> ② prep your toppings
-            <p class="step"> thinly slice the apple</p>
-            <p class="step-under"> if prepping ahead, toss the apple slices in a little lemon juice to prevent browning
-            </p>
+            <p class="step"> thinly slice the apple </p>
+            <p class="step-under"> if prepping ahead, toss the apple slices in a little lemon juice to prevent browning </p>
             <p class="step"> thinly slice the red onion </p>
             <p class="step-under"> soak the onion slices in cold water for 5 minutes if you want a milder flavour </p>
             <p class="step"> crumble the goat cheese into small chunks </p>
         </div>
-
         <div class="instruction"> ③ assemble the salad
             <p class="step"> add the arugula to a large bowl as your base </p>
             <p class="step"> scatter the apple slices evenly over the arugula </p>
             <p class="step"> add the dried cranberries or raisins </p>
             <p class="step"> layer on the red onion slices </p>
             <p class="step"> sprinkle the crumbled goat cheese on top </p>
-            <p class="step"> add w </p>
+            <p class="step"> add walnuts or pecans if using </p>
+            <p class="step"> drizzle the dressing over top and toss gently </p>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+    <div class="finish">
+        <button id="finish">Finish</button>
+    </div>
+
+    <!-- Reviews -->
     <div id="review-container">
         <section class="review-section">
             <hr class="review-section-divider">
@@ -199,13 +256,10 @@
                 <hr class="review-divider">
             </template>
         </section>
-
         <template id="uploaded-img-template">
             <div class="uploaded-img">
                 <img src="" alt="Image Upload">
-                <button>
-                    <i class="fas fa-times-circle"></i>
-                </button>
+                <button><i class="fas fa-times-circle"></i></button>
             </div>
         </template>
     </div>
@@ -215,5 +269,4 @@
     <script src="timer.js"></script>
 
 </body>
-
 </html>
