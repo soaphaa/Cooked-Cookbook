@@ -10,7 +10,7 @@
 
 .review-section button:hover:enabled {
     filter: brightness(90%);
-    background-color: rgb(167, 29, 29);
+    background-color: rgb(29, 70, 167);
 }
 
 .review-section button:active:enabled {
@@ -21,7 +21,7 @@
 .review-section button:disabled {
     opacity: 0.55;
     filter: brightness(95%);
-    background-color: rgb(167, 29, 29);
+    background-color: rgb(29, 64, 167);
 }
 
 .review-section i {
@@ -35,7 +35,7 @@
 .review-section h1 {
     margin: 3rem;
     font-size: 3.5rem;
-    color: #590000;
+    color: #001b59;
 }
 
 .review-section-divider {
@@ -43,8 +43,8 @@
     height: 0.2rem;
     border: none;
     margin: 0 -0.5rem;
-    background: rgb(134, 54, 54);
-    box-shadow: 0 0.12rem 0.3rem 0.01rem rgba(124, 40, 40, 0.5);
+    background: rgb(54, 67, 134);
+    box-shadow: 0 0.12rem 0.3rem 0.01rem rgba(46, 40, 124, 0.5);
 }
 
 .review-summary {
@@ -150,14 +150,14 @@
 .rating-bar-full {
     flex: 1;
     height: 0.75rem;
-    background-color: rgb(197, 170, 170);
+    background-color: rgb(170, 175, 197);
     overflow: hidden;
 }
 
 .rating-bar-filled {
     height: 100%;
     width: 0%;
-    background-color: #590000;
+    background-color: #001659;
     /* transition: width 0.5s ease; */
 }
 
@@ -264,7 +264,7 @@
 .img-upload-container label {
     display: inline-block;
     position: relative;
-    color: #590000;
+    color: #000759;
     font-size: 1.4rem;
     font-weight: 600;
     cursor: pointer;
@@ -380,7 +380,7 @@
 .uploaded-img button i {
     display: block;
     border-radius: 50%;
-    color: #590000;
+    color: #000059;
     background-color: white;
 }
 
@@ -523,7 +523,7 @@
     height: 2.8rem;
     justify-content: flex-end;
     align-items: center;
-    background-color: #c16c6c;
+    background-color: #6c7cc1;
 }
 
 .close-img-btn {

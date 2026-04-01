@@ -29,7 +29,7 @@
 body {
     margin:0;
     font-family: "Nunito", sans-serif;
-    background-color: #c16c6c;
+    background-color: #b8e3ef;
     color: #1a1a1a;
     line-height: 1em;
     font-size: 20px;
@@ -47,25 +47,15 @@ p {
 h1 {
     margin-left:10vw;
     margin-right:10vw;
-    color: pink;
+    color: rgb(191, 221, 243);
     max-width: 100vw;
     font-size: 4vw;
     text-align: center;
     line-height: 1em;
 }
 
-/* header heading 1*/
-/* hh1 {
-    color: pink;
-    font-size: 5vw;
-    text-align: center;
-    line-height: 1.5em;
-    padding: 20px;
-    margin-bottom: 50px;
-} */
-
 hh1 {
-    color: pink;
+    color: rgb(191, 221, 243);
     text-align: center;
     padding: 0; 
     margin-bottom: 0; 
@@ -75,7 +65,7 @@ hh1 {
 
 header {
     position: sticky;
-    background-color: rgb(167, 29, 29);
+    background-color: rgb(54, 109, 235);
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -88,7 +78,7 @@ header {
 
 credit {
     /* by le gang trust*/
-    color: rgb(229, 177, 195);
+    color: rgb(177, 214, 229);
     text-align: center;
     line-height: 0.5em;
     font-weight: bold;
@@ -121,7 +111,7 @@ button{
     padding: 10px;
     left: 20px;
     font-size: 20px;
-    background-color: rgb(167, 29, 29);
+    background-color: rgb(29, 43, 167);
     color: white;
     border: none;
     border-radius: 10px;
@@ -129,7 +119,7 @@ button{
 }
 
 button:hover{
-    background: #cf0404;
+    background: #0444cf;
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     border-radius: 9step0px;    
@@ -146,7 +136,7 @@ button:hover:disabled {
     /* when you select a specific ingredient cause my enter key doesn't work */
     width: 5vw;
     font-family: "Nunito", sans-serif;
-    background-color: rgb(194, 91, 91);
+    background-color: rgb(91, 108, 194);
     color: white;
     border: 1px, solid, white;
     padding-bottom:30px;
@@ -158,7 +148,7 @@ button:hover:disabled {
 }
 .search button:hover {
     font-family: "Nunito", sans-serif;
-    background-color: rgb(161, 66, 66);
+    background-color: rgb(91, 108, 194);
     border: 1px, solid, rgb(255, 203, 203);
     cursor: url("images/cursor1.cur"), auto;
 }
@@ -243,7 +233,7 @@ rbody {
     margin-top: 1vw;
     width: 20vw;
 
-    background-color: #cc0000;
+    background-color: rgb(91, 108, 194);
     color: white;
     
     text-decoration: none;
@@ -269,7 +259,7 @@ rbody {
 
     border-radius: 10px;
 
-    background-color: #d15b5b;
+    background-color: #5b80d1;
     color: white;
 
     text-decoration: none;
@@ -289,7 +279,7 @@ rbody {
     padding-left:10px;
     padding-right:10px;
 
-    background-color: #eb6b6b;
+    background-color: #5b80d1;
     color: rgb(247, 242, 242);
     
     text-decoration: none;
@@ -300,7 +290,7 @@ rbody {
 }
 
 .recipe-filter:hover{
-    background-color: #e04b4b;
+    background-color: #5b80d1;
     border: .5px, white, solid;
     border-radius: 90px;
     transform: scale(1.05);
@@ -344,7 +334,7 @@ rbody {
 
 
 .recipe-btn:hover {
-    background-color: #990000;
+    background-color: #5b80d1;
     transform:scale(1.03);
     cursor: url("images/cursor1.cur"), auto;
 }
@@ -367,7 +357,7 @@ rbody {
     left: 20px;
     z-index: 1000;
     background: #ffc4c4;
-    color: rgb(200, 0, 0);
+    color: rgb(0, 37, 200);
     border: none;
     border-radius: 50px;
     padding: 12px 20px;
@@ -398,7 +388,7 @@ rbody {
     left: 20px;
     z-index: 1000;
     background: #ffc4c4;
-    color: rgb(200, 0, 0);
+    color: rgb(0, 77, 200);
     border: none;
     border-radius: 50px;
     padding: 12px 20px;
@@ -457,7 +447,7 @@ rbody {
     padding-left: 35px;
     display: block;
     grid-template-columns: repeat(1, minmax(10vw, 20vw));
-    color: rgb(167, 29, 29);
+    color: rgb(0, 77, 200);
     margin-top:20px;
     margin-bottom: 20px;
     font-size:2vw;
@@ -467,7 +457,7 @@ rbody {
     content: "✩";
     position: absolute; 
     margin-right: 15px;
-    color: rgb(218, 121, 121);
+    color: rgb(0, 77, 200);
     display: block;
     left: 0;
     font-size:1em;
@@ -479,7 +469,7 @@ rbody {
     padding-left: 30px;
     display: block;
     grid-template-columns: repeat(1, minmax(10vw, 20vw));
-    color: rgb(167, 29, 29);
+    color: rgb(29, 52, 167);
     margin-top:10px;
     margin-bottom: 10px;
     font-size:2vw;
@@ -489,7 +479,7 @@ rbody {
     content: "✩";
     position: absolute; 
     margin-right: 55px;
-    color: rgb(218, 121, 121);
+    color: rgb(121, 155, 218);
     display: block;
     left: 0;
     font-size:1em;
@@ -506,7 +496,7 @@ rbody {
     padding: 10px;
     margin-left: 3px;
     font-size: 20px;
-    background-color: rgb(167, 29, 29);
+    background-color: rgb(29, 66, 167);
     color: white;
     border-radius: 90px;    
 }
@@ -541,7 +531,7 @@ h2.timer-header{
   color: white;
 }
 .stop-btn {
-  background-color: #f44336;
+  background-color: #3662f4;
   color: white;
 }
 
@@ -552,7 +542,7 @@ h2.timer-header{
     background: none;
     border: none;
     font-size: 16px;
-    color: #cc0000;
+    color: #0018cc;
     cursor: pointer;
     float: none;
     margin: 0;
@@ -561,7 +551,7 @@ h2.timer-header{
 }
 
 .timer-close-btn:hover {
-    color: #8b0000;
+    color: #00198b;
     transform: scale(1.2);
 }
 
@@ -577,12 +567,12 @@ h2.timer-header{
     font-family: "Nunito", sans-serif;
     font-size: 18px;
     font-weight: bold;
-    color: #8b0000;
+    color: #00258b;
     margin: 4px 0;
 }
 
 .timer-display.low {
-    color: #ff4400;
+    color: #0033ff;
 }
 
 .timer-controls {
@@ -595,10 +585,10 @@ h2.timer-header{
     font-family: "Nunito", sans-serif;
     font-size: 13px;
     background: rgba(255, 220, 150, 0.8);
-    border: 1px solid rgba(204, 0, 0, 0.3);
+    border: 1px solid rgba(0, 75, 204, 0.3);
     border-radius: 20px;
     padding: 4px 8px;
-    color: #8b0000;
+    color: #001e8b;
     margin-bottom: 8px;
     cursor: pointer;
     width: 100%;
@@ -625,7 +615,7 @@ h2.timer-header{
     top: 0;
     right: 0;
     width: 18vw;
-    background-color: #cd7575;
+    background-color: #7592cd;
     padding: 1rem;
     padding-top: 2rem;
     border-radius: 10px;
@@ -710,7 +700,7 @@ h2.timer-header{
     top: 40px;
     left: 20px;
     z-index: 1000;
-    background: #701616;
+    background: #162b70;
     color: white;
     border: none;
     border-radius: 50px;
@@ -726,7 +716,7 @@ h2.timer-header{
 }
 
 #nutrition-btn:hover {
-    background: #cf0404;
+    background: #0433cf;
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     cursor: url("images/cursor1.cur"), auto;
@@ -738,7 +728,7 @@ h2.timer-header{
     top: 40px;
     right: 20px;
     z-index: 1000;
-    background: #701616;
+    background: #162970;
     color: white;
     border: none;
     border-radius: 50%; /* circle */
@@ -756,7 +746,7 @@ h2.timer-header{
 }
 
 #profile-btn:hover {
-    background: #cf0404;
+    background: #0433cf;
     transform: scale(1.05);
     box-shadow: 0 6px 18px rgba(0,0,0,0.3);
     cursor: url("images/cursor1.cur"), auto;
@@ -803,7 +793,7 @@ h2.timer-header{
 .auth-container {
     max-width: 400px;
     margin: 60px auto;
-    background: pink;
+    background: rgb(191, 221, 243);
     border-radius: 24px;
     padding: 32px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
@@ -821,8 +811,8 @@ h2.timer-header{
     float: none;
     flex: 1;
     background: transparent;
-    border: 2px solid #cc0000;
-    color: #cc0000;
+    border: 2px solid #0025cc;
+    color: #0007cc;
     border-radius: 50px;
     padding: 8px 16px;
     font-family: "Nunito", sans-serif;
@@ -832,20 +822,20 @@ h2.timer-header{
 }
 
 #auth-tabs button.active-tab {
-    background: #cc0000;
+    background: #0000cc;
     color: white;
     font-weight: bold;
-    border-bottom: 2px solid #cc0000;
+    border-bottom: 2px solid #0025cc;
 }
 
 #auth-tabs button:hover {
-    background: #cc0000;
+    background: #0025cc;
     color: white;
     cursor: url("images/cursor1.cur"), auto;
 }
 
 .auth-heading {
-    color: #cc0000;
+    color: #0025cc;
     margin-bottom: 16px;
     font-size: 22px;
 }
@@ -856,7 +846,7 @@ h2.timer-header{
     padding: 10px 14px;
     margin-bottom: 12px;
     border-radius: 50px;
-    border: 2px solid #e09a9a;
+    border: 2px solid #9aa7e0;
     background: white;
     font-family: "Nunito", sans-serif;
     font-size: 15px;
@@ -866,14 +856,14 @@ h2.timer-header{
 /* does ts worik */
 
 .auth-input:focus {
-    border-color: #cc0000;
+    border-color: #0052cc;
 }
 
 .auth-btn {
     float: none;
     width: 100%;
     padding: 10px;
-    background: #cc0000;
+    background: #003acc;
     color: white;
     border: none;
     border-radius: 50px;
@@ -886,13 +876,13 @@ h2.timer-header{
 }
 
 .auth-btn:hover {
-    background: #990000;
+    background: #003099;
 }
 
 .auth-message {
     margin-top: 12px;
     font-size: 14px;
-    color: #cc0000;
+    color: #0036cc;
     font-weight: bold;
 }
 
@@ -901,7 +891,7 @@ h2.timer-header{
     align-items: center;
     gap: 6px;
     font-size: 13px;
-    color: #8b0000;
+    color: #002a8b;
     margin-bottom: 10px;
     cursor: pointer;
 }
@@ -910,7 +900,7 @@ h2.timer-header{
     width: 14px;
     height: 14px;
     cursor: pointer;
-    accent-color: #cc0000;
+    accent-color: #0025cc;
 }
 
 .review-section {
@@ -969,7 +959,7 @@ h2.timer-header{
 
 .overall-ratings i {
     font-size: 1.3rem;
-    color: #590000;
+    color: #001e59;
 }
 
 .rating-bars-container {
@@ -1020,7 +1010,7 @@ h2.timer-header{
 .rating-bar-filled {
     height: 100%;
     width: 0%;
-    background-color: #590000;
+    background-color: #002459;
     /* transition: width 0.5s ease; */
 }
 
@@ -1029,7 +1019,7 @@ h2.timer-header{
     height: 0.2rem;
     border: none;
     margin: 0rem -0.5rem;
-    background: rgb(134, 54, 54);
+    background: rgb(54, 77, 134);
     box-shadow: 0 0.12rem 0.3rem 0.01rem rgba(124, 40, 40, 0.5);
 }
 
@@ -1066,7 +1056,7 @@ h2.timer-header{
 }
 
 .ratings {
-    color: #590000;
+    color: #001659;
 }
 
 .review-content {
@@ -1154,7 +1144,7 @@ h2.timer-header{
     height: 2.8rem;
     justify-content: flex-end;
     align-items: center;
-    background-color: #d08888;
+    background-color: #88a2d0;
 }
 
 .close-img-btn {
@@ -1167,7 +1157,7 @@ h2.timer-header{
     padding: 0rem;
     margin: 0rem;
     cursor: pointer;
-    background-color: rgb(207, 101, 101);
+    background-color: rgb(101, 151, 207);
 }
 
 .close-img-btn i {
