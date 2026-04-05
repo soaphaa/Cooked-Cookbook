@@ -1200,25 +1200,3 @@ h2.timer-header{
             transparent 10px) 1;
     margin: 0rem -0.5rem;
 }
-
-.pantry-btn{
-    position: fixed;
-    top: 40px;
-    right: 20px;
-    z-index: 1000;
-    background: #162970;
-    color: white;
-    border: none;
-    border-radius: 50%; /* circle */
-    width: 100px;      
-    height: 100px;
-    padding: 5px 5px;
-    font-family: "Nunito", sans-serif;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    float: none;
-    margin: 0;
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
